@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<content-type>/component/two-column</content-type>
+	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<no-template-required/>
+	<objectGroupId>c8a4</objectGroupId>
+	<objectId>c8a45606-4804-a83a-bdde-44292dce1ab3</objectId>
+	<file-name>c8a45606-4804-a83a-bdde-44292dce1ab3.xml</file-name>
+	<internal-name>Two Columns - Left Image, Right Content</internal-name>
+	<title_s>Accessories For The Perfect Summer</title_s>
+	<image_s>/static-assets/images/page/c8a45606-4804-a83a-bdde-44292dce1ab3/top-left.b27bc488.jpg</image_s>
+	<contentAlignment_s>left</contentAlignment_s>
+	<content_html>&lt;p&gt;The weather is heating up, but you don&amp;rsquo;t have the right outfit yet. Thankfully, we are here to help you out. Spring break is upon us and it's essential to migrate. So whether you're jetting off to Ibiza or Mallorca for a party vacation or getting away to greener pastures - here are the fashion pieces we'll be stashing in ourfavorite getaway bags.&lt;/p&gt;</content_html>
+	<createdDate>2019-06-24T20:39:34.845Z</createdDate>
+	<createdDate_dt>2019-06-24T20:39:34.845Z</createdDate_dt>
+	<lastModifiedDate>2019-10-14T06:59:32.901Z</lastModifiedDate>
+	<lastModifiedDate_dt>2019-10-14T06:59:32.901Z</lastModifiedDate_dt>
+	<section_background_image_s>/static-assets/images/page/c8a45606-4804-a83a-bdde-44292dce1ab3/body-gradient-right.svg  </section_background_image_s>
+</component>

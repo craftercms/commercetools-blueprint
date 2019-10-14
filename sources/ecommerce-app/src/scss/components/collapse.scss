@@ -1,0 +1,188 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+.collapse__wrapper {
+
+  &.opened, &.opening {
+
+    .collapse__title {
+
+      p {
+        color: $color-additional;
+      }
+
+      svg {
+        fill: $color-additional;
+      }
+    }
+  }
+
+  &.boxed {
+    border: solid 1px #dddddd;
+    margin-top: -1px;
+
+    .collapse__title {
+      background-color: #f2f4f7;
+      border-bottom: solid 1px #dddddd;
+      padding: 8px 15px;
+
+      p {
+        color: #444444;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+
+    .collapse__content {
+      padding: 16px 20px 20px 15px;
+    }
+
+    &.closed {
+
+      .collapse__title {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &.with-shadow {
+    margin-bottom: 10px;
+    box-shadow: none;
+
+    .collapse__content {
+      padding: 15px 20px 0 25px;
+      max-width: 1320px;
+
+      @include theme($themes) {
+        color: themed('colorText');
+      }
+    }
+
+    .collapse__title {
+      padding: 15px 25px;
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s;
+
+      @include theme($themes) {
+        color: themed('colorText');
+      }
+
+      &:hover {
+
+        @include theme($themes) {
+          background-color: themed('colorHover');
+        }
+      }
+
+      svg {
+        display: none;
+      }
+
+      p {
+
+        svg {
+          display: block;
+          top: calc(50% - 7px);
+          transition: all 0.3s;
+
+          @include theme($themes) {
+            fill: themed('colorText');
+          }
+        }
+      }
+    }
+
+    &.opened .collapse__title,
+    &.opening .collapse__title {
+
+      p {
+        color: inherit;
+      }
+
+      svg {
+        fill: inherit;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.closing {
+
+    .collapse__content {
+      padding-top: 0;
+      padding-bottom: 0;
+      transition: all 0.3s;
+    }
+  }
+}
+
+.collapse__title, .collapse__content {
+  padding-left: 20px;
+  padding-right: 15px;
+}
+
+.collapse__title {
+  padding-bottom: 10px;
+  padding-top: 6px;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  display: block;
+  width: 100%;
+  border: none;
+  text-align: left;
+
+  p {
+    font-weight: 700;
+    margin-top: 0;
+    transition: all 0.3s;
+    position: relative;
+
+    svg {
+      right: 0;
+      left: auto;
+      display: none;
+    }
+  }
+
+  svg {
+    position: absolute;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    top: 8px;
+    transition: all 0.3s;
+
+    @include theme($themes) {
+      fill: themed('colorText');
+    }
+
+  }
+}
+
+.collapse__content {
+  padding-bottom: 14px;
+}

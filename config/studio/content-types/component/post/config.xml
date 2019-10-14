@@ -1,0 +1,18 @@
+<content-type name="/component/post" is-wcm-type="true">
+	<label>Blog Post</label>
+	<form>/component/post</form>
+	<form-path>simple</form-path>
+	<model-instance-path>NOT-USED-BY-SIMPLE-FORM-ENGINE</model-instance-path>
+	<file-extension>xml</file-extension>
+	<content-as-folder>false</content-as-folder>
+	<previewable>false</previewable>
+	<quickCreate>true</quickCreate>
+	<quickCreatePath>/site/components/posts/{yyyy}/{mm}/{dd}/</quickCreatePath>
+	<noThumbnail>true</noThumbnail>
+	<image-thumbnail></image-thumbnail>
+	<paths>
+		<includes>
+			<pattern>^/site/components/posts/.*</pattern>
+		</includes>
+	</paths>
+</content-type>

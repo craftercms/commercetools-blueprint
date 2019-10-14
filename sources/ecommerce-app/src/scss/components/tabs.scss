@@ -1,0 +1,102 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+.tabs {
+  overflow: auto;
+
+  .tabs__wrap {
+    min-width: min-content;
+    //-webkit-min-width: min-content;
+  }
+
+  .nav-tabs {
+    flex-wrap: nowrap;
+
+    li {
+
+      .nav-link {
+        padding: 10px 20px;
+        margin-right: 0;
+        transition: background-color 0.3s;
+        cursor: pointer;
+
+        @include theme($themes) {
+          color: themed('colorText');
+        }
+
+        &:hover, &:focus, &:active {
+          outline: none;
+
+          @include theme($themes) {
+            background-color: themed('colorHover');
+            border-color: themed('colorHover');
+            border-bottom-color: #dddddd;
+          }
+        }
+      }
+
+      .nav-link.active, .nav-link.active:focus,
+      .nav-link.active:hover {
+        background-color: transparent;
+
+        @include theme($themes) {
+          border-color: #dddddd;
+          border-bottom-color: themed('colorBackground');
+          color: themed('colorText');
+        }
+      }
+
+      &.disabled .nav-link {
+        color: $color-additional;
+      }
+    }
+  }
+
+  .tab-pane {
+    padding-top: 20px;
+  }
+
+  &.tabs--bordered-bottom {
+
+    .nav-tabs {
+
+      li .nav-link {
+        border-color: transparent;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 11px;
+      }
+
+      li .nav-link.active {
+
+        &, &:focus, &:hover {
+          border-radius: 0;
+          border-color: transparent;
+          border-bottom: 2px solid $color-accent;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+}

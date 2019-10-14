@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+	<content-type>/page/landing</content-type>
+	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<no-template-required/>
+	<placeInNav>true</placeInNav>
+	<file-name>index.xml</file-name>
+	<internal-name>Home</internal-name>
+	<orderDefault_f>3000</orderDefault_f>
+	<objectGroupId>8d7f</objectGroupId>
+	<objectId>8d7f21fa-5e09-00aa-8340-853b7db302da</objectId>
+	<folder-name/>
+	<createdDate>2017-1-31T16:18:14.000Z</createdDate>
+	<createdDate_dt>2017-1-31T16:18:14.000Z</createdDate_dt>
+	<lastModifiedDate>2019-10-09T16:43:01.389Z</lastModifiedDate>
+	<lastModifiedDate_dt>2019-10-09T16:43:01.389Z</lastModifiedDate_dt>
+	<sections_o item-list="true">	<item>	<key>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/afcc4f84-f568-955c-1faf-a17975aa0b9e.xml</key>
+	<value>Home Page Hero</value>
+	<include>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/afcc4f84-f568-955c-1faf-a17975aa0b9e.xml
+      </include>
+	<disableFlattening>false</disableFlattening>
+	</item>	<item datasource="sections">	<key>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/home-product-teaser.xml</key>
+	<value>Home Product Teaser</value>
+	<include>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/home-product-teaser.xml</include>
+	<disableFlattening>false</disableFlattening>
+	</item>	<item>	<key>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/7e169b07-0f58-8818-2b4c-bd25ecd2409b.xml</key>
+	<value>Home Blog Teaser</value>
+	<include>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/7e169b07-0f58-8818-2b4c-bd25ecd2409b.xml
+      </include>
+	<disableFlattening>false</disableFlattening>
+	</item>	<item>	<key>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/400fa07c-4fa5-3b22-6c31-c15f581b767a.xml</key>
+	<value>Two Columns - Right image, left content</value>
+	<include>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/400fa07c-4fa5-3b22-6c31-c15f581b767a.xml
+      </include>
+	<disableFlattening>false</disableFlattening>
+	</item>	<item datasource="sections">	<key>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/c8a45606-4804-a83a-bdde-44292dce1ab3.xml</key>
+	<value>Two Columns - Left Image, Right Content</value>
+	<include>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/c8a45606-4804-a83a-bdde-44292dce1ab3.xml
+      </include>
+	<disableFlattening>false</disableFlattening>
+	</item>	<item>	<key>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/eba9134c-0b15-5f87-1b28-bf746535d8e2.xml</key>
+	<value>Home Page Features</value>
+	<include>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/eba9134c-0b15-5f87-1b28-bf746535d8e2.xml
+      </include>
+	<disableFlattening>false</disableFlattening>
+	</item>	<item>	<key>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/49fff40d-2751-1f03-c9e3-74ee66797113.xml</key>
+	<value>Home Page Testimonials</value>
+	<include>/site/components/page/8d7f21fa-5e09-00aa-8340-853b7db302da/49fff40d-2751-1f03-c9e3-74ee66797113.xml
+      </include>
+	<disableFlattening>false</disableFlattening>
+	</item></sections_o>
+</page>

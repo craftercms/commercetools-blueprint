@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<content-type>/component/two-column</content-type>
+	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<no-template-required/>
+	<objectGroupId>400f</objectGroupId>
+	<objectId>400fa07c-4fa5-3b22-6c31-c15f581b767a</objectId>
+	<file-name>400fa07c-4fa5-3b22-6c31-c15f581b767a.xml</file-name>
+	<image_s>/static-assets/images/page/400fa07c-4fa5-3b22-6c31-c15f581b767a/top-right.bed4700e.jpg</image_s>
+	<internal-name>Two Columns - Right image, left content</internal-name>
+	<title_s>Here Comes The Sun</title_s>
+	<contentAlignment_s>right</contentAlignment_s>
+	<content_html>&lt;p&gt;FABULOUS EVERY DAY - SUMMER CHIC 😎&lt;/p&gt;
+&lt;p&gt;Between rising temperature outside and cool A/C inside, dressing for the the summer can be a tricky business. Luckily, we pulled together the most inspiring looks for. Check out our must-to-have-it pieces.&lt;/p&gt;</content_html>
+	<createdDate>2019-06-24T20:35:29.916Z</createdDate>
+	<createdDate_dt>2019-06-24T20:35:29.916Z</createdDate_dt>
+	<lastModifiedDate>2019-10-14T06:56:33.790Z</lastModifiedDate>
+	<lastModifiedDate_dt>2019-10-14T06:56:33.790Z</lastModifiedDate_dt>
+	<section_background_image_s/>
+</component>

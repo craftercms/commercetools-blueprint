@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<content-type>/component/feature-list</content-type>
+	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<no-template-required/>
+	<objectGroupId>eba9</objectGroupId>
+	<objectId>eba9134c-0b15-5f87-1b28-bf746535d8e2</objectId>
+	<file-name>eba9134c-0b15-5f87-1b28-bf746535d8e2.xml</file-name>
+	<internal-name>Home Page Our Story</internal-name>
+	<title_s>Our Commitment</title_s>
+	<openingContent_html>&lt;p&gt;The journey to making better things in a better way is a long one, and we&amp;rsquo;re just getting started. Here are a few of our proudest moments so far:&lt;/p&gt;</openingContent_html>
+	<closingContent_html/>
+	<features_o item-list="true">	<item>	<title_s>B CORP</title_s>
+	<description_t>As a certified B Corp, we do business differently. The environment is a stakeholder here, and how we treat it is just as important as the bottom line.</description_t>
+	<icon_s>/static-assets/images/icons/b-corp.svg</icon_s>
+	</item>	<item>	<icon_s>/static-assets/images/icons/s4s.svg</icon_s>
+	<title_s>SOLES4SOULS®</title_s>
+	<description_t>Thanks to our friends at Soles4Souls®, lightly used products find new life all around the world, helping communities in need thrive in the process.</description_t>
+	</item></features_o>
+	<createdDate>2019-06-24T20:40:58.171Z</createdDate>
+	<createdDate_dt>2019-06-24T20:40:58.171Z</createdDate_dt>
+	<lastModifiedDate>2019-10-14T07:14:47.286Z</lastModifiedDate>
+	<lastModifiedDate_dt>2019-10-14T07:14:47.286Z</lastModifiedDate_dt>
+</component>

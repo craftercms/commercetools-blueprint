@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<!-- notification-config.xml
+
+    This file configures the workflow notification system.
+
+-->
+<notificationConfig>
+	<version>2</version>
+   <lang><!-- language specific notifications -->
+      <deploymentFailureNotification><!-- list of email addresses to notify in case of publishing failure -->
+         <email>admin@example.com</email>
+         <email>admin2@example.com</email>
+      </deploymentFailureNotification>
+      <approverEmails><!-- list of content approver emails -->
+         <email>admin@example.com</email>
+         <email>admin2@example.com</email>
+      </approverEmails>
+      <generalMessages><!-- list of general messages --><!-- example scheduling policy -->
+         <content key="scheduling-policy">The {siteName} processes all publishing requests each business day, between 4PM EST and 6PM EST, unless a specific date/time is requested.&lt;br/&gt;&lt;br/&gt;All requests received after 4PM EST may not be processed until the next business day.&lt;br/&gt;&lt;br/&gt;If you have any questions about this policy or need a publish request processed immediately, please email the administrator.
+            </content>
+      </generalMessages>
+      <cannedMessages><!-- list of canned messages to speed up workflow approval processes -->
+         <content title="Not Approved" key="NotApproved">Please make the following revisions and resubmit.</content>
+         <content title="Typos" key="Typos">This content has multiple misspellings and/or grammatical errors. Please correct and re-submit.</content>
+         <content title="Incorrect Branding" key="IB">This content uses incorrect or outdated terms, images, and/or colors. Please correct and re-submit.</content>
+         <content title="Broken Links" key="BrokenLinks">This content has non-working links that may be due to incomplete and/or misspelled URLs.  Any links directing users to websites without the Acme.com primary navigation, or directing users to a document must open in a new browser window. Please correct and re-submit.</content>
+         <content title="Needs Section Owner's Approval" key="NSOA">This content needs the approval of its section&amp;apos;s owner to insure there is no negative impact on other pages/areas of section, etc. Once you have their approval please email the Web Marketing Operations Team and re-submit this publish request.</content>
+      </cannedMessages>
+      <completeMessages><!-- list of completion messages (when action is completed) -->
+         <content key="submitToGoLive">An email notification has been sent to the team. Your content will be reviewed and (if approved) pushed live between 4PM EST and 6PM EST of the business day that the request was received. If this request is sent after business hours, it will be reviewed and (if approved) pushed live as soon as possible, the next business day.&lt;br/&gt;&lt;br/&gt;If you need to make further revisions to this item, please re-submit this publish request after making them.&lt;br/&gt;&lt;br/&gt;If this request needs immediate attention, please email the administrator.</content>
+         <content key="delete">
+                Item(s) has been pushed for delete. It will be deleted shortly.
+            </content>
+         <content key="go-live">Item(s) has been pushed live. It will be visible on the live site shortly.</content>
+         <content key="schedule-to-go-live">The scheduled item(s) will go live on: ${date}.&lt;br/&gt;&lt;br/&gt;</content>
+         <content key="reject">Rejection has been sent. Item(s) have NOT been pushed live and have returned to draft state.</content>
+         <content key="delete">Item(s) has been pushed for delete. It will be deleted shortly.</content>
+         <content key="schedule-to-go-live">Item(s) have been scheduled to go live.</content>
+      </completeMessages>
+      <emailTemplates><!-- email templates written in FreeMarker -->
+         <emailTemplate key="deploymentError">
+            <subject>Deployment error on site ${siteName}</subject>
+            <body>
+                        &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;meta charset="utf-8"/&gt;
+                            &lt;/head&gt;
+                            &lt;body style=" font-size: 12pt;"&gt;
+                                &lt;p&gt;
+                                    The following content was unable to deploy:
+                                    &lt;ul&gt;
+                                        &lt;#list files as file&gt;
+                                                &lt;li&gt;${file.internalName!file.name}&lt;/li&gt;
+                                        &lt;/#list&gt;
+                                    &lt;/ul&gt;
+                                        Error:&lt;br/&gt;
+                                        ${deploymentError.toString()}
+                                    &lt;br/&gt;&lt;br/&gt;
+                                    &lt;a href="${liveUrl}" &gt;
+                                        &lt;img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" /&gt;
+                                    &lt;/a&gt;
+                                &lt;/p&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+</body>
+         </emailTemplate>
+         <emailTemplate key="contentApproved">
+            <subject>&lt;#if scheduleDate??&gt;Content Scheduled &lt;#else&gt;Content Approved&lt;/#if&gt;</subject>
+            <!-- Timezone can/is being overwritten in the following template -->
+            <body>
+                        &lt;#setting time_zone='EST'&gt;
+                        &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;meta charset="utf-8"/&gt;
+                            &lt;/head&gt;
+                            &lt;body style=" font-size: 12pt;"&gt;
+                                &lt;p&gt;
+                                    &lt;#if scheduleDate??&gt;
+                                        The following content has been scheduled for publishing on ${scheduleDate?string["MMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
+                                    &lt;#else&gt;
+                                        The following content has been reviewed and approved by ${approver.firstName!approver.username} ${approver.lastName!""}:
+                                    &lt;/#if&gt;
+                               &lt;ul&gt;
+                                  &lt;#list files as file&gt;
+                                        &lt;#if file.page&gt;
+                                            &lt;a href="${liveUrl}/${file.browserUri!""}"&gt;
+                                           &lt;/#if&gt;
+                                       &lt;li&gt;${file.internalName!file.name}&lt;/li&gt;
+                                        &lt;#if file.page&gt;
+                                          &lt;/a&gt;
+                                      &lt;/#if&gt;
+                                    &lt;/#list&gt;
+                                &lt;/ul&gt;&lt;br/&gt;
+                                &lt;#if scheduleDate??&gt;
+                                    &lt;a href="${liveUrl}"&gt;Click Here to View Your Published Content&lt;/a&gt;
+                                    &lt;br/&gt;
+                                &lt;/#if&gt;
+                                &lt;a href="${authoringUrl}/site-dashboard" &gt;
+                                    &lt;img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" /&gt;
+                                &lt;/a&gt;
+                                &lt;/p&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+                        </body>
+         </emailTemplate>
+         <emailTemplate key="submittedForReview">
+            <subject>Content Review</subject>
+            <body>
+                    						&lt;#setting time_zone='EST'&gt;
+                        &lt;html&gt;
+                        &lt;head&gt;
+                            &lt;meta charset="utf-8"/&gt;
+                        &lt;/head&gt;
+                        &lt;body style=" font-size: 12pt"&gt;
+                            &lt;p&gt;
+                                ${submitter.first_name!submitter.username} ${submitter.last_name} has submitted items for your review:
+                              &lt;ul&gt;
+                              &lt;#list files as file&gt;
+                                	&lt;#if file.page&gt;
+                                  	&lt;a href="${authoringUrl}/preview/#/?page=${file.browserUri!""}&amp;site=${siteName}"&gt;
+                                       &lt;/#if&gt;
+    	                           &lt;li&gt;${file.internalName!file.name}&lt;/li&gt;
+                                  	&lt;#if file.page&gt;
+	                                  &lt;/a&gt;
+                                  &lt;/#if&gt;
+                                &lt;/#list&gt;
+                            &lt;/ul&gt;
+                            &lt;#if submissionComments?has_content&gt;
+                            Comments:&lt;br/&gt;
+                                ${submissionComments!""}
+                                &lt;br/&gt;
+                            &lt;/#if&gt;&lt;br/&gt;
+                            &lt;a href="${previewUrl}/site-dashboard"&gt;Click Here to View Content Waiting for Approval&lt;/a&gt;
+                            &lt;br/&gt;&lt;br/&gt;
+        &lt;a href="${liveUrl}" &gt;
+            &lt;img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" /&gt;
+        &lt;/a&gt;
+    &lt;/p&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                        </body>
+         </emailTemplate>
+         <emailTemplate key="contentRejected">
+            <subject>Content Requires Revision</subject>
+            <body>
+						&lt;#setting time_zone='EST'&gt;
+                        &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;meta charset="utf-8"/&gt;
+                            &lt;/head&gt;
+                             &lt;body style=" font-size: 12pt;"&gt;
+                                &lt;p&gt;
+                                    The following content has been reviewed and requires some revision before it can be approved:
+                                    &lt;ul&gt;
+                                  &lt;#list files as file&gt;
+                                        &lt;#if file.page&gt;
+                                            &lt;a href="${authoringUrl}/preview/#/?page=${file.browserUri!""}&amp;site=${siteName}"&gt;
+                                           &lt;/#if&gt;
+                                       &lt;li&gt;${file.internalName!file.name}&lt;/li&gt;
+                                        &lt;#if file.page&gt;
+                                          &lt;/a&gt;
+                                      &lt;/#if&gt;
+                                    &lt;/#list&gt;
+                                &lt;/ul&gt;
+                                Reason:&lt;br/&gt;
+                                    ${rejectionReason!""}
+                                &lt;br/&gt;&lt;br/&gt;
+                                &lt;a href="${authoringUrl}/site-dashboard" &gt;
+                                    &lt;img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" /&gt;
+                                &lt;/a&gt;
+                                &lt;/p&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+                        </body>
+         </emailTemplate>
+         <emailTemplate key="contentExpiringSoon">
+            <subject>Content Expiring Soon</subject>
+            <body>
+                     &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;meta charset="utf-8"/&gt;
+                            &lt;/head&gt;
+                             &lt;body&gt;
+                                &lt;p&gt;
+                                    ${monitorName} in site '${siteName}':
+                                    &lt;ul&gt;
+                                  &lt;#list items as item&gt;
+                                        &lt;#if item.url??&gt;
+                                            &lt;li&gt;&lt;a href="${item.url}"&gt;${item.internalName!item.id}&lt;/a&gt;&lt;/li&gt;
+                                        &lt;#else&gt;
+                                            &lt;li&gt;${item.internalName!item.id}&lt;/li&gt;
+                                      &lt;/#if&gt;
+                                    &lt;/#list&gt;
+                                &lt;/ul&gt;
+                                &lt;/p&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+                        </body>
+         </emailTemplate>
+         <emailTemplate key="repositoryMergeConflict">
+            <subject>Repository merge conflict for site ${siteName}</subject>
+            <body>
+                            
+                        &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;meta charset="utf-8"/&gt;
+                            &lt;/head&gt;
+                            &lt;body style=" font-size: 12pt;"&gt;
+                                &lt;p&gt;
+                                    The following content was unable to be merged:
+                                    &lt;ul&gt;
+                                        &lt;#list files as file&gt;
+                                                &lt;li&gt;${file}&lt;/li&gt;
+                                        &lt;/#list&gt;
+                                    &lt;/ul&gt;
+                                &lt;/p&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+
+                        </body>
+         </emailTemplate>
+      </emailTemplates>
+      <!--list of email addresses to notify in case of repository merge conflict-->
+      <repositoryMergeConflictNotification>
+         <email>admin@example.com</email>
+         <email>admin2@example.com</email>
+      </repositoryMergeConflictNotification>
+   </lang>
+</notificationConfig>

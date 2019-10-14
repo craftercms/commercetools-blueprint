@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<content-type>/component/blog_teaser</content-type>	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<no-template-required/>
+	<objectGroupId>7e16</objectGroupId>
+	<objectId>7e169b07-0f58-8818-2b4c-bd25ecd2409b</objectId>
+	<file-name>7e169b07-0f58-8818-2b4c-bd25ecd2409b.xml</file-name>
+	<internal-name>Home Blog Teaser</internal-name>
+	<title_s>Latest blogs</title_s>
+	<createdDate>2019-07-23T07:28:05.072Z</createdDate>
+	<createdDate_dt>2019-07-23T07:28:05.072Z</createdDate_dt>
+	<lastModifiedDate>2019-07-23T18:53:12.751Z</lastModifiedDate>
+	<lastModifiedDate_dt>2019-07-23T18:53:12.751Z</lastModifiedDate_dt>
+</component>

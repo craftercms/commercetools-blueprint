@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<!--
+    This file configures the site application context used by Crafter Engine
+
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- add support for placeholders from site config -->
+  <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties"/>
+
+  <!-- generic beans used by the rest scripts -->
+  <bean id="serviceFactory" class="org.craftercms.sites.ecommerce.service.ProviderAwareServiceFactory">
+    <property name="provider" value="${ecommerce.provider}"/>
+  </bean>
+
+  <bean id="customerService" factory-bean="serviceFactory" factory-method="getCustomerService"/>
+
+  <bean id="productService" factory-bean="serviceFactory" factory-method="getProductService"/>
+
+  <bean id="cartService" factory-bean="serviceFactory" factory-method="getCartService"/>
+
+  <bean id="orderService" factory-bean="serviceFactory" factory-method="getOrderService"/>
+
+  <bean id="paymentService" factory-bean="serviceFactory" factory-method="getPaymentService"/>
+
+  <!-- Parent beans, all providers should extend these -->
+  <bean id="baseCustomerService" abstract="true">
+    <property name="storeName" value="${ecommerce.store.name}"/>
+    <property name="verificationEnabled" value="${ecommerce.email.verification.enabled}"/>
+    <property name="verificationTokenTimeout" value="${ecommerce.email.verification.timeout}"/>
+    <property name="verificationAddress" value="${ecommerce.email.verification.address}"/>
+    <property name="verificationSubject" value="${ecommerce.email.verification.subject}"/>
+    <property name="verificationUrl" value="${ecommerce.email.verification.url}"/>
+    <property name="verificationTemplate" value="${ecommerce.email.verification.template}"/>
+    <property name="urlTransformationService" ref="crafter.urlTransformationService"/>
+  </bean>
+
+  <bean id="baseProductService" abstract="true" init-method="init">
+    <property name="siteConfig" ref="siteConfig"/>
+  </bean>
+
+  <bean id="baseCartService" abstract="true">
+    <property name="customerService" ref="customerService"/>
+    <property name="paymentService" ref="paymentService"/>
+  </bean>
+
+  <bean id="baseOrderService" abstract="true"/>
+
+  <bean id="basePaymentService" abstract="true"/>
+
+  <!-- commercetools specific beans -->
+
+  <bean id="sphereClient" init-method="init" lazy-init="true"
+        class="org.craftercms.sites.ecommerce.service.commercetools.ClientFactory">
+    <property name="projectKey" value="${ecommerce.commercetools.projectKey}"/>
+    <property name="clientId" value="${ecommerce.commercetools.clientId}"/>
+    <property name="clientSecret" value="${ecommerce.commercetools.clientSecret}"/>
+    <property name="authUrl" value="${ecommerce.commercetools.authUrl}"/>
+    <property name="apiUrl" value="${ecommerce.commercetools.apiUrl}"/>
+    <property name="scopes" value="${ecommerce.commercetools.scopes}"/>
+  </bean>
+
+  <bean id="customerService-commercetools" parent="baseCustomerService" lazy-init="true"
+        class="org.craftercms.sites.ecommerce.service.commercetools.CustomerServiceImpl">
+    <property name="client" ref="sphereClient"/>
+    <property name="mappingService" ref="mappingService"/>
+  </bean>
+
+  <bean id="productService-commercetools" parent="baseProductService" lazy-init="true"
+        class="org.craftercms.sites.ecommerce.service.commercetools.ProductServiceImpl">
+    <property name="client" ref="sphereClient"/>
+  </bean>
+
+  <bean id="cartService-commercetools" parent="baseCartService" lazy-init="true"
+        class="org.craftercms.sites.ecommerce.service.commercetools.CartServiceImpl">
+    <property name="client" ref="sphereClient"/>
+    <property name="mappingService" ref="mappingService"/>
+  </bean>
+
+  <bean id="orderService-commercetools" parent="baseOrderService" lazy-init="true"
+        class="org.craftercms.sites.ecommerce.service.commercetools.OrderServiceImpl">
+    <property name="client" ref="sphereClient"/>
+  </bean>
+
+  <bean id="paymentService-commercetools" parent="basePaymentService" lazy-init="true"
+        class="org.craftercms.sites.ecommerce.service.commercetools.PaymentServiceImpl">
+    <property name="client" ref="sphereClient"/>
+  </bean>
+
+  <bean id="mappingService" lazy-init="true"
+    class="org.craftercms.sites.ecommerce.service.commercetools.MappingService"/>
+
+</beans>

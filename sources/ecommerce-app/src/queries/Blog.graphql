@@ -1,0 +1,40 @@
+query Blog($id: String) {
+  categories: taxonomy {
+    items {
+      file__name(filter:{matches:"category.xml"})
+      items {
+        item {
+          key
+          value
+        }
+      }
+    }
+  }
+  blog: page_blog_roll {
+    items {
+      title_s,
+      localId(filter: {equals: $id})
+    }
+  }
+  post: component_post(limit: 500) {
+    total
+    items {
+      label: internal__name
+      slug_s
+      localId
+      title_s
+      image_s
+      author_s
+      subtitle_s
+      content__type
+      content_html_raw
+      summary_html_raw
+      categories_o {
+        item {
+          key
+          value_smv
+        }
+      }
+    }
+  }
+}

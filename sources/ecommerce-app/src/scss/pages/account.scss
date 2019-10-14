@@ -1,0 +1,263 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+.account {
+  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  overflow-y: auto;
+
+  @include theme($themes) {
+    background: themed('colorBackgroundBody');
+  }
+
+}
+
+.account__wrapper {
+  margin: auto;
+  padding: 10px;
+}
+
+.account__card {
+
+  @include theme($themes) {
+    background-color: themed('colorBackground');
+  }
+
+  background-color: #ffffff;
+  padding: 50px 60px;
+  max-width: 520px;
+  width: 100%;
+}
+
+.account__btns {
+  display: flex;
+  width: 100%;
+}
+
+.account__btn {
+  width: 100%;
+  margin-right: 0;
+}
+
+.account__sign-in-btn {
+  @media (min-width: 426px) {
+    margin-right: 5px;
+  }
+}
+
+.account__register-btn {
+  @media (min-width: 426px) {
+    margin-left: 5px;
+  }
+}
+
+.account__avatar {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.account__name {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 15px;
+  margin-top: 5px;
+}
+
+.account__sub {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: $color-additional;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.account__forgot-password {
+  position: absolute;
+  font-size: 11px;
+  line-height: 15px;
+  bottom: -18px;
+  right: 0;
+
+  a {
+    color: $color-blue;
+
+    &:hover {
+      color: $color-blue-hover;
+      text-decoration: none;
+    }
+  }
+}
+
+.form__form-group--forgot {
+  margin-bottom: 40px;
+}
+
+.account__or {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  position: relative;
+
+  &:before, &:after {
+    content: "";
+    height: 1px;
+    width: calc(50% - 90px);
+    background: #dddddd;
+    position: absolute;
+    top: 10px;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+}
+
+.account__head {
+  margin-bottom: 30px;
+  padding-left: 10px;
+  border-left: 4px solid $color-blue;
+}
+
+.account__have-account {
+  text-align: center;
+  margin-top: 20px;
+
+  a {
+    color: $color-blue;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $color-blue-hover;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+
+  .account__card {
+    padding: 35px 30px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+
+  .account__btns {
+    flex-wrap: wrap;
+  }
+}
+
+.login-view__logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-view__logo-img {
+  max-width: 85%;
+}
+
+.address-card__action {
+  display: block;
+}
+
+.address-card__action--remove {
+  color: $color-red;
+}
+
+.address-display__default {
+  margin-bottom: 5px;
+}
+
+.address-options-btn {
+  margin-top: 5px;
+}
+
+
+.email-confirmation {
+  text-align: center;
+}
+
+.email-confirmation__buttons {
+  display: flex;
+  margin-top: 50px;
+  padding-bottom: 65px;
+  justify-content: center;
+
+  a {
+    margin: 0 15px 20px 15px;
+  }
+}
+
+.email-confirmation__icon {
+  margin: 0 auto;
+  position: relative;
+}
+
+.email-confirmation__mail {
+  width: 120px;
+  opacity: 0.16;
+  height: 120px;
+  fill: $color-gray;
+}
+
+.email-confirmation__check {
+  top: 0;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 30px;
+  position: absolute;
+  fill: $color-accent;
+}
+
+.email-confirmation__title {
+  margin-bottom: 15px;
+  color: $color-gray;
+}
+
+.email-confirmation__sub {
+  color: $color-gray;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media screen and (min-width: 576px) {
+
+  .email-confirmation__icon {
+
+  }
+
+  .email-confirmation__buttons {
+
+  }
+}

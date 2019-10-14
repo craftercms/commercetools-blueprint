@@ -1,0 +1,11 @@
+#import "./Header.fragment.graphql"
+#import "./Footer.fragment.graphql"
+#import "./Hero.fragment.graphql"
+#import "./ContentSideImage.fragment.graphql"
+#import "./FeatureList.fragment.graphql"
+#import "./Testimonials.fragment.graphql"
+query Products {
+  ...Header
+  ...Footer
+  ...Nav
+}

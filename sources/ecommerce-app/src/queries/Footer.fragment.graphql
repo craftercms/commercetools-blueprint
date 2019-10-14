@@ -1,0 +1,11 @@
+fragment Footer on craftercms_site {
+  footer: component_footer {
+    items {
+      localId
+      objectId
+      logo_s
+      logo_url_s
+      logo_alt_t
+    }
+  }
+}

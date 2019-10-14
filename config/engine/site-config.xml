@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<!--
+This file configures site properties used by Crafter Engine
+-->
+
+<site>
+  <defaultLocale>en_US</defaultLocale>
+  <spa>
+    <enabled>true</enabled>
+    <viewName>/templates/web/index.ftl</viewName>
+  </spa>
+  <filters>
+    <filter>
+      <script>/scripts/filters/authentication.groovy</script>
+      <mapping>
+        <include>/**</include>
+        <exclude>/static-assets/**</exclude>
+      </mapping>
+    </filter>
+    <filter>
+      <script>/scripts/filters/targeting.groovy</script>
+      <mapping>
+        <include>/**</include>
+        <exclude>/static-assets/**</exclude>
+      </mapping>
+    </filter>
+  </filters>
+  <ecommerce>
+    <!-- General settings -->
+    <store>
+      <name>Example Store</name> <!-- TODO: Add as a bp parameter and provide it to the ui? -->
+    </store>
+
+    <email>
+      <sender>
+        <host>localhost</host>
+        <port>25</port>
+        <protocol>smtp</protocol>
+        <encoding>UTF-8</encoding>
+        <secure>false</secure>
+      </sender>
+
+      <verification>
+        <enabled>false</enabled>
+        <timeout>30</timeout>
+        <address>no-reply@example.com</address>
+        <subject>Email Verification</subject>
+        <url>/customer/verify</url>
+        <template>/templates/mail/verification.ftl</template>
+      </verification>
+    </email>
+
+    <search>
+      <!-- Built-in facets -->
+      <facets>
+        <facet>
+          <key>categories</key>
+        </facet>
+        <facet>
+          <key>price</key>
+          <min>0</min>
+          <max>2000</max>
+          <ranges>
+            <range>
+              <to>100</to>
+            </range>
+            <range>
+              <from>100</from>
+              <to>500</to>
+            </range>
+            <range>
+              <from>500</from>
+              <to>1500</to>
+            </range>
+            <range>
+              <from>1500</from>
+            </range>
+          </ranges>
+        </facet>
+        <facet>
+          <key>rating</key>
+          <min>0</min>
+          <max>5</max>
+          <ranges>
+            <range>
+              <to>1</to>
+            </range>
+            <range>
+              <from>1</from>
+              <to>2</to>
+            </range>
+            <range>
+              <from>2</from>
+              <to>3</to>
+            </range>
+            <range>
+              <from>3</from>
+              <to>4</to>
+            </range>
+            <range>
+              <from>4</from>
+            </range>
+            <range>
+              <from>50</from>
+            </range>
+          </ranges>
+        </facet>
+      </facets>
+
+      <!-- Product specific facets -->
+      <attributes>
+        <!-- Change according to your commercetools products -->
+        <!-- <attribute>
+          <key>form</key>
+          <list>true</list>
+          <translated>true</translated>
+        </attribute> -->
+      </attributes>
+    </search>
+
+    <!-- Indicates the provider to use: (only commercetools supported for now) -->
+    <provider>commercetools</provider>
+
+    <!-- Specific configurations for commercetools provider -->
+    <commercetools>
+      <projectKey>${plugin:projectKey}</projectKey>
+      <clientId>${plugin:clientId}</clientId>
+      <clientSecret>${plugin:clientSecret}</clientSecret>
+      <authUrl>${plugin:authUrl}</authUrl>
+      <apiUrl>${plugin:apiUrl}</apiUrl>
+      <scopes>manage_project</scopes>
+    </commercetools>
+
+  </ecommerce>
+  <!-- CORS Properties -->
+  <cors>
+    <enable>true</enable>
+    <accessControlMaxAge>3600</accessControlMaxAge>
+    <accessControlAllowOrigin>*</accessControlAllowOrigin>
+    <accessControlAllowMethods>GET\, POST\, PUT\, OPTIONS</accessControlAllowMethods>
+    <accessControlAllowHeaders>Content-Type</accessControlAllowHeaders>
+    <accessControlAllowCredentials>true</accessControlAllowCredentials>
+  </cors>
+</site>

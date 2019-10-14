@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+<form>
+   <title>Component - Footer</title>
+   <description/>
+   <objectType>component</objectType>
+   <content-type>/component/footer</content-type>
+   <imageThumbnail>undefined</imageThumbnail>
+   <quickCreate>false</quickCreate>
+   <quickCreatePath/>
+   <properties>
+      <property>
+         <name>display-template</name>
+         <label>Display Template</label>
+         <value/>
+         <type>template</type>
+      </property>
+      <property>
+         <name>merge-strategy</name>
+         <label>Merge Strategy</label>
+         <value>inherit-levels</value>
+         <type>string</type>
+      </property>
+      <property>
+         <name>no-template-required</name>
+         <label>No Template Required</label>
+         <type>boolean</type>
+         <value/>
+      </property>
+   </properties>
+   <sections>
+      <section>
+         <title>Footer Properties</title>
+         <description/>
+         <defaultOpen>true</defaultOpen>
+         <fields>
+            <field>
+               <type>auto-filename</type>
+               <id>file-name</id>
+               <iceId/>
+               <title>Component ID</title>
+               <description/>
+               <defaultValue/>
+               <help/>
+               <properties/>
+               <constraints/>
+            </field>
+            <field>
+               <type>input</type>
+               <id>internal-name</id>
+               <iceId/>
+               <title>Internal Name</title>
+               <description/>
+               <defaultValue/>
+               <help/>
+               <properties>
+                  <property>
+                     <name>size</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>maxlength</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>readonly</name>
+                     <value/>
+                     <type>boolean</type>
+                  </property>
+                  <property>
+                     <name>tokenize</name>
+                     <value>false</value>
+                     <type>boolean</type>
+                  </property>
+               </properties>
+               <constraints>
+                  <constraint>
+                     <name>required</name>
+                     <value>true</value>
+                     <type>boolean</type>
+                  </constraint>
+               </constraints>
+            </field>
+            <field>
+               <type>image-picker</type>
+               <id>logo_s</id>
+               <iceId/>
+               <title>Logo</title>
+               <description/>
+               <defaultValue/>
+               <help/>
+               <properties>
+                  <property>
+                     <name>width</name>
+                     <value>{ "exact":"", "min":"", "max":"" }</value>
+                     <type>range</type>
+                  </property>
+                  <property>
+                     <name>height</name>
+                     <value>{ "exact":"", "min":"", "max":"" }</value>
+                     <type>range</type>
+                  </property>
+                  <property>
+                     <name>thumbnailWidth</name>
+                     <value/>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>thumbnailHeight</name>
+                     <value/>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>imageManager</name>
+                     <value>upload,browse</value>
+                     <type>datasource:image</type>
+                  </property>
+                  <property>
+                     <name>readonly</name>
+                     <value/>
+                     <type>boolean</type>
+                  </property>
+               </properties>
+               <constraints>
+                  <constraint>
+                     <name>required</name>
+                     <value>false</value>
+                     <type>boolean</type>
+                  </constraint>
+               </constraints>
+            </field>
+            <field>
+               <type>input</type>
+               <id>logo_alt_t</id>
+               <iceId/>
+               <title>Logo Description (alt text)</title>
+               <description/>
+               <defaultValue/>
+               <help/>
+               <properties>
+                  <property>
+                     <name>size</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>maxlength</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>readonly</name>
+                     <value/>
+                     <type>boolean</type>
+                  </property>
+                  <property>
+                     <name>tokenize</name>
+                     <value>false</value>
+                     <type>boolean</type>
+                  </property>
+               </properties>
+               <constraints>
+                  <constraint>
+                     <name>required</name>
+                     <value/>
+                     <type>boolean</type>
+                  </constraint>
+                  <constraint>
+                     <name>pattern</name>
+                     <value/>
+                     <type>string</type>
+                  </constraint>
+               </constraints>
+            </field>
+            <field>
+               <type>input</type>
+               <id>logo_url_s</id>
+               <iceId/>
+               <title>Logo URL</title>
+               <description/>
+               <defaultValue/>
+               <help/>
+               <properties>
+                  <property>
+                     <name>size</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>maxlength</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>readonly</name>
+                     <value/>
+                     <type>boolean</type>
+                  </property>
+                  <property>
+                     <name>tokenize</name>
+                     <value>false</value>
+                     <type>boolean</type>
+                  </property>
+               </properties>
+               <constraints>
+                  <constraint>
+                     <name>required</name>
+                     <value/>
+                     <type>boolean</type>
+                  </constraint>
+                  <constraint>
+                     <name>pattern</name>
+                     <value/>
+                     <type>string</type>
+                  </constraint>
+               </constraints>
+            </field>
+         </fields>
+      </section>
+   </sections>
+   <datasources>
+      <datasource>
+         <type>img-desktop-upload</type>
+         <id>upload</id>
+         <title>Upload</title>
+         <interface>image</interface>
+         <properties>
+            <property>
+               <name>repoPath</name>
+               <value>/static-assets/images/logos</value>
+               <type>undefined</type>
+            </property>
+         </properties>
+      </datasource>
+      <datasource>
+         <type>img-repository-upload</type>
+         <id>browse</id>
+         <title>Browse</title>
+         <interface>image</interface>
+         <properties>
+            <property>
+               <name>repoPath</name>
+               <value>/static-assets/images/logos</value>
+               <type>undefined</type>
+            </property>
+         </properties>
+      </datasource>
+   </datasources>
+</form>

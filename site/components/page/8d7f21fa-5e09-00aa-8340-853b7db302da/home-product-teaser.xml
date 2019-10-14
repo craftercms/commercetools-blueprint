@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<content-type>/component/product-teaser</content-type>
+	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<no-template-required/>
+	<objectGroupId>b7a3</objectGroupId>
+	<objectId>b7a3ab68-396e-1856-8db9-5e1b0d364bcb</objectId>
+	<file-name>home-product-teaser.xml</file-name>
+	<folder-name/>
+	<internal-name>Home Product Teaser</internal-name>
+	<createdDate>2019-10-09T16:32:05.959Z</createdDate>
+	<createdDate_dt>2019-10-09T16:32:05.959Z</createdDate_dt>
+	<lastModifiedDate>2019-10-09T17:40:59.136Z</lastModifiedDate>
+	<lastModifiedDate_dt>2019-10-09T17:40:59.136Z</lastModifiedDate_dt>
+	<title_s>From The Catalog...</title_s>
+	<numOfProducts_i>3</numOfProducts_i>
+</component>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<component>
+	<content-type>/component/testimonials</content-type>	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<objectGroupId>49ff</objectGroupId>
+	<objectId>49fff40d-2751-1f03-c9e3-74ee66797113</objectId>
+	<file-name>49fff40d-2751-1f03-c9e3-74ee66797113.xml</file-name>
+	<internal-name>Home Page Testimonials</internal-name>
+	<title_s>Testimonials</title_s>
+	<testimonials_o item-list="true">	<item>	<customer_s>Pharetra Tortor</customer_s>
+	<stars_i>4</stars_i>
+	<link_s>http://www.example.com</link_s>
+	<description_html>&lt;p&gt;Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.&lt;/p&gt;</description_html>
+	</item>	<item>	<customer_s>Euismod Porta</customer_s>
+	<stars_i>5</stars_i>
+	<description_html>&lt;p&gt;Curabitur blandit tempus porttitor. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.&lt;/p&gt;</description_html>
+	<link_s>http://www.example.com</link_s>
+	</item>	<item>	<customer_s>Adipiscing Justo Amet</customer_s>
+	<stars_i>5</stars_i>
+	<description_html>&lt;p&gt;Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;</description_html>
+	<link_s>http://www.example.com</link_s>
+	</item></testimonials_o>
+	<createdDate>2019-06-24T18:00:51.575Z</createdDate>
+	<createdDate_dt>2019-06-24T18:00:51.575Z</createdDate_dt>
+	<lastModifiedDate>2019-06-27T18:37:25.010Z</lastModifiedDate>
+	<lastModifiedDate_dt>2019-06-27T18:37:25.010Z</lastModifiedDate_dt>
+</component>

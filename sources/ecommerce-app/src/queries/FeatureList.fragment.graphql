@@ -1,0 +1,13 @@
+fragment FeatureList on component_feature__list {
+  objectId
+  title_s
+  openingContent_html_raw
+  closingContent_html_raw
+  features_o {
+    item {
+      icon_s
+      title_s
+      description_t
+    }
+  }
+}

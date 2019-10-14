@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<content-type>/component/post</content-type>
+	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<no-template-required>true</no-template-required>
+	<objectGroupId>6990</objectGroupId>
+	<objectId>699033ac-bbd8-8d46-7da8-9fda337fe57c</objectId>
+	<file-name>699033ac-bbd8-8d46-7da8-9fda337fe57c.xml</file-name>
+	<internal-name>Five Summer Fashion Tips</internal-name>
+	<slug_s>five-summer-fashion-tips</slug_s>
+	<title_s tokenized="true">Five Summer Fashion Tips</title_s>
+	<subtitle_s tokenized="true">Don't be a sweaty disaster</subtitle_s>
+	<author_s>John Doe</author_s>
+	<gender_o>	<item>	<key>male</key>
+	<value_smv>Male</value_smv>
+	</item>	<item>	<key>female</key>
+	<value_smv>Female</value_smv>
+	</item></gender_o>
+	<ages_o>	<item>	<key>adult</key>
+	<value_smv>Adult</value_smv>
+	</item>	<item>	<key>teen</key>
+	<value_smv>Teen</value_smv>
+	</item></ages_o>
+	<categories_o>	<item>	<key>sunglasses</key>
+	<value_smv>Sunglasses</value_smv>
+	</item>	<item>	<key>shirts</key>
+	<value_smv>Shirts</value_smv>
+	</item></categories_o>
+	<image_s>/static-assets/images/post/699033ac-bbd8-8d46-7da8-9fda337fe57c/alexandra-gorn-WF0LSThlRmw-unsplash.jpg</image_s>
+	<summary_html>&lt;p&gt;These five simple tips could help you be a sweaty disaster this summer and enjoy it more with confidence and comfort.&lt;/p&gt;</summary_html>
+	<content_html>&lt;p&gt;&lt;strong&gt;1. Avoid flimsy fabrics if you don't want your clothes to stick to your body.&lt;/strong&gt;&lt;br /&gt;Lightweight materials are great for hot weather, but they need to have some structure (like embroidery or seams), so they don't cling to you the second you start to sweat.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Choose clothes in natural fabrics.&lt;/strong&gt;&lt;br /&gt;Cotton, for example, is more breathable than polyester or rayon. It's also better at absorbing sweat and dries faster, which means you won't feel sweaty for as long as you would if your clothes were made from synthetic fabric.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. Avoid embellishments &amp;mdash; particularly heavy ones like beads or metals.&lt;/strong&gt;&lt;br /&gt;They tend to weigh down your clothes so they are closer to your skin, trapping body heat. Try wearing a patterned garment, which will add the same kind of interest to your outfit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. Wear unlined jackets, skirts, and dresses.&lt;/strong&gt;&lt;br /&gt;Not only is a lining one more layer between your skin and the air, it's often synthetic, meaning it won't breathe well and will leave you feeling like you're walking around inside your own private sauna.&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. Leave your backpack or large tote at home in favor of a small crossbody or handbag.&lt;/strong&gt;&lt;br /&gt;The last thing you want on a hot day is a huge backpack stuck to your back, or a gigantic tote stuck to your side, making you sweat. Take this opportunity to clean out your bag and get back to basics, since the less stuff you carry around, the less you will exert yourself, and the less sweaty you will feel as a result.&lt;br /&gt;&lt;/p&gt;</content_html>
+	<date_dt>2019-06-15T04:00:00.000Z</date_dt>
+	<createdDate>2019-10-14T07:36:48.417Z</createdDate>
+	<createdDate_dt>2019-10-14T07:36:48.417Z</createdDate_dt>
+	<lastModifiedDate>2019-10-14T19:35:30.381Z</lastModifiedDate>
+	<lastModifiedDate_dt>2019-10-14T19:35:30.381Z</lastModifiedDate_dt>
+	<date_dt_tz>EST5EDT</date_dt_tz>
+</component>

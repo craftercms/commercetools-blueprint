@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+<form>
+   <title>Page - Catalog</title>
+   <description/>
+   <objectType>page</objectType>
+   <content-type>/page/catalog</content-type>
+   <imageThumbnail>undefined</imageThumbnail>
+   <quickCreate>false</quickCreate>
+   <quickCreatePath/>
+   <properties>
+      <property>
+         <name>display-template</name>
+         <label>Display Template</label>
+         <value/>
+         <type>template</type>
+      </property>
+      <property>
+         <name>merge-strategy</name>
+         <label>Merge Strategy</label>
+         <value>inherit-levels</value>
+         <type>string</type>
+      </property>
+      <property>
+         <name>no-template-required</name>
+         <label>No Template Required</label>
+         <type>boolean</type>
+         <value/>
+      </property>
+   </properties>
+   <sections>
+      <section>
+         <title>Page - Catalog Properties</title>
+         <description/>
+         <defaultOpen>true</defaultOpen>
+         <fields>
+            <field>
+               <type>file-name</type>
+               <id>file-name</id>
+               <iceId/>
+               <title>Page URL</title>
+               <description/>
+               <defaultValue/>
+               <help/>
+               <properties>
+                  <property>
+                     <name>size</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>maxlength</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>readonly</name>
+                     <value/>
+                     <type>boolean</type>
+                  </property>
+               </properties>
+               <constraints/>
+            </field>
+            <field>
+               <type>input</type>
+               <id>internal-name</id>
+               <iceId/>
+               <title>Internal Name</title>
+               <description/>
+               <defaultValue/>
+               <help/>
+               <properties>
+                  <property>
+                     <name>size</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>maxlength</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+               </properties>
+               <constraints>
+                  <constraint>
+                     <name>required</name>
+                     <value>true</value>
+                     <type>boolean</type>
+                  </constraint>
+               </constraints>
+            </field>
+            <field>
+               <type>page-nav-order</type>
+               <id>placeInNav</id>
+               <iceId/>
+               <title>Place in Nav</title>
+               <description/>
+               <defaultValue/>
+               <help/>
+               <properties>
+                  <property>
+                     <name>readonly</name>
+                     <value/>
+                     <type>boolean</type>
+                  </property>
+               </properties>
+               <constraints>
+                  <constraint>
+                     <name>required</name>
+                     <value/>
+                     <type>boolean</type>
+                  </constraint>
+               </constraints>
+            </field>
+         </fields>
+      </section>
+      <section>
+         <title>Content</title>
+         <description/>
+         <defaultOpen>true</defaultOpen>
+         <fields>
+            <field>
+               <type>input</type>
+               <id>title_s</id>
+               <iceId/>
+               <title>Title</title>
+               <description/>
+               <defaultValue/>
+               <help/>
+               <properties>
+                  <property>
+                     <name>size</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>maxlength</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>readonly</name>
+                     <value/>
+                     <type>boolean</type>
+                  </property>
+                  <property>
+                     <name>tokenize</name>
+                     <value>false</value>
+                     <type>boolean</type>
+                  </property>
+               </properties>
+               <constraints>
+                  <constraint>
+                     <name>required</name>
+                     <value>true</value>
+                     <type>boolean</type>
+                  </constraint>
+                  <constraint>
+                     <name>pattern</name>
+                     <value/>
+                     <type>string</type>
+                  </constraint>
+               </constraints>
+            </field>
+            <field>
+               <type>textarea</type>
+               <id>description_t</id>
+               <iceId/>
+               <title>Description</title>
+               <description/>
+               <defaultValue/>
+               <help/>
+               <properties>
+                  <property>
+                     <name>cols</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>rows</name>
+                     <value>5</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>maxlength</name>
+                     <value>100000</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>allowResize</name>
+                     <value>true</value>
+                     <type>boolean</type>
+                  </property>
+                  <property>
+                     <name>readonly</name>
+                     <value/>
+                     <type>boolean</type>
+                  </property>
+               </properties>
+               <constraints>
+                  <constraint>
+                     <name>required</name>
+                     <value>true</value>
+                     <type>boolean</type>
+                  </constraint>
+               </constraints>
+            </field>
+            <field>
+               <type>input</type>
+               <id>pageSize_i</id>
+               <iceId/>
+               <title>Page Size</title>
+               <description/>
+               <defaultValue>10</defaultValue>
+               <help/>
+               <properties>
+                  <property>
+                     <name>size</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>maxlength</name>
+                     <value>50</value>
+                     <type>int</type>
+                  </property>
+                  <property>
+                     <name>readonly</name>
+                     <value/>
+                     <type>boolean</type>
+                  </property>
+                  <property>
+                     <name>tokenize</name>
+                     <value>false</value>
+                     <type>boolean</type>
+                  </property>
+               </properties>
+               <constraints>
+                  <constraint>
+                     <name>required</name>
+                     <value>true</value>
+                     <type>boolean</type>
+                  </constraint>
+                  <constraint>
+                     <name>pattern</name>
+                     <value>[0-9]+</value>
+                     <type>string</type>
+                  </constraint>
+               </constraints>
+            </field>
+         </fields>
+      </section>
+   </sections>
+   <datasources/>
+</form>

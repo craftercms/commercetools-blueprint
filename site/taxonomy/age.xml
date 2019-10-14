@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+  <content-type>/taxonomy</content-type>
+  <display-template/>
+  <merge-strategy>inherit-levels</merge-strategy>
+  <objectGroupId>1238</objectGroupId>
+  <objectId>12380d83-6306-0e26-c391-097c41c7fccc</objectId>
+  <items item-list="true">
+    <item>
+      <key>child</key>
+      <value>Child</value>
+    </item>
+    <item>
+      <key>teen</key>
+      <value>Teen</value>
+    </item>
+    <item>
+      <key>adult</key>
+      <value>Adult</value>
+    </item>
+    <item>
+      <key>senior</key>
+      <value>Senior</value>
+    </item>
+  </items>
+  <file-name>age.xml</file-name>
+  <folder-name/>
+  <internal-name>Age</internal-name>
+  <createdDate>2019-07-19T16:57:01.015Z</createdDate>
+  <createdDate_dt>2019-07-19T16:57:01.015Z</createdDate_dt>
+  <lastModifiedDate>2019-07-19T16:57:01.015Z</lastModifiedDate>
+  <lastModifiedDate_dt>2019-07-19T16:57:01.015Z</lastModifiedDate_dt>
+</component>

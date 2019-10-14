@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<content-type>/taxonomy</content-type>
+	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<no-template-required/>
+	<objectGroupId>c6b6</objectGroupId>
+	<objectId>c6b65dfd-eb96-92a2-15f5-b8ad109e86d3</objectId>
+	<items item-list="true">	<item>	<key>t-shirts</key>
+	<value>T-Shirts</value>
+	</item>	<item>	<key>jackets</key>
+	<value>Jackets</value>
+	</item>	<item>	<key>boots</key>
+	<value>Boots</value>
+	</item>	<item>	<key>blazers</key>
+	<value>Blazers</value>
+	</item>	<item>	<key>trousers</key>
+	<value>Trousers</value>
+	</item>	<item>	<key>sandals</key>
+	<value>Sandals</value>
+	</item>	<item>	<key>sneakers</key>
+	<value>Sneakers</value>
+	</item>	<item>	<key>sunglasses</key>
+	<value>Sunglasses</value>
+	</item>	<item>	<key>lace-up-shoes</key>
+	<value>Lace-up Shoes</value>
+	</item>	<item>	<key>wallets</key>
+	<value>Wallets</value>
+	</item>	<item>	<key>shirts</key>
+	<value>Shirts</value>
+	</item>	<item>	<key>dresses</key>
+	<value>Dresses</value>
+	</item></items>
+	<internal-name>Category</internal-name>
+	<file-name>category.xml</file-name>
+	<folder-name/>
+	<createdDate>2019-07-19T17:11:46.135Z</createdDate>
+	<createdDate_dt>2019-07-19T17:11:46.135Z</createdDate_dt>
+	<lastModifiedDate>2019-10-14T19:57:50.851Z</lastModifiedDate>
+	<lastModifiedDate_dt>2019-10-14T19:57:50.851Z</lastModifiedDate_dt>
+</component>

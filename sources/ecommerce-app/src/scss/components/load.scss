@@ -1,0 +1,85 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+.load {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  background: #ffffff;
+  z-index: 1000;
+
+  &.contained {
+    width: 100%;
+    height: 100%;
+    min-height: 60vh;
+    position: relative;
+  }
+
+  &.small {
+    width: 100%;
+    height: 100%;
+    min-height: 50px;
+    position: relative;
+  }
+
+  & + div {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &.loaded {
+    animation: ease loaded 0.5s;
+  }
+}
+
+.load__icon {
+  animation: linear load 2s infinite;
+  margin: auto;
+  width: 32px;
+  height: 32px;
+}
+
+.load__icon-wrap {
+  margin: auto;
+}
+
+@keyframes load {
+  from {
+    transform: rotate(0deg) scale(2);
+  }
+  to {
+    transform: rotate(360deg) scale(2);
+  }
+}
+
+@keyframes loaded {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

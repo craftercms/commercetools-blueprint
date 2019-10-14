@@ -1,0 +1,85 @@
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+.card {
+  width: 100%;
+  padding-bottom: 30px;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+
+  &.card--not-full-height {
+    height: auto;
+  }
+}
+
+.card-body {
+  padding: 30px;
+  height: 100%;
+  border-radius: 5px;
+
+  @include theme($themes) {
+    background-color: themed('colorBackground');
+  }
+}
+
+.card__title {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  position: relative;
+
+  &:not(:first-child) {
+    margin-top: 40px;
+  }
+
+  .subhead {
+    text-transform: none;
+    font-size: 12px;
+    line-height: 18px;
+    opacity: 0.7;
+    margin-top: 3px;
+  }
+
+  * {
+    margin-bottom: 0;
+  }
+
+  h5 {
+    font-size: 13px;
+  }
+}
+
+.squared-corner-theme {
+
+  .card-body {
+    border-radius: 0;
+  }
+}
+
+.blocks-with-shadow-theme {
+
+  .card-body {
+    box-shadow: 0 10px 30px 1px rgba(0, 0, 0, 0.06);
+  }
+}

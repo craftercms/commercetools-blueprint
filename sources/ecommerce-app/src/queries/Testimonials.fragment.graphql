@@ -1,0 +1,12 @@
+fragment Testimonials on component_testimonials {
+  objectId
+  title_s
+  testimonials_o {
+    item {
+      link_s
+      stars_i
+      customer_s
+      description_html_raw
+    }
+  }
+}

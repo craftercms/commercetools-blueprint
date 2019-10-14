@@ -1,0 +1,13 @@
+fragment Categories on craftercms_site {
+  categories: taxonomy {
+    items {
+      file__name(filter:{matches:"category.xml"})
+      items {
+        item {
+          key
+          value
+        }
+      }
+    }
+  }
+}

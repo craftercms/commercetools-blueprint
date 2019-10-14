@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+  <content-type>/taxonomy</content-type>
+  <display-template/>
+  <merge-strategy>inherit-levels</merge-strategy>
+  <objectGroupId>62f1</objectGroupId>
+  <objectId>62f15b42-967b-6fc2-d885-1efb5e2e8e8e</objectId>
+  <items item-list="true">
+    <item>
+      <key>female</key>
+      <value>Female</value>
+    </item>
+    <item>
+      <key>male</key>
+      <value>Male</value>
+    </item>
+  </items>
+  <file-name>gender.xml</file-name>
+  <folder-name/>
+  <internal-name>Gender</internal-name>
+  <createdDate>2019-07-19T16:55:03.910Z</createdDate>
+  <createdDate_dt>2019-07-19T16:55:03.910Z</createdDate_dt>
+  <lastModifiedDate>2019-07-19T16:55:03.910Z</lastModifiedDate>
+  <lastModifiedDate_dt>2019-07-19T16:55:03.910Z</lastModifiedDate_dt>
+</component>

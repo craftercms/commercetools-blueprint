@@ -1,0 +1,10 @@
+fragment Nav on craftercms_site {
+  nav: pages(sortBy: "orderDefault_f") {
+    items {
+      placeInNav(filter: { equals:true }) @skip(if: true)
+      url: localId(transform: "storeUrlToRenderUrl")
+      label: internal__name
+      localId: localId
+    }
+  }
+}

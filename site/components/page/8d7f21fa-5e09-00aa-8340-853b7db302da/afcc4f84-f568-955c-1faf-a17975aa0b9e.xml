@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+	<content-type>/component/hero</content-type>
+	<display-template/>
+	<merge-strategy>inherit-levels</merge-strategy>
+	<no-template-required/>
+	<objectGroupId>afcc</objectGroupId>
+	<objectId>afcc4f84-f568-955c-1faf-a17975aa0b9e</objectId>
+	<file-name>afcc4f84-f568-955c-1faf-a17975aa0b9e.xml</file-name>
+	<internal-name>Home Page Hero</internal-name>
+	<title_t>Urban Essentials</title_t>
+	<image_s>/static-assets/images/page/afcc4f84-f568-955c-1faf-a17975aa0b9e/1.jpg</image_s>
+	<content_html>&lt;p&gt;MAKE TODAY HAPPEN&lt;/p&gt;</content_html>
+	<buttons_o item-list="true">	<item>	<label_s>Shop Collection</label_s>
+	<link_s>/catalog</link_s>
+	</item></buttons_o>
+	<createdDate>2019-06-24T20:32:50.035Z</createdDate>
+	<createdDate_dt>2019-06-24T20:32:50.035Z</createdDate_dt>
+	<lastModifiedDate>2019-10-14T20:01:23.246Z</lastModifiedDate>
+	<lastModifiedDate_dt>2019-10-14T20:01:23.246Z</lastModifiedDate_dt>
+	<section_background_image_s>/static-assets/images/page/afcc4f84-f568-955c-1faf-a17975aa0b9e/header-gradient-blue.svg</section_background_image_s>
+</component>

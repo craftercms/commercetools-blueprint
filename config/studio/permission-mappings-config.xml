@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<!-- permission-mappings-config.xml
+
+  This files contains the permissions mappings for the roles defined in
+  role-mappings-config.xml.
+
+  Permissions are defined per:
+  site > role > rule
+
+  Rules have a regex expression that govern the scope of the permissions assigned.
+
+  Permissions are:
+  - Read
+  - Write
+  - Create Content
+  - Create Folder
+  - Create Content Type
+  - Publish
+
+  Absence of permissions means the permission is denied.
+
+  For example, to grant the role component_author the ability to read/write
+  components and read-only to everything else:
+
+      <role name="author">
+          <rule regex="/site/website/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="/site/components/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+              <permission>Write</permission>
+              <permission>Create Content</permission>
+              <permission>Create Folder</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="/static-assets/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+            </allowed-permissions>
+          </rule>
+      </role>
+
+  A regex of "~DASHBOARD~" governs view access to the publishing workflow
+  related dashboard widgets:
+  - Items Waiting For Approval
+  - Approved Scheduled Items
+  - Recently Published
+
+  To grant a role the ability to view these dashboard widgets, simple grant
+  the role the permission Publish to the scope ~DASHBOARD~. For example:
+
+      <rule regex="~DASHBOARD~">
+        <allowed-permissions>
+          <permission>Publish</permission>
+        </allowed-permissions>
+      </rule>
+
+-->
+<permissions>
+   <version>11</version>
+   <role name="author">
+      <rule regex="/site/website/.*">
+         <allowed-permissions>
+            <permission>Read</permission>
+            <permission>Write</permission>
+            <permission>Create Content</permission>
+            <permission>Create Folder</permission>
+            <permission>list_cmis</permission>
+            <permission>search_cmis</permission>
+            <permission>clone_content_cmis</permission>
+            <permission>upload_content_cmis</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex="/site/components|/site/components/.*">
+         <allowed-permissions>
+            <permission>Read</permission>
+            <permission>Write</permission>
+            <permission>Create Content</permission>
+            <permission>Create Folder</permission>
+            <permission>list_cmis</permission>
+            <permission>search_cmis</permission>
+            <permission>clone_content_cmis</permission>
+            <permission>upload_content_cmis</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex="/static-assets|/static-assets/.*">
+         <allowed-permissions>
+            <permission>Read</permission>
+            <permission>Write</permission>
+            <permission>Create Content</permission>
+            <permission>Create Folder</permission>
+            <permission>list_cmis</permission>
+            <permission>search_cmis</permission>
+            <permission>clone_content_cmis</permission>
+            <permission>upload_content_cmis</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex=".*">
+         <allowed-permissions>
+            <permission>S3 Read</permission>
+            <permission>S3 Write</permission>
+            <permission>webdav_read</permission>
+            <permission>webdav_write</permission>
+         </allowed-permissions>
+      </rule>
+   </role>
+   <role name="publisher">
+      <rule regex="/site/.*">
+         <allowed-permissions>
+            <permission>Read</permission>
+            <permission>Write</permission>
+            <permission>Create Content</permission>
+            <permission>Create Folder</permission>
+            <permission>Publish</permission>
+            <permission>list_cmis</permission>
+            <permission>search_cmis</permission>
+            <permission>clone_content_cmis</permission>
+            <permission>upload_content_cmis</permission>
+            <permission>get_publishing_queue</permission>
+            <permission>cancel_publish</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex="^/site/(?!website/index\.xml)(.*)">
+         <allowed-permissions>
+            <permission>Delete</permission>
+            <permission>delete_content</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex="/(static-assets|templates|scripts)/.*">
+         <allowed-permissions>
+            <permission>Read</permission>
+            <permission>Write</permission>
+            <permission>Delete</permission>
+            <permission>Create Content</permission>
+            <permission>Create Folder</permission>
+            <permission>Publish</permission>
+            <permission>list_cmis</permission>
+            <permission>search_cmis</permission>
+            <permission>clone_content_cmis</permission>
+            <permission>upload_content_cmis</permission>
+            <permission>delete_content</permission>
+            <permission>get_publishing_queue</permission>
+            <permission>cancel_publish</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex="~DASHBOARD~">
+         <allowed-permissions>
+            <permission>Publish</permission>
+            <permission>get_publishing_queue</permission>
+            <permission>cancel_publish</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex=".*">
+         <allowed-permissions>
+            <permission>S3 Read</permission>
+            <permission>S3 Write</permission>
+            <permission>webdav_read</permission>
+            <permission>webdav_write</permission>
+         </allowed-permissions>
+      </rule>
+   </role>
+   <role name="developer">
+      <rule regex="/.*">
+         <allowed-permissions>
+            <permission>Read</permission>
+            <permission>Write</permission>
+            <permission>Publish</permission>
+            <permission>Create Folder</permission>
+            <permission>Create Content</permission>
+            <permission>Change Content Type</permission>
+            <permission>list_cmis</permission>
+            <permission>search_cmis</permission>
+            <permission>clone_content_cmis</permission>
+            <permission>upload_content_cmis</permission>
+            <permission>write_configuration</permission>
+            <permission>get_publishing_queue</permission>
+            <permission>cancel_publish</permission>
+            <permission>add_remote</permission>
+            <permission>list_remotes</permission>
+            <permission>pull_from_remote</permission>
+            <permission>push_to_remote</permission>
+            <permission>rebuild_database</permission>
+            <permission>remove_remote</permission>
+            <permission>site_status</permission>
+            <permission>resolve_conflict</permission>
+            <permission>site_diff_conflicted_file</permission>
+            <permission>commit_resolution</permission>
+            <permission>cancel_failed_pull</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex="^/(?!site/website/index\.xml)(.*)">
+         <allowed-permissions>
+            <permission>Delete</permission>
+            <permission>delete_content</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex="~DASHBOARD~">
+         <allowed-permissions>
+            <permission>Publish</permission>
+            <permission>write_configuration</permission>
+            <permission>get_publishing_queue</permission>
+            <permission>cancel_publish</permission>
+            <permission>add_remote</permission>
+            <permission>list_remotes</permission>
+            <permission>pull_from_remote</permission>
+            <permission>push_to_remote</permission>
+            <permission>rebuild_database</permission>
+            <permission>remove_remote</permission>
+            <permission>site_status</permission>
+            <permission>resolve_conflict</permission>
+            <permission>site_diff_conflicted_file</permission>
+            <permission>commit_resolution</permission>
+            <permission>cancel_failed_pull</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex=".*">
+         <allowed-permissions>
+            <permission>S3 Read</permission>
+            <permission>S3 Write</permission>
+            <permission>webdav_read</permission>
+            <permission>webdav_write</permission>
+         </allowed-permissions>
+      </rule>
+   </role>
+   <role name="admin">
+      <rule regex="/.*">
+         <allowed-permissions>
+            <permission>Read</permission>
+            <permission>Write</permission>
+            <permission>Publish</permission>
+            <permission>Create Folder</permission>
+            <permission>Create Content</permission>
+            <permission>Change Content Type</permission>
+            <permission>audit_log</permission>
+            <permission>list_cmis</permission>
+            <permission>search_cmis</permission>
+            <permission>clone_content_cmis</permission>
+            <permission>upload_content_cmis</permission>
+            <permission>add_remote</permission>
+            <permission>list_remotes</permission>
+            <permission>pull_from_remote</permission>
+            <permission>push_to_remote</permission>
+            <permission>rebuild_database</permission>
+            <permission>remove_remote</permission>
+            <permission>write_configuration</permission>
+            <permission>site_status</permission>
+            <permission>resolve_conflict</permission>
+            <permission>site_diff_conflicted_file</permission>
+            <permission>commit_resolution</permission>
+            <permission>cancel_failed_pull</permission>
+            <permission>get_publishing_queue</permission>
+            <permission>cancel_publish</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex="^/(?!site/website/index\.xml)(.*)">
+         <allowed-permissions>
+            <permission>Delete</permission>
+            <permission>delete_content</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex="~DASHBOARD~">
+         <allowed-permissions>
+            <permission>Publish</permission>
+            <permission>audit_log</permission>
+            <permission>add_remote</permission>
+            <permission>list_remotes</permission>
+            <permission>pull_from_remote</permission>
+            <permission>push_to_remote</permission>
+            <permission>rebuild_database</permission>
+            <permission>remove_remote</permission>
+            <permission>write_configuration</permission>
+            <permission>site_status</permission>
+            <permission>resolve_conflict</permission>
+            <permission>site_diff_conflicted_file</permission>
+            <permission>commit_resolution</permission>
+            <permission>cancel_failed_pull</permission>
+            <permission>get_publishing_queue</permission>
+            <permission>cancel_publish</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex=".*">
+         <allowed-permissions>
+            <permission>S3 Read</permission>
+            <permission>S3 Write</permission>
+            <permission>webdav_read</permission>
+            <permission>webdav_write</permission>
+         </allowed-permissions>
+      </rule>
+   </role>
+   <role name="reviewer">
+      <rule regex="/.*">
+         <allowed-permissions>
+            <permission>Read</permission>
+            <permission>Publish</permission>
+            <permission>get_publishing_queue</permission>
+            <permission>cancel_publish</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex="~DASHBOARD~">
+         <allowed-permissions>
+            <permission>Publish</permission>
+            <permission>get_publishing_queue</permission>
+            <permission>cancel_publish</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex=".*">
+         <allowed-permissions>
+            <permission>S3 Read</permission>
+            <permission>webdav_read</permission>
+         </allowed-permissions>
+      </rule>
+   </role>
+   <role name="*">
+      <rule regex="/.*">
+         <allowed-permissions>
+            <permission>Read</permission>
+         </allowed-permissions>
+      </rule>
+      <rule regex=".*">
+         <allowed-permissions>
+            <permission>S3 Read</permission>
+            <permission>webdav_read</permission>
+         </allowed-permissions>
+      </rule>
+   </role>
+</permissions>
