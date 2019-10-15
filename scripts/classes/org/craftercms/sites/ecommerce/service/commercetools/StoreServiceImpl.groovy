@@ -22,46 +22,32 @@
  * SOFTWARE.
  */
 
-package org.craftercms.sites.ecommerce.service
+package org.craftercms.sites.ecommerce.service.commercetools
 
-import org.springframework.context.ApplicationContext
-import org.springframework.context.ApplicationContextAware
+import io.sphere.sdk.client.BlockingSphereClient
+import io.sphere.sdk.projects.queries.ProjectGet
+import org.craftercms.sites.ecommerce.service.StoreService
 
-class ProviderAwareServiceFactory implements ApplicationContextAware {
+class StoreServiceImpl extends StoreService {
 
-  def context
-  def provider
+  BlockingSphereClient client
 
-  void setApplicationContext(ApplicationContext context) {
-    this.context = context
+  def getName() {
+    def request = ProjectGet.of()
+    def response = client.executeBlocking(request)
+    return response.name
   }
 
-  def getBean(name) {
-    return context.getBean("$name-$provider")
+  def getLocales() {
+    def request = ProjectGet.of()
+    def response = client.executeBlocking(request)
+    return response.languages
   }
 
-  def getCustomerService() {
-    return getBean("customerService")
-  }
-
-  def getOrderService() {
-    return getBean("orderService")
-  }
-
-  def getProductService() {
-    return getBean("productService")
-  }
-
-  def getCartService() {
-    return getBean("cartService")
-  }
-
-  def getPaymentService() {
-    return getBean("paymentService")
-  }
-
-  def getStoreService() {
-    return getBean("storeService")
+  def getCurrencies() {
+    def request = ProjectGet.of()
+    def response = client.executeBlocking(request)
+    return response.currencies
   }
 
 }

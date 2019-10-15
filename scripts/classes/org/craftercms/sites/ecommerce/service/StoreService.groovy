@@ -24,44 +24,12 @@
 
 package org.craftercms.sites.ecommerce.service
 
-import org.springframework.context.ApplicationContext
-import org.springframework.context.ApplicationContextAware
+abstract class StoreService {
 
-class ProviderAwareServiceFactory implements ApplicationContextAware {
+  abstract def getName()
 
-  def context
-  def provider
+  abstract def getLocales()
 
-  void setApplicationContext(ApplicationContext context) {
-    this.context = context
-  }
-
-  def getBean(name) {
-    return context.getBean("$name-$provider")
-  }
-
-  def getCustomerService() {
-    return getBean("customerService")
-  }
-
-  def getOrderService() {
-    return getBean("orderService")
-  }
-
-  def getProductService() {
-    return getBean("productService")
-  }
-
-  def getCartService() {
-    return getBean("cartService")
-  }
-
-  def getPaymentService() {
-    return getBean("paymentService")
-  }
-
-  def getStoreService() {
-    return getBean("storeService")
-  }
+  abstract def getCurrencies()
 
 }
