@@ -66,7 +66,7 @@ export default function BlogEntry(props) {
 
               <CategoryListing categories={reqs.categories}/>
 
-              <RelatedPosts categories={reqs.post.categories_o.item}/>
+              <RelatedPosts categories={reqs.post.categories_o.item} slug={slug}/>
               <RelatedProducts categories={reqs.post.categories_o.item}/>
 
             </Col>
@@ -94,7 +94,7 @@ function Post({ post }) {
   );
 }
 
-function RelatedPosts({ categories }) {
+function RelatedPosts({ categories, slug }) {
   const [relatedPosts, setRelatedPosts] = useState();
   useEffect(
     () => {
@@ -106,7 +106,7 @@ function RelatedPosts({ categories }) {
               items {
                 title_s
                 image_s
-                slug_s
+                slug_s(filter: { not: [{ equals: "${slug}" }]})
                 categories_o @skip(if: true) {
                   item {
                     key(filter: {matches: "${categories[0].key}"})
