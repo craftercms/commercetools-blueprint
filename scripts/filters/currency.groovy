@@ -22,34 +22,12 @@
  * SOFTWARE.
  */
 
-package org.craftercms.sites.ecommerce.util
+import org.craftercms.sites.ecommerce.util.LocaleUtil
 
-import org.apache.commons.configuration2.XMLConfiguration
-import org.apache.commons.lang.LocaleUtils
-import org.springframework.context.i18n.LocaleContextHolder
-
-/**
- *
- * @author joseross
- */
-abstract class LocaleUtil {
-
-  private static currency = new InheritableThreadLocal<Currency>()
-
-  static Locale getLocale() {
-    LocaleContextHolder.locale
-  }
-
-  static void setCurrency(String currencyCode) {
-    currency.set(Currency.getInstance(currencyCode))
-  }
-
-  static void setCurrencysetCurrency(XMLConfiguration siteConfig) {
-    currency.set(Currency.getInstance(LocaleUtils.toLocale(siteConfig.getProperty('defaultLocale'))))
-  }
-
-  static String getCurrencyCode() {
-    currency.get()?.currencyCode
-  }
-
+if (params.currency) {
+  LocaleUtil.setCurrency(params.currency)
+} else if (!LocaleUtil.getCurrencyCode()) {
+  LocaleUtil.setCurrency(siteConfig)
 }
+
+filterChain.doFilter(request, response)

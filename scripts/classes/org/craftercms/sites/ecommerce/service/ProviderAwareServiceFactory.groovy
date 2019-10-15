@@ -60,4 +60,8 @@ class ProviderAwareServiceFactory implements ApplicationContextAware {
     return getBean("paymentService")
   }
 
+  def getStoreService() {
+    return getBean("storeService")
+  }
+
 }

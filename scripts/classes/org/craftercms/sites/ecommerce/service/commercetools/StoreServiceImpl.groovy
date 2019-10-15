@@ -22,34 +22,32 @@
  * SOFTWARE.
  */
 
-package org.craftercms.sites.ecommerce.util
+package org.craftercms.sites.ecommerce.service.commercetools
 
-import org.apache.commons.configuration2.XMLConfiguration
-import org.apache.commons.lang.LocaleUtils
-import org.springframework.context.i18n.LocaleContextHolder
+import io.sphere.sdk.client.BlockingSphereClient
+import io.sphere.sdk.projects.queries.ProjectGet
+import org.craftercms.sites.ecommerce.service.StoreService
 
-/**
- *
- * @author joseross
- */
-abstract class LocaleUtil {
+class StoreServiceImpl extends StoreService {
 
-  private static currency = new InheritableThreadLocal<Currency>()
+  BlockingSphereClient client
 
-  static Locale getLocale() {
-    LocaleContextHolder.locale
+  def getName() {
+    def request = ProjectGet.of()
+    def response = client.executeBlocking(request)
+    return response.name
   }
 
-  static void setCurrency(String currencyCode) {
-    currency.set(Currency.getInstance(currencyCode))
+  def getLocales() {
+    def request = ProjectGet.of()
+    def response = client.executeBlocking(request)
+    return response.languages
   }
 
-  static void setCurrencysetCurrency(XMLConfiguration siteConfig) {
-    currency.set(Currency.getInstance(LocaleUtils.toLocale(siteConfig.getProperty('defaultLocale'))))
-  }
-
-  static String getCurrencyCode() {
-    currency.get()?.currencyCode
+  def getCurrencies() {
+    def request = ProjectGet.of()
+    def response = client.executeBlocking(request)
+    return response.currencies
   }
 
 }
