@@ -59,11 +59,12 @@ import {
 } from '../actions/productsActions';
 import { errorOp, mapOp } from '../../util/redux';
 
-export const fetchProductEpic = (action$) => action$.pipe(
+export const fetchProductEpic = (action$, state$) => action$.pipe(
   ofType(FETCH_PRODUCT),
-  switchMap(({ payload }) =>
+  withLatestFrom(state$.pipe(pluck('products'))),
+  switchMap(([{ payload }, state]) =>
     ajax
-      .get(`/api/1/product/${payload.id}.json`)
+      .get(`/api/1/product/${payload.id}.json?locale=${state.query.locale}&currency=${state.query.currency}`)
       .pipe(errorOp)
   ),
   mapOp(fetchProductComplete, fetchProductFailed)

@@ -31,6 +31,7 @@ import { ajax } from 'rxjs/ajax';
 import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { useICE } from '../../util/component';
+import { getProducts, useProductsQuery } from '../../util/products';
 
 export default function BlogEntry(props) {
   const slug = props.match.params.slug;
@@ -143,17 +144,13 @@ function RelatedPosts({ categories, slug }) {
 
 function RelatedProducts({ categories }) {
   const [items, setItems] = useState();
-  // const productsBranch = useProductsBranch();
-  // const items = productsBranch.byId && Object.values(productsBranch.byId).slice(0, 3);
+  const params = useProductsQuery();
   useEffect(
     () => {
-      fetch(`/api/1/product/all.json?limit=3&locale=en_us&offset=${Math.floor(Math.random() * 11)}`)
-        .then(async (response) => {
-          const data = await response.json();
-          setItems(data.items)
-        });
+      getProducts({ limit: 3, offset: Math.floor(Math.random() * 11), ...params })
+        .subscribe(({ response }) => setItems(response.items));
     },
-    [categories[0].key]
+    [categories[0].key, params.locale, params.currency]
   );
   return (
     items ? <div className="blog__sidebar-bar-block">

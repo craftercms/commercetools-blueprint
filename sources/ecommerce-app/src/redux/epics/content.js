@@ -24,11 +24,12 @@
 
 import { loader } from 'graphql.macro';
 import { ofType } from 'redux-observable';
-import { FETCH_GRAPH, fetchGraphComplete, fetchGraphFailed } from '../actions/contentActions';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { FETCH_GRAPH, FETCH_GRAPH_COMPLETE, fetchGraphComplete, fetchGraphFailed } from '../actions/contentActions';
+import { catchError, map, mapTo, switchMap, filter } from 'rxjs/operators';
 import { capitalize } from '../../util/string';
 import { ajax } from 'rxjs/ajax';
 import { of } from 'rxjs';
+import { changeCurrency, changeLocale, setStoreSettings } from '../actions/productsActions';
 
 const FragmentMap = {
   home: loader('../../queries/Home.fragment.graphql').loc.source.body,
@@ -42,6 +43,7 @@ const FragmentMap = {
   ContentSideImage: loader('../../queries/ContentSideImage.fragment.graphql').loc.source.body,
   FeatureList: loader('../../queries/FeatureList.fragment.graphql').loc.source.body,
   Testimonials: loader('../../queries/Testimonials.fragment.graphql').loc.source.body,
+  store: loader('../../queries/Store.fragment.graphql').loc.source.body
 };
 
 export function fetchGraphEpic(action$) {
@@ -90,5 +92,17 @@ export function fetchGraphEpic(action$) {
       );
 
     })
+  );
+}
+
+export function fetchGraphCompleteEpic(action$) {
+  return action$.pipe(
+    ofType(FETCH_GRAPH_COMPLETE),
+    filter(({ payload }) => (
+      payload &&
+      payload.store &&
+      payload.store.settings
+    )),
+    map(({ payload: { store: { settings } } }) => setStoreSettings(settings))
   );
 }

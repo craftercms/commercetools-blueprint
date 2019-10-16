@@ -35,6 +35,7 @@ import {
 import rootEpic from './epics/epics';
 import { loginComplete, setPersona } from './actions/usersActions';
 import { setIsAuthoring } from './actions/themeActions';
+import { setStoreSettings } from './actions/productsActions';
 
 const reducer = combineReducers({
   form: reduxFormReducer,
@@ -69,6 +70,15 @@ try {
   persona && store.dispatch(setPersona(persona))
 } catch (e) {
   (process.env.NODE_ENV === 'development') && console.error('Invalid syntax for persona JSON.', e.message);
+}
+
+let storeSettings = null;
+try {
+  const json = document.getElementById('storeSettingsJSON').innerHTML;
+  storeSettings = JSON.parse(json);
+  storeSettings && store.dispatch(setStoreSettings(storeSettings));
+} catch (e) {
+  (process.env.NODE_ENV === 'development') && console.error('Invalid syntax for store settings JSON.', e.message);
 }
 
 // True if the site is being view via authoring (studio).

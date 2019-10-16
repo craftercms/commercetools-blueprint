@@ -30,13 +30,9 @@ import {
   Container,
 } from 'reactstrap';
 import { useICE } from '../../util/component';
-import { ajax } from 'rxjs/ajax';
 import Product from './Product';
 import { switchMap, map } from 'rxjs/operators';
-
-window.test = (offset, limit) => {
-  return ajax.get(`/api/1/product/all.json?limit=${limit}&locale=en_us&offset=${offset}`)
-};
+import { getProducts, useProductsQuery } from '../../util/products';
 
 export default function ProductTeaser(props) {
 
@@ -49,11 +45,12 @@ export default function ProductTeaser(props) {
 
   const { props: ice } = useICE({ modelId: localId, label });
   const [products, setProducts] = useState();
+  const query = useProductsQuery({ limit: numOfProducts_i });
 
   useEffect(
     () => {
       // Probe for total number of catalog items
-      ajax.get(`/api/1/product/all.json?limit=${numOfProducts_i}&locale=en_us&offset=0`)
+      getProducts(query)
         .pipe(
           switchMap(({ response: { total, items } }) => {
             if (total === 0 || total <= numOfProducts_i) {
@@ -61,14 +58,14 @@ export default function ProductTeaser(props) {
             } else {
               // Get a few products from the catalog based on numOfProducts_i &
               const offset = Math.ceil(Math.random() * total) - numOfProducts_i;
-              return ajax.get(`/api/1/product/all.json?limit=${numOfProducts_i}&locale=en_us&offset=${offset}`).pipe(
+              return getProducts({ ...query, offset }).pipe(
                 map(({ response: { items } }) => items)
               );
             }
           })
         ).subscribe(items => setProducts(items));
     },
-    []
+    [query.locale, query.currency]
   );
 
   return (

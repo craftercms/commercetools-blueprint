@@ -34,6 +34,7 @@ import { forkJoin, of } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
 import { BlogPostCard } from './BlogTeaser';
+import { getProducts } from '../../util/products';
 
 export default function ProductDetails(props) {
 
@@ -46,10 +47,10 @@ export default function ProductDetails(props) {
 
   useEffect(
     () => {
-      if (product == null)
+      // if (product == null)
         dispatch(fetchProduct(id))
     },
-    [id]
+    [id, products.query.locale, products.query.currency]
   );
 
   useEffect(
@@ -67,7 +68,7 @@ export default function ProductDetails(props) {
         );
 
         const products$ = keys.ids.length
-          ? ajax.get(`/api/1/product/all.json?limit=4&locale=en_us&filter=categories:${keys.ids.join(',')}`)
+          ? getProducts({ limit: 4, filter: `categories:${keys.ids.join(',')}`, locale: products.query.locale, currency: products.query.currency })
           : of({ response: { items: [] } });
 
         const posts$ = keys.keys.length
@@ -105,7 +106,7 @@ export default function ProductDetails(props) {
       }
       return () => sub.unsubscribe();
     },
-    [product ? product.id : undefined]
+    [product ? product.id : undefined, products.query.locale, products.query.currency]
   );
 
   return (

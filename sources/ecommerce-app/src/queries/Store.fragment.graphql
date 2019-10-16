@@ -1,0 +1,9 @@
+fragment Store on craftercms_site {
+  store {
+    settings {
+      name
+      locales
+      currencies
+    }
+  }
+}
