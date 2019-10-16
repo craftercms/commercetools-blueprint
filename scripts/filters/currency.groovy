@@ -22,46 +22,12 @@
  * SOFTWARE.
  */
 
-package org.craftercms.sites.ecommerce.service
+import org.craftercms.sites.ecommerce.util.LocaleUtil
 
-import org.springframework.context.ApplicationContext
-import org.springframework.context.ApplicationContextAware
-
-class ProviderAwareServiceFactory implements ApplicationContextAware {
-
-  def context
-  def provider
-
-  void setApplicationContext(ApplicationContext context) {
-    this.context = context
-  }
-
-  def getBean(name) {
-    return context.getBean("$name-$provider")
-  }
-
-  def getCustomerService() {
-    return getBean("customerService")
-  }
-
-  def getOrderService() {
-    return getBean("orderService")
-  }
-
-  def getProductService() {
-    return getBean("productService")
-  }
-
-  def getCartService() {
-    return getBean("cartService")
-  }
-
-  def getPaymentService() {
-    return getBean("paymentService")
-  }
-
-  def getStoreService() {
-    return getBean("storeService")
-  }
-
+if (params.currency) {
+  LocaleUtil.setCurrency(params.currency)
+} else if (!LocaleUtil.getCurrencyCode()) {
+  LocaleUtil.setCurrency(siteConfig)
 }
+
+filterChain.doFilter(request, response)

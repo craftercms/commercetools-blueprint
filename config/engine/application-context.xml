@@ -50,6 +50,8 @@
 
   <bean id="paymentService" factory-bean="serviceFactory" factory-method="getPaymentService"/>
 
+  <bean id="storeService" factory-bean="serviceFactory" factory-method="getStoreService"/>
+
   <!-- Parent beans, all providers should extend these -->
   <bean id="baseCustomerService" abstract="true">
     <property name="storeName" value="${ecommerce.store.name}"/>
@@ -111,6 +113,11 @@
 
   <bean id="paymentService-commercetools" parent="basePaymentService" lazy-init="true"
         class="org.craftercms.sites.ecommerce.service.commercetools.PaymentServiceImpl">
+    <property name="client" ref="sphereClient"/>
+  </bean>
+
+  <bean id="storeService-commercetools" lazy-init="true"
+        class="org.craftercms.sites.ecommerce.service.commercetools.StoreServiceImpl">
     <property name="client" ref="sphereClient"/>
   </bean>
 
