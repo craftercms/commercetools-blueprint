@@ -204,7 +204,19 @@ $landing-gradient-hover: linear-gradient(228deg, darken(rgba(127, 244, 222, 0.95
 }
 
 .landing__menu-logo {
+  display: flex;
   max-width: 180px;
+  img {
+    max-height: 40px;
+  }
+}
+
+.landing__store-name {
+  color: #333;
+  font-size: 2em;
+  margin-left: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .landing__menu .topbar__search {
@@ -251,7 +263,7 @@ $landing-gradient-hover: linear-gradient(228deg, darken(rgba(127, 244, 222, 0.95
       }
       .landing__btn {
         display: flex;
-        margin-top: 20px;
+        margin: 10px 0 20px;
         align-items: center;
       }
     }
@@ -325,6 +337,36 @@ $landing-gradient-hover: linear-gradient(228deg, darken(rgba(127, 244, 222, 0.95
   &:hover {
     color: $landing-accent-color;
   }
+}
+
+.landing__header-locale-dropdown,
+.landing__header-currency-dropdown {
+  margin: 0 0 0 .5em;
+  padding: 0;
+  display: inline-block;
+  img {
+    width: 20px
+  }
+  > .btn {
+    margin: 0;
+    border: none;
+    padding: .5em;
+    background: transparent;
+    &:focus,
+    &:active,
+    &:hover,
+    &::before {
+      background-color: #fff;
+    }
+  }
+}
+
+.landing__header-locale-dropdown {
+
+}
+
+.landing__header-currency-dropdown {
+
 }
 
 //Feedback
@@ -1250,6 +1292,8 @@ $landing-gradient-hover: linear-gradient(228deg, darken(rgba(127, 244, 222, 0.95
   height: 40px;
 }
 
+// Footer
+
 .landing__footer {
   padding: 50px 0;
   text-align: center;
@@ -1286,7 +1330,6 @@ $landing-gradient-hover: linear-gradient(228deg, darken(rgba(127, 244, 222, 0.95
   height: 830px;
   transition: 0.3s;
 }
-
 
 .landing__footer-locale-dropdown,
 .landing__footer-currency-dropdown {

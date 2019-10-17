@@ -35,8 +35,6 @@ const FlagCodeMap = {
   en_us: 'us'
 };
 
-const flagHeight = 10;
-
 function Footer(props){
 
   const dispatch = useDispatch();

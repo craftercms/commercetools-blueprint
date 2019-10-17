@@ -23,16 +23,46 @@
  */
 
 import React, { useContext, useState } from 'react';
-import { Col, Container, Popover, PopoverBody, Row } from 'reactstrap';
+import {
+  Col,
+  Container,
+  Popover,
+  PopoverBody,
+  Row,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'reactstrap';
 import Anchor from '../shared/Anchor';
 import { __RouterContext, Link } from 'react-router-dom';
 import SearchIcon from 'mdi-react/SearchIcon';
 import PersonCircleOutlineIcon from 'mdi-react/PersonCircleOutlineIcon';
 import ShoppingCartIcon from 'mdi-react/ShoppingCartIcon';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import hamburger  from '../../img/burger.svg';
+import Flag from 'react-world-flags';
+import { changeCurrency, changeLocale } from '../../redux/actions/productsActions';
+
+const FlagCodeMap = {
+  de: 'de',
+  en: 'us',
+  en_us: 'us'
+};
 
 export default function Header() {
+
+  const dispatch = useDispatch();
+  const { store: {
+    name,
+    locales,
+    currencies
+  } } = useSelector(state => state.content);
+  const {
+    query: { locale, currency }
+  } = useSelector(state => state.products);
+  const [localesOpen, setLocalesOpen] = useState(false);
+  const [currenciesOpen, setCurrenciesOpen] = useState(false);
 
   const { history } = useContext(__RouterContext);
   const { content, users, products } = useSelector(state => state);
@@ -56,7 +86,7 @@ export default function Header() {
           <Col md={12}>
             <div className="landing__menu-wrap">
               <Anchor className="landing__menu-logo" href={logo_url_s}>
-                <img src={logo_s} alt={logo_alt_t}/>
+                <img src={logo_s} alt={logo_alt_t}/> <span className="landing__store-name">{name}</span>
               </Anchor>
               <button
                 type="button"
@@ -119,6 +149,32 @@ export default function Header() {
                       </Link>
                     )
                 }
+                <Dropdown className="landing__header-locale-dropdown" isOpen={localesOpen} toggle={() => setLocalesOpen(!localesOpen)}>
+                  <DropdownToggle caret>
+                    {FlagCodeMap[locale] ? <Flag code={FlagCodeMap[locale]}/> : locale}
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    {
+                      (locales || []).map((code) => (
+                        <DropdownItem key={code} onClick={() => dispatch(changeLocale(code))}>
+                          {FlagCodeMap[code] ? <Flag code={FlagCodeMap[code]}/> : code}
+                        </DropdownItem>
+                      ))
+                    }
+                  </DropdownMenu>
+                </Dropdown>
+                <Dropdown className="landing__header-currency-dropdown" isOpen={currenciesOpen} toggle={() => setCurrenciesOpen(!currenciesOpen)}>
+                  <DropdownToggle caret>
+                    {currency}
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    {
+                      (currencies || []).map((code) => (
+                        <DropdownItem key={code} onClick={() => dispatch(changeCurrency(code))}>{code}</DropdownItem>
+                      ))
+                    }
+                  </DropdownMenu>
+                </Dropdown>
               </nav>
             </div>
           </Col>
