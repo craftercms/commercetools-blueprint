@@ -32,6 +32,7 @@ const initialState = {
   header: null,
   home: null,
   footer: null,
+  store: null,
   post: null,
   categories: null,
   loading: {},
@@ -86,7 +87,8 @@ export default function contentReducer(state = initialState, action) {
         footer: getFooter(payload) || state.footer,
         post: getPosts(state.post, payload),
         categories: getCategories(state.categories, payload),
-        errors: removeProp(state.errors, FETCH_GRAPH)
+        errors: removeProp(state.errors, FETCH_GRAPH),
+        store: getStore(state.store, payload)
       };
     }
     case FETCH_GRAPH_FAILED: {
@@ -153,6 +155,16 @@ function getPosts(state, payload) {
       ...state ? state.bySlug : {},
       ...toLookupTable(data.items, 'slug_s')
     }
+  };
+}
+
+function getStore(state, payload) {
+  const data = payload && payload.store ? payload.store : null;
+  if (!data || !data && !state) {
+    return state;
+  }
+  return {
+    ...payload.store.settings
   };
 }
 

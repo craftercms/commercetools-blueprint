@@ -1250,10 +1250,8 @@ $landing-gradient-hover: linear-gradient(228deg, darken(rgba(127, 244, 222, 0.95
   height: 40px;
 }
 
-//Footer
-
 .landing__footer {
-  padding-top: 50px;
+  padding: 50px 0;
   text-align: center;
   position: relative;
 
@@ -1287,6 +1285,23 @@ $landing-gradient-hover: linear-gradient(228deg, darken(rgba(127, 244, 222, 0.95
   width: 100%;
   height: 830px;
   transition: 0.3s;
+}
+
+
+.landing__footer-locale-dropdown,
+.landing__footer-currency-dropdown {
+  width: 100px;
+  display: inline-block;
+}
+
+.landing__footer-locale-dropdown {
+  img {
+    width: 20px
+  }
+}
+
+.landing__footer-currency-dropdown {
+
 }
 
 // Testimonials

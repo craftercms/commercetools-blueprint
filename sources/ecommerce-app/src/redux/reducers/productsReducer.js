@@ -27,6 +27,8 @@ import {
   ADD_TO_CART,
   ADD_TO_CART_COMPLETE,
   ADD_TO_CART_FAILED,
+  CHANGE_CURRENCY,
+  CHANGE_LOCALE,
   CHECKOUT_COMPLETE,
   FACETS_CHANGED,
   FETCH_CART_COMPLETE,
@@ -40,13 +42,14 @@ import {
   FETCH_SHIPPING_METHODS_COMPLETE,
   FETCH_SHIPPING_METHODS_FAILED,
   KEYWORDS_CHANGED, REMOVE_FROM_CART,
-  REMOVE_FROM_CART_COMPLETE,
+  REMOVE_FROM_CART_COMPLETE, SET_STORE_SETTINGS,
   UPDATE_CART,
   UPDATE_CART_COMPLETE, UPDATE_CART_FAILED, UPDATE_CART_ITEM_QUANTITY,
   UPDATE_CART_ITEM_QUANTITY_COMPLETE, UPDATE_CART_ITEM_QUANTITY_FAILED
 } from '../actions/productsActions';
 import { toLookupTable } from '../../util/array';
 import { byIdLoadingKey, getRootType, removeProp } from '../../util/redux';
+import { FETCH_GRAPH_COMPLETE } from '../actions/contentActions';
 
 const initialState = {
   byId: null,
@@ -57,7 +60,8 @@ const initialState = {
   query: {
     offset: 0,
     limit: 10,
-    locale: 'en_us'
+    locale: 'en',
+    currency: 'USD'
   }
 };
 
@@ -116,7 +120,42 @@ export default function productReducer(state = initialState, action) {
         facets: payload.facets
       };
 
+    case CHANGE_LOCALE:
+    case CHANGE_CURRENCY: {
+      return {
+        ...state,
+        query: {
+          ...state.query,
+          [type === CHANGE_LOCALE ? 'locale' : 'currency']: payload.value
+        }
+      }
+    }
 
+    case SET_STORE_SETTINGS: {
+      return {
+        ...state,
+        query: {
+          ...state.query,
+          ...payload
+        }
+      }
+    }
+
+    case FETCH_GRAPH_COMPLETE: {
+      // TODO: Enable optional chaining operator
+      if (payload && payload.store && payload.store.settings) {
+        return {
+          ...state,
+          query: {
+            ...state.query,
+            currency: payload.store.settings.currencies[0],
+            locale: payload.store.settings.locales[0]
+          }
+        };
+      } else {
+        return state;
+      }
+    }
 
     case FETCH_PRODUCT:
       return {

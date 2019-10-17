@@ -29,7 +29,7 @@ import AssertContent from '../shared/AssertContent';
 
 export function Layout({ children, className, requirements = [], variables, render }) {
   return <AssertContent
-    requirements={['nav', 'header', 'footer', ...requirements]}
+    requirements={['nav', 'header', 'footer', 'store', ...requirements]}
     variables={variables}
     render={(reqs) => (
       <div className={`landing ${className}`}>

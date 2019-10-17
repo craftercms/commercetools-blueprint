@@ -61,6 +61,10 @@ export const CHECKOUT = 'CHECKOUT';
 export const CHECKOUT_COMPLETE = 'CHECKOUT_COMPLETE';
 export const CHECKOUT_FAILED = 'CHECKOUT_FAILED';
 
+export const CHANGE_LOCALE = 'CHANGE_LOCALE';
+export const CHANGE_CURRENCY = 'CHANGE_CURRENCY';
+export const SET_STORE_SETTINGS = 'SET_STORE_SETTINGS';
+
 export function fetchProduct(id) {
   return {
     type: FETCH_PRODUCT,
@@ -278,4 +282,25 @@ export function checkoutFailed(data) {
     type: CHECKOUT_FAILED,
     payload: data
   };
+}
+
+export function changeLocale(value) {
+  return {
+    type: CHANGE_LOCALE,
+    payload: { value }
+  };
+}
+
+export function changeCurrency(value) {
+  return {
+    type: CHANGE_CURRENCY,
+    payload: { value }
+  };
+}
+
+export function setStoreSettings(settings) {
+  return {
+    type: SET_STORE_SETTINGS,
+    payload: { currency: settings.currencies[0], locale: settings.locales[0] }
+  }
 }

@@ -35,6 +35,7 @@ import { ajax } from 'rxjs/ajax';
 import { Link } from 'react-router-dom';
 import { capitalize } from '../../util/string';
 import { crafterConf, getQuery } from '../../util/component';
+import { getProducts, useProductsQuery } from '../../util/products';
 
 const
   ARTICLE = 'ARTICLE',
@@ -48,6 +49,8 @@ export default function Search(props) {
   const [productResults, setProductResults] = useState();
   const [contentResults, setContentResults] = useState();
 
+  const productsQueryParams = useProductsQuery({ q: query, limit: 10, offset: 10 });
+
   useEffect(
     () => {
       if (query) {
@@ -59,7 +62,7 @@ export default function Search(props) {
           });
         });
 
-        ajax.get(`/api/1/product/all.json?q=${query}&limit=10&locale=en_us&offset=0`).subscribe(({ response: catalog }) => {
+        getProducts(productsQueryParams).subscribe(({ response: catalog }) => {
           setProductResults({
             total: catalog.total,
             products: catalog.items
@@ -70,7 +73,7 @@ export default function Search(props) {
 
       }
     },
-    [query]
+    [query, productsQueryParams.locale, productsQueryParams.currency]
   );
 
   return (
