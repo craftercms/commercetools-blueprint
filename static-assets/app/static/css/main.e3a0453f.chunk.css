@@ -1,0 +1,791 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900);
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}[hidden],template{display:none}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}main{padding:0}body{margin:0;padding:0!important;box-sizing:border-box;font-family:Open Sans,sans-serif;font-size:13px;line-height:1.6;overflow-x:hidden}*{box-sizing:inherit}ol,ul{padding-left:15px;margin-bottom:0}a{color:#5ac8fa;transition:all .3s}a:hover{text-decoration:none;color:#29b8f9}img{width:100%}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */h1,h2,h3,h4,h5,h6,p{margin-top:0;font-weight:400;margin-bottom:0}.theme-light h1,.theme-light h2,.theme-light h3,.theme-light h4,.theme-light h5,.theme-light h6,.theme-light p{color:#48484a}.theme-dark h1,.theme-dark h2,.theme-dark h3,.theme-dark h4,.theme-dark h5,.theme-dark h6,.theme-dark p{color:#ddd}p{margin:10px 0 0}p:first-child{margin:0}h1{font-size:36px;line-height:48px}h1.subhead{color:#636366}h1.subhead,h2{font-size:30px;line-height:36px}h2.subhead{color:#636366}h2.subhead,h3{font-size:24px;line-height:32px}h3.subhead{color:#636366}h3.subhead,h4{font-size:18px;line-height:24px}h4.subhead{font-size:12px;color:#636366;line-height:16px}h5{font-size:14px;line-height:18px}h5.subhead{font-size:10px;color:#636366;line-height:12px}h6{font-size:12px;line-height:16px}h6.subhead{font-size:8px;color:#636366;line-height:10px}.bold-text{font-weight:700}.typography--inline{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap}.typography--inline *{margin-top:auto;margin-right:15px}.typography-card h1,.typography-card h2,.typography-card h3,.typography-card h4,.typography-card h5,.typography-card h6{margin-bottom:10px}blockquote{font-size:13px;font-style:italic;border-left:3px solid #007aff;margin-bottom:0;padding-left:10px}.highlight{background-color:#007aff;color:#fff}.red-text{color:#ad4444}.page-title{font-weight:500;text-transform:capitalize;font-size:20px}.page-title:last-child{margin-bottom:30px}.page-title.page-title--not-last{margin-top:20px}.page-subhead{display:block;margin-bottom:20px}.page-subhead.subhead{font-size:14px;opacity:.7}::-moz-selection{color:#fff;background:#007aff}::selection{color:#fff;background:#007aff}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */@media screen and (min-width:768px){.container{width:100%;max-width:1630px}}.container__wrap{padding-left:0;padding-top:90px;min-height:100vh;transition:padding-left .3s}.theme-light .container__wrap{background:#f2f4f7}.theme-dark .container__wrap{background:#2c2c2e}@media screen and (min-width:576px){.container__wrap{padding-left:250px}}.layout.layout--collapse+.container__wrap{padding-left:0}@media screen and (min-width:576px){.layout.layout--collapse+.container__wrap{padding-left:60px}}@media screen and (min-width:576px){.layout.layout--top-navigation+.container__wrap{padding-left:0}}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.alert{border-radius:0;position:relative;margin-bottom:10px;padding:0;display:-webkit-flex;display:flex}.alert.fade{opacity:1}.alert:last-child{margin-bottom:0}.alert p{color:#fff;margin-top:0}.alert .close{color:#fff;opacity:1;font-weight:100;right:20px;font-size:14px;line-height:14px;position:absolute;top:calc(50% - 7px);text-shadow:none}.alert .close:active,.alert .close:active:focus,.alert .close:focus{outline:none}.alert.alert-info{border-color:#5ac8fa}.alert.alert-info,.alert.alert-info.alert--bordered .alert__icon{background-color:#5ac8fa}.alert.alert-info.alert--colored .alert__icon{background-color:#87c3f7}.alert.alert-info.alert--neutral .alert__icon svg{fill:#5ac8fa}.alert.alert-success{border-color:#007aff}.alert.alert-success,.alert.alert-success.alert--bordered .alert__icon{background-color:#007aff}.alert.alert-success.alert--colored .alert__icon{background-color:#55e5bb}.alert.alert-success.alert--neutral .alert__icon svg{fill:#007aff}.alert.alert-warning{border-color:#fc0}.alert.alert-warning,.alert.alert-warning.alert--bordered .alert__icon{background-color:#fc0}.alert.alert-warning.alert--colored .alert__icon{background-color:#f4dd87}.alert.alert-warning.alert--neutral .alert__icon svg{fill:#fc0}.alert.alert-danger{border-color:#ff3b30}.alert.alert-danger,.alert.alert-danger.alert--bordered .alert__icon{background-color:#ff3b30}.alert.alert-danger.alert--colored .alert__icon{background-color:#f88e7d}.alert.alert-danger.alert--neutral .alert__icon svg{fill:#ff3b30}.alert.alert--bordered{background-color:transparent}.theme-light .alert.alert--bordered p{color:#48484a}.theme-dark .alert.alert--bordered p{color:#ddd}.alert.alert--bordered .close{color:#636366}.alert.alert--neutral{background-color:transparent;border-color:#f2f4f7}.theme-light .alert.alert--neutral p{color:#48484a}.theme-dark .alert.alert--neutral p{color:#ddd}.alert.alert--neutral .close{color:#636366}.theme-light .alert.alert--neutral svg{fill:#48484a}.theme-dark .alert.alert--neutral svg{fill:#ddd}.alert.alert--neutral .alert__icon{border-right:1px solid #f2f4f7}.alert__icon{padding:18px;display:-webkit-flex;display:flex}.alert__icon svg{fill:#fff;margin:auto 0}.alert__content{display:-webkit-flex;display:flex;overflow:hidden;-webkit-align-items:center;align-items:center;padding:10px 40px 10px 20px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.btn{border-radius:5px;padding:10px 25px;margin-bottom:20px;margin-right:15px;transition:all .4s;font-size:14px;position:relative;overflow:hidden;z-index:0}.btn:last-child{margin-right:0}.btn:before{position:absolute;height:0;width:0;border-radius:50%;background-color:#007aff;transition:width .3s ease-in-out,height .3s ease-in-out;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);z-index:-1;content:"";top:0;left:0}.btn p{display:-webkit-flex;display:flex;font-weight:500;color:#444}.btn p,.btn svg{transition:all .3s}.btn svg{height:14px;width:14px;margin:2px 5px 0 0;fill:#444}.btn:active,.btn:active:focus,.btn:focus,.btn:hover{outline:none;box-shadow:none!important}.btn:active:before,.btn:active:focus:before,.btn:focus:before,.btn:hover:before{height:500%;width:225%}.btn:active:before,.btn:active:focus:before,.btn:focus:before{transition:all 0s}.btn.square{border-radius:0}.btn.rounded{border-radius:30px!important}.btn.icon{padding:10px 15px}.btn.icon:hover p{color:#646777}.btn.icon:hover svg{fill:#646777}.btn.icon.icon--right svg{margin:2px 0 0 5px}.btn.btn-sm{padding:5px 25px;font-size:14px}.btn.btn-lg{padding:12px 25px;font-size:14px}.btn.btn-secondary{background-color:#e7e2e2;border-color:#e7e2e2;color:#646777}.btn.btn-secondary:before{background-color:#d0c6c6}.btn.btn-secondary:active,.btn.btn-secondary:active:focus,.btn.btn-secondary:focus,.btn.btn-secondary:hover{border-color:#d0c6c6;color:#646777}.btn.btn-secondary:not([disabled]):not(.disabled).active,.btn.btn-secondary:not([disabled]):not(.disabled):active{background-color:#ddd;border-color:#ddd}.btn.btn-outline-secondary{border-color:#e7e2e2}.theme-light .btn.btn-outline-secondary,.theme-light .btn.btn-outline-secondary p{color:#48484a}.theme-dark .btn.btn-outline-secondary,.theme-dark .btn.btn-outline-secondary p{color:#ddd}.theme-light .btn.btn-outline-secondary svg{fill:#48484a}.theme-dark .btn.btn-outline-secondary svg{fill:#ddd}.btn.btn-outline-secondary:before{background-color:#e7e2e2}.btn.btn-outline-secondary:active,.btn.btn-outline-secondary:active:focus,.btn.btn-outline-secondary:focus,.btn.btn-outline-secondary:hover{background:transparent;border-color:#e7e2e2;color:#444}.btn.btn-outline-secondary:active:focus p,.btn.btn-outline-secondary:active p,.btn.btn-outline-secondary:focus p,.btn.btn-outline-secondary:hover p{color:#444}.btn.btn-outline-secondary:active:focus svg,.btn.btn-outline-secondary:active svg,.btn.btn-outline-secondary:focus svg,.btn.btn-outline-secondary:hover svg{fill:#444}.btn.btn-primary{background-color:#5ac8fa;border-color:#5ac8fa}.btn.btn-primary:before{background-color:#29b8f9}.btn.btn-primary:active,.btn.btn-primary:active:focus,.btn.btn-primary:focus,.btn.btn-primary:hover{border-color:#29b8f9}.btn.btn-outline-primary{color:#5ac8fa;border-color:#5ac8fa}.btn.btn-outline-primary p{color:#5ac8fa}.btn.btn-outline-primary svg{fill:#5ac8fa}.btn.btn-outline-primary:before{background-color:#5ac8fa}.btn.btn-success{background-color:#007aff;border-color:#007aff}.btn.btn-success:before{background-color:#0062cc}.btn.btn-success:active,.btn.btn-success:active:focus,.btn.btn-success:focus,.btn.btn-success:hover{border-color:#0062cc}.btn.btn-outline-success{color:#007aff;border-color:#007aff}.btn.btn-outline-success p{color:#007aff}.btn.btn-outline-success svg{fill:#007aff}.btn.btn-outline-success:before{background-color:#007aff}.btn.btn-warning{background-color:#fc0;border-color:#fc0;color:#fff}.btn.btn-warning:before{background-color:#cca300}.btn.btn-warning:active,.btn.btn-warning:active:focus,.btn.btn-warning:focus,.btn.btn-warning:hover{border-color:#cca300}.btn.btn-outline-warning{color:#fc0;border-color:#fc0}.btn.btn-outline-warning p{color:#fc0}.btn.btn-outline-warning svg{fill:#fc0}.btn.btn-outline-warning:before{background-color:#fc0}.btn.btn-danger{background-color:#ff3b30;border-color:#ff3b30}.btn.btn-danger:before{background-color:#fc0d00}.btn.btn-danger:active,.btn.btn-danger:active:focus,.btn.btn-danger:focus,.btn.btn-danger:hover{border-color:#fc0d00}.btn.btn-outline-danger{color:#ff3b30;border-color:#ff3b30}.btn.btn-outline-danger p{color:#ff3b30}.btn.btn-outline-danger svg{fill:#ff3b30}.btn.btn-outline-danger:before{background-color:#ff3b30}.btn.btn-danger.disabled,.btn.btn-outline-danger.disabled,.btn.btn-outline-primary.disabled,.btn.btn-outline-secondary.disabled,.btn.btn-outline-success.disabled,.btn.btn-outline-warning.disabled,.btn.btn-primary.disabled,.btn.btn-secondary.disabled,.btn.btn-success.disabled,.btn.btn-warning.disabled,.btn.disabled,.btn.icon.btn-secondary.disabled,.btn.icon.disabled{background-color:#f2f4f7;border-color:#f2f4f7;color:#ddd;pointer-events:none}.btn.btn-danger.disabled p,.btn.btn-outline-danger.disabled p,.btn.btn-outline-primary.disabled p,.btn.btn-outline-secondary.disabled p,.btn.btn-outline-success.disabled p,.btn.btn-outline-warning.disabled p,.btn.btn-primary.disabled p,.btn.btn-secondary.disabled p,.btn.btn-success.disabled p,.btn.btn-warning.disabled p,.btn.disabled p,.btn.icon.btn-secondary.disabled p,.btn.icon.disabled p{color:#ddd}.btn.btn-danger.disabled svg,.btn.btn-outline-danger.disabled svg,.btn.btn-outline-primary.disabled svg,.btn.btn-outline-secondary.disabled svg,.btn.btn-outline-success.disabled svg,.btn.btn-outline-warning.disabled svg,.btn.btn-primary.disabled svg,.btn.btn-secondary.disabled svg,.btn.btn-success.disabled svg,.btn.btn-warning.disabled svg,.btn.disabled svg,.btn.icon.btn-secondary.disabled svg,.btn.icon.disabled svg{fill:#ddd}.btn.btn-danger p,.btn.btn-primary p,.btn.btn-success p,.btn.btn-warning p{color:#fff}.btn.btn-danger svg,.btn.btn-primary svg,.btn.btn-success svg,.btn.btn-warning svg{fill:#fff}.btn.btn-outline-danger:active,.btn.btn-outline-danger:active:focus,.btn.btn-outline-danger:focus,.btn.btn-outline-danger:hover,.btn.btn-outline-primary:active,.btn.btn-outline-primary:active:focus,.btn.btn-outline-primary:focus,.btn.btn-outline-primary:hover,.btn.btn-outline-success:active,.btn.btn-outline-success:active:focus,.btn.btn-outline-success:focus,.btn.btn-outline-success:hover,.btn.btn-outline-warning:active,.btn.btn-outline-warning:active:focus,.btn.btn-outline-warning:focus,.btn.btn-outline-warning:hover{color:#fff;background:transparent}.btn.btn-danger:active:focus p,.btn.btn-danger:active p,.btn.btn-danger:focus p,.btn.btn-danger:hover p,.btn.btn-outline-danger:active:focus p,.btn.btn-outline-danger:active p,.btn.btn-outline-danger:focus p,.btn.btn-outline-danger:hover p,.btn.btn-outline-primary:active:focus p,.btn.btn-outline-primary:active p,.btn.btn-outline-primary:focus p,.btn.btn-outline-primary:hover p,.btn.btn-outline-success:active:focus p,.btn.btn-outline-success:active p,.btn.btn-outline-success:focus p,.btn.btn-outline-success:hover p,.btn.btn-outline-warning:active:focus p,.btn.btn-outline-warning:active p,.btn.btn-outline-warning:focus p,.btn.btn-outline-warning:hover p,.btn.btn-primary:active:focus p,.btn.btn-primary:active p,.btn.btn-primary:focus p,.btn.btn-primary:hover p,.btn.btn-success:active:focus p,.btn.btn-success:active p,.btn.btn-success:focus p,.btn.btn-success:hover p,.btn.btn-warning:active:focus p,.btn.btn-warning:active p,.btn.btn-warning:focus p,.btn.btn-warning:hover p{color:#fff}.btn.btn-danger:active:focus svg,.btn.btn-danger:active svg,.btn.btn-danger:focus svg,.btn.btn-danger:hover svg,.btn.btn-outline-danger:active:focus svg,.btn.btn-outline-danger:active svg,.btn.btn-outline-danger:focus svg,.btn.btn-outline-danger:hover svg,.btn.btn-outline-primary:active:focus svg,.btn.btn-outline-primary:active svg,.btn.btn-outline-primary:focus svg,.btn.btn-outline-primary:hover svg,.btn.btn-outline-success:active:focus svg,.btn.btn-outline-success:active svg,.btn.btn-outline-success:focus svg,.btn.btn-outline-success:hover svg,.btn.btn-outline-warning:active:focus svg,.btn.btn-outline-warning:active svg,.btn.btn-outline-warning:focus svg,.btn.btn-outline-warning:hover svg,.btn.btn-primary:active:focus svg,.btn.btn-primary:active svg,.btn.btn-primary:focus svg,.btn.btn-primary:hover svg,.btn.btn-success:active:focus svg,.btn.btn-success:active svg,.btn.btn-success:focus svg,.btn.btn-success:hover svg,.btn.btn-warning:active:focus svg,.btn.btn-warning:active svg,.btn.btn-warning:focus svg,.btn.btn-warning:hover svg{fill:#fff}.btn.expand svg{width:0;transition:all .3s}@-webkit-keyframes rotating{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes rotating{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.btn.expand.expand--load svg{width:14px;-webkit-animation:rotating 2s linear infinite;animation:rotating 2s linear infinite}.btn-retry{margin-left:5px;margin-bottom:0}.btn-toolbar{margin-top:15px;margin-bottom:10px}.btn-toolbar>*{margin-right:15px}.btn-toolbar>:last-child{margin-right:0}.btn-toolbar:first-child{margin-top:0}.btn-toolbar:last-child{margin-bottom:-10px}.btn-toolbar.btn-toolbar--center>*{margin-right:auto;margin-left:auto}.btn-group{border-radius:5px;margin-bottom:-10px}.btn-group .btn{margin-right:0;padding:10px 15px;font-weight:500}.btn-group.btn-group--justified{display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;width:100%}.btn-group.btn-group--justified .btn{width:100%}.btn-group.btn-group--icons .btn{padding:7px 8px;line-height:14px}.btn-group.open .dropdown-toggle{box-shadow:none}button:active,button:focus{outline:none}.theme-light .btn-default.focus,.theme-light .btn-default:active:focus,.theme-light .btn-default:focus,.theme-light .open>.dropdown-toggle.btn-default{background-color:#fff}.theme-dark .btn-default.focus,.theme-dark .btn-default:active:focus,.theme-dark .btn-default:focus,.theme-dark .open>.dropdown-toggle.btn-default{background-color:#1c1c1e}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.post__author{margin-bottom:20px}.post__subtitle{font-size:1.5em}.post__image{display:block;margin-bottom:20px}.post__body .entry-content h2,.post__body .entry-content h3,.post__body .entry-content h4,.post__body .entry-content h5,.post__body .entry-content h6,.post__categories{margin-top:20px}.blog__side-bar-title{margin-bottom:20px}.blog__side-bar-item{display:block;margin-bottom:10px}.blog__side-bar-item--horizontal{display:-webkit-flex;display:flex}.blog__side-bar-item--horizontal .blog__side-bar-item-image{width:60px;margin-right:10px}.blog__related-post-title{line-height:1;margin:10px 0 20px;font-size:1.2em}.blog__sidebar-bar-block{margin-bottom:20px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.card{width:100%;padding-bottom:30px;height:100%;border:none;background-color:transparent}.card.card--not-full-height{height:auto}.card-body{padding:30px;height:100%;border-radius:5px}.theme-light .card-body{background-color:#fff}.theme-dark .card-body{background-color:#1c1c1e}.card__title{margin-bottom:30px;text-transform:uppercase;position:relative}.card__title:not(:first-child){margin-top:40px}.card__title .subhead{text-transform:none;font-size:12px;line-height:18px;opacity:.7;margin-top:3px}.card__title *{margin-bottom:0}.card__title h5{font-size:13px}.squared-corner-theme .card-body{border-radius:0}.blocks-with-shadow-theme .card-body{box-shadow:0 10px 30px 1px rgba(0,0,0,.06)}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.catalog-items__wrap{overflow:hidden;width:100%}.catalog-items{width:calc(100% + 30px);display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap}.catalog-item{width:calc(33.3333% - 30px);margin-bottom:30px;margin-right:30px;position:relative}.theme-light .catalog-item{background-color:#fff}.theme-dark .catalog-item{background-color:#1c1c1e}@media screen and (max-width:1500px){.catalog-item{width:calc(33.3333% - 30px)}}@media screen and (max-width:1200px){.catalog-item{width:calc(50% - 30px)}}@media screen and (max-width:992px){.catalog-item{width:calc(100% - 30px)}}.catalog-item__link{padding:20px;display:block}.catalog-item__link:hover{text-decoration:none}.catalog-item__link:hover .catalog-item__title{color:#007aff}.catalog-item__img-wrap{width:100%;height:200px;display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;margin-bottom:30px;overflow:hidden}.catalog-item__img{height:100%;width:auto}.catalog-item__info{position:relative}.catalog-item__title{font-weight:500;font-size:1.5em;transition:all .3s}.catalog-item__description{margin:0;color:#636366;line-height:17px}.catalog-item__price{display:block;font-size:1.5em;font-style:normal}.theme-light .catalog-item__price{color:#48484a}.theme-dark .catalog-item__price{color:#ddd}.catalog-item__old-price{position:absolute;right:-90px;top:36px;line-height:28px;color:#636366;margin:0;text-decoration:line-through}.catalog-item__color{height:10px;width:10px;margin-right:8px;display:inline-block;border-radius:50%;margin-top:10px;border:1px solid #eee}.catalog-item__label{position:absolute;top:-2px;right:20px;width:50px}.catalog-item--rating-widget{padding:.5em 0}.theme-light .catalog-item--rating-widget{color:#48484a}.theme-dark .catalog-item--rating-widget{color:#ddd}.catalog-page-controls{display:-webkit-flex;display:flex;place-content:center;padding:.5em;margin:0 0 1em;background:hsla(0,0%,100%,.7)}.catalog-page-controls .pagination__wrap{margin:0;padding:0}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.checkbox-btn{display:-webkit-flex;display:flex;cursor:pointer}.checkbox-btn:hover .checkbox-btn__checkbox-custom{border-color:#007aff}.checkbox-btn:hover .checkbox-btn__label{color:#007aff}.checkbox-btn.disabled{pointer-events:none;cursor:default}.checkbox-btn.disabled .checkbox-btn__checkbox-custom{transition:0s}.theme-light .checkbox-btn.disabled .checkbox-btn__checkbox-custom{background-color:#fafbfe;border-color:#f2f4f7}.theme-dark .checkbox-btn.disabled .checkbox-btn__checkbox-custom{background-color:#38373f;border-color:#33333a}.checkbox-btn.disabled .checkbox-btn__checkbox-custom svg{fill:#ddd}.checkbox-btn.disabled .checkbox-btn__label{color:#ddd}.checkbox-btn.checkbox-btn--colored .checkbox-btn__checkbox-custom{border-color:#007aff;background-color:#007aff}.checkbox-btn.checkbox-btn--colored .checkbox-btn__checkbox-custom svg{fill:#fff}.checkbox-btn.checkbox-btn--colored.disabled{opacity:.4}.checkbox-btn.checkbox-btn--colored-click .checkbox-btn__checkbox:checked+.checkbox-btn__checkbox-custom,.checkbox-btn.checkbox-btn--colored.disabled .checkbox-btn__checkbox-custom{border-color:#007aff;background-color:#007aff}.checkbox-btn.checkbox-btn--colored-click .checkbox-btn__checkbox:checked+.checkbox-btn__checkbox-custom svg{fill:#fff}.theme-light .checkbox-btn.checkbox-btn--colored-click.disabled .checkbox-btn__checkbox:checked+.checkbox-btn__checkbox-custom{background-color:#fafbfe;border-color:#f2f4f7}.theme-dark .checkbox-btn.checkbox-btn--colored-click.disabled .checkbox-btn__checkbox:checked+.checkbox-btn__checkbox-custom{background-color:#38373f;border-color:#33333a}.checkbox-btn.checkbox-btn--colored-click.disabled .checkbox-btn__checkbox:checked+.checkbox-btn__checkbox-custom svg{fill:#ddd}.checkbox-btn.checkbox-btn--button{background:#007aff;min-width:150px;color:#fff;height:24px;border-radius:4px;transition:all .3s;padding:0 6px;width:100%}.checkbox-btn.checkbox-btn--button .checkbox-btn__label{color:#fff}.checkbox-btn.checkbox-btn--button .checkbox-btn__checkbox-custom{display:none}.checkbox-btn.checkbox-btn--button .checkbox-btn__label-svg{margin:auto 4px auto auto;height:16px;line-height:1}.checkbox-btn.checkbox-btn--button .checkbox-btn__label-svg svg{fill:#fff;width:14px;height:14px}.checkbox-btn.checkbox-btn--button .checkbox-btn__label-svg .checkbox-btn__label-check{display:none}.checkbox-btn.checkbox-btn--button .checkbox-btn__checkbox:checked~.checkbox-btn__label-svg .checkbox-btn__label-check{display:block}.checkbox-btn.checkbox-btn--button .checkbox-btn__checkbox:checked~.checkbox-btn__label-svg .checkbox-btn__label-uncheck{display:none}.checkbox-btn.checkbox-btn--button .checkbox-btn__label{margin:auto auto auto 0;padding:0}.checkbox-btn.checkbox-btn--button:hover{background:#0062cc}.checkbox-btn.checkbox-btn--button:hover .checkbox-btn__label{color:#fff}.checkbox-btn.checkbox-btn--button.disabled{opacity:.4}.checkbox-btn.checkbox-btn--button.disabled .checkbox-btn__label{color:#fff}.checkbox-btn__checkbox{display:none}.checkbox-btn__checkbox-custom{position:absolute;width:18px;height:18px;border-radius:3px}.theme-light .checkbox-btn__checkbox-custom{border:1px solid #ddd}.theme-dark .checkbox-btn__checkbox-custom{border:1px solid #605f7b}.checkbox-btn__checkbox-custom svg{transition:all .3s;opacity:0;height:16px;width:16px;fill:#007aff;margin-top:-6px}.checkbox-btn__label{line-height:18px;padding-left:28px;padding-top:2px}.theme-light .checkbox-btn__label{color:#48484a}.theme-dark .checkbox-btn__label{color:#ddd}.checkbox-btn__checkbox-custom,.checkbox-btn__label{display:inline-block;vertical-align:middle;transition:all .3s}.checkbox-btn__checkbox:checked+.checkbox-btn__checkbox-custom svg{opacity:1}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.collapse__wrapper.opened .collapse__title p,.collapse__wrapper.opening .collapse__title p{color:#636366}.collapse__wrapper.opened .collapse__title svg,.collapse__wrapper.opening .collapse__title svg{fill:#636366}.collapse__wrapper.boxed{border:1px solid #ddd;margin-top:-1px}.collapse__wrapper.boxed .collapse__title{background-color:#f2f4f7;border-bottom:1px solid #ddd;padding:8px 15px}.collapse__wrapper.boxed .collapse__title p{color:#444}.collapse__wrapper.boxed .collapse__title svg{display:none}.collapse__wrapper.boxed .collapse__content{padding:16px 20px 20px 15px}.collapse__wrapper.boxed.closed .collapse__title{border-bottom:none}.collapse__wrapper.with-shadow{margin-bottom:10px;box-shadow:none}.collapse__wrapper.with-shadow .collapse__content{padding:15px 20px 0 25px;max-width:1320px}.theme-light .collapse__wrapper.with-shadow .collapse__content{color:#48484a}.theme-dark .collapse__wrapper.with-shadow .collapse__content{color:#ddd}.collapse__wrapper.with-shadow .collapse__title{padding:15px 25px;box-shadow:0 1px 5px 0 rgba(0,0,0,.05);transition:background-color .3s}.theme-light .collapse__wrapper.with-shadow .collapse__title{color:#48484a}.theme-dark .collapse__wrapper.with-shadow .collapse__title{color:#ddd}.theme-light .collapse__wrapper.with-shadow .collapse__title:hover{background-color:#fafbfe}.theme-dark .collapse__wrapper.with-shadow .collapse__title:hover{background-color:#38373f}.collapse__wrapper.with-shadow .collapse__title svg{display:none}.collapse__wrapper.with-shadow .collapse__title p svg{display:block;top:calc(50% - 7px);transition:all .3s}.theme-light .collapse__wrapper.with-shadow .collapse__title p svg{fill:#48484a}.theme-dark .collapse__wrapper.with-shadow .collapse__title p svg{fill:#ddd}.collapse__wrapper.with-shadow.opened .collapse__title p,.collapse__wrapper.with-shadow.opening .collapse__title p{color:inherit}.collapse__wrapper.with-shadow.opened .collapse__title svg,.collapse__wrapper.with-shadow.opening .collapse__title svg{fill:inherit;-webkit-transform:rotate(180deg);transform:rotate(180deg)}.collapse__wrapper.closing .collapse__content{padding-top:0;padding-bottom:0;transition:all .3s}.collapse__content,.collapse__title{padding-left:20px;padding-right:15px}.collapse__title{padding-bottom:10px;padding-top:6px;cursor:pointer;position:relative;background:transparent;display:block;width:100%;border:none;text-align:left}.collapse__title p{font-weight:700;margin-top:0;transition:all .3s;position:relative}.collapse__title p svg{right:0;left:auto;display:none}.collapse__title svg{position:absolute;left:0;width:14px;height:14px;top:8px;transition:all .3s}.theme-light .collapse__title svg{fill:#48484a}.theme-dark .collapse__title svg{fill:#ddd}.collapse__content{padding-bottom:14px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.facet-list-title{font-weight:500;text-transform:capitalize;font-size:20px}.hierarchical-facets .hierarchical-facets{margin-left:10px}.hierarchical-facets__item{padding:5px 0;display:block}.hierarchical-facets__item--checked{color:#999}.multiple-selection-facets label,.single-selection-facets label{width:100%}.range-selection-facet{margin-bottom:20px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.empty__fig{text-align:center;margin:20px auto}.empty__img{width:150px;margin:0 auto}.empty__desc{text-align:center}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.form{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap}.form input,.form textarea{width:100%;padding:5px 10px;font-size:12px;height:32px;transition:border .3s;background:transparent}.form input::-webkit-input-placeholder,.form textarea::-webkit-input-placeholder{color:#636366}.form input:-moz-placeholder,.form input::-moz-placeholder,.form textarea:-moz-placeholder,.form textarea::-moz-placeholder{color:#636366}.form input:-ms-input-placeholder,.form textarea:-ms-input-placeholder{color:#636366}.theme-light .form input,.theme-light .form textarea{border:1px solid #f2f4f7;color:#48484a}.theme-dark .form input,.theme-dark .form textarea{border:1px solid #33333a;color:#ddd}.theme-light .form input[disabled],.theme-light .form textarea[disabled]{background:#f2f4f7}.theme-dark .form input[disabled],.theme-dark .form textarea[disabled]{background:#2c2c2e}.theme-light .form input[disabled]:active,.theme-light .form input[disabled]:focus,.theme-light .form textarea[disabled]:active,.theme-light .form textarea[disabled]:focus{border-color:#eff1f5}.theme-dark .form input[disabled]:active,.theme-dark .form input[disabled]:focus,.theme-dark .form textarea[disabled]:active,.theme-dark .form textarea[disabled]:focus{border-color:#333246}.form input:active,.form input:focus,.form textarea:active,.form textarea:focus{outline:none;border-color:#007aff}.form textarea{min-height:85px}.form.form--horizontal .form__form-group{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap}.form.form--horizontal .form__form-group-field{width:calc(100% - 80px);padding-left:10px;margin-left:80px}.form.form--horizontal .form__form-group-label{width:80px;max-height:32px;line-height:18px;margin:auto 0}.form.form--horizontal .form__form-group-label+.form__form-group-field{margin-left:0}.form.form--horizontal .form__form-group-description{margin-left:90px}.form.form--horizontal .form__button-toolbar{margin-left:0}.form.form--horizontal .form__form-group-input-wrap--error-above{margin-bottom:15px}.form.form--horizontal .form__form-group-input-wrap--error-above .form__form-group-error{top:-28px}@media screen and (min-width:480px){.form.form--horizontal .form__form-group-label{width:120px}.form.form--horizontal .form__form-group-field{width:calc(100% - 120px);margin-left:120px;padding-left:20px}.form.form--horizontal .form__button-toolbar,.form.form--horizontal .form__form-group-description{margin-left:140px}}.form.form--preview{display:-webkit-flex;display:flex}.form.form--preview>div:nth-child(2){margin-right:50px}.form.form--preview .form__form-group{margin-bottom:10px;width:auto;min-height:18px}.form.form--preview p{margin-bottom:10px}.form.form--justify{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap}.form.form--justify .form__form-group{width:33.3333%}.form.form--justify .form__button-toolbar{width:100%}.form__half{width:calc(50% - 15px);height:100%}.form__half:first-child{margin-right:30px}.form__half .form__button-toolbar{float:right}@media screen and (max-width:1200px){.form__half{width:100%;margin-right:0}}.form__form-group{margin-bottom:20px;width:100%;position:relative}.form__form-group--address input:last-child{margin-left:15px;width:70%}.form__form-group-field{width:100%;display:-webkit-flex;display:flex;margin:auto}.form__form-group-label{margin-bottom:4px;display:inline-block}.theme-light .form__form-group-label{color:#48484a}.form__form-group-label span,.theme-dark .form__form-group-label{color:#ddd}.form__form-group-button{padding:6px;height:32px;cursor:pointer;transition:all .3s}.theme-light .form__form-group-button{background:#f2f4f7;border:1px solid #f2f4f7}.theme-dark .form__form-group-button{background:#33333a;border:1px solid #33333a}.form__form-group-button svg{fill:#636366;width:18px;height:18px;transition:all .3s}.form__form-group-button.active{background:#007aff;border:1px solid #007aff}.form__form-group-button.active svg{fill:#fff}.form__form-group-file label{border-radius:2px;line-height:18px;font-size:12px;padding:4px 20px;cursor:pointer;transition:all .3s;text-align:center}.theme-light .form__form-group-file label{border:1px solid #f2f4f7;color:#48484a}.theme-dark .form__form-group-file label{border:1px solid #33333a;color:#ddd}.theme-light .form__form-group-file label:hover{background:#f2f4f7}.theme-dark .form__form-group-file label:hover{background:#33333a}.form__form-group-file span{padding-left:10px}.form__form-group-file input{display:none}.form__form-group-icon{padding:6px;height:32px}.theme-light .form__form-group-icon{background:#f2f4f7;border:1px solid #f2f4f7}.theme-dark .form__form-group-icon{background:#33333a;border:1px solid #33333a}.form__form-group-icon svg{fill:#636366;width:18px;height:18px;transition:all .3s}.form__form-group-description{font-size:10px;color:#636366;line-height:13px;margin-top:2px}.form__button-toolbar{margin-top:10px}.form__form-group-input-wrap{width:100%}.form__form-group-error{font-size:10px;line-height:13px;color:#ad4444;margin-bottom:-5px;display:block;margin-top:5px}.form__form-group-input-wrap--error-above .form__form-group-error{position:absolute;margin:0;right:0;top:0;padding:5px 10px;background:#ffbcbc;border-radius:3px}.form__form-group-input-wrap--error-above .form__form-group-error:after{content:"";position:absolute;right:10px;bottom:-8px;border:4px solid transparent;border-top-color:#ffbcbc}.form__form-group-date-cvc{display:-webkit-flex;display:flex;width:100%}.form__form-group-date-cvc .form__form-group-date{width:100%;margin-right:20px}.form__form-group-date-cvc .form__form-group-cvc{max-width:280px;width:100%}@media screen and (max-width:767px){.form__form-group-date-cvc{-webkit-flex-wrap:wrap;flex-wrap:wrap}.form__form-group-date-cvc .form__form-group-date{margin-right:0}.form__form-group-date-cvc .form__form-group-cvc{max-width:100%}}.form__form-group-id-category{width:100%;display:-webkit-flex;display:flex}.form__form-group-id-category .form__form-group-id{min-width:100px;width:40%;margin-right:20px}@media screen and (max-width:767px){.form__form-group-id-category{-webkit-flex-wrap:wrap;flex-wrap:wrap}.form__form-group-id-category .form__form-group-id{margin-right:0;width:100%}}.form__form-group-price-discount{width:100%;display:-webkit-flex;display:flex;margin-bottom:20px}.form__form-group-price-discount>div{margin-bottom:0}.form__form-group-price-discount .form__form-group-price{margin-right:20px}@media screen and (max-width:767px){.form__form-group-price-discount{-webkit-flex-wrap:wrap;flex-wrap:wrap}.form__form-group-price-discount .form__form-group-price{margin-right:0}}.form__form-group-columns{width:100%;display:-webkit-flex;display:flex}.form__form-group-col-right{margin-left:10px}.form__form-group-col-left{margin-right:10px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.load{height:100vh;width:100vw;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;position:fixed;background:#fff;z-index:1000}.load.contained{min-height:60vh}.load.contained,.load.small{width:100%;height:100%;position:relative}.load.small{min-height:50px}.load+div{height:100vh;overflow:hidden}.load.loaded{-webkit-animation:loaded .5s ease;animation:loaded .5s ease}.load__icon{-webkit-animation:load 2s linear infinite;animation:load 2s linear infinite;margin:auto;width:32px;height:32px}.load__icon-wrap{margin:auto}@-webkit-keyframes load{0%{-webkit-transform:rotate(0deg) scale(2);transform:rotate(0deg) scale(2)}to{-webkit-transform:rotate(1turn) scale(2);transform:rotate(1turn) scale(2)}}@keyframes load{0%{-webkit-transform:rotate(0deg) scale(2);transform:rotate(0deg) scale(2)}to{-webkit-transform:rotate(1turn) scale(2);transform:rotate(1turn) scale(2)}}@-webkit-keyframes loaded{0%{opacity:1}to{opacity:0}}@keyframes loaded{0%{opacity:1}to{opacity:0}}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.pagination__link{background:transparent;border:none;color:#636366;height:28px;font-size:10px;padding:5px;text-align:center;min-width:28px;transition:all .3s;margin-right:2px}.pagination__link:hover{color:#007aff;background:transparent}.pagination__link:active,.pagination__link:focus{box-shadow:none}.pagination__link svg{transition:.3s}.pagination__link.pagination__link--arrow{border-radius:50%!important;width:28px;height:28px}.theme-light .pagination__link.pagination__link--arrow{background:#f2f4f7}.theme-dark .pagination__link.pagination__link--arrow{background:#33333a}.pagination__link.pagination__link--arrow:hover{background:#007aff}.pagination__link.pagination__link--arrow:hover svg{fill:#fff}.pagination__item.active .pagination__link{background-color:transparent;font-weight:700}.theme-light .pagination__item.active .pagination__link{color:#48484a}.theme-dark .pagination__item.active .pagination__link{color:#ddd}.theme-light .pagination__item.disabled .pagination__link svg{fill:#ddd}.theme-dark .pagination__item.disabled .pagination__link svg{fill:#605f7b}.pagination__link-icon{width:13px;height:13px;fill:#636366}.pagination__wrap{display:-webkit-flex;display:flex;margin-top:15px}.pagination__wrap.pagination__wrap--small{margin-top:0;display:block}.pagination-info{color:#636366;font-size:12px;margin:auto 0 auto 10px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.product-gallery{max-width:440px;width:100%}.product-gallery__current-img{max-width:440px;height:440px;display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;overflow:hidden;margin-bottom:10px}.theme-light .product-gallery__current-img{border:1px solid #eff1f5}.theme-dark .product-gallery__current-img{border:1px solid #333246}.product-gallery__current-img img{height:100%;width:auto}.product-gallery__img-preview,.product_gallery__gallery{display:-webkit-flex;display:flex}.product-gallery__img-preview{width:80px;height:80px;overflow:hidden;-webkit-justify-content:center;justify-content:center;cursor:pointer;margin-right:10px;padding:0;background:transparent}.theme-light .product-gallery__img-preview{border:1px solid #eff1f5}.theme-dark .product-gallery__img-preview{border:1px solid #333246}.product-gallery__img-preview:last-child{margin-right:0}.product-gallery__img-preview img{height:80px}@media screen and (max-width:1199px){.product-gallery{margin:auto}}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.radio-btn{display:inline-block;cursor:pointer;padding-right:20px}.radio-btn:last-child{padding-right:0}.radio-btn:hover .radio-btn__radio-custom{border-color:#007aff}.radio-btn:hover .radio-btn__label{color:#007aff}.radio-btn.disabled{pointer-events:none;cursor:default;opacity:.4}.radio-btn.radio-btn--colored .radio-btn__radio-custom{border:2px solid #007aff}.radio-btn.radio-btn--colored-click .radio-btn__radio:checked+.radio-btn__radio-custom{background:#007aff}.radio-btn.radio-btn--colored-click .radio-btn__radio:checked+.radio-btn__radio-custom:before{background:#fff}.radio-btn.radio-btn--colored-click.disabled .radio-btn__radio:checked+.radio-btn__radio-custom{background:transparent}.radio-btn.radio-btn--colored-click.disabled .radio-btn__radio:checked+.radio-btn__radio-custom:before{background:#007aff}.radio-btn.radio-btn--button{background:#007aff;min-width:150px;color:#fff;height:24px;border-radius:4px;transition:all .3s;display:-webkit-flex;display:flex;padding:0 6px;width:100%}.radio-btn.radio-btn--button .radio-btn__radio-custom{display:none}.radio-btn.radio-btn--button .radio-btn__label-svg{margin:auto 4px auto auto;height:16px;line-height:1}.radio-btn.radio-btn--button .radio-btn__label-svg svg{fill:#fff;width:14px;height:14px}.radio-btn.radio-btn--button .radio-btn__label-svg .radio-btn__label-check{display:none}.radio-btn.radio-btn--button .radio-btn__radio:checked~.radio-btn__label-svg .radio-btn__label-check{display:block}.radio-btn.radio-btn--button .radio-btn__radio:checked~.radio-btn__label-svg .radio-btn__label-uncheck{display:none}.radio-btn.radio-btn--button .radio-btn__label{margin:auto auto auto 0;padding:0;color:#fff}.radio-btn.radio-btn--button:hover{background:#0062cc}.radio-btn.radio-btn--button:hover .radio-btn__label{color:#fff}.radio-btn__radio{display:none}.radio-btn__radio-custom{width:18px;height:18px;border-radius:50%;position:relative;transition:all .3s}.theme-light .radio-btn__radio-custom{border:1px solid #ddd}.theme-dark .radio-btn__radio-custom{border:1px solid #605f7b}.radio-btn__radio:checked+.radio-btn__radio-custom{border-color:#007aff}.radio-btn__label{line-height:18px;padding-left:9px;transition:all .3s}.theme-light .radio-btn__label{color:#48484a}.theme-dark .radio-btn__label{color:#ddd}.radio-btn__label,.radio-btn__radio-custom{display:inline-block;vertical-align:middle}.radio-btn__radio:checked+.radio-btn__radio-custom:before{content:"";display:block;position:absolute;width:6px;height:6px;top:calc(50% - 3px);left:calc(50% - 3px);background:#007aff;border-radius:50%}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.react-select{width:100%;height:32px;font-size:12px}.react-select__control{height:32px;border-radius:0!important;transition:all .3s}.theme-light .react-select__control{border:1px solid #f2f4f7;background-color:#fff}.theme-dark .react-select__control{border:1px solid #33333a;background-color:#1c1c1e}.react-select__control.react-select__control--is-focused,.react-select__control:hover{border-color:#007aff!important;box-shadow:none;background:transparent}.react-select__input{height:30px}.react-select__indicator-separator{display:none}.react-select__clear-indicator,.react-select__dropdown-indicator{cursor:pointer}.theme-light .react-select__clear-indicator,.theme-light .react-select__dropdown-indicator{color:#ddd}.theme-dark .react-select__clear-indicator,.theme-dark .react-select__dropdown-indicator{color:#605f7b}.react-select__clear-indicator svg,.react-select__dropdown-indicator svg{height:16px;width:16px}.react-select__multi-value{background-color:transparent;border:1px solid #5ac8fa}.react-select__multi-value .react-select__multi-value__label{border-right:1px solid #5ac8fa;padding:3px 6px}.theme-light .react-select__multi-value .react-select__multi-value__label{color:#48484a}.theme-dark .react-select__multi-value .react-select__multi-value__label{color:#ddd}.react-select__multi-value__remove{opacity:.8;transition:.3s;cursor:pointer}.theme-light .react-select__multi-value__remove{color:#48484a}.theme-dark .react-select__multi-value__remove{color:#ddd}.theme-light .react-select__multi-value__label,.theme-light .react-select__multi-value__remove{background:#fff}.theme-dark .react-select__multi-value__label,.theme-dark .react-select__multi-value__remove{background:#1c1c1e}.theme-light .react-select__single-value{color:#48484a}.theme-dark .react-select__single-value{color:#ddd}.react-select__menu{box-shadow:none!important;margin-top:6px;margin-bottom:6px}.react-select__menu-list{top:calc(100% + 1px);border-radius:0;box-shadow:none;font-size:12px;-webkit-animation:open .3s ease-in-out;animation:open .3s ease-in-out;overflow:hidden}.theme-light .react-select__menu-list{background:#fff;border:1px solid #f2f4f7}.theme-dark .react-select__menu-list{background:#1c1c1e;border:1px solid #33333a}@-webkit-keyframes open{0%{max-height:0}to{max-height:200px}}@keyframes open{0%{max-height:0}to{max-height:200px}}.react-select__option{transition:all .3s;border-radius:0;display:-webkit-flex;display:flex;cursor:pointer;padding:8px 10px}.theme-light .react-select__option{background:#fff;color:#48484a}.theme-dark .react-select__option{background:#1c1c1e;color:#ddd}.theme-light .react-select__option.react-select__option--is-focused{background:#fafbfe}.theme-dark .react-select__option.react-select__option--is-focused{background:#38373f}.react-select__color{display:block;border-radius:50%;height:10px;width:10px;margin:auto 0 auto 5px}.form__select-color{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;max-width:84px;margin-right:40px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.search-result{padding:10px 0;border-bottom:1px solid #e7e7e7}.search-result:last-child{margin-bottom:25px}.search-result:first-child{margin-top:10px}.search-result__title{display:block;font-size:16px;font-weight:500;color:#5ac8fa}.search-result__link{margin:0}.search-result__link a{color:#007aff}.search-result__link a:hover{color:#0062cc}.search-result__preview{max-width:980px;margin-top:5px;color:#636366}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.search-result{display:-webkit-flex;display:flex;place-content:center space-between}.search-result__img{width:60px;height:60px;object-fit:cover}.search-result__content{-webkit-flex:1 1;flex:1 1;padding:0 0 0 10px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.slider{position:relative}.slider__max,.slider__min{color:#636366;font-size:12px;position:absolute;top:-16px}.slider__max{right:0}.rc-slider{margin-top:45px}.rc-slider .rc-slider-dot{opacity:0}.rc-slider .rc-slider-rail,.rc-slider .rc-slider-track{height:8px}.rc-slider .rc-slider-track{background:#99caff}.rc-slider .rc-slider-handle{border:none;background:#007aff;width:18px;height:18px}.rc-slider .rc-slider-mark{top:14px}.rc-slider .rc-slider-mark .rc-slider-mark-text,.rc-slider .rc-slider-mark .rc-slider-mark-text-active{color:#bbb;font-size:10px}.rc-slider-tooltip{padding-bottom:2px}.rc-slider-tooltip .rc-slider-tooltip-inner{background-color:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.09);color:#646777;font-size:12px;line-height:12px;padding:4px;height:20px;min-width:28px;border-radius:0}.rc-slider-tooltip.rc-slider-tooltip-placement-top .rc-slider-tooltip-arrow{border-top-color:#fff}.rc-slider-tooltip.rc-slider-tooltip-hidden{display:block}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.tabs{overflow:auto}.tabs .tabs__wrap{min-width:-webkit-min-content;min-width:-moz-min-content;min-width:min-content}.tabs .nav-tabs{-webkit-flex-wrap:nowrap;flex-wrap:nowrap}.tabs .nav-tabs li .nav-link{padding:10px 20px;margin-right:0;transition:background-color .3s;cursor:pointer}.theme-light .tabs .nav-tabs li .nav-link{color:#48484a}.theme-dark .tabs .nav-tabs li .nav-link{color:#ddd}.tabs .nav-tabs li .nav-link:active,.tabs .nav-tabs li .nav-link:focus,.tabs .nav-tabs li .nav-link:hover{outline:none}.theme-light .tabs .nav-tabs li .nav-link:active,.theme-light .tabs .nav-tabs li .nav-link:focus,.theme-light .tabs .nav-tabs li .nav-link:hover{background-color:#fafbfe;border-color:#fafbfe #fafbfe #ddd}.theme-dark .tabs .nav-tabs li .nav-link:active,.theme-dark .tabs .nav-tabs li .nav-link:focus,.theme-dark .tabs .nav-tabs li .nav-link:hover{background-color:#38373f;border-color:#38373f #38373f #ddd}.tabs .nav-tabs li .nav-link.active,.tabs .nav-tabs li .nav-link.active:focus,.tabs .nav-tabs li .nav-link.active:hover{background-color:transparent}.theme-light .tabs .nav-tabs li .nav-link.active,.theme-light .tabs .nav-tabs li .nav-link.active:focus,.theme-light .tabs .nav-tabs li .nav-link.active:hover{border-color:#ddd #ddd #fff;color:#48484a}.theme-dark .tabs .nav-tabs li .nav-link.active,.theme-dark .tabs .nav-tabs li .nav-link.active:focus,.theme-dark .tabs .nav-tabs li .nav-link.active:hover{border-color:#ddd #ddd #1c1c1e;color:#ddd}.tabs .nav-tabs li.disabled .nav-link{color:#636366}.tabs .tab-pane{padding-top:20px}.tabs.tabs--bordered-bottom .nav-tabs li .nav-link{border-color:transparent;border-bottom:1px solid transparent;padding-bottom:11px}.tabs.tabs--bordered-bottom .nav-tabs li .nav-link.active,.tabs.tabs--bordered-bottom .nav-tabs li .nav-link.active:focus,.tabs.tabs--bordered-bottom .nav-tabs li .nav-link.active:hover{border-radius:0;border-color:transparent;border-bottom:2px solid #007aff;padding-bottom:10px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.account{height:100vh;width:100%;min-height:100vh;display:-webkit-flex;display:flex;overflow-y:auto}.theme-light .account{background:#f2f4f7}.theme-dark .account{background:#2c2c2e}.account__wrapper{margin:auto;padding:10px}.account__card{padding:50px 60px;max-width:520px;width:100%}.account__card,.theme-light .account__card{background-color:#fff}.theme-dark .account__card{background-color:#1c1c1e}.account__btns{display:-webkit-flex;display:flex;width:100%}.account__btn{width:100%;margin-right:0}@media (min-width:426px){.account__sign-in-btn{margin-right:5px}}@media (min-width:426px){.account__register-btn{margin-left:5px}}.account__avatar{height:64px;width:64px;border-radius:50%;overflow:hidden}.account__name{text-transform:uppercase;font-weight:700;margin-top:5px}.account__name,.account__sub{font-size:11px;line-height:15px}.account__sub{margin-top:0;margin-bottom:10px;color:#636366}.account__forgot-password{position:absolute;font-size:11px;line-height:15px;bottom:-18px;right:0}.account__forgot-password a{color:#5ac8fa}.account__forgot-password a:hover{color:#29b8f9;text-decoration:none}.form__form-group--forgot{margin-bottom:40px}.account__or{text-align:center;margin-top:35px;margin-bottom:20px;position:relative}.account__or:after,.account__or:before{content:"";height:1px;width:calc(50% - 90px);background:#ddd;position:absolute;top:10px}.account__or:before{left:0}.account__or:after{right:0}.account__head{margin-bottom:30px;padding-left:10px;border-left:4px solid #5ac8fa}.account__have-account{text-align:center;margin-top:20px}.account__have-account a{color:#5ac8fa;transition:all .3s}.account__have-account a:hover{color:#29b8f9;text-decoration:none}@media screen and (max-width:520px){.account__card{padding:35px 30px}}@media screen and (max-width:425px){.account__btns{-webkit-flex-wrap:wrap;flex-wrap:wrap}}.login-view__logo{text-align:center;margin-bottom:40px}.login-view__logo-img{max-width:85%}.address-card__action{display:block}.address-card__action--remove{color:#ff3b30}.address-display__default{margin-bottom:5px}.address-options-btn{margin-top:5px}.email-confirmation{text-align:center}.email-confirmation__buttons{display:-webkit-flex;display:flex;margin-top:50px;padding-bottom:65px;-webkit-justify-content:center;justify-content:center}.email-confirmation__buttons a{margin:0 15px 20px}.email-confirmation__icon{margin:0 auto;position:relative}.email-confirmation__mail{width:120px;opacity:.16;height:120px;fill:#aeaeb2}.email-confirmation__check{top:0;left:50%;width:40px;height:40px;margin-left:30px;position:absolute;fill:#007aff}.email-confirmation__title{margin-bottom:15px;color:#aeaeb2}.email-confirmation__sub{color:#aeaeb2;font-size:18px;line-height:24px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.cart__preview-img{width:50px;height:45px;border:1px solid #f0f0f0;display:inline-block;overflow:hidden;text-align:center;padding:5px;position:absolute;top:8px}.cart__preview-img img{height:100%;width:auto;max-width:100%}.cart__product-name,.cart__product-name--sm{padding-left:60px;display:block}.cart__product-name{min-width:400px}.cart__table tbody td{padding:20px 10px;position:relative}.cart__summary-table .cart__quantity-display{font-weight:700}.cart__table-btn{background:transparent;border:none;line-height:14px;padding:0 0 0 20px;position:relative;color:#636366;cursor:pointer;transition:all .3s}.cart__table-btn svg{height:16px;width:16px;position:absolute;top:-2px;left:0;fill:#636366;transition:all .3s}.cart__table-btn:hover{color:#fc0d00}.cart__table-btn:hover svg{fill:#fc0d00}.cart__sub-total{margin-top:20px;font-weight:700}.cart__deliveries{margin-top:20px}.cart__delivery-field{-webkit-flex-wrap:wrap;flex-wrap:wrap}.cart__deliveries-title{font-weight:500}.cart__delivery{margin-right:50px;margin-bottom:10px}.cart__delivery:last-child{margin-right:0}.cart__delivery>label{margin-bottom:0}.cart__delivery-price,.cart__delivery-time{font-size:10px;line-height:13px;margin:0;padding-left:27px}.cart__delivery-time{color:#636366;margin-bottom:8px}.cart__total{width:100%;font-weight:700;margin-bottom:5px}.cart__quantity-wrapper{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center}.cart__quantity-wrapper .btn{margin-bottom:0}.cart__quantity-wrapper .btn-group,.cart__quantity-wrapper .btn svg{margin:0}.cart__quantity-wrapper .btn-toolbar{margin-top:0;margin-bottom:0}.cart__quantity-wrapper .btn-toolbar:last-child{margin-bottom:0}.cart__quantity-display{padding:7px 8px;display:-webkit-inline-flex;display:inline-flex}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.not-found{text-align:center;height:100vh;overflow:auto;display:-webkit-flex;display:flex;background:url(/static-assets/app/static/media/404.cb50982a.jpg) no-repeat 50%;background-size:cover}.not-found button{margin:0}.not-found:before{top:0;left:0;right:0;bottom:0;content:"";background:rgba(0,0,0,.4);position:absolute}.not-found__content{margin:auto;padding:10px;position:relative}.not-found .not-found__info{color:#fff;margin-bottom:20px;margin-top:90px}.not-found__image{max-width:500px;width:100%}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.payment{max-width:740px}.payment__credit-card{margin-right:80px}.payment__credit-card:last-child{margin-right:0}.payment-view__login{margin:40px auto 0;max-width:400px}.payment__complete-purchase-btn{width:100%}.payment__complete-purchase-btn[disabled]{background-color:#fff!important;color:#595968!important}.order-details__title{font-size:1.2em;margin-bottom:10px;text-transform:uppercase}.order-details__table{margin-bottom:20px}.order-details__th{text-align:right}.order-details__td{padding-left:5px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.product-card{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap}.product-card .product-card__btn-toolbar{margin-bottom:10px}.product-card__info{width:calc(100% - 440px);padding-left:42px}@media screen and (max-width:1199px){.product-card__info{width:100%;padding-left:0;padding-top:35px}}.product-card__not-in-stock,.product-card__wish-btn{display:block;padding:10px 0;font-size:14px;height:42px;background:transparent;border:none;cursor:pointer;transition:all .3s}.product-card__not-in-stock{cursor:default}.product-card__wish-btn{color:#5ac8fa}.product-card__wish-btn svg{height:14px;fill:#5ac8fa;transition:all .3s}.product-card__wish-btn:hover{color:#29b8f9}.product-card__wish-btn:hover svg{fill:#29b8f9}.product-card__title{font-weight:700;font-size:24px;margin-bottom:10px}.product-card__rate{display:-webkit-flex;display:flex;margin-bottom:30px}.product-card__rate svg{fill:#fc0;height:14px;width:14px}.product-card__link{font-size:12px;color:#5ac8fa;line-height:16px;display:block;margin-left:5px}.product-card__link:hover{color:#29b8f9;text-decoration:none}.product-card__price{font-size:36px;margin-bottom:25px}.product-card__old-price{font-size:24px;color:#636366;text-decoration:line-through}.product-card__form{margin-top:20px}.product-card__form-label{font-weight:500}.rating-widget__header{display:-webkit-flex;display:flex;place-content:center space-between}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.profile__card{height:100%;padding:0}.theme-light .profile__card{background-color:#fff}.theme-dark .profile__card{background-color:#1c1c1e}.profile__card .nav-item{text-transform:uppercase;font-weight:500}.profile__card .tab-content{padding:0 30px 40px}.profile__card--calendar .rbc-toolbar{-webkit-flex-wrap:nowrap!important;flex-wrap:nowrap!important}.profile__information{padding:30px 40px;display:-webkit-flex;display:flex}.theme-light .profile__information{border-bottom:1px solid #eff1f5}.theme-dark .profile__information{border-bottom:1px solid #333246}@media screen and (max-width:320px){.profile__information{-webkit-align-items:center;align-items:center}}@media screen and (max-width:320px){.profile__information,.profile__information .profile__data{width:100%;-webkit-flex-direction:column;flex-direction:column}.profile__information .profile__data{display:-webkit-flex;display:flex;text-align:center;padding:0}}.profile__stats{display:-webkit-flex;display:flex;-webkit-justify-content:space-around;justify-content:space-around}.profile__stat{text-align:center;padding-top:5px;padding-bottom:15px}.profile__stat-number{color:#5ac8fa;font-weight:700;font-size:20px;line-height:24px;margin:0}.profile__stat-title{margin:0;color:#636366;font-size:12px;line-height:14px}.profile__name{font-weight:900;text-transform:uppercase;margin:0;line-height:18px}.profile__work{font-weight:500;margin-bottom:10px;margin-top:0;opacity:.6;line-height:18px}.profile__contact{margin-top:0;margin-bottom:5px;line-height:18px}.profile__btn{margin-top:10px;margin-bottom:0;padding:8px 15px}
+
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */.landing .container{transition:.3s}@media (min-width:576px){.landing .container{max-width:540px}}@media (min-width:768px){.landing .container{max-width:720px}}@media (min-width:992px){.landing .container{max-width:960px}}@media (min-width:1200px){.landing .container{max-width:1140px}}.landing__btn{background-color:#fff;box-shadow:0 20px 30px 0 rgba(89,181,210,.31);color:#2c86a2;font-size:14px;font-weight:500;line-height:14px;border-radius:23px;height:46px;padding:10px 30px;transition:.3s;white-space:nowrap;border:none}.landing__btn:hover{color:#2c86a2;background:#f2f2f2;box-shadow:0 5px 15px 0 rgba(89,181,210,.5)}.landing__btn.landing__btn--header{display:inline-block;margin:0 15px 20px;-webkit-align-items:center;align-items:center;width:auto;padding:16px 30px}.landing__btn.landing__btn--feedback{display:inline-block;width:174px;height:50px;padding:16px 30px;line-height:20px}.landing__input{display:inline-block;height:50px;width:100%;margin-top:3px;padding:15px 20px;border:none;border-radius:30px;font-size:14px;line-height:49px;font-family:inherit;background:#fff;opacity:.6;outline:none}.landing__label{font-size:18px;line-height:30px;text-align:left;width:100%;color:#577687;margin-bottom:40px}.landing__label.landing__label--feedback-name{max-width:380px;margin-right:29px}@media screen and (max-width:992px){.landing__label.landing__label--feedback-name{max-width:300px;margin-right:20px}}@media screen and (max-width:768px){.landing__label.landing__label--feedback-name{display:block;width:100%;margin-left:auto;margin-right:auto}}.landing__label.landing__label--feedback-email{max-width:420px;margin-right:44px}@media screen and (max-width:992px){.landing__label.landing__label--feedback-email{max-width:300px;margin-right:20px}}@media screen and (max-width:768px){.landing__label.landing__label--feedback-email{display:block;width:100%;margin-left:auto;margin-right:auto}}.landing__btn--gradient{background:linear-gradient(228deg,rgba(127,244,222,.95),#38c7e1);color:#fff}.landing__btn--gradient:hover{background:linear-gradient(228deg,rgba(104,242,216,.95),#22c1de);color:#fff}.landing__content-wrapper{padding:50px 0;background:#f2f4f7}.landing__home-page .landing__menu{width:100%;position:absolute}.landing__home-page .landing__content-wrapper{background:inherit;padding-top:0}.landing__menu-wrap{width:100%;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:30px 0;place-content:center space-between}.landing__menu-logo{display:-webkit-flex;display:flex;max-width:180px}.landing__menu-logo img{max-height:40px}.landing__store-name{color:#333;font-size:2em;margin-left:5px;font-weight:700;text-transform:uppercase}@media screen and (max-width:992px){.landing__menu .topbar__search{display:none}}.landing__menu-deployer{border:none;padding:1em;background:none;border-radius:10px}@media screen and (min-width:992px){.landing__menu-deployer{display:none}}.landing__menu-deployer:hover{background:hsla(0,0%,100%,.5)!important}.landing__menu-nav{margin-left:auto}@media screen and (max-width:992px){.landing__menu-nav{opacity:.3;display:none;background:#fff;position:absolute}.landing__menu-nav.open{top:50px;left:50%;opacity:1;z-index:10;width:225px;padding:50px;display:block;border-radius:50px;margin-left:-112.5px;box-shadow:0 20px 30px 0 rgba(89,181,210,.31)}.landing__menu-nav.open .landing__menu-nav__item{display:block;padding:10px}.landing__menu-nav.open .landing__btn{display:-webkit-flex;display:flex;margin:10px 0 20px;-webkit-align-items:center;align-items:center}}.landing__menu-nav .landing__menu-nav__item{padding:0;border:none;font-size:14px;cursor:pointer;transition:.3s;margin-right:20px;position:relative;background:transparent;color:#244153}.landing__menu-nav .landing__menu-nav__item:hover{color:#0d171e}.landing__menu-nav-new{position:absolute;background:#f06a8e;height:6px;width:6px;border-radius:50%;right:-6px;display:block;top:-3px}.landing__header{padding:200px 0 100px;text-align:center;background-repeat:no-repeat;background-size:cover}.landing .landing__header-title{max-width:680px;line-height:normal;color:#244153;margin:auto auto 20px}.landing__header-img{margin-top:80px;max-width:1000px}.landing .landing__header-subhead{color:#244153;font-size:16px;line-height:1.8;max-width:500px;margin-bottom:30px;margin-right:auto;margin-left:auto}.landing__header-currency-dropdown,.landing__header-locale-dropdown{margin:0 0 0 .5em;padding:0;display:inline-block}.landing__header-currency-dropdown img,.landing__header-locale-dropdown img{width:20px}.landing__header-currency-dropdown>.btn,.landing__header-locale-dropdown>.btn{margin:0;border:none;padding:.5em;background:transparent}.landing__header-currency-dropdown>.btn:active,.landing__header-currency-dropdown>.btn:before,.landing__header-currency-dropdown>.btn:focus,.landing__header-currency-dropdown>.btn:hover,.landing__header-locale-dropdown>.btn:active,.landing__header-locale-dropdown>.btn:before,.landing__header-locale-dropdown>.btn:focus,.landing__header-locale-dropdown>.btn:hover{background-color:#fff}.landing__feedback{margin-top:-260px;padding-top:395px;padding-bottom:340px;text-align:center;background-repeat:no-repeat;background-size:100% 100%}@media screen and (min-width:1200px){.landing__feedback{padding-top:430px}}.landing .landing__feedback-title{max-width:680px;line-height:normal;color:#244153;margin:auto auto 50px}.landing__feedback-form{margin-bottom:20px}.landing__feedback-design-img{max-width:900px;margin-bottom:30px}.landing__feedback-macbook-img{-webkit-transform:translateX(11%);transform:translateX(11%)}.landing .landing__feedback-subhead{color:#244153;font-size:25px;line-height:49px;max-width:1090px;margin:0 auto 70px}.landing__header-subhead-update{text-decoration:underline;font-weight:700;color:#244153}.landing__header-subhead-update:hover{color:#244153}.landing__section--applications{background-repeat:no-repeat;background-size:100% 100%;padding-top:317px;padding-bottom:395px}.landing__applications-title{margin-bottom:35px!important}.landing__applications-description{margin-top:0!important}.applications__decor{position:absolute;width:auto;opacity:.5}@media screen and (max-width:1200px){.applications__decor{display:none}}.applications__decor--point{top:-13px;right:699px}.applications__decor--points-lg{left:105px;top:444px}@media screen and (max-width:1440px){.applications__decor--points-lg{display:none}}.applications__decor--points-md{left:194px;top:970px}@media screen and (max-width:1440px){.applications__decor--points-md{display:none}}.applications__decor--points-sm{left:272px;top:1245px}@media screen and (max-width:1440px){.applications__decor--points-sm{display:none}}.applications__decor--sin-lg{left:237px;top:1150px}.applications__decor--sin-md{top:1054px;left:300px}.applications__decor--plus-lg{top:-65px;right:232px}.applications__decor--plus-md{left:37px;top:33px}.applications__decor--plus-sm{left:-9px;bottom:246px}.applications__slider{display:-webkit-flex;display:flex;-webkit-flex-flow:row wrap;flex-flow:row wrap;-webkit-justify-content:space-between;justify-content:space-between;max-width:845px;margin-left:auto;margin-right:auto;margin-bottom:75px}@media screen and (max-width:768px){.applications__slider{-webkit-justify-content:center;justify-content:center}}.applications__slider-btn{max-width:190px;width:100%;height:32px;padding-bottom:40px;border:none;background:transparent;font-size:18px;line-height:40px;color:#577687}.applications__slider-btn--selected{color:#fff;border-bottom:4px solid #fff;font-weight:700}.applications__slider-body{position:relative;display:-webkit-flex;display:flex;-webkit-flex-flow:column nowrap;flex-flow:column nowrap;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;align-items:center;margin-left:auto;margin-right:auto;max-width:1050px}.applications__slider-body .applications__slider-body-img{width:100%}.applications__slider-body .applications__slider-body-caption{height:190px;max-width:980px;margin-top:-120px;font-size:28px;line-height:42px;text-align:center;letter-spacing:7.78px;text-transform:uppercase;color:#fff}@media screen and (max-width:768px){.applications__slider-body .applications__slider-body-caption{margin-top:0;font-size:22px;line-height:36px;padding-left:10px;padding-right:10px}}.landing__section{margin-bottom:100px;position:relative}.landing__section-background{position:absolute;bottom:-50px;right:0;z-index:-1;width:95%;height:1830px;transition:height .3s}@media screen and (min-width:576px){.landing__section-background{width:85%}}@media screen and (min-width:768px){.landing__section-background{width:75%;height:1200px;bottom:-400px}}@media screen and (min-width:992px){.landing__section-background{width:65%;bottom:0}}@media screen and (min-width:1200px){.landing__section-background{width:55%}}.landing__section-background.landing__section-background--technologies{left:auto;right:0;top:-55px;bottom:auto;width:95%;height:1550px}@media screen and (min-width:480px){.landing__section-background.landing__section-background--technologies{width:85%}}@media screen and (min-width:768px){.landing__section-background.landing__section-background--technologies{width:75%}}@media screen and (min-width:992px){.landing__section-background.landing__section-background--technologies{width:60%}}@media screen and (min-width:1200px){.landing__section-background.landing__section-background--technologies{width:50%}}.landing__section-background.landing__section-background--demos{left:0;right:auto;height:2760px;top:-455px;bottom:auto;width:95%}@media screen and (min-width:480px){.landing__section-background.landing__section-background--demos{width:85%}}@media screen and (min-width:768px){.landing__section-background.landing__section-background--demos{width:75%}}@media screen and (min-width:992px){.landing__section-background.landing__section-background--demos{width:60%}}@media screen and (min-width:1200px){.landing__section-background.landing__section-background--demos{width:65%}}.landing .landing__section-title{max-width:680px;text-align:center;color:#244153;margin:auto auto 50px;line-height:40px;position:relative;font-weight:500}.landing .landing__additional-title{max-width:680px;text-align:center;color:#244153;margin:70px auto 50px;line-height:32px}.landing .landing__section-description{color:#244153;opacity:.8}.landing__section-title-img{position:absolute;height:7px;width:85px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);top:-10px}@media screen and (min-width:425px){.landing__section-title-img{left:auto;top:auto;-webkit-transform:none;transform:none}}.landing__technology{text-align:center;max-width:168px;margin:auto}.landing__technology-img-wrap{width:100%;height:156px;display:-webkit-flex;display:flex;margin-bottom:20px;margin-left:auto;margin-right:auto}.landing__technology-img{width:100%;margin:auto}.landing .landing__technology-title{font-size:18px;line-height:1.44;color:#244153;opacity:.8;margin:0}.landing__technology--small{max-width:126px;margin-top:75px}.landing__technology--small .landing__technology-img-wrap{height:64px}.landing__technology--small .landing__technology-img{width:auto}.landing__technology--small .landing__technology-title{color:#244153;opacity:.8}.landing__new-feature{padding-bottom:50px;margin-top:105px;margin-bottom:-105px;text-align:center}.landing__new-feature-title{margin-bottom:16px;font-weight:700}.landing__new-feature-title+p{color:#244153;opacity:.8;font-size:16px;line-height:1.8;margin-top:16px}.landing__new-feature-img{margin-top:50px}.landing__new-feature-img img{border-radius:10px;box-shadow:0 18px 30px 0 rgba(28,50,61,.14)}.landing__code{-webkit-flex-direction:row;flex-direction:row}@media screen and (min-width:768px){.landing__code{-webkit-flex-direction:row;flex-direction:row}}@media screen and (max-width:768px){.landing__code.landing__code--left,.landing__code.landing__code--right{-webkit-transform:none;transform:none}}.landing__code:nth-child(odd){-webkit-flex-direction:row-reverse;flex-direction:row-reverse}.landing__code:nth-child(odd) .landing__code-text{text-align:center;margin-left:30px}@media screen and (min-width:768px){.landing__code:nth-child(odd) .landing__code-text,.landing__code:nth-child(odd) .landing__code-text .landing__section-title{text-align:left}}.landing__code-img,.landing__code-text{height:100%;display:-webkit-flex;display:flex}.landing__code-img{position:relative}.landing__code-img.landing__code-img--no-shadow img{box-shadow:none}.landing__img{box-shadow:0 18px 25px 0 rgba(28,50,61,.1);margin-top:30px}@media screen and (min-width:768px){.landing__img{margin:0}}.landing__code-text{margin-bottom:30px;text-align:center;margin-left:auto;margin-right:30px}.landing__code-text .landing__section-title{margin-bottom:16px;font-weight:500}.landing__code-text p{color:#244153;opacity:.8;font-size:16px;line-height:1.8;margin-top:16px}@media screen and (min-width:768px){.landing__code-text{max-width:360px;text-align:left;margin-bottom:0;margin-right:30px}.landing__code-text .landing__section-title{text-align:left}}.landing__code-wrap{margin-top:auto;margin-bottom:auto}.landing__code-wrap.landing__code-wrap--rounded img{border-radius:10px}.landing__code-update{height:54px;margin-bottom:20px;position:relative}.landing__code-update .landing__code-update-text{color:#bcc8d3;text-transform:uppercase;font-size:18px;font-weight:600;line-height:1.8}.landing .landing__seed{color:#2c86a2;font-size:24px;width:100%;max-width:490px;text-align:center;margin:80px auto 30px;line-height:normal;opacity:.9}.landing__section--demos{margin-bottom:240px}.landing__demo-wrap{margin-bottom:80px}.landing__demo-wrap:last-child{margin-bottom:0}.landing__demo-wrap:nth-child(odd){-webkit-flex-direction:row-reverse;flex-direction:row-reverse}.landing__demo-wrap:nth-child(odd) .landing__demo-theme-toggle,.landing__demo-wrap:nth-child(odd) .landing__demo-toggle-wrap{-webkit-justify-content:flex-end;justify-content:flex-end;text-align:right}.landing__demo-wrap:nth-child(odd) .landing__demo-theme-toggle span,.landing__demo-wrap:nth-child(odd) .landing__demo-toggle-wrap span{color:#244153;opacity:.8}.landing__demo-wrap:nth-child(odd) .landing__demo-theme-toggle{padding-left:0;padding-right:130px}.landing__demo-wrap:nth-child(odd) .landing__demo-theme-toggle:before{left:auto;right:0}.landing__demo-wrap:nth-child(odd) .landing__demo-title--new:before{content:"NEW";font-size:12px;color:#fff;text-align:center;background-color:#ffde2c;width:50px;height:24px;border-radius:20px;display:inline-block;margin-right:10px;padding-top:4px}.landing__demo-wrap:nth-child(odd) .landing__demo-title--new:after{display:none}.landing__demo-theme-toggle{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:left;justify-content:left;padding-left:130px;position:relative}.landing__demo-theme-toggle:before{content:"";height:2px;width:100px;background:#244153;position:absolute;left:0;-webkit-transform:translateY(-15px);transform:translateY(-15px)}.landing__demo-theme-toggle .landing__demo-title{width:100%;font-size:18px;line-height:1.44;color:#244153;margin:auto 0 0;position:relative}.landing__demo-theme-toggle .landing__demo-title--new:after{content:"NEW";position:absolute;font-size:12px;color:#fff;background-color:#ffde2c;width:50px;height:24px;margin-left:10px;background-position:left 0 top 0;text-align:center;border-radius:20px;padding-top:4px}.landing__demo{text-align:center;display:block}.landing__demo:hover .landing__demo-img-wrap img{box-shadow:none}.landing__demo:hover .landing__demo-img-wrap:before{opacity:.78}.landing__demo:hover .landing__demo-img-wrap:after{opacity:1}.landing__demo-img-wrap{position:relative}.landing__demo-img-wrap img{width:100%;box-shadow:0 18px 25px 0 rgba(28,50,61,.08);transition:.3s}.landing__demo-img-wrap:before{content:"";height:100%;background:linear-gradient(228deg,rgba(127,244,222,.95),#38c7e1);top:0}.landing__demo-img-wrap:after,.landing__demo-img-wrap:before{position:absolute;width:100%;left:0;opacity:0;transition:opacity .3s}.landing__demo-img-wrap:after{content:"Live demo";font-size:14px;color:#fff;line-height:14px;text-transform:uppercase;text-align:center;top:calc(50% - 7px);font-weight:500}.landing__demo-toggle-wrap{width:100%;display:-webkit-flex;display:flex;-webkit-justify-content:left;justify-content:left;-webkit-align-items:center;align-items:center;margin-bottom:auto}.landing__demo-toggle-wrap span{color:#244153;opacity:.8;font-size:14px;line-height:1.86}.landing__demo-toggle{width:auto;margin:0 15px}.landing__demo-toggle .toggle-btn__input-label{background-color:#eff1f5!important;width:40px;height:24px}.landing__demo-toggle .toggle-btn__input-label:after{background:#007aff;width:24px;height:24px}@media screen and (max-width:1200px){.landing__demo-theme-toggle{padding-left:80px}.landing__demo-theme-toggle:before{width:50px}.landing__demo-wrap:nth-child(odd) .landing__demo-theme-toggle{padding-right:80px;padding-left:0}}@media screen and (max-width:992px){.landing__demo-wrap .landing__demo-theme-toggle,.landing__demo-wrap .landing__demo-toggle-wrap,.landing__demo-wrap:nth-child(odd) .landing__demo-theme-toggle,.landing__demo-wrap:nth-child(odd) .landing__demo-toggle-wrap{-webkit-justify-content:center;justify-content:center;text-align:center}.landing__demo-theme-toggle .landing__demo-title{margin-top:25px}.landing__demo-theme-toggle{padding-left:0}.landing__demo-theme-toggle:before{display:none}.landing__demo-wrap:nth-child(odd) .landing__demo-theme-toggle{padding-right:0}}.landing .landing__request{color:#2c86a2;font-size:24px;width:100%;max-width:750px;text-align:center;margin:0 auto 60px;line-height:normal;opacity:.9}.landing__features-wrap{margin:0 auto -50px;display:-webkit-flex;display:flex;max-width:670px;width:100%;-webkit-flex-wrap:wrap;flex-wrap:wrap}.landing__features-wrap.landing__features-wrap--more{max-width:900px;-webkit-justify-content:space-between;justify-content:space-between;margin-bottom:-25px}.landing__features-wrap.landing__features-wrap--more .landing__feature-more{color:#244153;opacity:.8;font-size:16px}.landing__feature-more{max-width:230px;width:100%;margin:0 0 25px}.landing__feature-more svg{width:16px;height:16px;fill:#007aff;margin-right:20px}.landing__feature{width:50%;padding-left:75px;padding-right:16px;position:relative;margin-bottom:50px}.landing__feature .landing__feature-title{color:#244153;font-size:20px;line-height:20px;margin-bottom:8px;font-weight:500;margin-top:0}.landing__feature .landing__feature-caption{font-size:16px;line-height:24px;color:#244153;opacity:.8;margin:0}@media screen and (max-width:576px){.landing__features-wrap{max-width:400px}.landing__feature{width:100%;padding-right:0}.landing__feature:nth-child(odd){-webkit-order:0;order:0}.landing__feature:nth-child(2n){-webkit-order:1;order:1}}@media screen and (max-width:520px){.landing__features-wrap.landing__features-wrap--more{max-width:230px}.landing__features-wrap.landing__features-wrap--more .landing__feature-more{margin-bottom:25px}}.landing__feature-img-wrap{position:absolute;left:0;width:60px;height:60px;overflow:hidden;border-radius:50%;background-color:#fafafa;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center}.landing__feature-img-wrap img{height:24px;width:auto}.landing__center-btn{text-align:center;margin-top:-20px;height:40px}.landing__footer{padding:50px 0;text-align:center;position:relative}.landing__footer a{color:#244153;transition:.3s}.landing__footer a:hover{color:#15252f}.landing__footer .landing__footer-text{color:#244153;font-size:14px;line-height:normal;padding-bottom:50px;padding-top:120px}.landing__footer .landing__footer-logo{width:200px}.landing__footer-background{position:absolute;bottom:0;left:0;z-index:-1;width:100%;height:830px;transition:.3s}.landing__footer-currency-dropdown,.landing__footer-locale-dropdown{width:100px;display:inline-block}.landing__footer-locale-dropdown img{width:20px}.landing__teasers,.landing__testimonials{margin-bottom:-30px}.landing__teaser,.landing__testimonial{padding-top:25px;box-shadow:0 15px 20px 0 rgba(57,99,112,.06);background-color:#fff!important}.landing__teaser-title{font-size:1.3em;margin-top:1em}.landing__testimonial-name{color:#244153;margin-bottom:10px;text-decoration:underline;font-weight:500;font-size:14px;line-height:1.14}.landing__testimonial-stars{margin-bottom:18px}.landing__testimonial-stars svg{fill:#fc0;height:16px;width:16px;margin-right:5px}.landing__testimonial-review{color:#244153;opacity:.8;font-size:13px;line-height:1.54;margin:0}
+/*# sourceMappingURL=main.e3a0453f.chunk.css.map */
