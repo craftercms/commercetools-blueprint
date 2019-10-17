@@ -48,30 +48,4 @@
     Please note that valid types are limited to: dropdown, checkboxes, input.
 -->
 <targeting>
-    <property>
-        <name>age</name>
-        <label>Age</label>
-        <description>User's age.</description>
-        <type>dropdown</type> <!-- valid types: dropdown, checkboxes, input -->
-        <possible_values>
-            <value>child</value>
-            <value>teen</value>
-            <value>adult</value>
-            <value>senior</value>
-        </possible_values>
-        <default_value></default_value>
-        <hint></hint>
-    </property>
-    <property>
-        <name>gender</name>
-        <label>Gender</label>
-        <description>User's gender.</description>
-        <type>dropdown</type> <!-- valid types: dropdown, checkboxes, input -->
-        <possible_values>
-            <value>female</value>
-            <value>male</value>
-        </possible_values>
-        <default_value></default_value>
-        <hint></hint>
-    </property>
 </targeting>

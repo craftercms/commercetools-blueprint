@@ -67,28 +67,6 @@ class CustomerServiceImpl extends CustomerService {
     return client.executeBlocking(request)
   }
 
-  def setup() {
-    log.info("Checking custom fields")
-    def locale = LocaleUtil.locale
-    def query = TypeQuery.of().withPredicates(QueryPredicate.of('key = "targeting"'))
-    def response = client.executeBlocking(query)
-
-    if (response.total == 0) {
-      log.info("Creating custom fields")
-      def name = LocalizedString.of(locale, "Targeting")
-      def draft = TypeDraftBuilder.of("targeting", name, ResourceTypeIdsSetBuilder.of().addCustomers().build()).build()
-      def create = TypeCreateCommand.of(draft)
-      def type = client.executeBlocking(create)
-
-      def ageDef = FieldDefinition.of(StringFieldType.of(), "age", LocalizedString.of(locale, "Age"), false)
-      def genderDef = FieldDefinition.of(StringFieldType.of(), "gender", LocalizedString.of(locale, "Gennder"), false)
-      def update = TypeUpdateCommand.of(type, [AddFieldDefinition.of(ageDef), AddFieldDefinition.of(genderDef)])
-      client.executeBlocking(update)
-    } else {
-      log.info("Custom fields already defined")
-    }
-  }
-
   def doAuthenticate(email, password, uuid) {
     def request = CustomerSignInCommand.of(email, password)
     if (uuid) {
