@@ -41,7 +41,7 @@ class StoreServiceImpl extends StoreService {
   def getLocales() {
     def request = ProjectGet.of()
     def response = client.executeBlocking(request)
-    return response.languages
+    return response.languages*.replaceAll('-', '_')
   }
 
   def getCurrencies() {

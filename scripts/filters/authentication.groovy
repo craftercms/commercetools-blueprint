@@ -27,6 +27,10 @@ import org.craftercms.profile.api.Profile
 import org.craftercms.security.utils.SecurityUtils
 import org.craftercms.sites.ecommerce.util.SessionUtil
 
+if (!session) {
+  session = request.getSession(true)
+}
+
 def user = SessionUtil.getUser(session)
 
 if (user) {

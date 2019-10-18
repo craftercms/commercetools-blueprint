@@ -35,7 +35,6 @@ import groovy.util.logging.Slf4j
 @Slf4j
 abstract class CustomerService {
 
-  String storeName
   boolean verificationEnabled
   int verificationTokenTimeout
   String verificationAddress
@@ -44,8 +43,7 @@ abstract class CustomerService {
   String verificationTemplate
 
   UrlTransformationService urlTransformationService
-
-  abstract def setup()
+  StoreService storeService
 
   def authenticate(session, email, password) {
     def user = SessionUtil.getUser(session)
@@ -93,7 +91,7 @@ abstract class CustomerService {
     def emailService = EmailService.create()
     emailService.sendEmail(verificationAddress, user.email, verificationSubject, verificationTemplate, [
       siteName: SiteContext.current.siteName,
-      storeName: storeName,
+      storeName: storeService.getName(),
       user: user,
       token: token,
       url: urlTransformationService.transform("toFullUrl", verificationUrl)

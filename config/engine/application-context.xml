@@ -54,7 +54,6 @@
 
   <!-- Parent beans, all providers should extend these -->
   <bean id="baseCustomerService" abstract="true">
-    <property name="storeName" value="${ecommerce.store.name}"/>
     <property name="verificationEnabled" value="${ecommerce.email.verification.enabled}"/>
     <property name="verificationTokenTimeout" value="${ecommerce.email.verification.timeout}"/>
     <property name="verificationAddress" value="${ecommerce.email.verification.address}"/>
@@ -62,6 +61,7 @@
     <property name="verificationUrl" value="${ecommerce.email.verification.url}"/>
     <property name="verificationTemplate" value="${ecommerce.email.verification.template}"/>
     <property name="urlTransformationService" ref="crafter.urlTransformationService"/>
+    <property name="storeService" ref="storeService"/>
   </bean>
 
   <bean id="baseProductService" abstract="true" init-method="init">

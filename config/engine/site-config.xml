@@ -48,20 +48,9 @@ This file configures site properties used by Crafter Engine
         <exclude>/static-assets/**</exclude>
       </mapping>
     </filter>
-    <filter>
-      <script>/scripts/filters/targeting.groovy</script>
-      <mapping>
-        <include>/**</include>
-        <exclude>/static-assets/**</exclude>
-      </mapping>
-    </filter>
   </filters>
   <ecommerce>
     <!-- General settings -->
-    <store>
-      <name>Example Store</name> <!-- TODO: Add as a bp parameter and provide it to the ui? -->
-    </store>
-
     <email>
       <sender>
         <host>localhost</host>
