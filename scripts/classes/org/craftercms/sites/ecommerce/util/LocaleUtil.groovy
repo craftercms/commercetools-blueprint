@@ -25,7 +25,7 @@
 package org.craftercms.sites.ecommerce.util
 
 import org.apache.commons.configuration2.XMLConfiguration
-import org.apache.commons.lang.LocaleUtils
+import org.apache.commons.lang3.LocaleUtils
 import org.springframework.context.i18n.LocaleContextHolder
 
 abstract class LocaleUtil {
