@@ -79,7 +79,7 @@
 
   <!-- commercetools specific beans -->
 
-  <bean id="sphereClient" init-method="init" lazy-init="true"
+  <bean id="sphereClient" lazy-init="true"
         class="org.craftercms.sites.ecommerce.service.commercetools.ClientFactory">
     <property name="projectKey" value="${ecommerce.commercetools.projectKey}"/>
     <property name="clientId" value="${ecommerce.commercetools.clientId}"/>

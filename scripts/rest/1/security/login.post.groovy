@@ -22,11 +22,13 @@
  * SOFTWARE.
  */
 
+import org.craftercms.sites.ecommerce.util.SessionUtil
+
 import static org.craftercms.sites.ecommerce.util.RequestUtil.parse
 
 def req = parse(request, ["email", "password"])
 
-def user = session.getAttribute("user")
+def user = SessionUtil.getUser()
 
 if (user) {
   logger.debug("User {} already logged in", user.email)

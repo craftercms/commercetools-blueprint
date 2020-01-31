@@ -25,10 +25,9 @@
 package org.craftercms.sites.ecommerce.service.commercetools
 
 import io.sphere.sdk.client.BlockingSphereClient
-import io.sphere.sdk.client.SphereClient
 import io.sphere.sdk.client.SphereClientConfigBuilder
 import io.sphere.sdk.client.SphereClientFactory
-import org.springframework.beans.factory.FactoryBean
+import org.springframework.beans.factory.config.AbstractFactoryBean
 
 import java.util.concurrent.TimeUnit
 
@@ -36,7 +35,7 @@ import java.util.concurrent.TimeUnit
    @Grab('com.commercetools.sdk.jvm.core:commercetools-models:1.44.0'),
    @Grab('com.commercetools.sdk.jvm.core:commercetools-java-client:1.44.0')
 ])
-class ClientFactory implements FactoryBean<SphereClient> {
+class ClientFactory extends AbstractFactoryBean<BlockingSphereClient> {
 
   String projectKey
   String clientId
@@ -47,26 +46,27 @@ class ClientFactory implements FactoryBean<SphereClient> {
 
   def config
 
-  def init() {
+  void afterPropertiesSet() {
     config = SphereClientConfigBuilder
       .ofKeyIdSecret(projectKey, clientId, clientSecret)
       .authUrl(authUrl)
       .apiUrl(apiUrl)
       .scopeStrings(scopes)
       .build()
+    super.afterPropertiesSet()
   }
 
-  SphereClient getObject() {
+  BlockingSphereClient createInstance() {
     def asyncClient = SphereClientFactory.of().createClient(config)
     return BlockingSphereClient.of(asyncClient, 10, TimeUnit.SECONDS)
   }
 
   Class<?> getObjectType() {
-    return SphereClient.class
+    return BlockingSphereClient.class
   }
 
-  boolean isSingleton() {
-    return true
+  void destroyInstance(BlockingSphereClient instance) {
+    instance.close()
   }
 
 }

@@ -55,7 +55,7 @@ class CartServiceImpl extends CartService {
   MappingService mappingService
 
   def createCart(session) {
-    def user = SessionUtil.getUser(session)
+    def user = SessionUtil.getUser()
     def cartDraft = CartDraft.of(Monetary.getCurrency(LocaleUtil.currencyCode))
     if (user) {
       cartDraft = cartDraft.withCustomerId(user.id).withCustomerEmail(user.email)

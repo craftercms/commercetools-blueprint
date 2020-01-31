@@ -35,13 +35,6 @@ This file configures site properties used by Crafter Engine
   </spa>
   <filters>
     <filter>
-      <script>/scripts/filters/authentication.groovy</script>
-      <mapping>
-        <include>/**</include>
-        <exclude>/static-assets/**</exclude>
-      </mapping>
-    </filter>
-    <filter>
       <script>/scripts/filters/currency.groovy</script>
       <mapping>
         <include>/**</include>

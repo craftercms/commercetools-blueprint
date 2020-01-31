@@ -25,10 +25,12 @@
 package org.craftercms.sites.ecommerce.util
 
 import org.craftercms.engine.exception.HttpStatusCodeException
+import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.security.core.context.SecurityContextImpl
+import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken
 
 abstract class SessionUtil {
 
-  static final def USER_KEY = "user"
   static final def CART_KEY = "cart"
   static final def UUID_KEY = "uuid"
 
@@ -41,7 +43,7 @@ abstract class SessionUtil {
   }
 
   static def checkUser(session) {
-    def user = getUser(session)
+    def user = getUser()
 
     if (!user) {
       throw new HttpStatusCodeException(403, "No user logged in")
@@ -50,12 +52,17 @@ abstract class SessionUtil {
     return user
   }
 
-  static def getUser(session) {
-    return get(session, USER_KEY)
+  static def getUser() {
+    return SecurityContextHolder.context?.authentication?.principal
   }
 
-  static def setUser(session, user) {
-    set(session, user, USER_KEY)
+  static def setUser(user) {
+    def context = SecurityContextHolder.context
+    if (!context) {
+      context = new SecurityContextImpl()
+    }
+    context.authentication = new PreAuthenticatedAuthenticationToken(user, "N/A", [])
+    SecurityContextHolder.context = context
   }
 
   static def getCart(session) {

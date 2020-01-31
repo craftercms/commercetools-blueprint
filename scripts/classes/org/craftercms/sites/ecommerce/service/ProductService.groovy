@@ -84,7 +84,7 @@ abstract class ProductService {
   abstract def getProducts(keywords, filters, pagination)
 
   def review(id, review, session) {
-    def user = SessionUtil.getUser(session)
+    def user = SessionUtil.getUser()
     if (!user) {
       throw new HttpStatusCodeException(403, "No user logged in")
     }
