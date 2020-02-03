@@ -1,3 +1,5 @@
+import org.springframework.security.core.context.SecurityContextHolder
+
 /*
  * MIT License
  *
@@ -22,10 +24,13 @@
  * SOFTWARE.
  */
 
-def user = session.getAttribute("user")
+import org.craftercms.sites.ecommerce.util.SessionUtil
+
+def user = SessionUtil.getUser()
 
 if (user) {
   logger.debug("Logging out user {}", user.email)
+  SecurityContextHolder.clearContext()
   session.invalidate()
   return true
 } else {

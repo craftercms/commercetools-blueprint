@@ -46,7 +46,7 @@ abstract class CustomerService {
   StoreService storeService
 
   def authenticate(session, email, password) {
-    def user = SessionUtil.getUser(session)
+    def user = SessionUtil.getUser()
     if (user) {
       log.info("Customer {} already logged in", user.email)
       return true
@@ -54,7 +54,7 @@ abstract class CustomerService {
     log.info("Starting authentication for customer {}", email)
     user = doAuthenticate(email, password, SessionUtil.getUUID(session))
     if (user) {
-      SessionUtil.setUser(session, user)
+      SessionUtil.setUser(user)
       if (user.cart) {
         SessionUtil.setCart(session, user.cart)
       }
@@ -121,7 +121,7 @@ abstract class CustomerService {
 
     log.debug("Updating user {}", user.email)
     user = doUpdate(user, data)
-    SessionUtil.setUser(session, user)
+    SessionUtil.setUser(user)
 
     return user
   }

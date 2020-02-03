@@ -57,7 +57,7 @@ abstract class CartService {
 
   def update(session, info) {
     def cart = getCart(session)
-    def user = SessionUtil.getUser(session)
+    def user = SessionUtil.getUser()
     cart = doUpdate(user, cart, info)
     SessionUtil.setCart(session, cart)
     return cart
@@ -80,7 +80,7 @@ abstract class CartService {
     }
     def order = doCheckout(user, cart, info)
     user.cart = null
-    SessionUtil.setUser(session, user)
+    SessionUtil.setUser(user)
     SessionUtil.setCart(session, null)
     return order
   }
