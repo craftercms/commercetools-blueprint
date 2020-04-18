@@ -31,7 +31,6 @@ import { SearchService } from '@craftercms/search';
 
 import MagnifyIcon from 'mdi-react/MagnifyIcon';
 import { Empty } from '../shared/Empty';
-import { ajax } from 'rxjs/ajax';
 import { Link } from 'react-router-dom';
 import { capitalize } from '../../util/string';
 import { crafterConf, getQuery } from '../../util/component';
@@ -49,7 +48,7 @@ export default function Search(props) {
   const [productResults, setProductResults] = useState();
   const [contentResults, setContentResults] = useState();
 
-  const productsQueryParams = useProductsQuery({ q: query, limit: 10, offset: 10 });
+  const productsQueryParams = useProductsQuery({ q: query, limit: 10, offset: 0 });
 
   useEffect(
     () => {
@@ -57,8 +56,8 @@ export default function Search(props) {
 
         SearchService.search(getQuery(query), crafterConf).subscribe((content) => {
           setContentResults({
-            total: content.totalHits,
-            articles: content.hits.map(item => item.sourceAsMap)
+            total: content.total,
+            articles: content.hits.map(item => item._source)
           });
         });
 
