@@ -48,7 +48,7 @@ export default function Search(props) {
   const [productResults, setProductResults] = useState();
   const [contentResults, setContentResults] = useState();
 
-  const productsQueryParams = useProductsQuery({ q: query, limit: 10, offset: 10 });
+  const productsQueryParams = useProductsQuery({ q: query, limit: 10, offset: 0 });
 
   useEffect(
     () => {
