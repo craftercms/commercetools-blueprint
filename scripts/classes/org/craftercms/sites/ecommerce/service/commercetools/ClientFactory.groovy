@@ -67,6 +67,9 @@ class ClientFactory extends AbstractFactoryBean<BlockingSphereClient> {
 
   void destroyInstance(BlockingSphereClient instance) {
     instance.close()
+
+    // This is needed because the client's pool is still shutting down in a different thread
+    sleep(4000)
   }
 
 }
