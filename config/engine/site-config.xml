@@ -154,4 +154,14 @@ This file configures site properties used by Crafter Engine
     <accessControlAllowHeaders>Content-Type</accessControlAllowHeaders>
     <accessControlAllowCredentials>true</accessControlAllowCredentials>
   </cors>
+
+   <!-- Allow access to services -->
+   <publicBeans>
+     <bean>customerService</bean>
+     <bean>productService</bean>
+     <bean>cartService</bean>
+     <bean>orderService</bean>
+     <bean>paymentService</bean>
+     <bean>storeService</bean>
+   </publicBeans>
 </site>
