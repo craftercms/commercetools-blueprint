@@ -32,8 +32,8 @@ import org.springframework.beans.factory.config.AbstractFactoryBean
 import java.util.concurrent.TimeUnit
 
 @Grapes([
-   @Grab('com.commercetools.sdk.jvm.core:commercetools-models:1.44.0'),
-   @Grab('com.commercetools.sdk.jvm.core:commercetools-java-client:1.44.0')
+   @Grab(value = 'com.commercetools.sdk.jvm.core:commercetools-models:1.44.0', initClass = false),
+   @Grab(value = 'com.commercetools.sdk.jvm.core:commercetools-java-client:1.44.0', initClass = false)
 ])
 class ClientFactory extends AbstractFactoryBean<BlockingSphereClient> {
 
