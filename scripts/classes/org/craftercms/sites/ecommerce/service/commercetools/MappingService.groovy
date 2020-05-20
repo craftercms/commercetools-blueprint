@@ -148,7 +148,7 @@ class MappingService implements ApplicationContextAware {
           name: attrDef.label.get(locale),
           value:
             attrDef.attributeType instanceof LocalizedStringAttributeType?
-              attr.value[locale.toLanguageTag()] : attr.value
+              attr.value."${locale.toLanguageTag()}" : attr.value
         ]
       }
       return variant
