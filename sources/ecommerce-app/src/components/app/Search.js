@@ -55,7 +55,7 @@ export default function Search(props) {
       if (query) {
 
 
-         (getQuery(query), crafterConf).subscribe((content) => {
+        SearchService.search(getQuery(query), crafterConf).subscribe((content) => {
           setContentResults({
             total: Number.isInteger(content.total) ?  content.total : content.total.value,
             articles: content.hits.map(item => item._source)
