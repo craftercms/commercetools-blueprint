@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-yarn build
+echo "Making sure all deps are met"
+yarn
+
+echo "Running react build"
+react-scripts build
 
 echo "Deleting prior build"
 rm -rf ../../static-assets/app/*
