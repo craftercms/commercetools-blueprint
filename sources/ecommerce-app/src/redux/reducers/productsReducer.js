@@ -50,6 +50,7 @@ import {
 import { toLookupTable } from '../../util/array';
 import { byIdLoadingKey, getRootType, removeProp } from '../../util/redux';
 import { FETCH_GRAPH_COMPLETE } from '../actions/contentActions';
+import Cookies from 'js-cookie'
 
 const initialState = {
   byId: null,
@@ -122,6 +123,7 @@ export default function productReducer(state = initialState, action) {
 
     case CHANGE_LOCALE:
     case CHANGE_CURRENCY: {
+      Cookies.set(type === CHANGE_LOCALE ? 'locale' : 'currency', payload.value);
       return {
         ...state,
         query: {
@@ -148,8 +150,8 @@ export default function productReducer(state = initialState, action) {
           ...state,
           query: {
             ...state.query,
-            currency: payload.store.settings.currencies[0],
-            locale: payload.store.settings.locales[0]
+            currency: Cookies.get('currency') || payload.store.settings.currencies[0],
+            locale: Cookies.get('locale') || payload.store.settings.locales[0]
           }
         };
       } else {
