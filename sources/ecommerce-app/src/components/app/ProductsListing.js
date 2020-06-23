@@ -66,6 +66,8 @@ export default function ProductListing(props) {
         case 'range':
           facetMeta.state[value] = null;
           break;
+        default:
+          break;
       }
     });
   }

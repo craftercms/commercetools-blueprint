@@ -123,7 +123,7 @@ function RelatedPosts({ categories, slug }) {
         catchError((response) => of(response)),
       ).subscribe(posts => setRelatedPosts(posts));
     },
-    [categories[0].key]
+    [slug, categories]
   );
   return (
     relatedPosts ? <div className="blog__sidebar-bar-block">

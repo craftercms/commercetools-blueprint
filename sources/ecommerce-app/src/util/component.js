@@ -23,14 +23,15 @@
  */
 
 import {
-  ADD_TO_CART, FETCH_CART,
+  ADD_TO_CART,
+  FETCH_CART,
   fetchCart,
   REMOVE_FROM_CART,
   UPDATE_CART,
   UPDATE_CART_ITEM_QUANTITY
 } from '../redux/actions/productsActions';
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { fetchOrder, setLoginRedirect } from '../redux/actions/usersActions';
 import { SearchService } from '@craftercms/search';
 import Cookie from 'js-cookie';
@@ -58,11 +59,11 @@ export function useCart({ onEmpty } = {}) {
         onEmpty && onEmpty();
       }
     },
-    [cart]
+    [cart, onEmpty]
   );
   useEffect(() => {
     dispatch(fetchCart());
-  }, [locale, currency])
+  }, [dispatch, locale, currency])
   return cart;
 }
 
@@ -78,7 +79,7 @@ export function useUser({ redirect, onMissing } = {}) {
           onMissing && onMissing();
       }
     },
-    []
+    [dispatch, user, onMissing, redirect]
   );
   return user;
 }
@@ -95,7 +96,7 @@ export function useOrder(id) {
       if (id && (order == null || order.items == null))
         dispatch(fetchOrder(id));
     },
-    [id]
+    [dispatch, id, order]
   );
   return order;
 }

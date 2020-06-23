@@ -65,7 +65,9 @@ export default function ProductTeaser(props) {
           })
         ).subscribe(items => setProducts(items));
     },
-    [query.locale, query.currency]
+    // TODO: adding query is creating a loop
+    // eslint-disable-next-line
+    [numOfProducts_i, query.locale, query.currency]
   );
 
   return (

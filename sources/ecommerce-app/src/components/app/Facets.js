@@ -56,11 +56,10 @@ export function HierarchicalFacets(props) {
       {
         facets.map((facet) =>
           <Fragment key={facet.value}>
-            <a
-              href="javascript:"
+            <button
               className={`hierarchical-facets__item ${checked[facet.value] ? 'hierarchical-facets__item--checked' : ''}`}
               onClick={() => onSelection(facet)}
-            >{facet.label}</a>
+            >{facet.label}</button>
             {
               facet.children &&
               facet.children.length &&

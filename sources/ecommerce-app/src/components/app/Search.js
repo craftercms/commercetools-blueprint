@@ -73,6 +73,8 @@ export default function Search(props) {
 
       }
     },
+    // TODO: adding productsQueryParams is creating a loop
+    // eslint-disable-next-line
     [query, productsQueryParams.locale, productsQueryParams.currency]
   );
 

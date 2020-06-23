@@ -29,6 +29,7 @@ export default function Anchor(props) {
 
   const { href, autoTarget } = props;
 
+  // eslint-disable-next-line
   const isExternal = !!['http:', 'https:', 'javascript:'].find((protocol) => href.includes(protocol));
   const Component = isExternal ? 'a' : Link;
 
@@ -58,6 +59,7 @@ export default function Anchor(props) {
 }
 
 Anchor.defaultProps = {
+  // eslint-disable-next-line
   href: 'javascript:',
   autoTarget: true
 };

@@ -75,14 +75,14 @@ function ProductCard(props) {
     () => {
       !cart && dispatch(fetchCart())
     },
-    []
+    [dispatch, cart]
   );
 
   useEffect(
     () => {
       setVariant(product.variants[0]);
     },
-    [product.id, currency]
+    [product.id, currency, product.variants]
   );
 
   useEffect(

@@ -24,12 +24,17 @@
 
 import { loader } from 'graphql.macro';
 import { ofType } from 'redux-observable';
-import { FETCH_GRAPH, FETCH_GRAPH_COMPLETE, fetchGraphComplete, fetchGraphFailed } from '../actions/contentActions';
-import { catchError, map, mapTo, switchMap, filter } from 'rxjs/operators';
+import {
+  FETCH_GRAPH,
+  FETCH_GRAPH_COMPLETE,
+  fetchGraphComplete,
+  fetchGraphFailed
+} from '../actions/contentActions';
+import { catchError, filter, map, switchMap } from 'rxjs/operators';
 import { capitalize } from '../../util/string';
 import { ajax } from 'rxjs/ajax';
 import { of } from 'rxjs';
-import { changeCurrency, changeLocale, setStoreSettings } from '../actions/productsActions';
+import { setStoreSettings } from '../actions/productsActions';
 
 const FragmentMap = {
   home: loader('../../queries/Home.fragment.graphql').loc.source.body,

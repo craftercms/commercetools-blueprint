@@ -42,7 +42,7 @@ function OrderList() {
       if (loading[FETCH_ORDERS] == null)
         dispatch(fetchOrders());
     },
-    []
+    [dispatch, loading]
   );
   if (loading[FETCH_ORDERS]) {
     return <Spinner contained/>;
