@@ -50,16 +50,19 @@ export function useHeader() {
 export function useCart({ onEmpty } = {}) {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.products.cart);
+  const locale = useSelector(state => state.products).query.locale;
+  const currency = useSelector(state => state.products).query.currency;
   useEffect(
     () => {
-      if (cart == null) {
-        dispatch(fetchCart());
-      } else if (cart.items.length === 0) {
+      if (cart && cart.items.length === 0) {
         onEmpty && onEmpty();
       }
     },
     [cart]
   );
+  useEffect(() => {
+    dispatch(fetchCart());
+  }, [locale, currency])
   return cart;
 }
 
