@@ -106,7 +106,7 @@ export default function ProductDetails(props) {
       }
       return () => sub.unsubscribe();
     },
-    [product ? product.id : undefined, products.query.locale, products.query.currency]
+    [product, products.query.locale, products.query.currency]
   );
 
   return (

@@ -123,7 +123,7 @@ function ProductCard(props) {
       });
 
     },
-    [variant, cart]
+    [variant, cart, product.id, product.variants, setCartItem]
   );
 
   return (

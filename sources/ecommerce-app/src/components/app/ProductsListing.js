@@ -302,6 +302,8 @@ export default function ProductListing(props) {
                           }
                         />;
                       }
+                      default:
+                        return null;
                     }
                   })
                 }

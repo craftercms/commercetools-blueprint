@@ -178,7 +178,7 @@ function CheckoutView({ history }) {
       method && (method !== shippingMethod) && setShippingMethod(method);
 
     },
-    [cart]
+    [user, cart, shippingAddress, billingAddress, shippingMethod]
   );
 
   useEffect(
@@ -205,7 +205,7 @@ function CheckoutView({ history }) {
       }
 
     },
-    [shippingAddress, billingAddress, shippingMethod]
+    [dispatch, user, cart, shippingAddress, billingAddress, shippingMethod]
   );
 
   const checkoutDisabled = useMemo(

@@ -109,8 +109,7 @@ export function MultipleSelectionFacet(props) {
 export function SingleSelectionFacet(props) {
   const {
     title,
-    facets,
-    onSelection
+    facets
   } = props;
   return (
     <nav className="single-selection-facets">
