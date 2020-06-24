@@ -27,25 +27,29 @@ package org.craftercms.sites.ecommerce.util
 import org.apache.commons.configuration2.XMLConfiguration
 import org.apache.commons.lang3.LocaleUtils
 import org.springframework.context.i18n.LocaleContextHolder
+import org.springframework.web.context.request.RequestContextHolder
+
+import static org.springframework.web.context.request.RequestAttributes.SCOPE_SESSION
 
 abstract class LocaleUtil {
 
-  private static currency = new InheritableThreadLocal<Currency>()
+  private static String CURRENCY_KEY = "currency";
 
   static Locale getLocale() {
     LocaleContextHolder.locale
   }
 
   static void setCurrency(String currencyCode) {
-    currency.set(Currency.getInstance(currencyCode))
+    RequestContextHolder.requestAttributes.setAttribute(CURRENCY_KEY, Currency.getInstance(currencyCode), SCOPE_SESSION)
   }
 
   static void setCurrency(XMLConfiguration siteConfig) {
-    currency.set(Currency.getInstance(LocaleUtils.toLocale(siteConfig.getProperty('defaultLocale'))))
+    RequestContextHolder.requestAttributes.setAttribute(CURRENCY_KEY,
+      Currency.getInstance(LocaleUtils.toLocale(siteConfig.getProperty('defaultLocale'))), SCOPE_SESSION)
   }
 
   static String getCurrencyCode() {
-    currency.get()?.currencyCode
+    RequestContextHolder.requestAttributes.getAttribute(CURRENCY_KEY, SCOPE_SESSION)
   }
 
 }

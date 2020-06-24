@@ -33,14 +33,24 @@ abstract class CartService {
   PaymentService paymentService
 
   def getCart(session) {
-    def cart = SessionUtil.getCart(session)
-    return cart ?: createCart(session)
+    return SessionUtil.getCart(session)
   }
 
   abstract def createCart(session)
 
+  def deleteCart(session) {
+    def cart = getCart(session)
+    if (cart) {
+      doDeleteCart(cart)
+      SessionUtil.setCart(session, null)
+    }
+  }
+
+  abstract def doDeleteCart(cart)
+
   def addItem(session, productId, variantId, quantity) {
-    def cart = doAddItem(getCart(session), productId, variantId, quantity)
+    def cart = getCart(session) ?: createCart(session)
+    cart = doAddItem(cart, productId, variantId, quantity)
     SessionUtil.setCart(session, cart)
     return cart
   }
