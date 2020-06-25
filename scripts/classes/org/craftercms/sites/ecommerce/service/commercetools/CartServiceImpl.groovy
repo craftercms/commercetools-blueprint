@@ -11,6 +11,7 @@
  * furnished to do so, subject to the following conditions:
  *
  * The above copyright notice and this permission notice shall be included in all
+ * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -26,6 +27,7 @@ package org.craftercms.sites.ecommerce.service.commercetools
 
 import io.sphere.sdk.carts.CartDraft
 import io.sphere.sdk.carts.commands.CartCreateCommand
+import io.sphere.sdk.carts.commands.CartDeleteCommand
 import io.sphere.sdk.carts.commands.CartUpdateCommand
 import io.sphere.sdk.carts.commands.updateactions.AddLineItem
 import io.sphere.sdk.carts.commands.updateactions.AddPayment
@@ -76,6 +78,11 @@ class CartServiceImpl extends CartService {
     return cart
   }
 
+  def doDeleteCart(cart) {
+    def request = CartDeleteCommand.of(getCartById(cart.id))
+    client.executeBlocking(request)
+  }
+
   protected def getCartById(cartId) {
     def request = CartByIdGet.of(cartId)
     def cart = client.executeBlocking(request)
@@ -107,6 +114,8 @@ class CartServiceImpl extends CartService {
   def doUpdate(user, cart, info) {
     def currentCart = getCartById(cart.id)
     def actions = []
+
+    actions << Recalculate.of().withUpdateProductData(true)
 
     if (user && info.shippingAddress) {
       def address = user.addresses?.find { it.id == info.shippingAddress }
