@@ -58,7 +58,7 @@ const Routes = () => {
         });
       }
     },
-    [isAuthoring]
+    [history, isAuthoring]
   );
 
   return (

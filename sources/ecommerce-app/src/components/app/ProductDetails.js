@@ -50,7 +50,7 @@ export default function ProductDetails(props) {
       // if (product == null)
         dispatch(fetchProduct(id))
     },
-    [id, products.query.locale, products.query.currency]
+    [dispatch, id, products.query.locale, products.query.currency]
   );
 
   useEffect(
@@ -106,7 +106,7 @@ export default function ProductDetails(props) {
       }
       return () => sub.unsubscribe();
     },
-    [product ? product.id : undefined, products.query.locale, products.query.currency]
+    [product, products.query.locale, products.query.currency]
   );
 
   return (

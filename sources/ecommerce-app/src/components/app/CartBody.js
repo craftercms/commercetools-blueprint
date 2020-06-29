@@ -26,13 +26,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, ButtonGroup, ButtonToolbar, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import {
-  ADD_TO_CART,
-  REMOVE_FROM_CART,
-  removeFromCart,
-  UPDATE_CART, UPDATE_CART_ITEM_QUANTITY,
-  updateCartItemQuantity
-} from '../../redux/actions/productsActions';
+import { removeFromCart, updateCartItemQuantity } from '../../redux/actions/productsActions';
 import { money } from '../../util/string';
 import AddCircleOutlineIcon from 'mdi-react/AddCircleOutlineIcon';
 import DeleteForeverIcon from 'mdi-react/DeleteForeverIcon';

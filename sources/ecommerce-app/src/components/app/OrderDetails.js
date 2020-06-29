@@ -30,7 +30,6 @@ import { useOrder } from '../../util/component';
 import Spinner from '../shared/Spinner';
 import { Link } from 'react-router-dom';
 import { capitalize, money } from '../../util/string';
-import Collapse from '../shared/Collapse';
 
 
 function OrderDetails(props) {

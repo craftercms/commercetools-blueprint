@@ -147,7 +147,7 @@ function getHome(data) {
 
 function getPosts(state, payload) {
   const data = payload && payload.post ? payload.post : null;
-  if (!data || !data && !state) {
+  if (!data || (!data && !state)) {
     return state;
   }
   return {
@@ -160,7 +160,7 @@ function getPosts(state, payload) {
 
 function getStore(state, payload) {
   const data = payload && payload.store ? payload.store : null;
-  if (!data || !data && !state) {
+  if (!data || (!data && !state)) {
     return state;
   }
   return {
@@ -170,7 +170,7 @@ function getStore(state, payload) {
 
 function getCategories(state, payload) {
   const data = payload && payload.categories ? payload.categories : null;
-  if (!data || !data && !state)
+  if (!data || (!data && !state))
     return state;
   return {
     byId: toLookupTable(payload.categories.items[0].items.item, 'key')

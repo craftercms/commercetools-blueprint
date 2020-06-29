@@ -23,14 +23,15 @@
  */
 
 import {
-  ADD_TO_CART, FETCH_CART,
+  ADD_TO_CART,
+  FETCH_CART,
   fetchCart,
   REMOVE_FROM_CART,
   UPDATE_CART,
   UPDATE_CART_ITEM_QUANTITY
 } from '../redux/actions/productsActions';
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { fetchOrder, setLoginRedirect } from '../redux/actions/usersActions';
 import { SearchService } from '@craftercms/search';
 import Cookie from 'js-cookie';
@@ -48,34 +49,45 @@ export function useHeader() {
 }
 
 export function useCart({ onEmpty } = {}) {
+  const ref = useRef({});
+  ref.current = { onEmpty };
   const dispatch = useDispatch();
   const cart = useSelector(state => state.products.cart);
+  const locale = useSelector(state => state.products).query.locale;
+  const currency = useSelector(state => state.products).query.currency;
   useEffect(
     () => {
-      if (cart == null) {
-        dispatch(fetchCart());
-      } else if (cart.items.length === 0) {
-        onEmpty && onEmpty();
+      if (cart && cart.items.length === 0) {
+        if(ref.current.onEmpty) {
+          ref.current.onEmpty();
+        }
       }
     },
     [cart]
   );
+  useEffect(() => {
+    dispatch(fetchCart());
+  }, [dispatch, locale, currency])
   return cart;
 }
 
 export function useUser({ redirect, onMissing } = {}) {
+  const ref = useRef({});
+  ref.current = { redirect, onMissing };
   const dispatch = useDispatch();
   const user = useSelector(state => state.users.user);
   useEffect(
     () => {
       if (user == null) {
-        if (redirect)
-          dispatch(setLoginRedirect(redirect));
-        if (onMissing)
-          onMissing && onMissing();
+        if (ref.current.redirect) {
+          dispatch(setLoginRedirect(ref.current.redirect));
+        }
+        if(ref.current.onMissing) {
+          ref.current.onMissing();
+        }
       }
     },
-    []
+    [dispatch, user]
   );
   return user;
 }
@@ -92,7 +104,7 @@ export function useOrder(id) {
       if (id && (order == null || order.items == null))
         dispatch(fetchOrder(id));
     },
-    [id]
+    [dispatch, id, order]
   );
   return order;
 }

@@ -23,39 +23,40 @@
  */
 
 import { ofType } from 'redux-observable';
-import { switchMap, mapTo, map, withLatestFrom, pluck, tap } from 'rxjs/operators';
+import { mapTo, pluck, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
 
 import {
-  FETCH_CART,
   ADD_TO_CART,
-  FETCH_PRODUCT,
-  FETCH_PRODUCTS,
-  FACETS_CHANGED,
-  REMOVE_FROM_CART,
-  UPDATE_CART_ITEM_QUANTITY,
-  UPDATE_CART,
-  UPDATE_CART_COMPLETE,
-  FETCH_SHIPPING_METHODS,
-  CHECKOUT,
   addToCartComplete,
-  fetchCartComplete,
-  fetchProductComplete,
-  fetchProductsComplete,
-  updateCartItemQuantityComplete,
-  removeFromCartComplete,
-  fetchProducts,
-  fetchProductsFailed,
-  fetchCartFailed,
-  fetchProductFailed,
-  updateCartComplete,
-  updateCartFailed,
-  fetchShippingMethodsComplete,
-  fetchShippingMethodsFailed,
+  addToCartFailed,
+  CHECKOUT,
   checkoutComplete,
   checkoutFailed,
-  updateCartItemQuantityFailed,
-  addToCartFailed, removeFromCartFailed
+  FACETS_CHANGED,
+  FETCH_CART,
+  FETCH_PRODUCT,
+  FETCH_PRODUCTS,
+  FETCH_SHIPPING_METHODS,
+  fetchCartComplete,
+  fetchCartFailed,
+  fetchProductComplete,
+  fetchProductFailed,
+  fetchProducts,
+  fetchProductsComplete,
+  fetchProductsFailed,
+  fetchShippingMethodsComplete,
+  fetchShippingMethodsFailed,
+  REMOVE_FROM_CART,
+  removeFromCartComplete,
+  removeFromCartFailed,
+  UPDATE_CART,
+  UPDATE_CART_COMPLETE,
+  UPDATE_CART_ITEM_QUANTITY,
+  updateCartComplete,
+  updateCartFailed,
+  updateCartItemQuantityComplete,
+  updateCartItemQuantityFailed
 } from '../actions/productsActions';
 import { errorOp, mapOp } from '../../util/redux';
 

@@ -22,35 +22,27 @@
  * SOFTWARE.
  */
 
-import { catchError, map, switchMap } from 'rxjs/operators';
-import { ajax } from 'rxjs/ajax';
-import { of } from 'rxjs';
-
-import { loader } from 'graphql.macro';
+import { combineEpics } from 'redux-observable';
 import {
-  FETCH_GRAPH,
-  fetchGraphComplete,
-  fetchGraphFailed
-} from '../actions/contentActions';
-import { combineEpics, ofType } from 'redux-observable';
-import { capitalize } from '../../util/string';
-import {
+  addToCartEpic,
+  checkoutEpic,
+  facetsChangedEpic,
+  fetchCartEpic,
   fetchProductEpic,
   fetchProductsEpic,
-  fetchCartEpic,
-  addToCartEpic,
   removeFromCartEpic,
-  updateCartItemEpic,
-  facetsChangedEpic,
   updateCartEpic,
-  checkoutEpic
+  updateCartItemEpic
 } from './products';
 import {
   addUserAddressEpic,
-  editUserAddressEpic, fetchOrderEpic,
+  editUserAddressEpic,
+  fetchOrderEpic,
   fetchOrdersEpic,
   loginEpic,
-  logoutEpic, removeUserAddressEpic, setAsDefaultAddressEpic,
+  logoutEpic,
+  removeUserAddressEpic,
+  setAsDefaultAddressEpic,
   unauthorizedEpic
 } from './users';
 import { fetchGraphEpic } from './content';

@@ -270,9 +270,9 @@ export function AddressEntry(props) {
               onSuccess={() => props.history.push(backUrl)}
               onCancel={() => props.history.push(backUrl)}
               initialValues={
-                isEditMode && user.addresses.find(
+                (isEditMode && user.addresses.find(
                   (address) => address.id === addressId
-                ) || {
+                )) || {
                   firstName: user.firstName,
                   lastName: user.lastName,
                   email: user.email

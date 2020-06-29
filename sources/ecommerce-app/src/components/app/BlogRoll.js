@@ -66,7 +66,7 @@ export default function BlogRoll(props) {
       }
       return () => sub.unsubscribe()
     },
-    [content.nav != null]
+    [content.nav, props.location.pathname]
   );
 
   if (!roll) {

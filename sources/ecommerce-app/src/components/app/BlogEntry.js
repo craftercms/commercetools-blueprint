@@ -123,7 +123,7 @@ function RelatedPosts({ categories, slug }) {
         catchError((response) => of(response)),
       ).subscribe(posts => setRelatedPosts(posts));
     },
-    [categories[0].key]
+    [slug, categories]
   );
   return (
     relatedPosts ? <div className="blog__sidebar-bar-block">
@@ -150,7 +150,7 @@ function RelatedProducts({ categories }) {
       getProducts({ limit: 3, offset: Math.floor(Math.random() * 11), ...params })
         .subscribe(({ response }) => setItems(response.items));
     },
-    [categories[0].key, params.locale, params.currency]
+    [categories, params, params.locale, params.currency]
   );
   return (
     items ? <div className="blog__sidebar-bar-block">

@@ -57,6 +57,7 @@ function ProductCard(props) {
   const { cart } = useSelector(state => state.products);
   const { user } = useSelector(state => state.users);
   const { product } = props;
+  const currency = product.variants[0].currency;
 
   const [images, setImages] = useState([]);
   const [variant, setVariant] = useState();
@@ -74,14 +75,14 @@ function ProductCard(props) {
     () => {
       !cart && dispatch(fetchCart())
     },
-    []
+    [dispatch, cart]
   );
 
   useEffect(
     () => {
       setVariant(product.variants[0]);
     },
-    [product.id]
+    [product.id, currency, product.variants]
   );
 
   useEffect(
@@ -122,7 +123,7 @@ function ProductCard(props) {
       });
 
     },
-    [variant, cart]
+    [variant, cart, product.id, product.variants, setCartItem]
   );
 
   return (
