@@ -150,7 +150,9 @@ function RelatedProducts({ categories }) {
       getProducts({ limit: 3, offset: Math.floor(Math.random() * 11), ...params })
         .subscribe(({ response }) => setItems(response.items));
     },
-    [categories, params, params.locale, params.currency]
+    // TODO: adding params is creating a loop
+    // eslint-disable-next-line
+    [categories, params.locale, params.currency]
   );
   return (
     items ? <div className="blog__sidebar-bar-block">
