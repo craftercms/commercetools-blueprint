@@ -26,133 +26,127 @@
 <!--
 This file configures site properties used by Crafter Engine
 -->
-
 <site>
-  <defaultLocale>en_US</defaultLocale>
-  <spa>
-    <enabled>true</enabled>
-    <viewName>/templates/web/index.ftl</viewName>
-  </spa>
-  <filters>
-    <filter>
-      <script>/scripts/filters/currency.groovy</script>
-      <mapping>
-        <include>/**</include>
-        <exclude>/static-assets/**</exclude>
-      </mapping>
-    </filter>
-  </filters>
-  <ecommerce>
-    <!-- General settings -->
-    <email>
-      <sender>
-        <host>localhost</host>
-        <port>25</port>
-        <protocol>smtp</protocol>
-        <encoding>UTF-8</encoding>
-        <secure>false</secure>
-      </sender>
+	<version>2</version>
+   <defaultLocale>en_US</defaultLocale>
+   <spa>
+      <enabled>true</enabled>
+      <viewName>/templates/web/index.ftl</viewName>
+   </spa>
+   <filters>
+      <filter>
+         <script>/scripts/filters/currency.groovy</script>
+         <mapping>
+            <include>/**</include>
+            <exclude>/static-assets/**</exclude>
+         </mapping>
+      </filter>
+   </filters>
+   <ecommerce>
+<!-- General settings -->
+      <email>
+         <sender>
+            <host>localhost</host>
+            <port>25</port>
+            <protocol>smtp</protocol>
+            <encoding>UTF-8</encoding>
+            <secure>false</secure>
+         </sender>
+         <verification>
+            <enabled>false</enabled>
+            <timeout>30</timeout>
+            <address>no-reply@example.com</address>
+            <subject>Email Verification</subject>
+            <url>/customer/verify</url>
+            <template>/templates/mail/verification.ftl</template>
+         </verification>
+      </email>
+      <search>
+<!-- Built-in facets -->
+         <facets>
+            <facet>
+               <key>categories</key>
+            </facet>
+            <facet>
+               <key>price</key>
+               <min>0</min>
+               <max>2000</max>
+               <ranges>
+                  <range>
+                     <to>100</to>
+                  </range>
+                  <range>
+                     <from>100</from>
+                     <to>500</to>
+                  </range>
+                  <range>
+                     <from>500</from>
+                     <to>1500</to>
+                  </range>
+                  <range>
+                     <from>1500</from>
+                  </range>
+               </ranges>
+            </facet>
+            <facet>
+               <key>rating</key>
+               <min>0</min>
+               <max>5</max>
+               <ranges>
+                  <range>
+                     <to>1</to>
+                  </range>
+                  <range>
+                     <from>1</from>
+                     <to>2</to>
+                  </range>
+                  <range>
+                     <from>2</from>
+                     <to>3</to>
+                  </range>
+                  <range>
+                     <from>3</from>
+                     <to>4</to>
+                  </range>
+                  <range>
+                     <from>4</from>
+                  </range>
+                  <range>
+                     <from>50</from>
+                  </range>
+               </ranges>
+            </facet>
+         </facets>
+         <!-- Product specific facets -->
+         <attributes>
+<!-- Change according to your commercetools products -->
 
-      <verification>
-        <enabled>false</enabled>
-        <timeout>30</timeout>
-        <address>no-reply@example.com</address>
-        <subject>Email Verification</subject>
-        <url>/customer/verify</url>
-        <template>/templates/mail/verification.ftl</template>
-      </verification>
-    </email>
-
-    <search>
-      <!-- Built-in facets -->
-      <facets>
-        <facet>
-          <key>categories</key>
-        </facet>
-        <facet>
-          <key>price</key>
-          <min>0</min>
-          <max>2000</max>
-          <ranges>
-            <range>
-              <to>100</to>
-            </range>
-            <range>
-              <from>100</from>
-              <to>500</to>
-            </range>
-            <range>
-              <from>500</from>
-              <to>1500</to>
-            </range>
-            <range>
-              <from>1500</from>
-            </range>
-          </ranges>
-        </facet>
-        <facet>
-          <key>rating</key>
-          <min>0</min>
-          <max>5</max>
-          <ranges>
-            <range>
-              <to>1</to>
-            </range>
-            <range>
-              <from>1</from>
-              <to>2</to>
-            </range>
-            <range>
-              <from>2</from>
-              <to>3</to>
-            </range>
-            <range>
-              <from>3</from>
-              <to>4</to>
-            </range>
-            <range>
-              <from>4</from>
-            </range>
-            <range>
-              <from>50</from>
-            </range>
-          </ranges>
-        </facet>
-      </facets>
-
-      <!-- Product specific facets -->
-      <attributes>
-        <!-- Change according to your commercetools products -->
-        <!-- <attribute>
+<!-- <attribute>
           <key>form</key>
           <list>true</list>
           <translated>true</translated>
         </attribute> -->
-      </attributes>
-    </search>
-
-    <!-- Indicates the provider to use: (only commercetools supported for now) -->
-    <provider>commercetools</provider>
-
-    <!-- Specific configurations for commercetools provider -->
-    <commercetools>
-      <projectKey>${plugin:projectKey}</projectKey>
-      <clientId>${plugin:clientId}</clientId>
-      <clientSecret>${plugin:clientSecret}</clientSecret>
-      <authUrl>${plugin:authUrl}</authUrl>
-      <apiUrl>${plugin:apiUrl}</apiUrl>
-      <scopes>manage_project</scopes>
-    </commercetools>
-
-  </ecommerce>
-  <!-- CORS Properties -->
-  <cors>
-    <enable>true</enable>
-    <accessControlMaxAge>3600</accessControlMaxAge>
-    <accessControlAllowOrigin>*</accessControlAllowOrigin>
-    <accessControlAllowMethods>GET\, POST\, PUT\, OPTIONS</accessControlAllowMethods>
-    <accessControlAllowHeaders>Content-Type</accessControlAllowHeaders>
-    <accessControlAllowCredentials>true</accessControlAllowCredentials>
-  </cors>
-
+</attributes>
+      </search>
+      <!-- Indicates the provider to use: (only commercetools supported for now) -->
+      <provider>commercetools</provider>
+      <!-- Specific configurations for commercetools provider -->
+      <commercetools>
+         <projectKey>${plugin:projectKey}</projectKey>
+         <clientId>${plugin:clientId}</clientId>
+         <clientSecret>${plugin:clientSecret}</clientSecret>
+         <authUrl>${plugin:authUrl}</authUrl>
+         <apiUrl>${plugin:apiUrl}</apiUrl>
+         <scopes>manage_project</scopes>
+      </commercetools>
+   </ecommerce>
+   <!-- CORS Properties -->
+   <cors>
+      <enable>true</enable>
+      <accessControlMaxAge>3600</accessControlMaxAge>
+      <accessControlAllowOrigin>*</accessControlAllowOrigin>
+      <accessControlAllowMethods>GET\, POST\, PUT\, OPTIONS</accessControlAllowMethods>
+      <accessControlAllowHeaders>Content-Type</accessControlAllowHeaders>
+      <accessControlAllowCredentials>true</accessControlAllowCredentials>
+   </cors>
 </site>

@@ -29,16 +29,15 @@
 
 -->
 <site-config>
-   <version>3</version>
+   <version>7</version>
    <wem-project>{siteName}</wem-project>
    <display-name>{siteName}</display-name>
    <default-timezone>EST5EDT</default-timezone>
    <published-repository>
       <enable-staging-environment>false</enable-staging-environment>
-      <staging-environment>staging</staging-environment>
-      <live-environment>live</live-environment>
    </published-repository>
-   <repository rootPrefix="/site"><!-- default inheritance file name -->
+   <repository rootPrefix="/site">
+<!-- default inheritance file name -->
       <level-descriptor>crafter-level-descriptor.level.xml</level-descriptor>
       <!-- The section below classifies items into folders for two dashboard widgets:
         - Items Waiting For Approval
@@ -53,7 +52,8 @@
          <folder name="Templates" path="/templates" read-direct-children="false" attach-root-prefix="false"/>
       </folders>
       <!-- Item Patterns -->
-      <patterns><!-- The section below helps determine the type of content based on regex. This shows up in two places:
+      <patterns>
+<!-- The section below helps determine the type of content based on regex. This shows up in two places:
             - The activity audit log.
             - The UI icon used for the item
             -->
@@ -174,4 +174,22 @@
          <field>disabled</field>
       </ignore-postfix-fields>
    </form-engine>
+   <publishing>
+      <comments>
+<!-- Global setting would apply to all -->
+         <required>false</required>
+         <!-- Additional (also optional) specific overrides -->
+
+         <!-- <delete-required/> -->
+
+         <!-- <bulk-publish-required/> -->
+
+         <!-- <publish-by-commit-required/> -->
+      </comments>
+   </publishing>
+   <site-urls>
+      <authoring-url/>
+      <staging-url/>
+      <live-url/>
+   </site-urls>
 </site-config>

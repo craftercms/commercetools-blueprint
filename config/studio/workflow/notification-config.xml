@@ -154,7 +154,7 @@
                                 ${submissionComments!""}
                                 &lt;br/&gt;
                             &lt;/#if&gt;&lt;br/&gt;
-                            &lt;a href="${previewUrl}/site-dashboard"&gt;Click Here to View Content Waiting for Approval&lt;/a&gt;
+                            &lt;a href="${authoringUrl}/site-dashboard"&gt;Click Here to View Content Waiting for Approval&lt;/a&gt;
                             &lt;br/&gt;&lt;br/&gt;
         &lt;a href="${liveUrl}" &gt;
             &lt;img style="max-width: 350px;  max-height: 350px;" src="${liveUrl}/static-assets/images/workflow-email-footer.png" alt="" /&gt;
