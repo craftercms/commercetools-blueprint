@@ -41,12 +41,15 @@ import BlogEntry from './app/BlogEntry';
 import Search from './app/Search';
 import { __RouterContext } from 'react-router';
 import { useSelector } from 'react-redux';
+import DynamicRoute from './shared/DynamicRoute';
 
 const Routes = () => {
 
   const { history } = useContext(__RouterContext);
   const { isAuthoring } = useSelector(state => state.theme);
 
+
+  // TODO: remove once file is refactored to use DynamicRoute
   useEffect(
     () => {
       if (isAuthoring) {
@@ -63,7 +66,8 @@ const Routes = () => {
 
   return (
     <Switch>
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/" component={DynamicRoute} />
+      {/*<Route exact path="/" component={Home}/>*/}
       <Route exact path="/catalog" component={ProductListing}/>
       <Route path="/catalog/:product" component={ProductDetails}/>
       <Route path="/cart" component={CartView}/>

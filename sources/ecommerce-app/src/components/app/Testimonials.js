@@ -48,7 +48,7 @@ function Testimonials(props) {
         </Row>
         <Row className="landing__testimonials">
           {
-            testimonials_o.item.map(({ customer_s, description_html_raw, link_s, stars_i }, index) =>
+            testimonials_o.map(({ customer_s, description_html_raw, link_s, stars_i }, index) =>
               <Col key={index} lg={4} md={6}>
                 <a
                   href={link_s}

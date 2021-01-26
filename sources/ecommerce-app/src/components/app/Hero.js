@@ -60,7 +60,7 @@ function Hero(props) {
               dangerouslySetInnerHTML={{ __html: content_html_raw }}
             />
             {
-              buttons_o.item.map(({ label_s, link_s }, index) =>
+              buttons_o.map(({ label_s, link_s }, index) =>
                 <A
                   key={index}
                   href={link_s}

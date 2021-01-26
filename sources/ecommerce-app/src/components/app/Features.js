@@ -51,7 +51,7 @@ function Features(props) {
           <Col md={12}>
             <div className="landing__features-wrap">
               {
-                features_o.item.map(({ description_t, icon_s, title_s }, index) =>
+                features_o.map(({ description_t, icon_s, title_s }, index) =>
                   <div className="landing__feature" key={index}>
                     <div className="landing__feature-img-wrap">
                       <img src={icon_s} alt=""/>

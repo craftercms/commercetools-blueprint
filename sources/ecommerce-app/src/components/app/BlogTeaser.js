@@ -23,7 +23,7 @@
  */
 
 /* eslint-disable max-len */
-import React from 'react';
+import React  from 'react';
 import {
   Col,
   Row,
@@ -33,6 +33,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { useICE } from '../../util/component';
+import { usePosts } from '../shared/hooks';
 
 function BlogTeaser(props) {
 
@@ -45,6 +46,11 @@ function BlogTeaser(props) {
 
   const { props: ice } = useICE({ modelId: localId, label });
 
+  const posts = usePosts({
+    itemsPerPage: 3,
+    currentPage: 0
+  });
+
   return (
     <section className="landing__section" {...ice}>
       <Container>
@@ -55,8 +61,9 @@ function BlogTeaser(props) {
         </Row>
         <Row className="landing__teasers">
           {
-            posts_o.slice(0, 3).map((post) =>
-              <Col key={post.localId} lg={4} md={6}>
+            posts &&
+            posts.items.map((post) =>
+              <Col key={post.craftercms.id} lg={4} md={6}>
                 <BlogPostCard {...post}/>
               </Col>
             )

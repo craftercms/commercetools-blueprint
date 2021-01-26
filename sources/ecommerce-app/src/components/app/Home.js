@@ -45,7 +45,10 @@ const ContentTypeMap = {
   '/component/product-teaser': ProductTeaser
 };
 
-export default function Home() {
+export default function Home(props) {
+  const {
+    model
+  } = props;
 
   const content = useSelector(state => state.content.home);
   const persona = useSelector(state => state.users.persona);
@@ -80,9 +83,10 @@ export default function Home() {
       ]}
     >
       {
-        content && content.map((component) => {
-          const Component = ContentTypeMap[component.contentType] || NotImplemented;
-          return <Component key={component.objectId || component.localId} {...component} />
+        model && model.sections_o && model.sections_o.map((component) => {
+          const Component = ContentTypeMap[component.craftercms.contentTypeId] || NotImplemented;
+
+          return <Component key={component.craftercms.id} {...component} />
         })
       }
     </Layout>
