@@ -23,7 +23,7 @@
  */
 
 /* eslint-disable max-len */
-import React  from 'react';
+import React from 'react';
 import {
   Col,
   Row,
@@ -45,11 +45,7 @@ function BlogTeaser(props) {
   } = props;
 
   const { props: ice } = useICE({ modelId: localId, label });
-
-  const posts = usePosts({
-    itemsPerPage: 3,
-    currentPage: 0
-  });
+  const posts = usePosts();
 
   return (
     <section className="landing__section" {...ice}>

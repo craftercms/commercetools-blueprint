@@ -19,7 +19,12 @@ import { fetchQuery } from '../../util/content';
 import { postsQuery } from './queries.graphql';
 import { parseDescriptor } from '@craftercms/content';
 
-export function usePosts(paginationData) {
+const defaultPaginationData = {
+  itemsPerPage: 3,
+  currentPage: 0
+};
+
+export function usePosts(paginationData = defaultPaginationData) {
   const [posts, setPosts] = useState();
 
   useEffect(() => {

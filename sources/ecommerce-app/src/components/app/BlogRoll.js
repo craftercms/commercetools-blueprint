@@ -35,14 +35,26 @@ import { Empty } from '../shared/Empty';
 import * as qs from 'query-string';
 import KeyboardArrowLeftIcon from 'mdi-react/KeyboardArrowLeftIcon';
 import { Link } from 'react-router-dom';
+import { usePosts } from '../shared/hooks';
 
 const query = loader('../../queries/Blog.graphql').loc.source.body;
 
 export default function BlogRoll(props) {
+  const {
+    model
+  } = props;
 
   const content = useContentBranch();
   const [roll, setRoll] = useState();
   const selectedCategory = qs.parse(props.location.search).category;
+  const [postsFiltered, setPostsFiltered] = useState();
+
+
+  const [paginationData, setPaginationData] = useState({
+    itemsPerPage: 500,
+    currentPage: 0
+  });
+  const posts = usePosts(paginationData);
 
   useEffect(
     () => {
@@ -58,8 +70,6 @@ export default function BlogRoll(props) {
           catchError(({ response }) => [response])
         ).subscribe((response) => {
           setRoll({
-            blog: response.blog.items[0],
-            posts: response.post.items,
             categories: response.categories.items[0].items.item
           });
         })
@@ -68,6 +78,18 @@ export default function BlogRoll(props) {
     },
     [content.nav, props.location.pathname]
   );
+
+  useEffect(() => {
+    if (posts) {
+      setPostsFiltered(
+        selectedCategory
+          ? posts.items.filter(
+          ({categories_o}) => categories_o.some(i => i.key === selectedCategory)
+          )
+          : posts.items
+      );
+    }
+  }, [posts, selectedCategory]);
 
   if (!roll) {
     return (
@@ -83,31 +105,26 @@ export default function BlogRoll(props) {
     );
   }
 
-  const posts = selectedCategory
-    ? roll.posts.filter(
-      ({categories_o}) => categories_o.item.some(i => i.key === selectedCategory)
-    )
-    : roll.posts;
 
   return (
     <Layout>
       <Container>
         <Row>
           <Col md={12}>
-            <h1 className="page-title">{roll.blog.title_s}</h1>
+            <h1 className="page-title">{ model && model.craftercms.label}</h1>
           </Col>
           <Col md={9}>
             <Row>
               {
-                posts.length === 0 && <Col sm={12}>
+                postsFiltered && postsFiltered.length === 0 && <Col sm={12}>
                   <Card style={{ background: '#fff' }}>
                     <Empty description="There are no posts at this time. Please check back often :)"/>
                   </Card>
                 </Col>
               }
               {
-                posts.map((post) =>
-                  <Col key={post.localId} xl={4} lg={6}>
+                postsFiltered && postsFiltered.map((post) =>
+                  <Col key={post.craftercms.id} xl={4} lg={6}>
                     <BlogPostCard {...post} hideSummary/>
                   </Col>
                 )

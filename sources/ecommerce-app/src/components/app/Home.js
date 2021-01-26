@@ -50,17 +50,7 @@ export default function Home(props) {
     model
   } = props;
 
-  const content = useSelector(state => state.content.home);
   const persona = useSelector(state => state.users.persona);
-
-  useEffect(
-    () => {
-      if (content) {
-        window.amplify && window.amplify.publish('INIT_ICE_REGIONS');
-      }
-    },
-    [content]
-  );
 
   return (
     <Layout

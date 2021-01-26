@@ -173,7 +173,7 @@ export default `
         )
         content__type(
           filter:{
-            regex: ".*(landing|post).*"   # TODO: types!
+            regex: ".*(landing|post|blog_roll).*"   # TODO: types!
           }
         ) @skip (if: $skipContentType)
         ...on page_landing {
