@@ -19,6 +19,7 @@ import Home from '../app/Home';
 import { fetchQuery } from '../../util/content';
 import byUrlQuery from './queries.graphql';
 import { parseDescriptor } from '@craftercms/content';
+import { reportNavigation } from '@craftercms/ice';
 // import { Guest, ContentType } from '@craftercms/studio-guest';
 import { isAuthoring } from './utils';
 
@@ -29,7 +30,7 @@ export default function DynamicRoute(props) {
 
   useEffect(() => {
     let destroyed = false;
-    // reportNavigation(url); // TODO: get from craftercms/ice
+    reportNavigation(url);
     fetchQuery(
       { text: byUrlQuery },
       {
