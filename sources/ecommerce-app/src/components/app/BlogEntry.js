@@ -32,16 +32,21 @@ import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { useICE } from '../../util/component';
 import { getProducts, useProductsQuery } from '../../util/products';
+import { useCategories, usePosts } from '../shared/hooks';
 
 export default function BlogEntry(props) {
   const slug = props.match.params.slug;
+
+  const categories = useCategories();
+
+  const [paginationData] = useState({
+    itemsPerPage: 1,
+    currentPage: 0
+  });
+  const post = usePosts(paginationData, slug);
+
   return <Layout
     requirements={[
-      {
-        name: 'categories',
-        optional: true,
-        getter: (content) => content.categories ? Object.values(content.categories.byId) : null
-      },
       { name: 'post', getter: (content) => content.post && content.post.bySlug[slug] }
     ]}
     variables={{
@@ -56,20 +61,26 @@ export default function BlogEntry(props) {
       (reqs) => (
         <Container>
           <Row>
-            <Col md={9}>
-              <Card>
-                <CardBody>
-                  <Post post={reqs.post}/>
-                </CardBody>
-              </Card>
-            </Col>
+            {
+              post &&
+              <Col md={9}>
+                <Card>
+                  <CardBody>
+                    <Post post={post.items[0]}/>
+                  </CardBody>
+                </Card>
+              </Col>
+            }
             <Col md={3}>
 
-              <CategoryListing categories={reqs.categories}/>
-
-              <RelatedPosts categories={reqs.post.categories_o.item} slug={slug}/>
-              <RelatedProducts categories={reqs.post.categories_o.item}/>
-
+              <CategoryListing categories={categories}/>
+              {
+                post &&
+                <>
+                  <RelatedPosts categories={post.items[0].categories_o} slug={slug}/>
+                  <RelatedProducts categories={post.items[0].categories_o}/>
+                </>
+              }
             </Col>
           </Row>
         </Container>
@@ -90,7 +101,7 @@ function Post({ post }) {
       </section>
       {image_s && <img className="post__image" src={image_s} alt=""/>}
       <div className="post__body" dangerouslySetInnerHTML={{ __html: content_html_raw }}/>
-      <div className="post__categories">{categories_o.item.map((item) => item.value_smv).join(', ')}</div>
+      <div className="post__categories">{categories_o.map((item) => item.value_smv).join(', ')}</div>
     </>
   );
 }

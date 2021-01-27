@@ -14,6 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import { crafterConf } from '@craftercms/classes';
+import Cookies from 'js-cookie';
+
 export function isAuthoring() {
   const html = document.documentElement;
   const attr = html.getAttribute('data-craftercms-preview');
@@ -23,3 +26,44 @@ export function isAuthoring() {
     attr === 'true'
   );
 }
+
+export function createResource(factory) {
+  let result;
+  let status = "pending";
+  let suspender = factory().then(
+    response => {
+      status = "success";
+      result = response;
+    },
+    error => {
+      status = "error";
+      result = error;
+    }
+  );
+  return {
+    read() {
+      if (status === "pending") {
+        throw suspender;
+      } else if (status === "error") {
+        throw result;
+      } else if (status === "success") {
+        return result;
+      }
+    }
+  };
+}
+
+export const siteName =
+  document.getElementById('2fb5164e').innerHTML ||
+  process.env.REACT_APP_CRAFTERCMS_SITE_ID ||
+  Cookies.get('crafterSite');
+if (!siteName) {
+  throw new Error('Site not set.');
+}
+
+export const crafterConfig = {
+  baseUrl: process.env.REACT_APP_CRAFTERCMS_BASE_URL ?? '',
+  site: siteName
+};
+
+crafterConf.configure(crafterConfig);

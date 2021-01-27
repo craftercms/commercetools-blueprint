@@ -34,6 +34,7 @@ import store from '../redux/store';
 import ScrollReset from './ScrollReset';
 import { config as i18nextConfig } from '../translations/i18n';
 import MainWrapper from './MainWrapper';
+import { GlobalContextProvider } from './shared/context';
 
 i18next.init(i18nextConfig);
 
@@ -63,19 +64,21 @@ function App(props) {
   );
 
   return (
-    <Provider store={store}>
-      <I18nextProvider i18n={i18next}>
-        <BrowserRouter>
-          <ScrollReset>
-            <MainWrapper>
-              <main>
-                <Routes/>
-              </main>
-            </MainWrapper>
-          </ScrollReset>
-        </BrowserRouter>
-      </I18nextProvider>
-    </Provider>
+    <GlobalContextProvider jQuery={props.jQuery}>
+      <Provider store={store}>
+        <I18nextProvider i18n={i18next}>
+          <BrowserRouter>
+            <ScrollReset>
+              <MainWrapper>
+                <main>
+                  <Routes/>
+                </main>
+              </MainWrapper>
+            </ScrollReset>
+          </BrowserRouter>
+        </I18nextProvider>
+      </Provider>
+    </GlobalContextProvider>
   );
 }
 

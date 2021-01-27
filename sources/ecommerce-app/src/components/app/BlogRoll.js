@@ -35,7 +35,7 @@ import { Empty } from '../shared/Empty';
 import * as qs from 'query-string';
 import KeyboardArrowLeftIcon from 'mdi-react/KeyboardArrowLeftIcon';
 import { Link } from 'react-router-dom';
-import { usePosts } from '../shared/hooks';
+import { useCategories, usePosts } from '../shared/hooks';
 
 const query = loader('../../queries/Blog.graphql').loc.source.body;
 
@@ -44,40 +44,14 @@ export default function BlogRoll(props) {
     model
   } = props;
 
-  const content = useContentBranch();
-  const [roll, setRoll] = useState();
   const selectedCategory = qs.parse(props.location.search).category;
   const [postsFiltered, setPostsFiltered] = useState();
-
-
-  const [paginationData, setPaginationData] = useState({
+  const [paginationData] = useState({
     itemsPerPage: 500,
     currentPage: 0
   });
   const posts = usePosts(paginationData);
-
-  useEffect(
-    () => {
-      let sub = { unsubscribe: () => void null };
-      if (!!content.nav) {
-        const navItem = content.nav.find(item => props.location.pathname === item.url);
-        sub = ajax.post(
-          process.env.REACT_APP_GRAPHQL_SERVER,
-          { query, variables: { id: navItem.localId } },
-          { 'Content-Type': 'application/json; charset=UTF-8' }
-        ).pipe(
-          map(({ response }) => response.data),
-          catchError(({ response }) => [response])
-        ).subscribe((response) => {
-          setRoll({
-            categories: response.categories.items[0].items.item
-          });
-        })
-      }
-      return () => sub.unsubscribe()
-    },
-    [content.nav, props.location.pathname]
-  );
+  const categories = useCategories();
 
   useEffect(() => {
     if (posts) {
@@ -91,7 +65,7 @@ export default function BlogRoll(props) {
     }
   }, [posts, selectedCategory]);
 
-  if (!roll) {
+  if (!model) {
     return (
       <Layout>
         <Container>
@@ -104,7 +78,6 @@ export default function BlogRoll(props) {
       </Layout>
     );
   }
-
 
   return (
     <Layout>
@@ -133,7 +106,7 @@ export default function BlogRoll(props) {
           </Col>
           <Col md={3}>
             <CategoryListing
-              categories={roll.categories}
+              categories={categories}
               selected={selectedCategory}
             />
           </Col>

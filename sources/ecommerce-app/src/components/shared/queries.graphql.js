@@ -192,16 +192,16 @@ export const postsQuery = `
     $postsLimit: Int = 3
     $postsOffset: Int = 0
     $exclude: String = ""
+    $slug: String = ".*.*"
   ) {
     post: component_post(
       limit: $postsLimit
       offset: $postsOffset
     ) {
-      # ...byUrlQueryPost
       total
       items {
         ...byUrlQueryContentItemFields
-        slug_s  # TODO: check this slug filter (filter: {equals: $slug})
+        slug_s(filter: { regex: $slug })
         localId
         title_s
         image_s

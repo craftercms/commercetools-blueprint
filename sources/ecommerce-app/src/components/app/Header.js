@@ -35,7 +35,7 @@ import {
   DropdownItem
 } from 'reactstrap';
 import Anchor from '../shared/Anchor';
-import { __RouterContext, Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import SearchIcon from 'mdi-react/SearchIcon';
 import PersonCircleOutlineIcon from 'mdi-react/PersonCircleOutlineIcon';
 import ShoppingCartIcon from 'mdi-react/ShoppingCartIcon';
@@ -64,7 +64,7 @@ export default function Header() {
   const [localesOpen, setLocalesOpen] = useState(false);
   const [currenciesOpen, setCurrenciesOpen] = useState(false);
 
-  const { history } = useContext(__RouterContext);
+  const history = useHistory();
   const { content, users, products } = useSelector(state => state);
   const { query } = products;
   const [searchOpen, setSearchOpen] = useState(false);
