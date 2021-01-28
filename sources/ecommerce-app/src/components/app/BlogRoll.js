@@ -25,10 +25,6 @@
 import React, { useEffect, useState } from 'react';
 import Layout from './Layout';
 import { Container, Row, Col, Card } from 'reactstrap';
-import { useContentBranch } from '../../util/component';
-import { loader } from 'graphql.macro';
-import { ajax } from 'rxjs/ajax';
-import { map, catchError } from 'rxjs/operators';
 import { BlogPostCard } from './BlogTeaser';
 import Spinner from '../shared/Spinner';
 import { Empty } from '../shared/Empty';
@@ -36,8 +32,6 @@ import * as qs from 'query-string';
 import KeyboardArrowLeftIcon from 'mdi-react/KeyboardArrowLeftIcon';
 import { Link } from 'react-router-dom';
 import { useCategories, usePosts } from '../shared/hooks';
-
-const query = loader('../../queries/Blog.graphql').loc.source.body;
 
 export default function BlogRoll(props) {
   const {

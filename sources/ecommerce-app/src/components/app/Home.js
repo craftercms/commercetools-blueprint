@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Hero from './Hero';
 import Features from './Features';

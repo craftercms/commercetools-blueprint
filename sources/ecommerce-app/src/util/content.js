@@ -14,7 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { crafterConf } from '@craftercms/classes';
 import Cookies from 'js-cookie';
 
 export const siteName =

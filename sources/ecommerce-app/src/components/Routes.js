@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ProductListing from './app/ProductsListing';
 import ProductDetails from './app/ProductDetails';
@@ -39,13 +39,13 @@ import OrderDetails from './app/OrderDetails';
 import BlogRoll from './app/BlogRoll';
 import BlogEntry from './app/BlogEntry';
 import Search from './app/Search';
-import { __RouterContext } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import DynamicRoute from './shared/DynamicRoute';
 
 const Routes = () => {
 
-  const { history } = useContext(__RouterContext);
+  const history = useHistory();
   const { isAuthoring } = useSelector(state => state.theme);
 
 

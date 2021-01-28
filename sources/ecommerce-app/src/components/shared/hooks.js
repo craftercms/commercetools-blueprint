@@ -58,7 +58,7 @@ export function usePosts(paginationData = defaultPaginationData, slug) {
         pageCount: Math.ceil(data.post.total/paginationData.itemsPerPage)
       });
     });
-  }, [paginationData]);
+  }, [paginationData, slug]);
 
   return posts;
 }

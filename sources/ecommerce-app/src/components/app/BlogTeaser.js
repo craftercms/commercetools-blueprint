@@ -41,7 +41,6 @@ function BlogTeaser(props) {
     label,
     localId,
     title_s,
-    posts_o // Fake model property. Injected by the reducer.
   } = props;
 
   const { props: ice } = useICE({ modelId: localId, label });
