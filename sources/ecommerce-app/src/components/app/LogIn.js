@@ -31,19 +31,18 @@ import { Field, reduxForm } from 'redux-form';
 import EyeIcon from 'mdi-react/EyeIcon';
 import KeyVariantIcon from 'mdi-react/KeyVariantIcon';
 import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import renderCheckBoxField from '../shared/form/CheckBox';
 import Alert from '../shared/Alert';
 import { ajax } from 'rxjs/ajax';
 import { catchError } from 'rxjs/operators';
-import { __RouterContext } from 'react-router';
 import { loginComplete } from '../../redux/actions/usersActions';
 import { useDispatch, useSelector } from 'react-redux';
 
 function LogInFormComponent(props) {
 
   const dispatch = useDispatch();
-  const { history } = useContext(__RouterContext);
+  const history = useHistory();
   const state = useSelector(state => state);
 
   const [showPassword, setShowPassword] = useState(false);

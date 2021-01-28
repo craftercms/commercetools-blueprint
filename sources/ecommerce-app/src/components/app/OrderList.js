@@ -27,13 +27,13 @@ import React, { useContext, useEffect } from 'react';
 import { FETCH_ORDERS, fetchOrders } from '../../redux/actions/usersActions';
 import Spinner from '../shared/Spinner';
 import { capitalize, money } from '../../util/string';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Empty } from '../shared/Empty';
-import { __RouterContext } from 'react-router';
 
 function OrderList() {
-  const { history } = useContext(__RouterContext);
+  const history = useHistory();
+
   const dispatch = useDispatch();
   const { orders: ordersTable, loading } = useSelector(state => state.users);
   const orders = Object.values(ordersTable);

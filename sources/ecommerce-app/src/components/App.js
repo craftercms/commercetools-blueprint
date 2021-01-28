@@ -27,8 +27,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { hot } from 'react-hot-loader';
 import Routes from './Routes';
 import store from '../redux/store';
 import ScrollReset from './ScrollReset';
@@ -38,7 +36,7 @@ import { GlobalContextProvider } from './shared/context';
 
 i18next.init(i18nextConfig);
 
-function App(props) {
+export default function App(props) {
 
   useEffect(
     () => {
@@ -81,5 +79,3 @@ function App(props) {
     </GlobalContextProvider>
   );
 }
-
-export default hot(module)(App);

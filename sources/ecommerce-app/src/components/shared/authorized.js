@@ -27,7 +27,7 @@ import React, { useContext } from 'react';
 // import invariant from 'tiny-invariant';
 import hoistStatics from 'hoist-non-react-statics';
 
-import { __RouterContext } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useUser } from '../../util/component';
 import Spinner from './Spinner';
 
@@ -36,7 +36,8 @@ export default function authorized(Component) {
   const displayName = `authorized(${Component.displayName || Component.name})`;
   const C = props => {
 
-    const { history, location } = useContext(__RouterContext);
+    const history = useHistory();
+    const location = useLocation;
     const { wrappedComponentRef, ...remainingProps } = props;
 
     const user = useUser({
