@@ -26,7 +26,9 @@
 import es from './es/main.json';
 import en from './en/main.json';
 
-export default {
+const resources = {
   en: { ...en },
   es: { ...es  }
 };
+
+export default resources;

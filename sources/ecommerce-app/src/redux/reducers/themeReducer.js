@@ -39,7 +39,7 @@ const initialState = {
   topNavigation: false,
 };
 
-export default function (state = initialState, action) {
+function themeReducer(state = initialState, action) {
   switch (action.type) {
     case CHANGE_THEME_TO_DARK:
       return { ...state, className: 'theme-dark' };
@@ -57,3 +57,6 @@ export default function (state = initialState, action) {
       return state;
   }
 }
+
+export default themeReducer;
+

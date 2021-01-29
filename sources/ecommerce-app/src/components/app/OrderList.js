@@ -23,7 +23,7 @@
  */
 
 import { Badge, Table } from 'reactstrap';
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { FETCH_ORDERS, fetchOrders } from '../../redux/actions/usersActions';
 import Spinner from '../shared/Spinner';
 import { capitalize, money } from '../../util/string';

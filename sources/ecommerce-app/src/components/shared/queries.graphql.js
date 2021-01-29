@@ -27,7 +27,7 @@ const commonFragments = `
 `
 
 // language=GraphQL
-export default `
+const main = `
   ${commonFragments}
 
   fragment byUrlQueryBlogTeaser on component_blog_teaser {
@@ -219,3 +219,5 @@ export const postsQuery = `
     }
   }
 `
+
+export default main;

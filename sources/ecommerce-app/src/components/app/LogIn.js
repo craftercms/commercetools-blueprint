@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Anchor from '../shared/Anchor';
 import { getLoginFormDefaults } from '../../util/component';
 import AssertContent from '../shared/AssertContent';

@@ -69,6 +69,7 @@ const Routes = () => {
       <Route exact path="/" component={DynamicRoute} />
       {/*<Route exact path="/" component={Home}/>*/}
       <Route exact path="/catalog" component={ProductListing}/>
+      {/*<Route exact path="/catalog" component={DynamicRoute}/>*/}
       <Route path="/catalog/:product" component={ProductDetails}/>
       <Route path="/cart" component={CartView}/>
       <Route path="/checkout" component={CheckoutView}/>
@@ -76,8 +77,10 @@ const Routes = () => {
       <Route exact path="/account/address-book/edit/:id?" component={AddressEntry}/>
       <Route exact path="/account/orders/:id" component={OrderDetails}/>
       <Route path="/account/:tab?" component={Account}/>
-      <Route exact path="/blog" component={BlogRoll}/>
+      {/*<Route exact path="/blog" component={BlogRoll}/>*/}
+      <Route exact path="/blog" component={DynamicRoute}/>
       <Route path="/blog/:slug" component={BlogEntry}/>
+      {/*<Route path="/blog/:slug" component={DynamicRoute}/>*/}
       <Route path="/login" component={LogIn}/>
       <Route path="/register" component={Register}/>
       <Route path="/search" component={Search}/>
