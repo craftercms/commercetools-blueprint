@@ -29,14 +29,12 @@ import ProductDetails from './app/ProductDetails';
 
 import LogIn from './app/LogIn';
 import Register from './app/Register';
-import Home from './app/Home';
 import NotFound404 from './app/NotFoundView';
 import CartView from './app/CartView';
 import Account from './app/Account';
 import CheckoutView from './app/CheckoutView';
 import { AddressEntry } from './app/AddressCard';
 import OrderDetails from './app/OrderDetails';
-import BlogRoll from './app/BlogRoll';
 import BlogEntry from './app/BlogEntry';
 import Search from './app/Search';
 import { useHistory } from 'react-router-dom';
@@ -67,7 +65,6 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={DynamicRoute} />
-      {/*<Route exact path="/" component={Home}/>*/}
       <Route exact path="/catalog" component={ProductListing}/>
       {/*<Route exact path="/catalog" component={DynamicRoute}/>*/}
       <Route path="/catalog/:product" component={ProductDetails}/>
@@ -77,10 +74,8 @@ const Routes = () => {
       <Route exact path="/account/address-book/edit/:id?" component={AddressEntry}/>
       <Route exact path="/account/orders/:id" component={OrderDetails}/>
       <Route path="/account/:tab?" component={Account}/>
-      {/*<Route exact path="/blog" component={BlogRoll}/>*/}
       <Route exact path="/blog" component={DynamicRoute}/>
       <Route path="/blog/:slug" component={BlogEntry}/>
-      {/*<Route path="/blog/:slug" component={DynamicRoute}/>*/}
       <Route path="/login" component={LogIn}/>
       <Route path="/register" component={Register}/>
       <Route path="/search" component={Search}/>

@@ -15,13 +15,13 @@
  */
 
 import React, { useEffect, useState } from 'react';
-import Home from '../app/Home';
 import { fetchQuery } from '../../util/content';
 import byUrlQuery from './queries.graphql';
 import { parseDescriptor } from '@craftercms/content';
 import { reportNavigation } from '@craftercms/ice';
-// import { Guest, ContentType } from '@craftercms/studio-guest';
+import { Guest, ContentType } from '@craftercms/studio-guest';
 import { isAuthoring } from './utils';
+import contentTypeMap from './contentTypeMap';
 
 export default function DynamicRoute(props) {
   const { match, location } = props;
@@ -56,18 +56,19 @@ export default function DynamicRoute(props) {
   }, [url]);
 
 
-  // if (state === null) {
-  //   return <></>; // TODO: spinner component
-  // } else {
-  //   return <Guest
-  //     modelId={state.model?.craftercms.id}
-  //     isAuthoring={isAuthoring()}
-  //     path={state.model?.craftercms.path}
-  //   >
-  //     <Home {...state} {...props} />
-  //   </Guest>
-  // }
-
-
-  return <Home {...state} {...props} />
+  if (state === null) {
+    return <></>; // TODO: spinner component
+  } else {
+    return <Guest
+      modelId={state.model?.craftercms.id}
+      isAuthoring={isAuthoring()}
+      path={state.model?.craftercms.path}
+    >
+      <ContentType
+        {...state}
+        {...props}
+        contentTypeMap={contentTypeMap}
+      />
+    </Guest>
+  }
 }
