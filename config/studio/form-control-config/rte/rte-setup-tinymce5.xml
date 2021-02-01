@@ -2,7 +2,7 @@
 <!--
   ~ MIT License
   ~
-  ~ Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+  ~ Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
   ~
   ~ Permission is hereby granted, free of charge, to any person obtaining a copy
   ~ of this software and associated documentation files (the "Software"), to deal
@@ -42,8 +42,8 @@
         </rteStyleOverride>
 
         <plugins>
-            print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template 
-			codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount 
+            print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
+			codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount
 			textpattern help acecode
         </plugins>
 
