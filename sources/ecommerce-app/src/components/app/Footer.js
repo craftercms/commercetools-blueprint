@@ -28,6 +28,7 @@ import Anchor from "../shared/Anchor";
 import { useDispatch, useSelector } from 'react-redux';
 import Flag from 'react-world-flags';
 import { changeCurrency, changeLocale } from '../../redux/actions/productsActions';
+import { useFooter, useStoreSettings } from '../shared/hooks';
 
 const FlagCodeMap = {
   de: 'de',
@@ -36,24 +37,9 @@ const FlagCodeMap = {
 };
 
 function Footer(props){
-
   const dispatch = useDispatch();
-
-  const { footer, store } = useSelector(state => state.content);
-
-  const {
-    logo_s,
-    logo_alt_t,
-    logo_url_s,
-    section_background_image_s
-  } = footer;
-
-  const {
-    name,
-    locales,
-    currencies
-  } = store;
-
+  const footer = useFooter();
+  const storeSettings = useStoreSettings();
   const {
     query: { locale, currency }
   } = useSelector(state => state.products);
@@ -65,8 +51,9 @@ function Footer(props){
   return (
     <footer className="landing__footer">
       {
-        section_background_image_s &&
-        <img className="landing__footer-background" src={section_background_image_s} alt="" />
+        footer &&
+        footer.section_background_image_s &&
+        <img className="landing__footer-background" src={footer.section_background_image_s} alt="" />
       }
       <Container>
         <Row>
@@ -75,37 +62,46 @@ function Footer(props){
               <DropdownToggle caret>
                 {FlagCodeMap[locale] ? <Flag code={FlagCodeMap[locale]}/> : locale}
               </DropdownToggle>
-              <DropdownMenu>
-                {
-                  (locales || []).map((code) => (
-                    <DropdownItem key={code} onClick={() => dispatch(changeLocale(code))}>
-                      {FlagCodeMap[code] ? <Flag code={FlagCodeMap[code]}/> : code}
-                    </DropdownItem>
-                  ))
-                }
-              </DropdownMenu>
+              {
+                storeSettings &&
+                <DropdownMenu>
+                  {
+                    (storeSettings.locales || []).map((code) => (
+                      <DropdownItem key={code} onClick={() => dispatch(changeLocale(code))}>
+                        {FlagCodeMap[code] ? <Flag code={FlagCodeMap[code]}/> : code}
+                      </DropdownItem>
+                    ))
+                  }
+                </DropdownMenu>
+              }
             </Dropdown>
             <Dropdown className="landing__footer-currency-dropdown" direction="up" isOpen={currenciesOpen} toggle={() => setCurrenciesOpen(!currenciesOpen)}>
               <DropdownToggle caret>
                 {currency}
               </DropdownToggle>
-              <DropdownMenu>
-                {
-                  (currencies || []).map((code) => (
-                    <DropdownItem key={code} onClick={() => dispatch(changeCurrency(code))}>{code}</DropdownItem>
-                  ))
-                }
-              </DropdownMenu>
+              {
+                storeSettings &&
+                <DropdownMenu>
+                  {
+                    (storeSettings.currencies || []).map((code) => (
+                      <DropdownItem key={code} onClick={() => dispatch(changeCurrency(code))}>{code}</DropdownItem>
+                    ))
+                  }
+                </DropdownMenu>
+              }
             </Dropdown>
           </Col>
           <Col md={12}>
             <p>Powered By</p>
-            <Anchor href={logo_url_s}>
-              <img className="landing__footer-logo" src={logo_s} alt={logo_alt_t}/>
-            </Anchor>
+            {
+              footer &&
+              <Anchor href={footer.logo_url_s}>
+                <img className="landing__footer-logo" src={footer.logo_s} alt={footer.logo_alt_t}/>
+              </Anchor>
+            }
           </Col>
           <Col md={12}>
-            © {name} {new Date().getFullYear()}
+            © {storeSettings && storeSettings.name} {new Date().getFullYear()}
           </Col>
         </Row>
       </Container>

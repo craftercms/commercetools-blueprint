@@ -45,14 +45,11 @@ export default function Search(props) {
   const [productResults, setProductResults] = useState();
   const productsQueryParams = useProductsQuery({ q: query, limit: 10, offset: 0 });
 
-  const [paginationData/*, setPaginationData*/] = useState({
+  const [paginationData] = useState({
     itemsPerPage: 10,
     currentPage: 0
   });
   let resource = useUrlSearchQueryFetchResource(paginationData.itemsPerPage);
-
-  // const history = useHistory();
-  // const [query] = useSearchQuery();
 
   useEffect(
     () => {

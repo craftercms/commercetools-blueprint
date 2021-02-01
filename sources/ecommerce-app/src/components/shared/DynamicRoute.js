@@ -22,6 +22,7 @@ import { reportNavigation } from '@craftercms/ice';
 import { Guest, ContentType } from '@craftercms/studio-guest';
 import { isAuthoring } from './utils';
 import contentTypeMap from './contentTypeMap';
+import Spinner from '../shared/Spinner';
 
 export default function DynamicRoute(props) {
   const { match, location } = props;
@@ -57,7 +58,7 @@ export default function DynamicRoute(props) {
 
 
   if (state === null) {
-    return <></>; // TODO: spinner component
+    return <Spinner />;
   } else {
     return <Guest
       modelId={state.model?.craftercms.id}

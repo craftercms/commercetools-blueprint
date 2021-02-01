@@ -22,24 +22,24 @@
  * SOFTWARE.
  */
 
-import React from 'react';
+import React  from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import AssertContent from '../shared/AssertContent';
 
-export function Layout({ children, className, requirements = [], variables, render }) {
-  return <AssertContent
-    requirements={['nav', 'header', 'footer', 'store', ...requirements]}
-    variables={variables}
-    render={(reqs) => (
-      <div className={`landing ${className}`}>
-        <Header/>
-        <div className="landing__content-wrapper">
-          {render ? render(reqs) : children}
-        </div>
-        <Footer/>
+export function Layout({ children, className = [] }) {
+  return (
+    <div className={`landing ${className}`}>
+      <Header/>
+      <div className="landing__content-wrapper">
+        {
+          React.Children.map(children, (child) => {
+              return React.cloneElement(child)
+            })
+        }
       </div>
-    )}/>;
+      <Footer/>
+    </div>
+  );
 }
 
 Layout.defaultProps = {

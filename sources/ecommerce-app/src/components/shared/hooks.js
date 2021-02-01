@@ -16,7 +16,13 @@
 
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { fetchQuery } from '../../util/content';
-import { postsQuery } from './queries.graphql';
+import {
+  footerQuery,
+  headerQuery,
+  navQuery,
+  postsQuery,
+  storeSettingsQuery
+} from './queries.graphql';
 import { parseDescriptor, preParseSearchResults } from '@craftercms/content';
 import { useGlobalContext } from './context';
 import { useLocation } from 'react-router-dom';
@@ -159,4 +165,88 @@ export function useUrlSearchQueryFetchResource(size = 1) {
     ))
   }, [query, page, size]);
   return resource;
+}
+
+export function useNavigation() {
+  const [{ pages, pagesLoading }, update] = useGlobalContext();
+  const destroyedRef = useRef(false);
+  useEffect(() => {
+    return () => {
+      destroyedRef.current = true;
+    }
+  }, []);
+  useEffect(() => {
+    if (!pages && !pagesLoading) {
+      update({ pagesLoading: true });
+      fetchQuery({
+        text: navQuery
+      }).then(({ data }) => {
+        (!destroyedRef.current) && update({ pages: data.pages.items });
+      })
+    }
+  }, [update, pages, pagesLoading]);
+  return pages;
+}
+
+export function useHeader() {
+  const [{ header, headerLoading}, update] = useGlobalContext();
+  const destroyedRef = useRef(false);
+  useEffect(() => {
+    return () => {
+      destroyedRef.current = true;
+    }
+  }, []);
+  useEffect(() => {
+    if (!header && !headerLoading) {
+      update({ headerLoading: true });
+      fetchQuery({
+        text: headerQuery
+      }).then(({ data }) => {
+        (!destroyedRef.current) && update({ header: data.component_header.items[0]});
+      })
+    }
+  }, [update, header, headerLoading]);
+  return header;
+}
+
+export function useFooter() {
+  const [{ footer, footerLoading }, update] = useGlobalContext();
+  const destroyedRef = useRef(false);
+  useEffect(() => {
+    return () => {
+      destroyedRef.current = true;
+    }
+  }, []);
+  useEffect(() => {
+    if (!footer && !footerLoading) {
+      update({ footerLoading: true });
+      fetchQuery({
+        text: footerQuery
+      }).then(({ data }) => {
+        (!destroyedRef.current) && update({ footer: data.component_footer.items[0] });
+      })
+    }
+  }, [update, footer, footerLoading]);
+  return footer;
+}
+
+export function useStoreSettings() {
+  const [{ storeSettings, storeSettingsLoading }, update] = useGlobalContext();
+  const destroyedRef = useRef(false);
+  useEffect(() => {
+    return () => {
+      destroyedRef.current = true;
+    }
+  }, []);
+  useEffect(() => {
+    if(!storeSettings && !storeSettingsLoading) {
+      update({ storeSettingsLoading: true });
+      fetchQuery({
+        text: storeSettingsQuery
+      }).then(({ data }) => {
+        (!destroyedRef.current) && update({ storeSettings: data.store.settings });
+      });
+    }
+  }, [update, storeSettings, storeSettingsLoading]);
+  return storeSettings;
 }

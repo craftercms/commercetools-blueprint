@@ -43,6 +43,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import hamburger  from '../../img/burger.svg';
 import Flag from 'react-world-flags';
 import { changeCurrency, changeLocale } from '../../redux/actions/productsActions';
+import { useHeader, useNavigation, useStoreSettings } from '../shared/hooks';
 
 const FlagCodeMap = {
   de: 'de',
@@ -53,11 +54,6 @@ const FlagCodeMap = {
 export default function Header() {
 
   const dispatch = useDispatch();
-  const { store: {
-    name,
-    locales,
-    currencies
-  } } = useSelector(state => state.content);
   const {
     query: { locale, currency }
   } = useSelector(state => state.products);
@@ -65,19 +61,16 @@ export default function Header() {
   const [currenciesOpen, setCurrenciesOpen] = useState(false);
 
   const history = useHistory();
-  const { content, users, products } = useSelector(state => state);
+  const { users, products } = useSelector(state => state);
   const { query } = products;
   const [searchOpen, setSearchOpen] = useState(false);
   const [keywords, setKeywords] = useState(query.keywords || '');
 
-  const
-    {
-      logo_s,
-      logo_alt_t,
-      logo_url_s
-    } = content.header,
-    { user } = users,
-    nav = content.nav;
+  const { user } = users;
+
+  const header = useHeader();
+  const nav = useNavigation();
+  const storeSettings = useStoreSettings();
 
   return (
     <div className="landing__menu">
@@ -85,9 +78,13 @@ export default function Header() {
         <Row>
           <Col md={12}>
             <div className="landing__menu-wrap">
-              <Anchor className="landing__menu-logo" href={logo_url_s}>
-                <img src={logo_s} alt={logo_alt_t}/> <span className="landing__store-name">{name}</span>
-              </Anchor>
+              {
+                header &&
+                <Anchor className="landing__menu-logo" href={header.logo_url_s}>
+                  <img src={header.logo_s} alt={header.logo_alt_t}/> <span className="landing__store-name">{storeSettings && storeSettings.name}</span>
+                </Anchor>
+              }
+
               <button
                 type="button"
                 className="landing__menu-deployer"
@@ -104,7 +101,7 @@ export default function Header() {
               </button>
               <nav className="landing__menu-nav">
                 {
-                  nav.map((item, index) =>
+                  nav && nav.map((item, index) =>
                     <Anchor
                       key={index}
                       className="landing__menu-nav__item"
@@ -153,27 +150,33 @@ export default function Header() {
                   <DropdownToggle caret>
                     {FlagCodeMap[locale] ? <Flag code={FlagCodeMap[locale]}/> : locale}
                   </DropdownToggle>
-                  <DropdownMenu>
-                    {
-                      (locales || []).map((code) => (
-                        <DropdownItem key={code} onClick={() => dispatch(changeLocale(code))}>
-                          {FlagCodeMap[code] ? <Flag code={FlagCodeMap[code]}/> : code}
-                        </DropdownItem>
-                      ))
-                    }
-                  </DropdownMenu>
+                  {
+                    storeSettings &&
+                    <DropdownMenu>
+                      {
+                        (storeSettings.locales || []).map((code) => (
+                          <DropdownItem key={code} onClick={() => dispatch(changeLocale(code))}>
+                            {FlagCodeMap[code] ? <Flag code={FlagCodeMap[code]}/> : code}
+                          </DropdownItem>
+                        ))
+                      }
+                    </DropdownMenu>
+                  }
                 </Dropdown>
                 <Dropdown className="landing__header-currency-dropdown" isOpen={currenciesOpen} toggle={() => setCurrenciesOpen(!currenciesOpen)}>
                   <DropdownToggle caret>
                     {currency}
                   </DropdownToggle>
-                  <DropdownMenu>
-                    {
-                      (currencies || []).map((code) => (
-                        <DropdownItem key={code} onClick={() => dispatch(changeCurrency(code))}>{code}</DropdownItem>
-                      ))
-                    }
-                  </DropdownMenu>
+                  {
+                    storeSettings &&
+                    <DropdownMenu>
+                      {
+                        (storeSettings.currencies || []).map((code) => (
+                          <DropdownItem key={code} onClick={() => dispatch(changeCurrency(code))}>{code}</DropdownItem>
+                        ))
+                      }
+                    </DropdownMenu>
+                  }
                 </Dropdown>
               </nav>
             </div>

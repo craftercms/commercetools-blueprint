@@ -25,7 +25,6 @@
 import React, { useEffect, useState } from 'react';
 import Anchor from '../shared/Anchor';
 import { getLoginFormDefaults } from '../../util/component';
-import AssertContent from '../shared/AssertContent';
 
 import { Field, reduxForm } from 'redux-form';
 import EyeIcon from 'mdi-react/EyeIcon';
@@ -38,6 +37,7 @@ import { ajax } from 'rxjs/ajax';
 import { catchError } from 'rxjs/operators';
 import { loginComplete } from '../../redux/actions/usersActions';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHeader } from '../shared/hooks';
 
 function LogInFormComponent(props) {
 
@@ -151,34 +151,29 @@ function LogInFormComponent(props) {
 export const LogInForm = reduxForm({ form: 'login' })(LogInFormComponent);
 
 function LogIn() {
-  return <AssertContent
-    requirements={['header']}
-    render={({ header }) => {
-      const {
-        logo_s,
-        logo_alt_t,
-        logo_url_s
-      } = header;
-      return (
-        <div className="account">
-          <div className="account__wrapper">
-            <div className="account__card">
-              <div className="login-view__logo">
-                <Anchor href={logo_url_s} className="login-view__logo">
-                  <img src={logo_s} alt={logo_alt_t} className="login-view__logo-img"/>
-                </Anchor>
-              </div>
-              <div className="account__head">
-                <h3 className="account__title">Welcome</h3>
-                <h4 className="account__subhead subhead">Please log in</h4>
-              </div>
-              <LogInForm onSubmit initialValues={getLoginFormDefaults()}/>
-            </div>
+  const header = useHeader();
+
+  return (
+    <div className="account">
+      <div className="account__wrapper">
+        <div className="account__card">
+          <div className="login-view__logo">
+            {
+              header &&
+              <Anchor href={header.logo_url_s} className="login-view__logo">
+                <img src={header.logo_s} alt={header.logo_alt_t} className="login-view__logo-img"/>
+              </Anchor>
+            }
           </div>
+          <div className="account__head">
+            <h3 className="account__title">Welcome</h3>
+            <h4 className="account__subhead subhead">Please log in</h4>
+          </div>
+          <LogInForm onSubmit initialValues={getLoginFormDefaults()}/>
         </div>
-      );
-    }}
-  />;
+      </div>
+    </div>
+  );
 }
 
 export default LogIn;

@@ -25,7 +25,6 @@
 import React, { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import AssertContent from '../shared/AssertContent';
 import Anchor from '../shared/Anchor';
 import { useDispatch, useSelector } from 'react-redux';
 import { registrationComplete } from '../../redux/actions/usersActions';
@@ -42,6 +41,7 @@ import MailRuIcon from 'mdi-react/MailRuIcon';
 import Alert from '../shared/Alert';
 import { catchError } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
+import { useHeader } from '../shared/hooks';
 
 export const RegisterFormComponent = memo(function ({ handleSubmit, onSuccess }) {
 
@@ -160,41 +160,39 @@ const RegistrationConfirmation = () => (
 const Register = () => {
   const dispatch = useDispatch();
   const success = useSelector(state => state.users.registerConfirmPending);
-  return <AssertContent requirements={['header']} render={({ header }) => {
-    const {
-      logo_s,
-      logo_alt_t,
-      logo_url_s
-    } = header;
-    return (
-      <div className="account">
-        <div className="account__wrapper">
-          <div className="account__card">
-            <div className="login-view__logo">
-              <Anchor href={logo_url_s} className="login-view__logo">
-                <img src={logo_s} alt={logo_alt_t} className="login-view__logo-img"/>
-              </Anchor>
-            </div>
+  const header = useHeader();
+
+  return (
+    <div className="account">
+      <div className="account__wrapper">
+        <div className="account__card">
+          <div className="login-view__logo">
             {
-              success
-                ? <RegistrationConfirmation/>
-                : <>
-                  <div className="account__head">
-                    <h3 className="account__title">
-                      Create an account
-                    </h3>
-                  </div>
-                  <RegisterForm onSuccess={() => dispatch(registrationComplete())}/>
-                  <div className="account__have-account">
-                    <p>Already have an account? <Link to="/login">Login</Link></p>
-                  </div>
-                </>
+              header &&
+              <Anchor href={header.logo_url_s} className="login-view__logo">
+                <img src={header.logo_s} alt={header.logo_alt_t} className="login-view__logo-img"/>
+              </Anchor>
             }
           </div>
+          {
+            success
+              ? <RegistrationConfirmation/>
+              : <>
+                <div className="account__head">
+                  <h3 className="account__title">
+                    Create an account
+                  </h3>
+                </div>
+                <RegisterForm onSuccess={() => dispatch(registrationComplete())}/>
+                <div className="account__have-account">
+                  <p>Already have an account? <Link to="/login">Login</Link></p>
+                </div>
+              </>
+          }
         </div>
       </div>
-    );
-  }}/>;
+    </div>
+  );
 };
 
 export default Register;

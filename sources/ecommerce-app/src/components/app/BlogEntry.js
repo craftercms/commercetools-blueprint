@@ -45,48 +45,33 @@ export default function BlogEntry(props) {
   });
   const post = usePosts(paginationData, slug);
 
-  return <Layout
-    requirements={[
-      { name: 'post', getter: (content) => content.post && content.post.bySlug[slug] }
-    ]}
-    variables={{
-      post: [
-        { name: 'ageGroup', type: 'String', value: null },
-        { name: 'gender', type: 'String', value: null },
-        { name: 'slug', type: 'String', value: slug },
-        { name: 'limit', type: 'Int', value: 1 }
-      ]
-    }}
-    render={
-      (reqs) => (
-        <Container>
-          <Row>
-            {
-              post &&
-              <Col md={9}>
-                <Card>
-                  <CardBody>
-                    <Post post={post.items[0]}/>
-                  </CardBody>
-                </Card>
-              </Col>
-            }
-            <Col md={3}>
+  return <Layout>
+    <Container>
+      <Row>
+        {
+          post &&
+          <Col md={9}>
+            <Card>
+              <CardBody>
+                <Post post={post.items[0]}/>
+              </CardBody>
+            </Card>
+          </Col>
+        }
+        <Col md={3}>
 
-              <CategoryListing categories={categories}/>
-              {
-                post &&
-                <>
-                  <RelatedPosts categories={post.items[0].categories_o} slug={slug}/>
-                  <RelatedProducts categories={post.items[0].categories_o}/>
-                </>
-              }
-            </Col>
-          </Row>
-        </Container>
-      )
-    }
-  />;
+          <CategoryListing categories={categories}/>
+          {
+            post &&
+            <>
+              <RelatedPosts categories={post.items[0].categories_o} slug={slug}/>
+              <RelatedProducts categories={post.items[0].categories_o}/>
+            </>
+          }
+        </Col>
+      </Row>
+    </Container>
+  </Layout>;
 }
 
 function Post({ post }) {

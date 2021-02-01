@@ -24,7 +24,6 @@
 
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import ProductListing from './app/ProductsListing';
 import ProductDetails from './app/ProductDetails';
 
 import LogIn from './app/LogIn';
@@ -47,7 +46,7 @@ const Routes = () => {
   const { isAuthoring } = useSelector(state => state.theme);
 
 
-  // TODO: remove once file is refactored to use DynamicRoute
+  // TODO: reportNavigation in here?
   useEffect(
     () => {
       if (isAuthoring) {
@@ -65,8 +64,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={DynamicRoute} />
-      <Route exact path="/catalog" component={ProductListing}/>
-      {/*<Route exact path="/catalog" component={DynamicRoute}/>*/}
+      <Route exact path="/catalog" component={DynamicRoute}/>
       <Route path="/catalog/:product" component={ProductDetails}/>
       <Route path="/cart" component={CartView}/>
       <Route path="/checkout" component={CheckoutView}/>

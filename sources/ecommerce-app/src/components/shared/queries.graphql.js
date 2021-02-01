@@ -173,7 +173,7 @@ const main = `
         )
         content__type(
           filter:{
-            regex: ".*(landing|post|blog_roll).*"   # TODO: types!
+            regex: ".*(landing|post|blog_roll|catalog).*"   # TODO: types!
           }
         ) @skip (if: $skipContentType)
         ...on page_landing {
@@ -215,6 +215,69 @@ export const postsQuery = `
             value_smv
           }
         }
+      }
+    }
+  }
+`
+
+//language=GraphQL
+export const navQuery = `
+  query Nav {
+    pages(sortBy: "orderDefault_f") {
+      items {
+        placeInNav(filter: { equals:true }) @skip(if: true)
+        url: localId(transform: "storeUrlToRenderUrl")
+        label: internal__name
+        localId: localId
+      }
+    }
+  }
+`
+
+//language=GraphQL
+export const footerQuery = `
+  query Footer {
+    component_footer {
+      items {
+        localId
+        objectId
+        logo_s
+        logo_url_s
+        logo_alt_t
+      }
+    }
+  }
+`
+
+//language=GraphQL
+export const headerQuery = `  
+  query Header {
+    component_header {
+      items {
+        localId
+        objectId
+        logo_s
+        logo_url_s
+        logo_alt_t
+        buttons_o {
+          item {
+            label_s
+            link_s
+          }
+        }
+      }
+    }
+  }
+`
+
+//language=GraphQL
+export const storeSettingsQuery = `
+  query StoreSettings {
+    store {
+      settings {
+        name
+        locales
+        currencies
       }
     }
   }

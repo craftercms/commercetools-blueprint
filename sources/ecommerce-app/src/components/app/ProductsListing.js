@@ -102,7 +102,7 @@ export default function ProductListing(props) {
     dispatch(fetchProducts(facetMeta.state));
   };
 
-  useEffect(fetch, [history.location.search, query.locale, query.currency, dispatch, facetMeta.state]);
+  useEffect(fetch, [history.location.search, query.locale, query.currency]);
 
   useEffect(
     () => {
