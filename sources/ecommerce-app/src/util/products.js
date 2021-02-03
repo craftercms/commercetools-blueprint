@@ -1,5 +1,5 @@
 import { ajax } from 'rxjs/ajax';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../redux/store';
 
 export function getProducts(params = {}) {
 
@@ -14,6 +14,6 @@ export function getProducts(params = {}) {
 }
 
 export function useProductsQuery(params = {}) {
-  const { query: { currency, locale } } = useSelector(state => state.products);
+  const { query: { currency, locale } } = useAppSelector(state => state.products);
   return { currency, locale, ...params };
 }

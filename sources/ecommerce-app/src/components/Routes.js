@@ -37,16 +37,14 @@ import OrderDetails from './app/OrderDetails';
 import BlogEntry from './app/BlogEntry';
 import Search from './app/Search';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import DynamicRoute from './shared/DynamicRoute';
+import { useAppSelector } from '../redux/store';
 
 const Routes = () => {
 
   const history = useHistory();
-  const { isAuthoring } = useSelector(state => state.theme);
+  const { isAuthoring } = useAppSelector(state => state.theme);
 
-
-  // TODO: reportNavigation in here?
   useEffect(
     () => {
       if (isAuthoring) {

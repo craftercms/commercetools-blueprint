@@ -36,6 +36,9 @@ import rootEpic from './epics/epics';
 import { loginComplete, setPersona } from './actions/usersActions';
 import { setIsAuthoring } from './actions/themeActions';
 import { setStoreSettings } from './actions/productsActions';
+import React, { createContext, useContext, useMemo } from 'react';
+import { createDispatchHook, createSelectorHook, createStoreHook } from 'react-redux';
+import Subscription from 'react-redux/lib/utils/Subscription';
 
 const reducer = combineReducers({
   form: reduxFormReducer,
@@ -95,5 +98,32 @@ if (isAuthoring) {
 }
 
 epicMiddleware.run(rootEpic);
+
+const AppStoreContext = createContext();
+
+export function useAppStoreContext() {
+  const context = useContext(AppStoreContext);
+  if (!context) {
+    throw new Error(`useGlobalContext must be used within a GlobalContextProvider`);
+  }
+  return context;
+}
+
+export function AppStoreContextProvider(props) {
+  const value = useMemo(function () {
+    var subscription = new Subscription(store);
+    subscription.onStateChange = subscription.notifyNestedSubs;
+    return {
+      store: store,
+      subscription: subscription
+    };
+  }, [store]);
+
+  return <AppStoreContext.Provider value={value} {...props} />;
+}
+
+export const useAppStore = createStoreHook(AppStoreContext);
+export const useAppSelector = createSelectorHook(AppStoreContext);
+export const useAppDispatch = createDispatchHook(AppStoreContext);
 
 export default store;

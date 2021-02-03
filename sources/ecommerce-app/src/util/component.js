@@ -30,11 +30,11 @@ import {
   UPDATE_CART,
   UPDATE_CART_ITEM_QUANTITY
 } from '../redux/actions/productsActions';
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef } from 'react';
 import { fetchOrder, setLoginRedirect } from '../redux/actions/usersActions';
 import { SearchService } from '@craftercms/search';
 import Cookie from 'js-cookie';
+import { useAppDispatch, useAppSelector } from '../redux/store';
 
 export function getLoginFormDefaults() {
   const email = localStorage.getItem(`${process.env.REACT_APP_STORE_KEY}.email`);
@@ -45,16 +45,16 @@ export function getLoginFormDefaults() {
 }
 
 export function useHeader() {
-  return useSelector(state => state.content.header);
+  return useAppSelector(state => state.content.header);
 }
 
 export function useCart({ onEmpty } = {}) {
   const ref = useRef({});
   ref.current = { onEmpty };
-  const dispatch = useDispatch();
-  const cart = useSelector(state => state.products.cart);
-  const locale = useSelector(state => state.products).query.locale;
-  const currency = useSelector(state => state.products).query.currency;
+  const dispatch = useAppDispatch();
+  const cart = useAppSelector(state => state.products.cart);
+  const locale = useAppSelector(state => state.products).query.locale;
+  const currency = useAppSelector(state => state.products).query.currency;
   useEffect(
     () => {
       if (cart && cart.items.length === 0) {
@@ -74,8 +74,8 @@ export function useCart({ onEmpty } = {}) {
 export function useUser({ redirect, onMissing } = {}) {
   const ref = useRef({});
   ref.current = { redirect, onMissing };
-  const dispatch = useDispatch();
-  const user = useSelector(state => state.users.user);
+  const dispatch = useAppDispatch();
+  const user = useAppSelector(state => state.users.user);
   useEffect(
     () => {
       if (user == null) {
@@ -93,12 +93,12 @@ export function useUser({ redirect, onMissing } = {}) {
 }
 
 export function useUserBranch() {
-  return useSelector(state => state.users);
+  return useAppSelector(state => state.users);
 }
 
 export function useOrder(id) {
-  const dispatch = useDispatch();
-  const order = useSelector(state => state.users.orders[id]);
+  const dispatch = useAppDispatch();
+  const order = useAppSelector(state => state.users.orders[id]);
   useEffect(
     () => {
       if (id && (order == null || order.items == null))
@@ -110,11 +110,11 @@ export function useOrder(id) {
 }
 
 export function useProductsBranch() {
-  return useSelector(state => state.products);
+  return useAppSelector(state => state.products);
 }
 
 export function useContentBranch() {
-  return useSelector(state => state.content);
+  return useAppSelector(state => state.content);
 }
 
 let iceRepaintTimeout;
@@ -147,7 +147,7 @@ export function useICE({ modelId, label }) {
 }
 
 export function useCartUpdateInFlight() {
-  const { loading } = useSelector(state => state.products);
+  const { loading } = useAppSelector(state => state.products);
   return (
     loading[FETCH_CART] ||
     loading[UPDATE_CART] ||

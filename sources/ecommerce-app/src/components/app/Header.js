@@ -39,11 +39,11 @@ import { Link, useHistory } from 'react-router-dom';
 import SearchIcon from 'mdi-react/SearchIcon';
 import PersonCircleOutlineIcon from 'mdi-react/PersonCircleOutlineIcon';
 import ShoppingCartIcon from 'mdi-react/ShoppingCartIcon';
-import { useDispatch, useSelector } from 'react-redux';
 import hamburger  from '../../img/burger.svg';
 import Flag from 'react-world-flags';
 import { changeCurrency, changeLocale } from '../../redux/actions/productsActions';
 import { useHeader, useNavigation, useStoreSettings } from '../shared/hooks';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 
 const FlagCodeMap = {
   de: 'de',
@@ -53,15 +53,16 @@ const FlagCodeMap = {
 
 export default function Header() {
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const {
     query: { locale, currency }
-  } = useSelector(state => state.products);
+  } = useAppSelector(state =>  state.products);
+
   const [localesOpen, setLocalesOpen] = useState(false);
   const [currenciesOpen, setCurrenciesOpen] = useState(false);
 
   const history = useHistory();
-  const { users, products } = useSelector(state => state);
+  const { users, products } = useAppSelector(state => state);
   const { query } = products;
   const [searchOpen, setSearchOpen] = useState(false);
   const [keywords, setKeywords] = useState(query.keywords || '');

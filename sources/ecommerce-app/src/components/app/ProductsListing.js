@@ -29,7 +29,6 @@ import {
   MultipleSelectionFacet,
   RangeFacet, SingleSelectionFacet,
 } from './Facets';
-import { useDispatch, useSelector } from 'react-redux';
 import Spinner from '../shared/Spinner';
 import Product from './Product';
 import * as qs from 'query-string';
@@ -40,12 +39,13 @@ import SearchIcon from 'mdi-react/SearchIcon';
 import ChevronRightIcon from 'mdi-react/ChevronRightIcon';
 import ChevronLeftIcon from 'mdi-react/ChevronLeftIcon';
 import ReactPaginate from 'react-paginate';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 
 export default function ProductListing(props) {
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { history } = props;
-  const { byId, facets, query, loading, errors } = useSelector(state => state.products);
+  const { byId, facets, query, loading, errors } = useAppSelector(state => state.products);
   const products = byId ? Object.values(byId) : null;
   const inputRef = useRef();
 

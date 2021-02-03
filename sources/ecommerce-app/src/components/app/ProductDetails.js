@@ -23,7 +23,6 @@
  */
 
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 import Layout from './Layout';
 import ProductCard from './ProductCard';
@@ -35,11 +34,12 @@ import { ajax } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
 import { BlogPostCard } from './BlogTeaser';
 import { getProducts } from '../../util/products';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 
 export default function ProductDetails(props) {
 
-  const dispatch = useDispatch();
-  const products = useSelector(state => state.products);
+  const dispatch = useAppDispatch();
+  const products = useAppSelector(state => state.products);
 
   const id = props.match.params.product;
   const product = products.byId ? products.byId[id] : null;

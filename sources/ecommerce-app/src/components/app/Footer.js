@@ -25,10 +25,10 @@
 import React, { useState } from 'react';
 import { Col, Row, Container, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import Anchor from "../shared/Anchor";
-import { useDispatch, useSelector } from 'react-redux';
 import Flag from 'react-world-flags';
 import { changeCurrency, changeLocale } from '../../redux/actions/productsActions';
 import { useFooter, useStoreSettings } from '../shared/hooks';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 
 const FlagCodeMap = {
   de: 'de',
@@ -37,12 +37,12 @@ const FlagCodeMap = {
 };
 
 function Footer(props){
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const footer = useFooter();
   const storeSettings = useStoreSettings();
   const {
     query: { locale, currency }
-  } = useSelector(state => state.products);
+  } = useAppSelector(state => state.products);
 
   const [localesOpen, setLocalesOpen] = useState(false);
 

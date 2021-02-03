@@ -23,11 +23,12 @@
  */
 
 import React from 'react';
-import { connect } from 'react-redux';
 import classNames from 'classnames';
+import { useAppSelector } from '../redux/store';
 
 function MainWrapper(props) {
-  const { theme, children } = props;
+  const { children } = props;
+  const theme = useAppSelector(state => state.theme);
 
   const wrapperClass = classNames({
     'wrapper': true,
@@ -45,7 +46,4 @@ function MainWrapper(props) {
   );
 }
 
-export default connect(state => ({
-  theme: state.theme,
-  customizer: state.customizer,
-}))(MainWrapper);
+export default MainWrapper;
