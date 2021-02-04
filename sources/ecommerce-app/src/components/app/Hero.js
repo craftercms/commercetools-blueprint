@@ -25,29 +25,26 @@
 import React from 'react';
 import { Col, Row, Container } from 'reactstrap';
 import A from "../shared/Anchor";
-import { useICE } from '../../util/component';
+import { Field } from '@craftercms/studio-guest';
 
 function Hero(props) {
   const {
-    label,
     title_t,
     image_s,
-    localId,
     image_alt_t,
     section_background_image_s,
     content_html_raw,
     buttons_o
   } = props;
-  const { props: ice } = useICE({ modelId: localId, label });
   return (
-    <div
+    <Field
+      model={props}
       className="landing__header"
       style={
         section_background_image_s
           ? { backgroundImage: `url(${section_background_image_s})` }
           : {}
       }
-      {...ice}
     >
       <Container>
         <Row>
@@ -81,7 +78,7 @@ function Hero(props) {
           </Col>
         </Row>
       </Container>
-    </div>
+    </Field>
   );
 }
 

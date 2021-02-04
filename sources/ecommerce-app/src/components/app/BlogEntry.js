@@ -30,9 +30,9 @@ import { Link } from 'react-router-dom';
 import { ajax } from 'rxjs/ajax';
 import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { useICE } from '../../util/component';
 import { getProducts, useProductsQuery } from '../../util/products';
 import { useCategories, usePosts } from '../shared/hooks';
+import { Field } from '@craftercms/studio-guest';
 
 export default function BlogEntry(props) {
   const slug = props.match.params.slug;
@@ -75,15 +75,14 @@ export default function BlogEntry(props) {
 }
 
 function Post({ post }) {
-  const { title_s, image_s, author_s, subtitle_s, content_html_raw, categories_o, localId } = post;
-  const { props: ice } = useICE({ modelId: localId, label: `Blog Post: ${title_s}` });
+  const { title_s, image_s, author_s, subtitle_s, content_html_raw, categories_o } = post;
   return (
     <>
-      <section className="post__head" {...ice}>
+      <Field component="section" className="post__head" model={post}>
         <h1 className="post__title">{title_s}</h1>
         {subtitle_s && <p className="post__subtitle">{subtitle_s}</p>}
         {author_s && <p className="post__author">By {author_s}</p>}
-      </section>
+      </Field>
       {image_s && <img className="post__image" src={image_s} alt=""/>}
       <div className="post__body" dangerouslySetInnerHTML={{ __html: content_html_raw }}/>
       <div className="post__categories">{categories_o.map((item) => item.value_smv).join(', ')}</div>

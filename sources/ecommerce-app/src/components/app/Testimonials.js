@@ -28,18 +28,15 @@ import {
   Col, Row, Container, Card, CardBody,
 } from 'reactstrap';
 import StarIcon from 'mdi-react/StarIcon';
-import { useICE } from '../../util/component';
+import { Field } from '@craftercms/studio-guest';
 
 function Testimonials(props) {
   const {
-    label,
-    localId,
     title_s,
     testimonials_o
   } = props;
-  const { props: ice } = useICE({ modelId: localId, label });
   return (
-    <section className="landing__section" {...ice}>
+    <Field component="section" className="landing__section" model={props}>
       <Container>
         <Row>
           <Col md={12}>
@@ -80,7 +77,7 @@ function Testimonials(props) {
           }
         </Row>
       </Container>
-    </section>
+    </Field>
   );
 }
 

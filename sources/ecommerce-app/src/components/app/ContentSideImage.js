@@ -24,7 +24,7 @@
 
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
-import { useICE } from '../../util/component';
+import { Field } from '@craftercms/studio-guest';
 
 function ContentSideImage(props) {
   const {
@@ -33,11 +33,8 @@ function ContentSideImage(props) {
     content_html_raw,
     image_alt_s,
     image_s,
-    title_s,
-    localId,
-    label
+    title_s
   } = props;
-  const { props: ice } = useICE({ modelId: localId, label });
   const
     CopyColumn = (
       <Col md={6} sm={12} xs={12}>
@@ -60,7 +57,7 @@ function ContentSideImage(props) {
     );
 
   return (
-    <section className="landing__section" {...ice}>
+    <Field component="section" className="landing__section" model={props}>
       {
         section_background_image_s &&
         <img className="landing__section-background landing__section-background--technologies" src={section_background_image_s} alt=""/>
@@ -89,7 +86,7 @@ function ContentSideImage(props) {
           }
         </Row>
       </Container>
-    </section>
+    </Field>
   );
 }
 

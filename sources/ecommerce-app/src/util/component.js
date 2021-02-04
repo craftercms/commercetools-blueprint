@@ -113,35 +113,6 @@ export function useContentBranch() {
   return useAppSelector(state => state.content);
 }
 
-let iceRepaintTimeout;
-function ICERepaint() {
-  clearTimeout(iceRepaintTimeout);
-  iceRepaintTimeout = setTimeout(
-    () => {
-      window.amplify &&
-      window.amplify.publish('INIT_ICE_REGIONS');
-    },
-    100
-  );
-}
-
-export function useICE({ modelId, label }) {
-  const { isAuthoring } = useSelector(state => state.theme);
-  useEffect(() => ICERepaint, []);
-  useEffect(
-    () => {
-      isAuthoring && ICERepaint();
-    }
-  );
-  return {
-    props: isAuthoring ? {
-      'data-studio-ice': '',
-      'data-studio-ice-path': modelId,
-      'data-studio-ice-label': label
-    } : {}
-  };
-}
-
 export function useCartUpdateInFlight() {
   const { loading } = useAppSelector(state => state.products);
   return (

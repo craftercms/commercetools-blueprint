@@ -32,22 +32,18 @@ import {
   CardBody
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { useICE } from '../../util/component';
 import { usePosts } from '../shared/hooks';
+import { Field } from '@craftercms/studio-guest';
 
 function BlogTeaser(props) {
 
   const {
-    label,
-    localId,
     title_s,
   } = props;
-
-  const { props: ice } = useICE({ modelId: localId, label });
   const posts = usePosts();
 
   return (
-    <section className="landing__section" {...ice}>
+    <Field component="section" className="landing__section" model={props}>
       <Container>
         <Row>
           <Col md={12}>
@@ -65,15 +61,15 @@ function BlogTeaser(props) {
           }
         </Row>
       </Container>
-    </section>
+    </Field>
   );
 }
 
-export function BlogPostCard({ localId, label, slug_s, title_s, image_s, summary_html_raw, hideSummary }) {
-  const { props: ice } = useICE({ modelId: localId, label });
+export function BlogPostCard(props) {
+  const { slug_s, title_s, image_s, summary_html_raw, hideSummary } = props;
   return (
     <Link to={`/blog/${slug_s}`}>
-      <Card {...ice}>
+      <Field component={Card} model={props}>
         <CardBody className="landing__teaser">
           <img src={image_s} alt="" className="landing__teaser-img"/>
           <h3 className="landing__teaser-title">{title_s}</h3>
@@ -85,7 +81,7 @@ export function BlogPostCard({ localId, label, slug_s, title_s, image_s, summary
             />
           }
         </CardBody>
-      </Card>
+      </Field>
     </Link>
   );
 }

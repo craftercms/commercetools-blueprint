@@ -24,20 +24,17 @@
 
 import React from 'react';
 import { Col, Row, Container } from 'reactstrap';
-import { useICE } from '../../util/component';
+import { Field } from '@craftercms/studio-guest';
 
 function Features(props) {
   const {
-    label,
-    localId,
     title_s,
     features_o,
     closingContent_html_raw,
     openingContent_html_raw
   } = props;
-  const { props: ice } = useICE({ modelId: localId, label });
   return (
-    <section className="landing__section" {...ice}>
+    <Field component='section' className="landing__section" model={props}>
       <Container>
         <Row>
           <Col md={12}>
@@ -70,7 +67,7 @@ function Features(props) {
           </Col>
         </Row>
       </Container>
-    </section>
+    </Field>
   );
 }
 
