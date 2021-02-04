@@ -34,11 +34,11 @@ import { AddressSelection } from './AddressCard';
 import Spinner from '../shared/Spinner';
 import { money } from '../../util/string';
 import { Empty } from '../shared/Empty';
-import { useDispatch } from 'react-redux';
 import {
   checkout, UPDATE_CART,
   updateCart
 } from '../../redux/actions/productsActions';
+import { useAppDispatch } from '../../redux/store';
 
 function address(cart, user, type) {
   if (cart == null || user == null) {
@@ -142,7 +142,7 @@ function CreditCardForm({ cardNumber, cvc, expirationDate, nameOnCard, onChange 
 
 function CheckoutView({ history }) {
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { loading } = useProductsBranch();
   const user = useUser({ redirect: '/checkout' });
   const cart = useCart({ onEmpty: () => history.push('/cart') });

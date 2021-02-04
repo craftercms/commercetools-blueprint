@@ -46,18 +46,18 @@ import {
 import classnames from 'classnames';
 import ProfileSettings, { ChangePasswordForm } from './ProfileSettings';
 import OrdersList from './OrderList';
-import { useDispatch, useSelector } from 'react-redux';
 import { logout, removeAddress, setAddressDefaults } from '../../redux/actions/usersActions';
 import AddressCard from './AddressCard';
 import ChevronDownIcon from 'mdi-react/ChevronDownIcon';
 
 import authorized from '../shared/authorized';
 import { Empty } from '../shared/Empty';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 
 function Account({ history, match, user }) {
 
-  const dispatch = useDispatch();
-  const { orders } = useSelector(state => state.users);
+  const dispatch = useAppDispatch();
+  const { orders } = useAppSelector(state => state.users);
 
   const activeTab = useMemo(
     () => (
@@ -76,7 +76,7 @@ function Account({ history, match, user }) {
   const setActiveTab = (tab) => {
     history.push(`/account/${tab}`);
   };
-  
+
   return (
     <Layout>
       <Container>

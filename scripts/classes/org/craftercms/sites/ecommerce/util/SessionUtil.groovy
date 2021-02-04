@@ -28,6 +28,7 @@ import org.craftercms.engine.exception.HttpStatusCodeException
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.context.SecurityContextImpl
 import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken
+import org.springframework.security.authentication.AnonymousAuthenticationToken
 
 abstract class SessionUtil {
 
@@ -53,7 +54,13 @@ abstract class SessionUtil {
   }
 
   static def getUser() {
-    return SecurityContextHolder.context?.authentication?.principal
+    def auth = SecurityContextHolder.context?.authentication
+
+    if (auth && !(auth instanceof AnonymousAuthenticationToken)) {
+      return auth.principal
+    }
+
+    return null
   }
 
   static def setUser(user) {

@@ -28,14 +28,14 @@ import { FETCH_ORDERS, fetchOrders } from '../../redux/actions/usersActions';
 import Spinner from '../shared/Spinner';
 import { capitalize, money } from '../../util/string';
 import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { Empty } from '../shared/Empty';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 
 function OrderList() {
   const history = useHistory();
 
-  const dispatch = useDispatch();
-  const { orders: ordersTable, loading } = useSelector(state => state.users);
+  const dispatch = useAppDispatch();
+  const { orders: ordersTable, loading } = useAppSelector(state => state.users);
   const orders = Object.values(ordersTable);
   useEffect(
     () => {

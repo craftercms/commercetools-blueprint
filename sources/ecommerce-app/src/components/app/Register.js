@@ -26,14 +26,10 @@ import React, { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Anchor from '../shared/Anchor';
-import { useDispatch, useSelector } from 'react-redux';
 import { registrationComplete } from '../../redux/actions/usersActions';
-
 import { Button, ButtonToolbar } from 'reactstrap';
 import CheckboxMarkedCircleIcon from 'mdi-react/CheckboxMarkedCircleIcon';
 import EmailIcon from 'mdi-react/EmailIcon';
-
-import { Field, reduxForm } from 'redux-form';
 import EyeIcon from 'mdi-react/EyeIcon';
 import KeyVariantIcon from 'mdi-react/KeyVariantIcon';
 import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
@@ -42,8 +38,10 @@ import Alert from '../shared/Alert';
 import { catchError } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
 import { useHeader } from '../shared/hooks';
+import { Form, Field } from 'react-final-form';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 
-export const RegisterFormComponent = memo(function ({ handleSubmit, onSuccess }) {
+export const RegisterFormComponent = memo(function ({ onSuccess }) {
 
   const [error, setError] = useState();
   const [showPassword, setShowPassword] = useState(false);
@@ -65,84 +63,90 @@ export const RegisterFormComponent = memo(function ({ handleSubmit, onSuccess })
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit(submit)}>
-      {
-        error &&
-        <Alert color="danger" className="alert--bordered">
-          <p>{error}</p>
-        </Alert>
-      }
-      <div className="form__form-group">
-        <div className="form__form-group-field">
-          <div className="form__form-group-icon">
-            <AccountOutlineIcon/>
+    <Form
+      onSubmit={submit}
+    >
+      {({ handleSubmit }) => (
+        <form className="form" onSubmit={handleSubmit}>
+          {
+            error &&
+            <Alert color="danger" className="alert--bordered">
+              <p>{error}</p>
+            </Alert>
+          }
+          <div className="form__form-group">
+            <div className="form__form-group-field">
+              <div className="form__form-group-icon">
+                <AccountOutlineIcon/>
+              </div>
+              <Field
+                name="firstName"
+                component="input"
+                type="text"
+                placeholder="First Name"
+              />
+            </div>
           </div>
-          <Field
-            name="firstName"
-            component="input"
-            type="text"
-            placeholder="First Name"
-          />
-        </div>
-      </div>
-      <div className="form__form-group">
-        <div className="form__form-group-field">
-          <div className="form__form-group-icon">
-            <AccountOutlineIcon/>
+          <div className="form__form-group">
+            <div className="form__form-group-field">
+              <div className="form__form-group-icon">
+                <AccountOutlineIcon/>
+              </div>
+              <Field
+                name="lastName"
+                component="input"
+                type="text"
+                placeholder="Last Name"
+              />
+            </div>
           </div>
-          <Field
-            name="lastName"
-            component="input"
-            type="text"
-            placeholder="Last Name"
-          />
-        </div>
-      </div>
-      <div className="form__form-group">
-        <div className="form__form-group-field">
-          <div className="form__form-group-icon">
-            <MailRuIcon/>
+          <div className="form__form-group">
+            <div className="form__form-group-field">
+              <div className="form__form-group-icon">
+                <MailRuIcon/>
+              </div>
+              <Field
+                name="email"
+                component="input"
+                type="email"
+                placeholder="E-mail (username)"
+              />
+            </div>
           </div>
-          <Field
-            name="email"
-            component="input"
-            type="email"
-            placeholder="E-mail (username)"
-          />
-        </div>
-      </div>
-      <div className="form__form-group form__form-group--forgot">
-        <div className="form__form-group-field">
-          <div className="form__form-group-icon">
-            <KeyVariantIcon/>
+          <div className="form__form-group form__form-group--forgot">
+            <div className="form__form-group-field">
+              <div className="form__form-group-icon">
+                <KeyVariantIcon/>
+              </div>
+              <Field
+                name="password"
+                component="input"
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Password"
+              />
+              <button
+                type="button"
+                className={`form__form-group-button${showPassword ? ' active' : ''}`}
+                onClick={() => setShowPassword(!showPassword)}
+              ><EyeIcon/>
+              </button>
+            </div>
           </div>
-          <Field
-            name="password"
-            component="input"
-            type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
-          />
-          <button
-            type="button"
-            className={`form__form-group-button${showPassword ? ' active' : ''}`}
-            onClick={() => setShowPassword(!showPassword)}
-          ><EyeIcon/>
-          </button>
-        </div>
-      </div>
-      <div className="account__btns">
-        <button
-          type="submit"
-          className="btn btn-primary account__btn"
-        >
-          Sign Up
-        </button>
-      </div>
-    </form>
+          <div className="account__btns">
+            <button
+              type="submit"
+              className="btn btn-primary account__btn"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+      )}
+    </Form>
   );
 });
 
-export const RegisterForm = reduxForm({ form: 'registration' })(RegisterFormComponent);
+export const RegisterForm = RegisterFormComponent;
 
 const RegistrationConfirmation = () => (
   <div className="email-confirmation">
@@ -158,8 +162,8 @@ const RegistrationConfirmation = () => (
   </div>
 );
 const Register = () => {
-  const dispatch = useDispatch();
-  const success = useSelector(state => state.users.registerConfirmPending);
+  const dispatch = useAppDispatch();
+  const success = useAppSelector(state => state.users.registerConfirmPending);
   const header = useHeader();
 
   return (

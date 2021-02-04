@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ProductDetails from './app/ProductDetails';
 
@@ -36,29 +36,9 @@ import { AddressEntry } from './app/AddressCard';
 import OrderDetails from './app/OrderDetails';
 import BlogEntry from './app/BlogEntry';
 import Search from './app/Search';
-import { useHistory } from 'react-router-dom';
 import DynamicRoute from './shared/DynamicRoute';
-import { useAppSelector } from '../redux/store';
 
 const Routes = () => {
-
-  const history = useHistory();
-  const { isAuthoring } = useAppSelector(state => state.theme);
-
-  useEffect(
-    () => {
-      if (isAuthoring) {
-        return history.listen((location) => {
-          window.require &&
-          window.require(['guest'], (guest) => {
-            guest.reportNavigation(location, location.pathname);
-          });
-        });
-      }
-    },
-    [history, isAuthoring]
-  );
-
   return (
     <Switch>
       <Route exact path="/" component={DynamicRoute} />

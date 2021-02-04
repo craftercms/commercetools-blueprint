@@ -23,7 +23,6 @@
  */
 
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
-import { reducer as reduxFormReducer } from 'redux-form';
 import { createEpicMiddleware } from 'redux-observable';
 import {
   themeReducer,
@@ -41,7 +40,6 @@ import { createDispatchHook, createSelectorHook, createStoreHook } from 'react-r
 import Subscription from 'react-redux/lib/utils/Subscription';
 
 const reducer = combineReducers({
-  form: reduxFormReducer,
   theme: themeReducer,
   content: contentReducer,
   users: usersReducer,
@@ -99,7 +97,7 @@ if (isAuthoring) {
 
 epicMiddleware.run(rootEpic);
 
-const AppStoreContext = createContext();
+export const AppStoreContext = createContext();
 
 export function useAppStoreContext() {
   const context = useContext(AppStoreContext);
@@ -117,6 +115,7 @@ export function AppStoreContextProvider(props) {
       store: store,
       subscription: subscription
     };
+    // eslint-disable-next-line
   }, [store]);
 
   return <AppStoreContext.Provider value={value} {...props} />;

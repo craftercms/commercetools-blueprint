@@ -26,7 +26,6 @@ import React, { useEffect, useState } from 'react';
 import Anchor from '../shared/Anchor';
 import { getLoginFormDefaults } from '../../util/component';
 
-import { Field, reduxForm } from 'redux-form';
 import EyeIcon from 'mdi-react/EyeIcon';
 import KeyVariantIcon from 'mdi-react/KeyVariantIcon';
 import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
@@ -36,21 +35,20 @@ import Alert from '../shared/Alert';
 import { ajax } from 'rxjs/ajax';
 import { catchError } from 'rxjs/operators';
 import { loginComplete } from '../../redux/actions/usersActions';
-import { useDispatch, useSelector } from 'react-redux';
 import { useHeader } from '../shared/hooks';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { Form, Field } from 'react-final-form';
 
 function LogInFormComponent(props) {
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const history = useHistory();
-  const state = useSelector(state => state);
+  const state = useAppSelector(state => state);
 
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const data = state.form.login.values;
+  const onSubmit = (data) => {
     if (data) {
       if (data.rememberMe) {
         localStorage.setItem(`${process.env.REACT_APP_STORE_KEY}.email`, data.email);
@@ -85,70 +83,77 @@ function LogInFormComponent(props) {
   );
 
   return (
-    <form className="form" onSubmit={onSubmit}>
-      {
-        error &&
-        <Alert color="danger" className="alert--bordered">
-          <p>{error}</p>
-        </Alert>
-      }
-      <div className="form__form-group">
-        <div className="form__form-group-field">
-          <div className="form__form-group-icon">
-            <AccountOutlineIcon/>
+    <Form
+      initialValues={getLoginFormDefaults()}
+      onSubmit={onSubmit}
+    >
+      {({ handleSubmit } ) => (
+        <form className="form" onSubmit={handleSubmit}>
+          {
+            error &&
+            <Alert color="danger" className="alert--bordered">
+              <p>{error}</p>
+            </Alert>
+          }
+          <div className="form__form-group">
+            <div className="form__form-group-field">
+              <div className="form__form-group-icon">
+                <AccountOutlineIcon/>
+              </div>
+              <Field
+                name="email"
+                type="text"
+                component="input"
+                placeholder="Name"
+              />
+            </div>
           </div>
-          <Field
-            name="email"
-            type="text"
-            component="input"
-            placeholder="Name"
-          />
-        </div>
-      </div>
-      <div className="form__form-group">
-        <div className="form__form-group-field">
-          <div className="form__form-group-icon">
-            <KeyVariantIcon/>
+          <div className="form__form-group">
+            <div className="form__form-group-field">
+              <div className="form__form-group-icon">
+                <KeyVariantIcon/>
+              </div>
+              <Field
+                name="password"
+                component="input"
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Password"
+              />
+              <button
+                type="button"
+                className={`form__form-group-button${showPassword ? ' active' : ''}`}
+                onClick={() => setShowPassword(!showPassword)}
+              ><EyeIcon/>
+              </button>
+            </div>
+            <div className="account__forgot-password">
+              <a href="/">Forgot a password?</a>
+            </div>
           </div>
-          <Field
-            name="password"
-            component="input"
-            type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
-          />
-          <button
-            type="button"
-            className={`form__form-group-button${showPassword ? ' active' : ''}`}
-            onClick={() => setShowPassword(!showPassword)}
-          ><EyeIcon/>
-          </button>
-        </div>
-        <div className="account__forgot-password">
-          <a href="/">Forgot a password?</a>
-        </div>
-      </div>
-      <div className="form__form-group">
-        <div className="form__form-group-field">
-          <Field
-            type="checkbox"
-            name="rememberMe"
-            label="Remember me"
-            component={renderCheckBoxField}
-          />
-        </div>
-      </div>
-      <div className="account__btns">
-        <button className="btn btn-primary account__btn account__sign-in-btn" type="submit">Sign In</button>
-        <Link className="btn btn-outline-primary account__btn account__register-btn" to="/register">
-          Create Account
-        </Link>
-      </div>
-    </form>
+          <div className="form__form-group">
+            <div className="form__form-group-field">
+              <Field
+                type="checkbox"
+                name="rememberMe"
+                label="Remember me"
+                component={renderCheckBoxField}
+              />
+            </div>
+          </div>
+          <div className="account__btns">
+            <button className="btn btn-primary account__btn account__sign-in-btn" type="submit">Sign In</button>
+            <Link className="btn btn-outline-primary account__btn account__register-btn" to="/register">
+              Create Account
+            </Link>
+          </div>
+        </form>
+      )}
+    </Form>
   );
 
 }
 
-export const LogInForm = reduxForm({ form: 'login' })(LogInFormComponent);
+export const LogInForm = LogInFormComponent;
 
 function LogIn() {
   const header = useHeader();
@@ -169,7 +174,7 @@ function LogIn() {
             <h3 className="account__title">Welcome</h3>
             <h4 className="account__subhead subhead">Please log in</h4>
           </div>
-          <LogInForm onSubmit initialValues={getLoginFormDefaults()}/>
+          <LogInForm/>
         </div>
       </div>
     </div>

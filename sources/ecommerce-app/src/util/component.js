@@ -44,10 +44,6 @@ export function getLoginFormDefaults() {
   };
 }
 
-export function useHeader() {
-  return useAppSelector(state => state.content.header);
-}
-
 export function useCart({ onEmpty } = {}) {
   const ref = useRef({});
   ref.current = { onEmpty };
@@ -155,14 +151,6 @@ export function useCartUpdateInFlight() {
     loading[REMOVE_FROM_CART] ||
     loading[UPDATE_CART_ITEM_QUANTITY]
   );
-}
-
-export function useICESetup() {
-
-}
-
-export function setupICE() {
-
 }
 
 export const crafterConf = {

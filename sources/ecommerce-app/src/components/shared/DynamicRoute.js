@@ -69,7 +69,6 @@ export default function DynamicRoute(props) {
     return <Spinner />;
   } else {
     return <Guest
-      modelId={state.model?.craftercms.id}
       isAuthoring={isAuthoring()}
       path={state.model?.craftercms.path}
     >
