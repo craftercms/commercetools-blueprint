@@ -102,7 +102,9 @@ export default function ProductListing(props) {
     dispatch(fetchProducts(facetMeta.state));
   };
 
-  useEffect(fetch, [history.location.search, query.locale, query.currency]);
+  // Adding facetMeta.state is creating a loop
+  // eslint-disable-next-line
+  useEffect(fetch, [history.location.search, query.locale, query.currency, dispatch]);
 
   useEffect(
     () => {
