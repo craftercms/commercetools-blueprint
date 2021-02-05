@@ -136,11 +136,11 @@ This file configures site properties used by Crafter Engine
 
     <!-- Specific configurations for commercetools provider -->
     <commercetools>
-      <projectKey>sunrise-crafter</projectKey>
-      <clientId>oyptKfE5mXN3KLxqvhggC5gM</clientId>
-      <clientSecret>zZ-8xLpteFSGOlUQHeME3lujnUY1wAM9</clientSecret>
-      <authUrl>https://auth.commercetools.co</authUrl>
-      <apiUrl>https://api.commercetools.co</apiUrl>
+      <projectKey>${plugin:projectKey}</projectKey>
+      <clientId>${plugin:clientId}</clientId>
+      <clientSecret>${plugin:clientSecret}</clientSecret>
+      <authUrl>${plugin:authUrl}</authUrl>
+      <apiUrl>${plugin:apiUrl}</apiUrl>
       <scopes>manage_project</scopes>
     </commercetools>
 
