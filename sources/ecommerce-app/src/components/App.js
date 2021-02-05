@@ -36,30 +36,6 @@ import { GlobalContextProvider } from './shared/context';
 i18next.init(i18nextConfig);
 
 export default function App(props) {
-
-  useEffect(
-    () => {
-
-      // True if the site is being view via authoring (studio). False if it's the live site
-      const { isAuthoring } = store.getState().theme;
-
-      if (isAuthoring) {
-        const script = document.createElement('script');
-
-        script.src = `/studio/static-assets/libs/requirejs/require.js`;
-
-        script.setAttribute(
-          'data-main',
-          `/studio/overlayhook?site=NOTUSED&page=NOTUSED&cs.js`
-        );
-
-        document.head.appendChild(script);
-      }
-
-    },
-    []
-  );
-
   return (
     <GlobalContextProvider jQuery={props.jQuery}>
       <AppStoreContextProvider store={store}>
