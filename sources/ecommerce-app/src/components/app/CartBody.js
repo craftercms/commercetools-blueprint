@@ -32,10 +32,10 @@ import DeleteForeverIcon from 'mdi-react/DeleteForeverIcon';
 import RemoveCircleOutlineIcon from 'mdi-react/RemoveCircleOutlineIcon';
 import { Empty } from '../shared/Empty';
 import { useCartUpdateInFlight } from '../../util/component';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 
 export function CartSummary() {
-  const { cart } = useAppSelector(state => state.products);
+  const { cart } = useSelector(state => state.products);
   return (
     (cart.items.length === 0) ? (
       <h2 className="text-center">Your cart is empty</h2>
@@ -74,8 +74,8 @@ export function CartSummary() {
 }
 
 function CartBody(props) {
-  const dispatch = useAppDispatch();
-  const { cart } = useAppSelector(state => state.products);
+  const dispatch = useDispatch();
+  const { cart } = useSelector(state => state.products);
   const options = {
     ...props.displayOptions
       ? { ...CartBody.defaultProps.displayOptions, ...props.displayOptions }
@@ -180,7 +180,7 @@ function CartBody(props) {
 }
 
 export function OrderTotals(props) {
-  const { cart } = useAppSelector(state => state.products);
+  const { cart } = useSelector(state => state.products);
   return (
     <>
       <h3 className="order-details__title">Order Details</h3>

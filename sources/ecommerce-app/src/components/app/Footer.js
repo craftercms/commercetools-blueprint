@@ -28,7 +28,7 @@ import Anchor from "../shared/Anchor";
 import Flag from 'react-world-flags';
 import { changeCurrency, changeLocale } from '../../redux/actions/productsActions';
 import { useFooter, useStoreSettings } from '../shared/hooks';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 
 const FlagCodeMap = {
   de: 'de',
@@ -37,12 +37,12 @@ const FlagCodeMap = {
 };
 
 function Footer(props){
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   const footer = useFooter();
   const storeSettings = useStoreSettings();
   const {
     query: { locale, currency }
-  } = useAppSelector(state => state.products);
+  } = useSelector(state => state.products);
 
   const [localesOpen, setLocalesOpen] = useState(false);
 

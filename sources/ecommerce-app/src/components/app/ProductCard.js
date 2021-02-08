@@ -40,7 +40,7 @@ import ShoppingCartIcon from 'mdi-react/ShoppingCartIcon';
 import Ratings from 'react-ratings-declarative';
 import Alert from '../shared/Alert';
 import { useCartUpdateInFlight } from '../../util/component';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 
 const isSale = false;
 
@@ -52,10 +52,10 @@ export function useMergeState(initialState) {
 
 function ProductCard(props) {
 
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
-  const { cart } = useAppSelector(state => state.products);
-  const { user } = useAppSelector(state => state.users);
+  const { cart } = useSelector(state => state.products);
+  const { user } = useSelector(state => state.users);
   const { product } = props;
   const currency = product.variants[0].currency;
 

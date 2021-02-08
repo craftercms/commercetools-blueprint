@@ -40,8 +40,14 @@ function ContentSideImage(props) {
       <Col md={6} sm={12} xs={12}>
         <div className="landing__code-text">
           <div className="landing__code-wrap">
-            <h3 className="landing__section-title">{title_s}</h3>
-            <p className="landing__section-description" dangerouslySetInnerHTML={{ __html: content_html_raw }}/>
+            <Field component="h3" model={props} fieldId="title_s" />
+            <Field
+              component="p"
+              model={props}
+              fieldId="content_html"
+              className="landing__section-description"
+              dangerouslySetInnerHTML={{ __html: content_html_raw }}
+            />
           </div>
         </div>
       </Col>
@@ -50,17 +56,26 @@ function ContentSideImage(props) {
       <Col md={6} sm={12} xs={12}>
         <div className="landing__code-img landing__code-img--no-shadow">
           <div className="landing__code-wrap">
-            <img className="landing__img landing__img--over" src={image_s} alt={image_alt_s || ''}/>
+            <Field
+              component="img"
+              className="landing__img landing__img--over"
+              model={props}
+              fieldId="image_s"
+              src={image_s}
+              alt={image_alt_s || ''}
+            />
           </div>
         </div>
       </Col>
     );
-
   return (
     <Field component="section" className="landing__section" model={props}>
       {
         section_background_image_s &&
-        <img className="landing__section-background landing__section-background--technologies" src={section_background_image_s} alt=""/>
+        <img
+          className="landing__section-background landing__section-background--technologies"
+          src={section_background_image_s} alt=""
+        />
       }
       <Container>
         <Row

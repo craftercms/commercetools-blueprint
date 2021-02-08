@@ -52,12 +52,12 @@ import ChevronDownIcon from 'mdi-react/ChevronDownIcon';
 
 import authorized from '../shared/authorized';
 import { Empty } from '../shared/Empty';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Account({ history, match, user }) {
 
-  const dispatch = useAppDispatch();
-  const { orders } = useAppSelector(state => state.users);
+  const dispatch = useDispatch();
+  const { orders } = useSelector(state => state.users);
 
   const activeTab = useMemo(
     () => (

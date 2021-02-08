@@ -43,7 +43,7 @@ import hamburger  from '../../img/burger.svg';
 import Flag from 'react-world-flags';
 import { changeCurrency, changeLocale } from '../../redux/actions/productsActions';
 import { useHeader, useNavigation, useStoreSettings } from '../shared/hooks';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 
 const FlagCodeMap = {
   de: 'de',
@@ -53,16 +53,16 @@ const FlagCodeMap = {
 
 export default function Header() {
 
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   const {
     query: { locale, currency }
-  } = useAppSelector(state =>  state.products);
+  } = useSelector(state =>  state.products);
 
   const [localesOpen, setLocalesOpen] = useState(false);
   const [currenciesOpen, setCurrenciesOpen] = useState(false);
 
   const history = useHistory();
-  const { users, products } = useAppSelector(state => state);
+  const { users, products } = useSelector(state => state);
   const { query } = products;
   const [searchOpen, setSearchOpen] = useState(false);
   const [keywords, setKeywords] = useState(query.keywords || '');

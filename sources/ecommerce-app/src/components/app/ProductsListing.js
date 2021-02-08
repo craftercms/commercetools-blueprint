@@ -39,13 +39,13 @@ import SearchIcon from 'mdi-react/SearchIcon';
 import ChevronRightIcon from 'mdi-react/ChevronRightIcon';
 import ChevronLeftIcon from 'mdi-react/ChevronLeftIcon';
 import ReactPaginate from 'react-paginate';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function ProductListing(props) {
 
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   const { history } = props;
-  const { byId, facets, query, loading, errors } = useAppSelector(state => state.products);
+  const { byId, facets, query, loading, errors } = useSelector(state => state.products);
   const products = byId ? Object.values(byId) : null;
   const inputRef = useRef();
 

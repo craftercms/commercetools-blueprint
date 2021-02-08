@@ -36,14 +36,14 @@ import { ajax } from 'rxjs/ajax';
 import { catchError } from 'rxjs/operators';
 import { loginComplete } from '../../redux/actions/usersActions';
 import { useHeader } from '../shared/hooks';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { Form, Field } from 'react-final-form';
+import { useDispatch, useSelector } from 'react-redux';
 
 function LogInFormComponent(props) {
 
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   const history = useHistory();
-  const state = useAppSelector(state => state);
+  const state = useSelector(state => state);
 
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState();

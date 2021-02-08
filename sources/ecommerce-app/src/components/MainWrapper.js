@@ -24,11 +24,11 @@
 
 import React from 'react';
 import classNames from 'classnames';
-import { useAppSelector } from '../redux/store';
+import { useSelector } from 'react-redux';
 
 function MainWrapper(props) {
   const { children } = props;
-  const theme = useAppSelector(state => state.theme);
+  const theme = useSelector(state => state.theme);
 
   const wrapperClass = classNames({
     'wrapper': true,

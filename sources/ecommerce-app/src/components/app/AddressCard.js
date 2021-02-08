@@ -33,9 +33,9 @@ import { Link } from 'react-router-dom';
 import { Empty } from '../shared/Empty';
 import { useUser } from '../../util/component';
 import * as qs from 'query-string';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { Form, Field } from 'react-final-form';
 import { FORM_ERROR } from 'final-form';
+import { useDispatch, useSelector } from 'react-redux';
 
 export function AddressCard({ address, user, showName }) {
   return (
@@ -86,7 +86,7 @@ export const AddressForm = function (props) {
 
   const [success, setSuccess] = useState();
 
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
   const submit = (values) => {
     success && setSuccess();
@@ -249,7 +249,7 @@ export const AddressForm = function (props) {
 
 export function AddressEntry(props) {
 
-  const user = useAppSelector(state => state.users.user);
+  const user = useSelector(state => state.users.user);
   const addressId = props.match.params.id;
   const queryString = qs.parse(props.location.search);
   const backUrl = queryString.origin || '/account/address-book';

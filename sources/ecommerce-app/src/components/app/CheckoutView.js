@@ -38,7 +38,7 @@ import {
   checkout, UPDATE_CART,
   updateCart
 } from '../../redux/actions/productsActions';
-import { useAppDispatch } from '../../redux/store';
+import { useDispatch } from 'react-redux';
 
 function address(cart, user, type) {
   if (cart == null || user == null) {
@@ -142,7 +142,7 @@ function CreditCardForm({ cardNumber, cvc, expirationDate, nameOnCard, onChange 
 
 function CheckoutView({ history }) {
 
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   const { loading } = useProductsBranch();
   const user = useUser({ redirect: '/checkout' });
   const cart = useCart({ onEmpty: () => history.push('/cart') });

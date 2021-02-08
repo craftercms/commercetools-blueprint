@@ -39,7 +39,7 @@ import { catchError } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
 import { useHeader } from '../shared/hooks';
 import { Form, Field } from 'react-final-form';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const RegisterFormComponent = memo(function ({ onSuccess }) {
 
@@ -162,8 +162,8 @@ const RegistrationConfirmation = () => (
   </div>
 );
 const Register = () => {
-  const dispatch = useAppDispatch();
-  const success = useAppSelector(state => state.users.registerConfirmPending);
+  const dispatch = useDispatch();
+  const success = useSelector(state => state.users.registerConfirmPending);
   const header = useHeader();
 
   return (

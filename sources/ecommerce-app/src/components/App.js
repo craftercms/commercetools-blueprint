@@ -22,23 +22,24 @@
  * SOFTWARE.
  */
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next';
 import Routes from './Routes';
-import store, { AppStoreContextProvider } from '../redux/store';
+import store from '../redux/store';
 import ScrollReset from './ScrollReset';
 import { config as i18nextConfig } from '../translations/i18n';
 import MainWrapper from './MainWrapper';
 import { GlobalContextProvider } from './shared/context';
+import { Provider } from 'react-redux';
 
 i18next.init(i18nextConfig);
 
 export default function App(props) {
   return (
     <GlobalContextProvider jQuery={props.jQuery}>
-      <AppStoreContextProvider store={store}>
+      <Provider store={store}>
         <I18nextProvider i18n={i18next}>
           <BrowserRouter>
             <ScrollReset>
@@ -50,7 +51,7 @@ export default function App(props) {
             </ScrollReset>
           </BrowserRouter>
         </I18nextProvider>
-      </AppStoreContextProvider>
+      </Provider>
     </GlobalContextProvider>
   );
 }

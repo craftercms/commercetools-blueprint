@@ -32,7 +32,7 @@ import Alert from '../shared/Alert';
 import { loginComplete } from '../../redux/actions/usersActions';
 import { Form, Field } from 'react-final-form';
 import { FORM_ERROR } from 'final-form';
-import { useAppDispatch } from '../../redux/store';
+import { useDispatch } from 'react-redux';
 
 const renderTextField = ({ input, label, meta: { touched, error }, children }) => (
   <TextField
@@ -66,7 +66,7 @@ renderTextField.defaultProps = {
 
 function ProfileSettings(props) {
 
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
   const { initialValues } = props;
   const [success, setSuccess] = useState();

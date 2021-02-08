@@ -34,12 +34,12 @@ import { ajax } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
 import { BlogPostCard } from './BlogTeaser';
 import { getProducts } from '../../util/products';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function ProductDetails(props) {
 
-  const dispatch = useAppDispatch();
-  const products = useAppSelector(state => state.products);
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.products);
 
   const id = props.match.params.product;
   const product = products.byId ? products.byId[id] : null;
