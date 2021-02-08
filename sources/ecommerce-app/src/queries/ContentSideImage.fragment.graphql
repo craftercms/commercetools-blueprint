@@ -1,8 +1,0 @@
-fragment ContentSideImage on component_two__column {
-  title_s
-  image_s
-  objectId
-  contentAlignment_s
-  content_html_raw
-  section_background_image_s
-}

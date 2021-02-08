@@ -26,7 +26,6 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import {
   themeReducer,
-  contentReducer,
   usersReducer,
   productsReducer
 } from './reducers';
@@ -38,7 +37,6 @@ import { setStoreSettings } from './actions/productsActions';
 
 const reducer = combineReducers({
   theme: themeReducer,
-  content: contentReducer,
   users: usersReducer,
   products: productsReducer
 });

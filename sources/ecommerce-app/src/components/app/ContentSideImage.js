@@ -40,7 +40,7 @@ function ContentSideImage(props) {
       <Col md={6} sm={12} xs={12}>
         <div className="landing__code-text">
           <div className="landing__code-wrap">
-            <Field component="h3" model={props} fieldId="title_s" />
+            <Field component="h3" model={props} fieldId="title_s">{title_s}</Field>
             <Field
               component="p"
               model={props}

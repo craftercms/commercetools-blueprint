@@ -23,13 +23,11 @@
  */
 
 import themeReducer from './themeReducer';
-import contentReducer from './contentReducer';
 import usersReducer from './usersReducer';
 import productsReducer from './productsReducer';
 
 export {
   themeReducer,
-  contentReducer,
   usersReducer,
   productsReducer
 };

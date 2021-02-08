@@ -1,4 +1,0 @@
-fragment BlogTeaser on component_blog_teaser {
-  objectId
-  title_s
-}

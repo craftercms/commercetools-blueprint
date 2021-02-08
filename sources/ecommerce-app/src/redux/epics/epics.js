@@ -45,14 +45,10 @@ import {
   setAsDefaultAddressEpic,
   unauthorizedEpic
 } from './users';
-import { fetchGraphEpic } from './content';
-
-// (action$: Observable<Action>, state$: StateObservable<State>): Observable<Action>;
 
 export default combineEpics(
   fetchProductEpic,
   fetchProductsEpic,
-  fetchGraphEpic,
   fetchCartEpic,
   addToCartEpic,
   removeFromCartEpic,
