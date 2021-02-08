@@ -91,10 +91,6 @@ class CheckBoxField extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     name: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.bool,
-    ]).isRequired,
     label: PropTypes.string,
     defaultChecked: PropTypes.bool,
     disabled: PropTypes.bool,
