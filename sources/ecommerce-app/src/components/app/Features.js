@@ -38,10 +38,22 @@ function Features(props) {
       <Container>
         <Row>
           <Col md={12}>
-            <h3 className="landing__section-title">{title_s}</h3>
+            <Field
+              component="h3"
+              model={props}
+              fieldId="title_s"
+              className="landing__section-title"
+            >
+              {title_s}
+            </Field>
             {openingContent_html_raw &&
-            <div className="landing__feature landing__feature-caption" style={{ width: '100%' }}
-                 dangerouslySetInnerHTML={{ __html: openingContent_html_raw }}/>}
+            <Field
+              model={props}
+              fieldId="openingContent_html"
+              className="landing__feature landing__feature-caption"
+              style={{ width: '100%' }}
+              dangerouslySetInnerHTML={{ __html: openingContent_html_raw }}
+            />}
           </Col>
         </Row>
         <Row>
@@ -51,10 +63,32 @@ function Features(props) {
                 features_o.map(({ description_t, icon_s, title_s }, index) =>
                   <div className="landing__feature" key={index}>
                     <div className="landing__feature-img-wrap">
-                      <img src={icon_s} alt=""/>
+                      <Field
+                        component="img"
+                        model={props}
+                        fieldId="features_o.icon_s"
+                        index={index}
+                        src={icon_s}
+                      />
                     </div>
-                    <p className="landing__feature-title">{title_s}</p>
-                    <p className="landing__feature-caption">{description_t}</p>
+                    <Field
+                      component="p"
+                      model={props}
+                      fieldId="features_o.title_s"
+                      index={index}
+                      className="landing__feature-title"
+                    >
+                      {title_s}
+                    </Field>
+                    <Field
+                      component="p"
+                      model={props}
+                      fieldId="features_o.description_t"
+                      index={index}
+                      className="landing__feature-caption"
+                    >
+                      {description_t}
+                    </Field>
                   </div>
                 )
               }

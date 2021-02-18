@@ -40,7 +40,14 @@ function Testimonials(props) {
       <Container>
         <Row>
           <Col md={12}>
-            <h3 className="landing__section-title">{title_s}</h3>
+            <Field
+              component="h3"
+              model={props}
+              fieldId="title_s"
+              className="landing__section-title"
+            >
+              {title_s}
+            </Field>
           </Col>
         </Row>
         <Row className="landing__testimonials">
@@ -54,7 +61,15 @@ function Testimonials(props) {
                 >
                   <Card>
                     <CardBody className="landing__testimonial">
-                      <p className="landing__testimonial-name">{customer_s}</p>
+                      <Field
+                        component="p"
+                        model={props}
+                        fieldId="testimonials_o.customer_s"
+                        className="landing__testimonial-name"
+                        index={index}
+                      >
+                        {customer_s}
+                      </Field>
                       <div className="landing__testimonial-stars">
                         {(
                           () => {
@@ -65,8 +80,12 @@ function Testimonials(props) {
                           }
                         )()}
                       </div>
-                      <p
+                      <Field
+                        component="p"
+                        model={props}
+                        fieldId="testimonials_o.description_html"
                         className="landing__testimonial-review"
+                        index={index}
                         dangerouslySetInnerHTML={{ __html: description_html_raw }}
                       />
                     </CardBody>

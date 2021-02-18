@@ -79,12 +79,54 @@ function Post({ post }) {
   return (
     <>
       <Field component="section" className="post__head" model={post}>
-        <h1 className="post__title">{title_s}</h1>
-        {subtitle_s && <p className="post__subtitle">{subtitle_s}</p>}
-        {author_s && <p className="post__author">By {author_s}</p>}
+        <Field
+          component="h1"
+          model={post}
+          fieldId="title_s"
+          className="post__title"
+        >
+          {title_s}
+        </Field>
+        {
+          subtitle_s &&
+          <Field
+            component="p"
+            model={post}
+            fieldId="subtitle_s"
+            className="post__subtitle"
+          >
+            {subtitle_s}
+          </Field>
+        }
+        {
+          author_s &&
+          <Field
+            component="p"
+            model={post}
+            fieldId="author_s"
+            className="post__author"
+          >
+            {author_s}
+          </Field>
+        }
       </Field>
-      {image_s && <img className="post__image" src={image_s} alt=""/>}
-      <div className="post__body" dangerouslySetInnerHTML={{ __html: content_html_raw }}/>
+      {
+        image_s &&
+        <Field
+          component="img"
+          className="post__image"
+          model={post}
+          fieldId="image_s"
+          src={image_s}
+          alt=""
+        />
+      }
+      <Field
+        model={post}
+        fieldId="content_html"
+        className="post__body"
+        dangerouslySetInnerHTML={{ __html: content_html_raw }}
+      />
       <div className="post__categories">{categories_o.map((item) => item.value_smv).join(', ')}</div>
     </>
   );

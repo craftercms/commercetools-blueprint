@@ -49,10 +49,17 @@ function Hero(props) {
       <Container>
         <Row>
           <Col md={12}>
-            <h2 className="landing__header-title">
+            <Field
+              component="h2"
+              model={props}
+              fieldId="title_t"
+              className="landing__header-title"
+            >
               {title_t}
-            </h2>
-            <div
+            </Field>
+            <Field
+              model={props}
+              fieldId="content_html"
               className="landing__header-subhead"
               dangerouslySetInnerHTML={{ __html: content_html_raw }}
             />
@@ -69,8 +76,11 @@ function Hero(props) {
             }
             {
               image_s &&
-              <img
+              <Field
+                component="img"
                 className="landing__header-img"
+                model={props}
+                fieldId="image_s"
                 src={image_s}
                 alt={image_alt_t || ''}
               />

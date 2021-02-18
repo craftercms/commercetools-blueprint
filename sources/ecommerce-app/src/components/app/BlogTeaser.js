@@ -47,7 +47,14 @@ function BlogTeaser(props) {
       <Container>
         <Row>
           <Col md={12}>
-            <h3 className="landing__section-title">{title_s}</h3>
+            <Field
+              component="h3"
+              model={props}
+              fieldId="title_s"
+              className="landing__section-title"
+            >
+              {title_s}
+            </Field>
           </Col>
         </Row>
         <Row className="landing__teasers">
@@ -71,11 +78,28 @@ export function BlogPostCard(props) {
     <Field component={Link} to={`/blog/${slug_s}`} model={props}>
       <Card>
         <CardBody className="landing__teaser">
-          <img src={image_s} alt="" className="landing__teaser-img"/>
-          <h3 className="landing__teaser-title">{title_s}</h3>
+          <Field
+            component="img"
+            className="landing__teaser-img"
+            model={props}
+            fieldId="image_s"
+            src={image_s}
+            alt=''
+          />
+          <Field
+            component="h3"
+            model={props}
+            fieldId="title_s"
+            className="landing__teaser-title"
+          >
+            {title_s}
+          </Field>
           {
             !hideSummary && summary_html_raw &&
-            <p
+            <Field
+              component="p"
+              model={props}
+              fieldId="summary_html"
               className="landing__teaser-review"
               dangerouslySetInnerHTML={{ __html: summary_html_raw }}
             />
