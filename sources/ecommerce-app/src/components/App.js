@@ -38,7 +38,7 @@ i18next.init(i18nextConfig);
 
 export default function App(props) {
   return (
-    <GlobalContextProvider jQuery={props.jQuery}>
+    <GlobalContextProvider>
       <Provider store={store}>
         <I18nextProvider i18n={i18next}>
           <BrowserRouter>
