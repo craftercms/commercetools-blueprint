@@ -33,6 +33,8 @@ import { of } from 'rxjs';
 import { getProducts, useProductsQuery } from '../../util/products';
 import { useCategories, usePosts } from '../shared/hooks';
 import { Field } from '@craftercms/studio-guest';
+import { Guest } from '@craftercms/studio-guest';
+import { isAuthoring } from '../shared/utils';
 
 export default function BlogEntry(props) {
   const slug = props.match.params.slug;
@@ -45,33 +47,38 @@ export default function BlogEntry(props) {
   });
   const post = usePosts(paginationData, slug);
 
-  return <Layout>
-    <Container>
-      <Row>
-        {
-          post &&
-          <Col md={9}>
-            <Card>
-              <CardBody>
-                <Post post={post.items[0]}/>
-              </CardBody>
-            </Card>
-          </Col>
-        }
-        <Col md={3}>
-
-          <CategoryListing categories={categories}/>
+  return <Guest
+    isAuthoring={isAuthoring()}
+    path={post?.items[0].craftercms.path}
+  >
+    <Layout>
+      <Container>
+        <Row>
           {
             post &&
-            <>
-              <RelatedPosts categories={post.items[0].categories_o} slug={slug}/>
-              <RelatedProducts categories={post.items[0].categories_o}/>
-            </>
+            <Col md={9}>
+              <Card>
+                <CardBody>
+                  <Post post={post.items[0]}/>
+                </CardBody>
+              </Card>
+            </Col>
           }
-        </Col>
-      </Row>
-    </Container>
-  </Layout>;
+          <Col md={3}>
+
+            <CategoryListing categories={categories}/>
+            {
+              post &&
+              <>
+                <RelatedPosts categories={post.items[0].categories_o} slug={slug}/>
+                <RelatedProducts categories={post.items[0].categories_o}/>
+              </>
+            }
+          </Col>
+        </Row>
+      </Container>
+    </Layout>
+  </Guest>
 }
 
 function Post({ post }) {
