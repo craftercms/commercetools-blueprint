@@ -32,8 +32,7 @@ import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { getProducts, useProductsQuery } from '../../util/products';
 import { useCategories, usePosts } from '../shared/hooks';
-import { Field } from '@craftercms/studio-guest';
-import { Guest } from '@craftercms/studio-guest';
+import { Field, Guest } from '@craftercms/studio-guest/react';
 import { isAuthoring } from '../shared/utils';
 
 export default function BlogEntry(props) {

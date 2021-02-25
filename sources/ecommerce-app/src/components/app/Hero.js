@@ -25,7 +25,7 @@
 import React from 'react';
 import { Col, Row, Container } from 'reactstrap';
 import A from "../shared/Anchor";
-import { Field } from '@craftercms/studio-guest';
+import { Field, RenderField } from '@craftercms/studio-guest/react';
 
 function Hero(props) {
   const {
@@ -76,13 +76,13 @@ function Hero(props) {
             }
             {
               image_s &&
-              <Field
+              <RenderField
                 component="img"
-                className="landing__header-img"
+                renderTarget="src"
                 model={props}
                 fieldId="image_s"
-                src={image_s}
-                alt={image_alt_t || ''}
+                className="landing__header-img"
+                alt=""
               />
             }
           </Col>

@@ -32,7 +32,7 @@ import {
 import Product from './Product';
 import { switchMap, map } from 'rxjs/operators';
 import { getProducts, useProductsQuery } from '../../util/products';
-import { Field } from '@craftercms/studio-guest';
+import { Field } from '@craftercms/studio-guest/react';
 
 export default function ProductTeaser(props) {
 
