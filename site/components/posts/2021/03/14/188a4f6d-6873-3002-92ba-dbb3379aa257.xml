@@ -4,28 +4,30 @@
 	<display-template/>
 	<merge-strategy>inherit-levels</merge-strategy>
 	<no-template-required>true</no-template-required>
-	<objectGroupId>93a5</objectGroupId>
-	<objectId>93a53e29-abf3-20d3-7948-fe9840a35843</objectId>
-	<internal-name>Men's Accessories</internal-name>
-	<slug_s>mens-accessories</slug_s>
-	<title_s tokenized="true">Men's Accessories</title_s>
+	<objectGroupId>188a</objectGroupId>
+	<objectId>188a4f6d-6873-3002-92ba-dbb3379aa257</objectId>
+	<image_s>/static-assets/images/post/188a4f6d-6873-3002-92ba-dbb3379aa257/stil-D4jRahaUaIc-unsplash.jpg</image_s>
+	<file-name>188a4f6d-6873-3002-92ba-dbb3379aa257.xml</file-name>
+	<internal-name>Women's Accessories</internal-name>
+	<slug_s>womens-accessories</slug_s>
+	<title_s tokenized="true">Women's Accessories</title_s>
 	<subtitle_s tokenized="true"/>
-	<author_s>Joe Bloggs</author_s>
-	<gender_o>	<item>	<key>male</key>
-	<value_smv>Male</value_smv>
+	<author_s>Jane Smith</author_s>
+	<gender_o>	<item>	<key>female</key>
+	<value_smv>Female</value_smv>
 	</item></gender_o>
 	<ages_o>	<item>	<key>adult</key>
 	<value_smv>Adult</value_smv>
+	</item>	<item>	<key>teen</key>
+	<value_smv>Teen</value_smv>
+	</item>	<item>	<key>senior</key>
+	<value_smv>Senior</value_smv>
 	</item></ages_o>
-	<categories_o>	<item>	<key>boots</key>
-	<value_smv>Boots</value_smv>
+	<categories_o>	<item>	<key>sunglasses</key>
+	<value_smv>Sunglasses</value_smv>
 	</item>	<item>	<key>wallets</key>
 	<value_smv>Wallets</value_smv>
-	</item>	<item>	<key>sunglasses</key>
-	<value_smv>Sunglasses</value_smv>
 	</item></categories_o>
-	<image_s>/static-assets/images/post/93a53e29-abf3-20d3-7948-fe9840a35843/nordwood-themes-Nv4QHkTVEaI-unsplash.jpg</image_s>
-	<file-name>93a53e29-abf3-20d3-7948-fe9840a35843.xml</file-name>
 	<summary_html>&lt;p&gt;&lt;span style="font-family: 'Open Sans', Arial, sans-serif; font-size: 14px; text-align: justify; background-color: #ffffff;"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt at nulla eget maximus. Nullam neque massa, malesuada vel est id, consectetur tempor sapien.&lt;/span&gt;&lt;/p&gt;</summary_html>
 	<content_html>&lt;p style="box-sizing: inherit; margin: 0px 0px 15px; color: #48484a; font-size: 14px; padding: 0px; text-align: justify; font-family: 'Open Sans', Arial, sans-serif; background-color: #ffffff;"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt at nulla eget maximus. Nullam neque massa, malesuada vel est id, consectetur tempor sapien. Vestibulum id massa sed tellus condimentum congue sit amet nec lorem. Ut quis massa a mi pharetra cursus ac in mauris. Fusce sit amet lorem hendrerit, fermentum dolor ac, molestie augue. Nam nec rhoncus orci. Phasellus in libero in purus hendrerit tincidunt vitae malesuada orci. Cras turpis lectus, ornare bibendum purus a, ullamcorper fermentum sem. Sed nec pretium lorem, et scelerisque arcu. Integer nec risus felis. Etiam vitae nulla quam. Ut tortor sem, egestas ac urna vitae, ornare fringilla mauris. Proin sagittis diam vitae sodales eleifend. Nunc ut orci et urna congue ullamcorper id id justo. Cras sagittis eleifend blandit.&lt;/p&gt;
 &lt;p style="box-sizing: inherit; margin: 0px 0px 15px; color: #48484a; font-size: 14px; padding: 0px; text-align: justify; font-family: 'Open Sans', Arial, sans-serif; background-color: #ffffff;"&gt;&lt;span style="box-sizing: inherit;"&gt;Female Male Child Teen Adult Senior T-Shirts Jackets Boots Blazers Trousers Sandals Sneakers Sunglasses Lace-up Shoes Wallets Shirts&lt;/span&gt;&lt;br style="box-sizing: inherit;" /&gt;&lt;/p&gt;
@@ -34,10 +36,10 @@
 &lt;p style="box-sizing: inherit; margin: 0px 0px 15px; color: #48484a; font-size: 14px; padding: 0px; text-align: justify; font-family: 'Open Sans', Arial, sans-serif; background-color: #ffffff;"&gt;Morbi at vulputate mauris. Vestibulum ac scelerisque nibh. Nunc porttitor risus ut ante auctor volutpat. Donec malesuada nulla at arcu maximus, ut tincidunt arcu gravida. Integer ac egestas libero. Nullam condimentum mauris sed lobortis ultrices. Vivamus a viverra odio, et tincidunt orci. Etiam venenatis mi sit amet nibh pulvinar fringilla. Morbi interdum est at enim pulvinar, sed consectetur justo euismod. Integer porta elit nec sem lobortis, nec bibendum orci malesuada. In efficitur placerat justo, in pulvinar turpis egestas id.&lt;/p&gt;
 &lt;p style="box-sizing: inherit; margin: 0px 0px 15px; color: #48484a; font-family: 'Open Sans', sans-serif; font-size: 13px; padding: 0px; text-align: justify; background-color: #ffffff;"&gt;&lt;span style="box-sizing: inherit; font-family: 'Open Sans', Arial, sans-serif;"&gt;&lt;span style="box-sizing: inherit; font-size: 14px;"&gt;Female Male Child Teen Adult Senior T-Shirts Jackets Boots Blazers Trousers Sandals Sneakers Sunglasses Lace-up Shoes Wallets Shirts&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style="box-sizing: inherit; margin: 0px 0px 15px; color: #48484a; font-size: 14px; padding: 0px; text-align: justify; font-family: 'Open Sans', Arial, sans-serif; background-color: #ffffff;"&gt;Vivamus ante nunc, suscipit vitae nunc ut, varius pellentesque libero. In justo risus, maximus ut vehicula eu, semper non erat. Mauris eget aliquet dui, vitae pretium enim. Phasellus sit amet neque nisl. Donec at nunc at ligula placerat lobortis a vel ligula. Sed interdum eros ut lacinia bibendum. Phasellus at purus leo. Vivamus et ultricies sem. Nunc vel pellentesque nisi. Donec et fringilla diam. Etiam ullamcorper lectus in nulla cursus pulvinar eu et lacus. Praesent suscipit vehicula mauris, vel mattis libero consequat eget. Cras vel porttitor ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam leo sapien, mollis at tempus a, volutpat id dui.&lt;/p&gt;</content_html>
-	<createdDate>2019-10-14T19:36:18.795Z</createdDate>
-	<createdDate_dt>2019-10-14T19:36:18.795Z</createdDate_dt>
-	<lastModifiedDate>2019-10-14T19:37:58.781Z</lastModifiedDate>
-	<lastModifiedDate_dt>2019-10-14T19:37:58.781Z</lastModifiedDate_dt>
-	<date_dt>2019-10-14T04:00:00.000Z</date_dt>
+	<createdDate>2019-10-14T19:45:30.513Z</createdDate>
+	<createdDate_dt>2019-10-14T19:45:30.513Z</createdDate_dt>
+	<lastModifiedDate>2019-10-14T19:45:30.513Z</lastModifiedDate>
+	<lastModifiedDate_dt>2019-10-14T19:45:30.513Z</lastModifiedDate_dt>
+	<date_dt>2021-03-14T04:00:00.000Z</date_dt>
 	<date_dt_tz>EST5EDT</date_dt_tz>
 </component>
