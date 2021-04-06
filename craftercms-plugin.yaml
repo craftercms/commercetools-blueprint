@@ -34,9 +34,9 @@ plugin:
     - blueprint
     - ecommerce
   version:
-    major: 1
-    minor: 1
-    patch: 22
+    major: 2
+    minor: 0
+    patch: 0
   description: |
     An e-commerce blueprint with full integration with commercetools https://commercetools.com
   website:
@@ -74,33 +74,6 @@ plugin:
     name: MIT
     url: https://opensource.org/licenses/MIT
   crafterCmsVersions:
-    - major: 3
-      minor: 1
-      patch: 6
-    - major: 3
-      minor: 1
-      patch: 7
-    - major: 3
-      minor: 1
-      patch: 8
-    - major: 3
-      minor: 1
-      patch: 9
-    - major: 3
-      minor: 1
-      patch: 10
-    - major: 3
-      minor: 1
-      patch: 11
-    - major: 3
-      minor: 1
-      patch: 12
-    - major: 3
-      minor: 1
-      patch: 13
-    - major: 3
-      minor: 2
-      patch: 0
     - major: 4
       minor: 0
       patch: 0

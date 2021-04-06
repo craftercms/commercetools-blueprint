@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -32,59 +32,81 @@ import {
   CardBody
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { useICE } from '../../util/component';
+import { usePosts } from '../shared/hooks';
+import { Field } from '@craftercms/studio-guest/react';
 
 function BlogTeaser(props) {
 
   const {
-    label,
-    localId,
     title_s,
-    posts_o // Fake model property. Injected by the reducer.
   } = props;
-
-  const { props: ice } = useICE({ modelId: localId, label });
+  const posts = usePosts();
 
   return (
-    <section className="landing__section" {...ice}>
+    <Field component="section" className="landing__section" model={props}>
       <Container>
         <Row>
           <Col md={12}>
-            <h3 className="landing__section-title">{title_s}</h3>
+            <Field
+              component="h3"
+              model={props}
+              fieldId="title_s"
+              className="landing__section-title"
+            >
+              {title_s}
+            </Field>
           </Col>
         </Row>
         <Row className="landing__teasers">
           {
-            posts_o.slice(0, 3).map((post) =>
-              <Col key={post.localId} lg={4} md={6}>
+            posts &&
+            posts.items.map((post) =>
+              <Col key={post.craftercms.id} lg={4} md={6}>
                 <BlogPostCard {...post}/>
               </Col>
             )
           }
         </Row>
       </Container>
-    </section>
+    </Field>
   );
 }
 
-export function BlogPostCard({ localId, label, slug_s, title_s, image_s, summary_html_raw, hideSummary }) {
-  const { props: ice } = useICE({ modelId: localId, label });
+export function BlogPostCard(props) {
+  const { slug_s, title_s, image_s, summary_html_raw, hideSummary } = props;
   return (
-    <Link to={`/blog/${slug_s}`}>
-      <Card {...ice}>
+    <Field component={Link} to={`/blog/${slug_s}`} model={props}>
+      <Card>
         <CardBody className="landing__teaser">
-          <img src={image_s} alt="" className="landing__teaser-img"/>
-          <h3 className="landing__teaser-title">{title_s}</h3>
+          <Field
+            component="img"
+            className="landing__teaser-img"
+            model={props}
+            fieldId="image_s"
+            src={image_s}
+            alt=''
+          />
+          <Field
+            component="h3"
+            model={props}
+            fieldId="title_s"
+            className="landing__teaser-title"
+          >
+            {title_s}
+          </Field>
           {
             !hideSummary && summary_html_raw &&
-            <p
+            <Field
+              component="p"
+              model={props}
+              fieldId="summary_html"
               className="landing__teaser-review"
               dangerouslySetInnerHTML={{ __html: summary_html_raw }}
             />
           }
         </CardBody>
       </Card>
-    </Link>
+    </Field>
   );
 }
 

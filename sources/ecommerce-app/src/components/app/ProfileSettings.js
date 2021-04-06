@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,12 +25,13 @@
 /* eslint-disable react/no-children-prop */
 import React, { useState } from 'react';
 import { Button, ButtonToolbar } from 'reactstrap';
-import { Field, reduxForm, SubmissionError } from 'redux-form';
 import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import renderCheckBoxField from '../shared/form/CheckBox';
 import Alert from '../shared/Alert';
 import { loginComplete } from '../../redux/actions/usersActions';
+import { Form, Field } from 'react-final-form';
+import { FORM_ERROR } from 'final-form';
 import { useDispatch } from 'react-redux';
 
 const renderTextField = ({ input, label, meta: { touched, error }, children }) => (
@@ -64,10 +65,10 @@ renderTextField.defaultProps = {
 };
 
 function ProfileSettings(props) {
-  
+
   const dispatch = useDispatch();
 
-  const { handleSubmit, reset, error } = props;
+  const { initialValues } = props;
   const [success, setSuccess] = useState();
 
   function submit(values) {
@@ -81,9 +82,7 @@ function ProfileSettings(props) {
     }).then(async (response) => {
       if (response.status !== 200) {
         const data = await response.json();
-        throw new SubmissionError({
-          _error: data.message
-        });
+        return { [FORM_ERROR]: data.message };
       }
       setSuccess('Update successful.');
       return response.json();
@@ -93,82 +92,83 @@ function ProfileSettings(props) {
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit(submit)}>
-      {
-        success &&
-        <Alert color="success" className="alert--bordered" onDismiss={() => setSuccess()}>
-          <p>{success}</p>
-        </Alert>
-      }
-      {
-        error &&
-        <Alert color="danger" className="alert--bordered">
-          <p>{error}</p>
-        </Alert>
-      }
-      <div className="form__form-group">
-        <span className="form__form-group-label">Name</span>
-        <div className="form__form-group-field">
-          <Field
-            type="text"
-            name="firstName"
-            component="input"
-          />
-        </div>
-      </div>
-      <div className="form__form-group">
-        <span className="form__form-group-label">Middle Name</span>
-        <div className="form__form-group-field">
-          <Field
-            type="text"
-            name="middleName"
-            component="input"
-          />
-        </div>
-      </div>
-      <div className="form__form-group">
-        <span className="form__form-group-label">Last Name</span>
-        <div className="form__form-group-field">
-          <Field
-            type="text"
-            name="lastName"
-            component="input"
-          />
-        </div>
-      </div>
-      <div className="form__form-group">
-        <span className="form__form-group-label">Phone Number</span>
-        <div className="form__form-group-field">
-          <Field
-            type="text"
-            name="phone"
-            component="input"
-          />
-        </div>
-      </div>
-      <div className="form__form-group">
-        <span className="form__form-group-label">E-mail</span>
-        <div className="form__form-group-field">
-          <Field
-            type="text"
-            name="email"
-            component="input"
-          />
-        </div>
-      </div>
-      <ButtonToolbar className="form__button-toolbar">
-        <Button color="primary" type="submit">Update profile</Button>
-        <Button type="button" onClick={reset}>
-          Cancel
-        </Button>
-      </ButtonToolbar>
-    </form>
+    <Form
+      initialValues={initialValues}
+      onSubmit={submit}
+    >
+      {({ handleSubmit, form, submitError }) => (
+        <form className="form" onSubmit={handleSubmit}>
+          {
+            success &&
+            <Alert color="success" className="alert--bordered" onDismiss={() => setSuccess()}>
+              <p>{success}</p>
+            </Alert>
+          }
+          <div className="form__form-group">
+            <span className="form__form-group-label">Name</span>
+            <div className="form__form-group-field">
+              <Field
+                type="text"
+                name="firstName"
+                component="input"
+              />
+            </div>
+          </div>
+          <div className="form__form-group">
+            <span className="form__form-group-label">Middle Name</span>
+            <div className="form__form-group-field">
+              <Field
+                type="text"
+                name="middleName"
+                component="input"
+              />
+            </div>
+          </div>
+          <div className="form__form-group">
+            <span className="form__form-group-label">Last Name</span>
+            <div className="form__form-group-field">
+              <Field
+                type="text"
+                name="lastName"
+                component="input"
+              />
+            </div>
+          </div>
+          <div className="form__form-group">
+            <span className="form__form-group-label">Phone Number</span>
+            <div className="form__form-group-field">
+              <Field
+                type="text"
+                name="phone"
+                component="input"
+              />
+            </div>
+          </div>
+          <div className="form__form-group">
+            <span className="form__form-group-label">E-mail</span>
+            <div className="form__form-group-field">
+              <Field
+                type="text"
+                name="email"
+                component="input"
+              />
+            </div>
+          </div>
+          {submitError && <div className="error">{submitError}</div>}
+          <ButtonToolbar className="form__button-toolbar">
+            <Button color="primary" type="submit">Update profile</Button>
+            <Button type="button" onClick={form.reset}>
+              Cancel
+            </Button>
+          </ButtonToolbar>
+        </form>
+      )}
+    </Form>
   );
 
 }
 
 function ChangePasswordFormComponent(props) {
-  const { handleSubmit, reset, error } = props;
   const [type, setType] = useState('password');
   const [success, setSuccess] = useState();
 
@@ -183,70 +183,68 @@ function ChangePasswordFormComponent(props) {
     }).then(async (response) => {
       if (response.status !== 200) {
         const data = await response.json();
-        throw new SubmissionError({
-          _error: data.message
-        });
+        return { [FORM_ERROR]: data.message };
       }
-      reset();
       setSuccess('Update successful.');
       return response.json();
     });
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit(submit)}>
-      {
-        success &&
-        <Alert color="success" className="alert--bordered" onDismiss={() => setSuccess()}>
-          <p>{success}</p>
-        </Alert>
-      }
-      {
-        error &&
-        <Alert color="danger" className="alert--bordered">
-          <p>{error}</p>
-        </Alert>
-      }
-      <div className="form__form-group">
-        <span className="form__form-group-label">Current Password</span>
-        <div className="form__form-group-field">
-          <Field
-            name="currentPassword"
-            component="input"
-            type={type}
-          />
-        </div>
-      </div>
-      <div className="form__form-group">
-        <span className="form__form-group-label">New Password</span>
-        <div className="form__form-group-field">
-          <Field
-            name="newPassword"
-            component="input"
-            type={type}
-          />
-        </div>
-      </div>
-      <div className="form__form-group">
-        <div className="form__form-group-field">
-          <Field
-            name="showPassword"
-            onChange={(value, checked) => setType(checked ? 'text' : 'password')}
-            component={renderCheckBoxField}
-            label="Show passwords"
-          />
-        </div>
-      </div>
-      <ButtonToolbar className="form__button-toolbar">
-        <Button color="primary" type="submit">Submit</Button>
-        <Button type="button" onClick={reset}>
-          Cancel
-        </Button>
-      </ButtonToolbar>
-    </form>
+    <Form
+      onSubmit={submit}
+    >
+      {({ handleSubmit, form, submitError }) => (
+        <form className="form" onSubmit={values => handleSubmit(values).then(form.reset)}>
+          {
+            success &&
+            <Alert color="success" className="alert--bordered" onDismiss={() => setSuccess()}>
+              <p>{success}</p>
+            </Alert>
+          }
+          <div className="form__form-group">
+            <span className="form__form-group-label">Current Password</span>
+            <div className="form__form-group-field">
+              <Field
+                name="currentPassword"
+                component="input"
+                type={type}
+              />
+            </div>
+          </div>
+          <div className="form__form-group">
+            <span className="form__form-group-label">New Password</span>
+            <div className="form__form-group-field">
+              <Field
+                name="newPassword"
+                component="input"
+                type={type}
+              />
+            </div>
+          </div>
+          <div className="form__form-group">
+            <div className="form__form-group-field">
+              <Field
+                name="showPassword"
+                onChange={(value, checked) => setType(checked ? 'text' : 'password')}
+                component={renderCheckBoxField}
+                label="Show passwords"
+              />
+            </div>
+          </div>
+          {submitError && <div className="error">{submitError}</div>}
+          <ButtonToolbar className="form__button-toolbar">
+            <Button color="primary" type="submit">Submit</Button>
+            <Button type="button" onClick={form.reset}>
+              Cancel
+            </Button>
+          </ButtonToolbar>
+        </form>
+      )}
+    </Form>
   );
 }
 
-export const ChangePasswordForm = reduxForm({ form: 'passwordUpdateForm' })(ChangePasswordFormComponent);
+export const ChangePasswordForm = ChangePasswordFormComponent;
 
-export default reduxForm({ form: 'profileForm' })(ProfileSettings);
+export default ProfileSettings;

@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,7 @@ const initialState = {
   topNavigation: false,
 };
 
-export default function (state = initialState, action) {
+function themeReducer(state = initialState, action) {
   switch (action.type) {
     case CHANGE_THEME_TO_DARK:
       return { ...state, className: 'theme-dark' };
@@ -57,3 +57,6 @@ export default function (state = initialState, action) {
       return state;
   }
 }
+
+export default themeReducer;
+

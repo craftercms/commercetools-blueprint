@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,6 @@
  */
 
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 import Layout from './Layout';
 import ProductCard from './ProductCard';
@@ -35,6 +34,7 @@ import { ajax } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
 import { BlogPostCard } from './BlogTeaser';
 import { getProducts } from '../../util/products';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function ProductDetails(props) {
 

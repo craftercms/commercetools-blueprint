@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,6 @@
  */
 
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Button, ButtonGroup, ButtonToolbar, Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { removeFromCart, updateCartItemQuantity } from '../../redux/actions/productsActions';
@@ -33,7 +32,7 @@ import DeleteForeverIcon from 'mdi-react/DeleteForeverIcon';
 import RemoveCircleOutlineIcon from 'mdi-react/RemoveCircleOutlineIcon';
 import { Empty } from '../shared/Empty';
 import { useCartUpdateInFlight } from '../../util/component';
-
+import { useDispatch, useSelector } from 'react-redux';
 
 export function CartSummary() {
   const { cart } = useSelector(state => state.products);

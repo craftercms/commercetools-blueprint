@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -46,13 +46,13 @@ import {
 import classnames from 'classnames';
 import ProfileSettings, { ChangePasswordForm } from './ProfileSettings';
 import OrdersList from './OrderList';
-import { useDispatch, useSelector } from 'react-redux';
 import { logout, removeAddress, setAddressDefaults } from '../../redux/actions/usersActions';
 import AddressCard from './AddressCard';
 import ChevronDownIcon from 'mdi-react/ChevronDownIcon';
 
 import authorized from '../shared/authorized';
 import { Empty } from '../shared/Empty';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Account({ history, match, user }) {
 
@@ -76,7 +76,7 @@ function Account({ history, match, user }) {
   const setActiveTab = (tab) => {
     history.push(`/account/${tab}`);
   };
-  
+
   return (
     <Layout>
       <Container>

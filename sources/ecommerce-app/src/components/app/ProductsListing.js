@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,6 @@ import {
   MultipleSelectionFacet,
   RangeFacet, SingleSelectionFacet,
 } from './Facets';
-import { useDispatch, useSelector } from 'react-redux';
 import Spinner from '../shared/Spinner';
 import Product from './Product';
 import * as qs from 'query-string';
@@ -40,6 +39,7 @@ import SearchIcon from 'mdi-react/SearchIcon';
 import ChevronRightIcon from 'mdi-react/ChevronRightIcon';
 import ChevronLeftIcon from 'mdi-react/ChevronLeftIcon';
 import ReactPaginate from 'react-paginate';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function ProductListing(props) {
 
@@ -102,7 +102,9 @@ export default function ProductListing(props) {
     dispatch(fetchProducts(facetMeta.state));
   };
 
-  useEffect(fetch, [history.location.search, query.locale, query.currency]);
+  // Adding facetMeta.state is creating a loop
+  // eslint-disable-next-line
+  useEffect(fetch, [history.location.search, query.locale, query.currency, dispatch]);
 
   useEffect(
     () => {

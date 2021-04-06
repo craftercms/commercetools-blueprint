@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -91,10 +91,6 @@ class CheckBoxField extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     name: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.bool,
-    ]).isRequired,
     label: PropTypes.string,
     defaultChecked: PropTypes.bool,
     disabled: PropTypes.bool,

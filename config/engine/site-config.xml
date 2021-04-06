@@ -2,7 +2,7 @@
 <!--
   ~ MIT License
   ~
-  ~ Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+  ~ Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
   ~
   ~ Permission is hereby granted, free of charge, to any person obtaining a copy
   ~ of this software and associated documentation files (the "Software"), to deal
@@ -26,23 +26,23 @@
 <!--
 This file configures site properties used by Crafter Engine
 -->
-
 <site>
-  <defaultLocale>en_US</defaultLocale>
-  <spa>
-    <enabled>true</enabled>
-    <viewName>/templates/web/index.ftl</viewName>
-  </spa>
-  <filters>
-    <filter>
-      <script>/scripts/filters/currency.groovy</script>
-      <mapping>
-        <include>/**</include>
-        <exclude>/static-assets/**</exclude>
-      </mapping>
-    </filter>
-  </filters>
-  <ecommerce>
+	<version>2</version>
+   <defaultLocale>en_US</defaultLocale>
+   <spa>
+      <enabled>true</enabled>
+      <viewName>/templates/web/index.ftl</viewName>
+   </spa>
+   <filters>
+      <filter>
+         <script>/scripts/filters/currency.groovy</script>
+         <mapping>
+            <include>/**</include>
+            <exclude>/static-assets/**</exclude>
+         </mapping>
+      </filter>
+   </filters>
+   <ecommerce>
     <!-- General settings -->
     <email>
       <sender>
@@ -145,14 +145,13 @@ This file configures site properties used by Crafter Engine
     </commercetools>
 
   </ecommerce>
-  <!-- CORS Properties -->
-  <cors>
-    <enable>true</enable>
-    <accessControlMaxAge>3600</accessControlMaxAge>
-    <accessControlAllowOrigin>*</accessControlAllowOrigin>
-    <accessControlAllowMethods>GET\, POST\, PUT\, OPTIONS</accessControlAllowMethods>
-    <accessControlAllowHeaders>Content-Type</accessControlAllowHeaders>
-    <accessControlAllowCredentials>true</accessControlAllowCredentials>
-  </cors>
-
+   <!-- CORS Properties -->
+   <cors>
+      <enable>true</enable>
+      <accessControlMaxAge>3600</accessControlMaxAge>
+      <accessControlAllowOrigin>*</accessControlAllowOrigin>
+      <accessControlAllowMethods>GET\, POST\, PUT\, OPTIONS</accessControlAllowMethods>
+      <accessControlAllowHeaders>Content-Type</accessControlAllowHeaders>
+      <accessControlAllowCredentials>true</accessControlAllowCredentials>
+   </cors>
 </site>

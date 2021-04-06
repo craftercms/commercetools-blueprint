@@ -2,7 +2,7 @@
 <!--
   ~ MIT License
   ~
-  ~ Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+  ~ Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
   ~
   ~ Permission is hereby granted, free of charge, to any person obtaining a copy
   ~ of this software and associated documentation files (the "Software"), to deal
@@ -49,7 +49,6 @@
                 <item><modulehook>targeting</modulehook></item>
                 <item><modulehook>search</modulehook></item>
                 <item><modulehook>status</modulehook></item>
-                <item><modulehook>logout</modulehook></item>
             </menuItem>
         </right>
 
@@ -65,7 +64,6 @@
             <module><moduleName>targeting</moduleName><value>targeting</value></module>
             <module><moduleName>search</moduleName><value>search</value></module>
             <module><moduleName>status</moduleName><value>status</value></module>
-            <module><moduleName>logout</moduleName><value>logout</value></module>
         </modules>
     </context>
 </app-context-menu>

@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,46 +22,38 @@
  * SOFTWARE.
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import Layout from './Layout';
 import { Badge, Card, CardBody, Col, Container, Row } from 'reactstrap';
 import * as qs from 'query-string';
-
-import { SearchService } from '@craftercms/search';
 
 import MagnifyIcon from 'mdi-react/MagnifyIcon';
 import { Empty } from '../shared/Empty';
 import { Link } from 'react-router-dom';
 import { capitalize } from '../../util/string';
-import { crafterConf, getQuery } from '../../util/component';
 import { getProducts, useProductsQuery } from '../../util/products';
+import { useUrlSearchQueryFetchResource } from '../shared/hooks';
 
 const
   ARTICLE = 'ARTICLE',
   PRODUCT = 'PRODUCT';
 
 export default function Search(props) {
-
   const { q: query } = { q: '', ...qs.parse(props.location.search) };
   const [value, setValue] = useState(query);
 
   const [productResults, setProductResults] = useState();
-  const [contentResults, setContentResults] = useState();
-
   const productsQueryParams = useProductsQuery({ q: query, limit: 10, offset: 0 });
+
+  const [paginationData] = useState({
+    itemsPerPage: 10,
+    currentPage: 0
+  });
+  let resource = useUrlSearchQueryFetchResource(paginationData.itemsPerPage);
 
   useEffect(
     () => {
       if (query) {
-
-
-        SearchService.search(getQuery(query), crafterConf).subscribe((content) => {
-          setContentResults({
-            total: Number.isInteger(content.total) ?  content.total : content.total.value,
-            articles: content.hits.map(item => item._source)
-          });
-        });
-
         getProducts(productsQueryParams).subscribe(({ response: catalog }) => {
           setProductResults({
             total: catalog.total,
@@ -70,7 +62,6 @@ export default function Search(props) {
         });
 
         setValue(query);
-
       }
     },
     // TODO: adding productsQueryParams is creating a loop
@@ -109,25 +100,11 @@ export default function Search(props) {
                   !query &&
                   <Empty description="Please enter your search query to perform a search."/>
                 }
-                {
-                  contentResults && <>
-                    <h4>{`Search result for "${query}"`}</h4>
-                    <p className="subhead">Found {contentResults.total} results.</p>
-                    <div>
-                      {
-                        contentResults.total === 0
-                          ? <Empty description="No results where found for your query."/>
-                          : contentResults.articles.map((item) =>
-                            <SearchResult
-                              key={item.objectId}
-                              type={ARTICLE}
-                              item={item}
-                            />
-                          )
-                      }
-                    </div>
-                  </>
-                }
+                <Suspense fallback={<Empty description="No results where found for your query."/>}>
+                  <SearchResults
+                    resource={resource}
+                  />
+                </Suspense>
               </CardBody>
             </Card>
           </Col>
@@ -175,5 +152,24 @@ export function SearchResult(props) {
         <Badge color="info">{capitalize(type.toLowerCase())}</Badge>
       </div>
     </div>
+  );
+}
+
+export function SearchResults(props) {
+  const { resource } = props;
+  const { hits } = resource.read();
+
+  return (
+    <>
+      {
+        hits.map((item) =>
+          <SearchResult
+            key={item.craftercms.id}
+            type={ARTICLE}
+            item={item}
+          />
+        )
+      }
+    </>
   );
 }

@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,21 +29,18 @@ import {
   Row,
   Container,
 } from 'reactstrap';
-import { useICE } from '../../util/component';
 import Product from './Product';
 import { switchMap, map } from 'rxjs/operators';
 import { getProducts, useProductsQuery } from '../../util/products';
+import { Field } from '@craftercms/studio-guest/react';
 
 export default function ProductTeaser(props) {
 
   const {
-    label,
-    localId,
     title_s,
     numOfProducts_i = 3
   } = props;
 
-  const { props: ice } = useICE({ modelId: localId, label });
   const [products, setProducts] = useState();
   const query = useProductsQuery({ limit: numOfProducts_i });
 
@@ -71,7 +68,7 @@ export default function ProductTeaser(props) {
   );
 
   return (
-    <section className="landing__section" {...ice}>
+    <Field component="section" className="landing__section" model={props}>
       <Container>
         <Row>
           <Col md={12}>
@@ -95,7 +92,7 @@ export default function ProductTeaser(props) {
           }
         </Row>
       </Container>
-    </section>
+    </Field>
   );
 }
 

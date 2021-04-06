@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,40 +24,71 @@
 
 import React from 'react';
 import { Col, Row, Container } from 'reactstrap';
-import { useICE } from '../../util/component';
+import { Field } from '@craftercms/studio-guest/react';
 
 function Features(props) {
   const {
-    label,
-    localId,
     title_s,
     features_o,
     closingContent_html_raw,
     openingContent_html_raw
   } = props;
-  const { props: ice } = useICE({ modelId: localId, label });
   return (
-    <section className="landing__section" {...ice}>
+    <Field component='section' className="landing__section" model={props}>
       <Container>
         <Row>
           <Col md={12}>
-            <h3 className="landing__section-title">{title_s}</h3>
+            <Field
+              component="h3"
+              model={props}
+              fieldId="title_s"
+              className="landing__section-title"
+            >
+              {title_s}
+            </Field>
             {openingContent_html_raw &&
-            <div className="landing__feature landing__feature-caption" style={{ width: '100%' }}
-                 dangerouslySetInnerHTML={{ __html: openingContent_html_raw }}/>}
+            <Field
+              model={props}
+              fieldId="openingContent_html"
+              className="landing__feature landing__feature-caption"
+              style={{ width: '100%' }}
+              dangerouslySetInnerHTML={{ __html: openingContent_html_raw }}
+            />}
           </Col>
         </Row>
         <Row>
           <Col md={12}>
             <div className="landing__features-wrap">
               {
-                features_o.item.map(({ description_t, icon_s, title_s }, index) =>
+                features_o.map(({ description_t, icon_s, title_s }, index) =>
                   <div className="landing__feature" key={index}>
                     <div className="landing__feature-img-wrap">
-                      <img src={icon_s} alt=""/>
+                      <Field
+                        component="img"
+                        model={props}
+                        fieldId="features_o.icon_s"
+                        index={index}
+                        src={icon_s}
+                      />
                     </div>
-                    <p className="landing__feature-title">{title_s}</p>
-                    <p className="landing__feature-caption">{description_t}</p>
+                    <Field
+                      component="p"
+                      model={props}
+                      fieldId="features_o.title_s"
+                      index={index}
+                      className="landing__feature-title"
+                    >
+                      {title_s}
+                    </Field>
+                    <Field
+                      component="p"
+                      model={props}
+                      fieldId="features_o.description_t"
+                      index={index}
+                      className="landing__feature-caption"
+                    >
+                      {description_t}
+                    </Field>
                   </div>
                 )
               }
@@ -70,7 +101,7 @@ function Features(props) {
           </Col>
         </Row>
       </Container>
-    </section>
+    </Field>
   );
 }
 

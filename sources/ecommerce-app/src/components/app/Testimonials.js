@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,27 +28,31 @@ import {
   Col, Row, Container, Card, CardBody,
 } from 'reactstrap';
 import StarIcon from 'mdi-react/StarIcon';
-import { useICE } from '../../util/component';
+import { Field } from '@craftercms/studio-guest/react';
 
 function Testimonials(props) {
   const {
-    label,
-    localId,
     title_s,
     testimonials_o
   } = props;
-  const { props: ice } = useICE({ modelId: localId, label });
   return (
-    <section className="landing__section" {...ice}>
+    <Field component="section" className="landing__section" model={props}>
       <Container>
         <Row>
           <Col md={12}>
-            <h3 className="landing__section-title">{title_s}</h3>
+            <Field
+              component="h3"
+              model={props}
+              fieldId="title_s"
+              className="landing__section-title"
+            >
+              {title_s}
+            </Field>
           </Col>
         </Row>
         <Row className="landing__testimonials">
           {
-            testimonials_o.item.map(({ customer_s, description_html_raw, link_s, stars_i }, index) =>
+            testimonials_o.map(({ customer_s, description_html_raw, link_s, stars_i }, index) =>
               <Col key={index} lg={4} md={6}>
                 <a
                   href={link_s}
@@ -57,7 +61,15 @@ function Testimonials(props) {
                 >
                   <Card>
                     <CardBody className="landing__testimonial">
-                      <p className="landing__testimonial-name">{customer_s}</p>
+                      <Field
+                        component="p"
+                        model={props}
+                        fieldId="testimonials_o.customer_s"
+                        className="landing__testimonial-name"
+                        index={index}
+                      >
+                        {customer_s}
+                      </Field>
                       <div className="landing__testimonial-stars">
                         {(
                           () => {
@@ -68,8 +80,12 @@ function Testimonials(props) {
                           }
                         )()}
                       </div>
-                      <p
+                      <Field
+                        component="p"
+                        model={props}
+                        fieldId="testimonials_o.description_html"
                         className="landing__testimonial-review"
+                        index={index}
                         dangerouslySetInnerHTML={{ __html: description_html_raw }}
                       />
                     </CardBody>
@@ -80,7 +96,7 @@ function Testimonials(props) {
           }
         </Row>
       </Container>
-    </section>
+    </Field>
   );
 }
 

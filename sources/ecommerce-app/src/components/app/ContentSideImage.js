@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@
 
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
-import { useICE } from '../../util/component';
+import { Field } from '@craftercms/studio-guest/react';
 
 function ContentSideImage(props) {
   const {
@@ -33,18 +33,21 @@ function ContentSideImage(props) {
     content_html_raw,
     image_alt_s,
     image_s,
-    title_s,
-    localId,
-    label
+    title_s
   } = props;
-  const { props: ice } = useICE({ modelId: localId, label });
   const
     CopyColumn = (
       <Col md={6} sm={12} xs={12}>
         <div className="landing__code-text">
           <div className="landing__code-wrap">
-            <h3 className="landing__section-title">{title_s}</h3>
-            <p className="landing__section-description" dangerouslySetInnerHTML={{ __html: content_html_raw }}/>
+            <Field component="h3" model={props} fieldId="title_s">{title_s}</Field>
+            <Field
+              component="p"
+              model={props}
+              fieldId="content_html"
+              className="landing__section-description"
+              dangerouslySetInnerHTML={{ __html: content_html_raw }}
+            />
           </div>
         </div>
       </Col>
@@ -53,17 +56,26 @@ function ContentSideImage(props) {
       <Col md={6} sm={12} xs={12}>
         <div className="landing__code-img landing__code-img--no-shadow">
           <div className="landing__code-wrap">
-            <img className="landing__img landing__img--over" src={image_s} alt={image_alt_s || ''}/>
+            <Field
+              component="img"
+              className="landing__img landing__img--over"
+              model={props}
+              fieldId="image_s"
+              src={image_s}
+              alt={image_alt_s || ''}
+            />
           </div>
         </div>
       </Col>
     );
-
   return (
-    <section className="landing__section" {...ice}>
+    <Field component="section" className="landing__section" model={props}>
       {
         section_background_image_s &&
-        <img className="landing__section-background landing__section-background--technologies" src={section_background_image_s} alt=""/>
+        <img
+          className="landing__section-background landing__section-background--technologies"
+          src={section_background_image_s} alt=""
+        />
       }
       <Container>
         <Row
@@ -89,7 +101,7 @@ function ContentSideImage(props) {
           }
         </Row>
       </Container>
-    </section>
+    </Field>
   );
 }
 

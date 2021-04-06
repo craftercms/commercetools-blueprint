@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,6 @@ import {
   Card, CardBody, ButtonToolbar, Button, Modal,
 } from 'reactstrap';
 import ProductGallery from './ProductGallery';
-import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
 import {
   addToCart,
@@ -41,6 +40,7 @@ import ShoppingCartIcon from 'mdi-react/ShoppingCartIcon';
 import Ratings from 'react-ratings-declarative';
 import Alert from '../shared/Alert';
 import { useCartUpdateInFlight } from '../../util/component';
+import { useDispatch, useSelector } from 'react-redux';
 
 const isSale = false;
 

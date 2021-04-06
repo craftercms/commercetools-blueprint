@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,61 +22,36 @@
  * SOFTWARE.
  */
 
-import React, { useEffect } from 'react';
-import { Provider } from 'react-redux';
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { hot } from 'react-hot-loader';
 import Routes from './Routes';
 import store from '../redux/store';
 import ScrollReset from './ScrollReset';
 import { config as i18nextConfig } from '../translations/i18n';
 import MainWrapper from './MainWrapper';
+import { GlobalContextProvider } from './shared/context';
+import { Provider } from 'react-redux';
 
 i18next.init(i18nextConfig);
 
-function App(props) {
-
-  useEffect(
-    () => {
-
-      // True if the site is being view via authoring (studio). False if it's the live site
-      const { isAuthoring } = store.getState().theme;
-
-      if (isAuthoring) {
-        const script = document.createElement('script');
-
-        script.src = `/studio/static-assets/libs/requirejs/require.js`;
-
-        script.setAttribute(
-          'data-main',
-          `/studio/overlayhook?site=NOTUSED&page=NOTUSED&cs.js`
-        );
-
-        document.head.appendChild(script);
-      }
-
-    },
-    []
-  );
-
+export default function App(props) {
   return (
-    <Provider store={store}>
-      <I18nextProvider i18n={i18next}>
-        <BrowserRouter>
-          <ScrollReset>
-            <MainWrapper>
-              <main>
-                <Routes/>
-              </main>
-            </MainWrapper>
-          </ScrollReset>
-        </BrowserRouter>
-      </I18nextProvider>
-    </Provider>
+    <GlobalContextProvider>
+      <Provider store={store}>
+        <I18nextProvider i18n={i18next}>
+          <BrowserRouter>
+            <ScrollReset>
+              <MainWrapper>
+                <main>
+                  <Routes/>
+                </main>
+              </MainWrapper>
+            </ScrollReset>
+          </BrowserRouter>
+        </I18nextProvider>
+      </Provider>
+    </GlobalContextProvider>
   );
 }
-
-export default hot(module)(App);

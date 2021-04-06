@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,49 +22,27 @@
  * SOFTWARE.
  */
 
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import ProductListing from './app/ProductsListing';
 import ProductDetails from './app/ProductDetails';
 
 import LogIn from './app/LogIn';
 import Register from './app/Register';
-import Home from './app/Home';
 import NotFound404 from './app/NotFoundView';
 import CartView from './app/CartView';
 import Account from './app/Account';
 import CheckoutView from './app/CheckoutView';
 import { AddressEntry } from './app/AddressCard';
 import OrderDetails from './app/OrderDetails';
-import BlogRoll from './app/BlogRoll';
 import BlogEntry from './app/BlogEntry';
 import Search from './app/Search';
-import { __RouterContext } from 'react-router';
-import { useSelector } from 'react-redux';
+import DynamicRoute from './shared/DynamicRoute';
 
 const Routes = () => {
-
-  const { history } = useContext(__RouterContext);
-  const { isAuthoring } = useSelector(state => state.theme);
-
-  useEffect(
-    () => {
-      if (isAuthoring) {
-        return history.listen((location) => {
-          window.require &&
-          window.require(['guest'], (guest) => {
-            guest.reportNavigation(location, location.pathname);
-          });
-        });
-      }
-    },
-    [history, isAuthoring]
-  );
-
   return (
     <Switch>
-      <Route exact path="/" component={Home}/>
-      <Route exact path="/catalog" component={ProductListing}/>
+      <Route exact path="/" component={DynamicRoute} />
+      <Route exact path="/catalog" component={DynamicRoute}/>
       <Route path="/catalog/:product" component={ProductDetails}/>
       <Route path="/cart" component={CartView}/>
       <Route path="/checkout" component={CheckoutView}/>
@@ -72,7 +50,7 @@ const Routes = () => {
       <Route exact path="/account/address-book/edit/:id?" component={AddressEntry}/>
       <Route exact path="/account/orders/:id" component={OrderDetails}/>
       <Route path="/account/:tab?" component={Account}/>
-      <Route exact path="/blog" component={BlogRoll}/>
+      <Route exact path="/blog" component={DynamicRoute}/>
       <Route path="/blog/:slug" component={BlogEntry}/>
       <Route path="/login" component={LogIn}/>
       <Route path="/register" component={Register}/>

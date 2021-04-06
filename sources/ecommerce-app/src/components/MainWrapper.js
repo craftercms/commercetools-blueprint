@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,12 @@
  */
 
 import React from 'react';
-import { connect } from 'react-redux';
 import classNames from 'classnames';
+import { useSelector } from 'react-redux';
 
 function MainWrapper(props) {
-  const { theme, children } = props;
+  const { children } = props;
+  const theme = useSelector(state => state.theme);
 
   const wrapperClass = classNames({
     'wrapper': true,
@@ -45,7 +46,4 @@ function MainWrapper(props) {
   );
 }
 
-export default connect(state => ({
-  theme: state.theme,
-  customizer: state.customizer,
-}))(MainWrapper);
+export default MainWrapper;

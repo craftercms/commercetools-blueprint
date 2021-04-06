@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -34,11 +34,11 @@ import { AddressSelection } from './AddressCard';
 import Spinner from '../shared/Spinner';
 import { money } from '../../util/string';
 import { Empty } from '../shared/Empty';
-import { useDispatch } from 'react-redux';
 import {
   checkout, UPDATE_CART,
   updateCart
 } from '../../redux/actions/productsActions';
+import { useDispatch } from 'react-redux';
 
 function address(cart, user, type) {
   if (cart == null || user == null) {

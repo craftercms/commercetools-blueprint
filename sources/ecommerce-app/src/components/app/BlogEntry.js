@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,67 +30,110 @@ import { Link } from 'react-router-dom';
 import { ajax } from 'rxjs/ajax';
 import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { useICE } from '../../util/component';
 import { getProducts, useProductsQuery } from '../../util/products';
+import { useCategories, usePosts } from '../shared/hooks';
+import { Field, Guest } from '@craftercms/studio-guest/react';
+import { isAuthoring } from '../shared/utils';
 
 export default function BlogEntry(props) {
   const slug = props.match.params.slug;
-  return <Layout
-    requirements={[
-      {
-        name: 'categories',
-        optional: true,
-        getter: (content) => content.categories ? Object.values(content.categories.byId) : null
-      },
-      { name: 'post', getter: (content) => content.post && content.post.bySlug[slug] }
-    ]}
-    variables={{
-      post: [
-        { name: 'ageGroup', type: 'String', value: null },
-        { name: 'gender', type: 'String', value: null },
-        { name: 'slug', type: 'String', value: slug },
-        { name: 'limit', type: 'Int', value: 1 }
-      ]
-    }}
-    render={
-      (reqs) => (
-        <Container>
-          <Row>
+
+  const categories = useCategories();
+
+  const [paginationData] = useState({
+    itemsPerPage: 1,
+    currentPage: 0
+  });
+  const post = usePosts(paginationData, slug);
+
+  return <Guest
+    isAuthoring={isAuthoring()}
+    path={post?.items[0].craftercms.path}
+  >
+    <Layout>
+      <Container>
+        <Row>
+          {
+            post &&
             <Col md={9}>
               <Card>
                 <CardBody>
-                  <Post post={reqs.post}/>
+                  <Post post={post.items[0]}/>
                 </CardBody>
               </Card>
             </Col>
-            <Col md={3}>
+          }
+          <Col md={3}>
 
-              <CategoryListing categories={reqs.categories}/>
-
-              <RelatedPosts categories={reqs.post.categories_o.item} slug={slug}/>
-              <RelatedProducts categories={reqs.post.categories_o.item}/>
-
-            </Col>
-          </Row>
-        </Container>
-      )
-    }
-  />;
+            <CategoryListing categories={categories}/>
+            {
+              post &&
+              <>
+                <RelatedPosts categories={post.items[0].categories_o} slug={slug}/>
+                <RelatedProducts categories={post.items[0].categories_o}/>
+              </>
+            }
+          </Col>
+        </Row>
+      </Container>
+    </Layout>
+  </Guest>
 }
 
 function Post({ post }) {
-  const { title_s, image_s, author_s, subtitle_s, content_html_raw, categories_o, localId } = post;
-  const { props: ice } = useICE({ modelId: localId, label: `Blog Post: ${title_s}` });
+  const { title_s, image_s, author_s, subtitle_s, content_html_raw, categories_o } = post;
   return (
     <>
-      <section className="post__head" {...ice}>
-        <h1 className="post__title">{title_s}</h1>
-        {subtitle_s && <p className="post__subtitle">{subtitle_s}</p>}
-        {author_s && <p className="post__author">By {author_s}</p>}
-      </section>
-      {image_s && <img className="post__image" src={image_s} alt=""/>}
-      <div className="post__body" dangerouslySetInnerHTML={{ __html: content_html_raw }}/>
-      <div className="post__categories">{categories_o.item.map((item) => item.value_smv).join(', ')}</div>
+      <Field component="section" className="post__head" model={post}>
+        <Field
+          component="h1"
+          model={post}
+          fieldId="title_s"
+          className="post__title"
+        >
+          {title_s}
+        </Field>
+        {
+          subtitle_s &&
+          <Field
+            component="p"
+            model={post}
+            fieldId="subtitle_s"
+            className="post__subtitle"
+          >
+            {subtitle_s}
+          </Field>
+        }
+        {
+          author_s &&
+          <Field
+            component="p"
+            model={post}
+            fieldId="author_s"
+            className="post__author"
+          >
+            {author_s}
+          </Field>
+        }
+      </Field>
+      {
+        image_s &&
+        <Field
+          component="img"
+          className="post__image"
+          model={post}
+          fieldId="image_s"
+          src={image_s}
+          alt=""
+        />
+      }
+      <Field
+        model={post}
+        fieldId="content_html"
+        className="post__body"
+        dangerouslySetInnerHTML={{ __html: content_html_raw }}
+      />
+      <div className="post__categories">{categories_o.map((item) => item.value_smv).join(', ')}</div>
     </>
   );
 }

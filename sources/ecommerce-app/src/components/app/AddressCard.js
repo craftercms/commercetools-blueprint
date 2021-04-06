@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,18 +23,19 @@
  */
 
 import React, { useMemo, useState } from 'react';
-import { Field, reduxForm, SubmissionError } from 'redux-form';
 import Layout from './Layout';
 import { Button, ButtonToolbar, Card, CardBody, Col, Container, Row } from 'reactstrap';
 import Alert from '../shared/Alert';
 import Spinner from '../shared/Spinner';
-import { useDispatch, useSelector } from 'react-redux';
 import { addAddressComplete, editAddressComplete } from '../../redux/actions/usersActions';
 import { RadioButton } from '../shared/form/RadioButton';
 import { Link } from 'react-router-dom';
 import { Empty } from '../shared/Empty';
 import { useUser } from '../../util/component';
 import * as qs from 'query-string';
+import { Form, Field } from 'react-final-form';
+import { FORM_ERROR } from 'final-form';
+import { useDispatch, useSelector } from 'react-redux';
 
 export function AddressCard({ address, user, showName }) {
   return (
@@ -73,14 +74,14 @@ export function AddressCard({ address, user, showName }) {
   );
 }
 
-export const AddressForm = reduxForm({ form: 'addressForm' })(function (props) {
+export const AddressForm = function (props) {
 
   const {
-    handleSubmit,
     error,
     onSuccess,
     onCancel,
-    isEditMode
+    isEditMode,
+    initialValues
   } = props;
 
   const [success, setSuccess] = useState();
@@ -96,9 +97,7 @@ export const AddressForm = reduxForm({ form: 'addressForm' })(function (props) {
     }).then(async (response) => {
       const data = await response.json();
       if (response.status !== 200) {
-        throw new SubmissionError({
-          _error: data.message
-        });
+        return { [FORM_ERROR]: data.message };
       }
       dispatch(isEditMode ? editAddressComplete(data) : addAddressComplete(data));
       setSuccess('Update successful.');
@@ -107,138 +106,146 @@ export const AddressForm = reduxForm({ form: 'addressForm' })(function (props) {
   };
 
   return (
-    <form className="form address-form" onSubmit={handleSubmit(submit)}>
-      {
-        success &&
-        <Alert color="success" className="alert--bordered" onDismiss={() => setSuccess()}>
-          <p>{success}</p>
-        </Alert>
-      }
-      {
-        error &&
-        <Alert color="danger" className="alert--bordered">
-          <p>{error}</p>
-        </Alert>
-      }
-      <Field
-        name="id"
-        component="input"
-        type="hidden"
-      />
-      <div className="form__form-group">
-        <span className="form__form-group-label">Address Name</span>
-        <div className="form__form-group-field">
+    <Form
+      initialValues={initialValues}
+      onSubmit={submit}
+    >
+      {({ handleSubmit, submitError }) => (
+        <form className="form address-form" onSubmit={handleSubmit}>
+          {
+            success &&
+            <Alert color="success" className="alert--bordered" onDismiss={() => setSuccess()}>
+              <p>{success}</p>
+            </Alert>
+          }
+          {
+            error &&
+            <Alert color="danger" className="alert--bordered">
+              <p>{error}</p>
+            </Alert>
+          }
           <Field
-            name="addressName"
+            name="id"
             component="input"
-            type="text"
+            type="hidden"
           />
-        </div>
-      </div>
-      <div className="form__form-group-columns">
-        <div className="form__form-group form__form-group-col-left">
-          <span className="form__form-group-label">First Name</span>
-          <div className="form__form-group-field">
-            <Field
-              name="firstName"
-              component="input"
-              type="text"
-            />
+          <div className="form__form-group">
+            <span className="form__form-group-label">Address Name</span>
+            <div className="form__form-group-field">
+              <Field
+                name="addressName"
+                component="input"
+                type="text"
+              />
+            </div>
           </div>
-        </div>
-        <div className="form__form-group form__form-group-col-right">
-          <span className="form__form-group-label">Last Name</span>
-          <div className="form__form-group-field">
-            <Field
-              name="lastName"
-              component="input"
-              type="text"
-            />
+          <div className="form__form-group-columns">
+            <div className="form__form-group form__form-group-col-left">
+              <span className="form__form-group-label">First Name</span>
+              <div className="form__form-group-field">
+                <Field
+                  name="firstName"
+                  component="input"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div className="form__form-group form__form-group-col-right">
+              <span className="form__form-group-label">Last Name</span>
+              <div className="form__form-group-field">
+                <Field
+                  name="lastName"
+                  component="input"
+                  type="text"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="form__form-group">
-        <span className="form__form-group-label">Street Address</span>
-        <div className="form__form-group-field">
-          <Field
-            name="streetAddressLineOne"
-            component="input"
-            type="text"
-          />
-        </div>
-      </div>
-      <div className="form__form-group">
-        <div className="form__form-group-field">
-          <Field
-            name="streetAddressLineTwo"
-            component="input"
-            type="text"
-          />
-        </div>
-      </div>
-      <div className="form__form-group-columns">
-        <div className="form__form-group form__form-group-col-left">
-          <span className="form__form-group-label">Country</span>
-          <div className="form__form-group-field">
-            <Field
-              name="country"
-              component="input"
-              type="text"
-            />
+          <div className="form__form-group">
+            <span className="form__form-group-label">Street Address</span>
+            <div className="form__form-group-field">
+              <Field
+                name="streetAddressLineOne"
+                component="input"
+                type="text"
+              />
+            </div>
           </div>
-        </div>
-        <div className="form__form-group form__form-group-col-right">
-          <span className="form__form-group-label">State</span>
-          <div className="form__form-group-field">
-            <Field
-              name="state"
-              component="input"
-              type="text"
-            />
+          <div className="form__form-group">
+            <div className="form__form-group-field">
+              <Field
+                name="streetAddressLineTwo"
+                component="input"
+                type="text"
+              />
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="form__form-group-columns">
-        <div className="form__form-group form__form-group-col-left">
-          <span className="form__form-group-label">City</span>
-          <div className="form__form-group-field">
-            <Field
-              name="city"
-              component="input"
-              type="text"
-            />
+          <div className="form__form-group-columns">
+            <div className="form__form-group form__form-group-col-left">
+              <span className="form__form-group-label">Country</span>
+              <div className="form__form-group-field">
+                <Field
+                  name="country"
+                  component="input"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div className="form__form-group form__form-group-col-right">
+              <span className="form__form-group-label">State</span>
+              <div className="form__form-group-field">
+                <Field
+                  name="state"
+                  component="input"
+                  type="text"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="form__form-group form__form-group-col-right">
-          <span className="form__form-group-label">Postcode</span>
-          <div className="form__form-group-field">
-            <Field
-              name="postalCode"
-              component="input"
-              type="text"
-            />
+          <div className="form__form-group-columns">
+            <div className="form__form-group form__form-group-col-left">
+              <span className="form__form-group-label">City</span>
+              <div className="form__form-group-field">
+                <Field
+                  name="city"
+                  component="input"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div className="form__form-group form__form-group-col-right">
+              <span className="form__form-group-label">Postcode</span>
+              <div className="form__form-group-field">
+                <Field
+                  name="postalCode"
+                  component="input"
+                  type="text"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="form__form-group">
-        <span className="form__form-group-label">Phone</span>
-        <div className="form__form-group-field">
-          <Field
-            name="phone"
-            component="input"
-            type="text"
-          />
-        </div>
-      </div>
-      <ButtonToolbar className="form__button-toolbar">
-        <Button color="primary" type="submit">Submit</Button>
-        <Button type="button" onClick={onCancel}>
-          Cancel
-        </Button>
-      </ButtonToolbar>
-    </form>
+          <div className="form__form-group">
+            <span className="form__form-group-label">Phone</span>
+            <div className="form__form-group-field">
+              <Field
+                name="phone"
+                component="input"
+                type="text"
+              />
+            </div>
+          </div>
+          {submitError && <div className="error">{submitError}</div>}
+          <ButtonToolbar className="form__button-toolbar">
+            <Button color="primary" type="submit">Submit</Button>
+            <Button type="button" onClick={onCancel}>
+              Cancel
+            </Button>
+          </ButtonToolbar>
+        </form>
+      )}
+    </Form>
   );
-});
+};
 
 export function AddressEntry(props) {
 

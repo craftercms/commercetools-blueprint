@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Hero from './Hero';
 import Features from './Features';
@@ -30,10 +30,7 @@ import Testimonials from './Testimonials';
 import ContentSideImage from './ContentSideImage';
 import Layout from './Layout';
 import NotImplemented from '../shared/NotImplemented';
-import { useSelector } from 'react-redux';
 import BlogTeaser from './BlogTeaser';
-import { FETCH_GRAPH } from '../../redux/actions/contentActions';
-import { byIdLoadingKey } from '../../util/redux';
 import ProductTeaser from './ProductTeaser';
 
 const ContentTypeMap = {
@@ -45,44 +42,18 @@ const ContentTypeMap = {
   '/component/product-teaser': ProductTeaser
 };
 
-export default function Home() {
-
-  const content = useSelector(state => state.content.home);
-  const persona = useSelector(state => state.users.persona);
-
-  useEffect(
-    () => {
-      if (content) {
-        window.amplify && window.amplify.publish('INIT_ICE_REGIONS');
-      }
-    },
-    [content]
-  );
+export default function Home(props) {
+  const {
+    model
+  } = props;
 
   return (
-    <Layout
-      className="landing__home-page"
-      variables={{
-        post: [
-          { name: 'ageGroup', type: 'String', value: persona ? persona.age : null },
-          { name: 'gender', type: 'String', value: persona ? persona.gender : null },
-          { name: 'slug', type: 'String', value: null },
-          { name: 'limit', type: 'Int', value: 3 }
-        ]
-      }}
-      requirements={[
-        'home',
-        {
-          name: 'post',
-          getter: (content) =>
-            (content.loading[byIdLoadingKey(FETCH_GRAPH, 'home')] === false) ? content.post : null
-        }
-      ]}
-    >
+    <Layout className="landing__home-page">
       {
-        content && content.map((component) => {
-          const Component = ContentTypeMap[component.contentType] || NotImplemented;
-          return <Component key={component.objectId || component.localId} {...component} />
+        model && model.sections_o && model.sections_o.map((component) => {
+          const Component = ContentTypeMap[component.craftercms.contentTypeId] || NotImplemented;
+
+          return <Component key={component.craftercms.id} {...component} />
         })
       }
     </Layout>

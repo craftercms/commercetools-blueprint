@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,42 +25,46 @@
 import React from 'react';
 import { Col, Row, Container } from 'reactstrap';
 import A from "../shared/Anchor";
-import { useICE } from '../../util/component';
+import { Field, RenderField } from '@craftercms/studio-guest/react';
 
 function Hero(props) {
   const {
-    label,
     title_t,
     image_s,
-    localId,
     image_alt_t,
     section_background_image_s,
     content_html_raw,
     buttons_o
   } = props;
-  const { props: ice } = useICE({ modelId: localId, label });
   return (
-    <div
+    <Field
+      model={props}
       className="landing__header"
       style={
         section_background_image_s
           ? { backgroundImage: `url(${section_background_image_s})` }
           : {}
       }
-      {...ice}
     >
       <Container>
         <Row>
           <Col md={12}>
-            <h2 className="landing__header-title">
+            <Field
+              component="h2"
+              model={props}
+              fieldId="title_t"
+              className="landing__header-title"
+            >
               {title_t}
-            </h2>
-            <div
+            </Field>
+            <Field
+              model={props}
+              fieldId="content_html"
               className="landing__header-subhead"
               dangerouslySetInnerHTML={{ __html: content_html_raw }}
             />
             {
-              buttons_o.item.map(({ label_s, link_s }, index) =>
+              buttons_o.map(({ label_s, link_s }, index) =>
                 <A
                   key={index}
                   href={link_s}
@@ -72,16 +76,19 @@ function Hero(props) {
             }
             {
               image_s &&
-              <img
+              <RenderField
+                component="img"
+                renderTarget="src"
+                model={props}
+                fieldId="image_s"
                 className="landing__header-img"
-                src={image_s}
-                alt={image_alt_t || ''}
+                alt=""
               />
             }
           </Col>
         </Row>
       </Container>
-    </div>
+    </Field>
   );
 }
 

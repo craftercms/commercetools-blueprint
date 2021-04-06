@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,9 @@
  */
 
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
-import { reducer as reduxFormReducer } from 'redux-form';
 import { createEpicMiddleware } from 'redux-observable';
 import {
   themeReducer,
-  contentReducer,
   usersReducer,
   productsReducer
 } from './reducers';
@@ -38,9 +36,7 @@ import { setIsAuthoring } from './actions/themeActions';
 import { setStoreSettings } from './actions/productsActions';
 
 const reducer = combineReducers({
-  form: reduxFormReducer,
   theme: themeReducer,
-  content: contentReducer,
   users: usersReducer,
   products: productsReducer
 });

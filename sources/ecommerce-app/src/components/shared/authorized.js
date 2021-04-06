@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2019 Crafter Software Corporation. All Rights Reserved.
+ * Copyright (c) 2021 Crafter Software Corporation. All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,12 +22,12 @@
  * SOFTWARE.
  */
 
-import React, { useContext } from 'react';
+import React from 'react';
 
 // import invariant from 'tiny-invariant';
 import hoistStatics from 'hoist-non-react-statics';
 
-import { __RouterContext } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useUser } from '../../util/component';
 import Spinner from './Spinner';
 
@@ -36,7 +36,8 @@ export default function authorized(Component) {
   const displayName = `authorized(${Component.displayName || Component.name})`;
   const C = props => {
 
-    const { history, location } = useContext(__RouterContext);
+    const history = useHistory();
+    const location = useLocation;
     const { wrappedComponentRef, ...remainingProps } = props;
 
     const user = useUser({
