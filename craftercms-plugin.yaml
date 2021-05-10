@@ -36,7 +36,7 @@ plugin:
   version:
     major: 2
     minor: 0
-    patch: 3
+    patch: 4
   description: |
     An e-commerce blueprint with full integration with commercetools https://commercetools.com
   website:
@@ -52,7 +52,7 @@ plugin:
         url: "https://raw.githubusercontent.com/craftercms/commercetools-blueprint/master/static-assets/images/screenshots/blog.jpg"
       - title: Catalog
         description: Shop the Catalog
-        url: "https://raw.githubusercontent.com/craftercms/commercetools-blueprint/master/static-assets/images/screenshots/catalog.jpg"
+        url: "https://raw.githubusercontent.com/cqraftercms/commercetools-blueprint/master/static-assets/images/screenshots/catalog.jpg"
       - title: Shopping Cart
         description: View the Shopping Cart
         url: "https://raw.githubusercontent.com/craftercms/commercetools-blueprint/master/static-assets/images/screenshots/cart.jpg"
