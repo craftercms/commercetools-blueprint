@@ -32,12 +32,12 @@
 	<version>2</version>
    <lang name="en"><!-- language specific notifications -->
       <deploymentFailureNotification><!-- list of email addresses to notify in case of publishing failure -->
-         <email>admin@example.com</email>
-         <email>admin2@example.com</email>
+<!--         <email>admin@example.com</email>-->
+<!--         <email>admin2@example.com</email>-->
       </deploymentFailureNotification>
       <approverEmails><!-- list of content approver emails -->
-         <email>admin@example.com</email>
-         <email>admin2@example.com</email>
+<!--         <email>admin@example.com</email>-->
+<!--         <email>admin2@example.com</email>-->
       </approverEmails>
       <generalMessages><!-- list of general messages --><!-- example scheduling policy -->
          <content key="scheduling-policy">The {siteName} processes all publishing requests each business day, between 4PM EST and 6PM EST, unless a specific date/time is requested.&lt;br/&gt;&lt;br/&gt;All requests received after 4PM EST may not be processed until the next business day.&lt;br/&gt;&lt;br/&gt;If you have any questions about this policy or need a publish request processed immediately, please email the administrator.
@@ -224,7 +224,7 @@
          <emailTemplate key="repositoryMergeConflict">
             <subject>Repository merge conflict for site ${siteName}</subject>
             <body>
-                            
+
                         &lt;html&gt;
                             &lt;head&gt;
                                 &lt;meta charset="utf-8"/&gt;
@@ -246,8 +246,8 @@
       </emailTemplates>
       <!--list of email addresses to notify in case of repository merge conflict-->
       <repositoryMergeConflictNotification>
-         <email>admin@example.com</email>
-         <email>admin2@example.com</email>
+<!--         <email>admin@example.com</email>-->
+<!--         <email>admin2@example.com</email>-->
       </repositoryMergeConflictNotification>
    </lang>
 </notificationConfig>
