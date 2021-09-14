@@ -139,7 +139,7 @@
                </constraints>
             </field>
             <field>
-               <type>rte-tinymce5</type>
+               <type>rte</type>
                <id>openingContent_html</id>
                <iceId/>
                <title>Opening Content</title>
@@ -354,7 +354,7 @@
                </fields>
             </field>
             <field>
-               <type>rte-tinymce5</type>
+               <type>rte</type>
                <id>closingContent_html</id>
                <iceId/>
                <title>Closing Content</title>
