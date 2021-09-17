@@ -469,7 +469,7 @@
 					</constraints>
 				</field>
 				<field>
-					<type>rte-tinymce5</type>
+					<type>rte</type>
 					<id>summary_html</id>
 					<iceId></iceId>
 					<title>Summary</title>
@@ -527,7 +527,7 @@
 					</constraints>
 				</field>
 				<field>
-					<type>rte-tinymce5</type>
+					<type>rte</type>
 					<id>content_html</id>
 					<iceId></iceId>
 					<title>Content</title>
