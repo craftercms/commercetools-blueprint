@@ -132,7 +132,7 @@ export const crafterConf = {
 };
 
 export function getQuery(query) {
-  const crafterQuery = SearchService.createQuery('elasticsearch');
+  const crafterQuery = SearchService.createQuery();
   crafterQuery.query = {
     query: {
       bool: {

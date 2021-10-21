@@ -136,7 +136,7 @@ export function useUrlSearchQueryFetchResource(size = 1) {
   useEffect(() => {
     setResource(createResource(
       () => search(
-        createQuery('elasticsearch', {
+        createQuery({
           query: {
             'bool': {
               'filter': [
