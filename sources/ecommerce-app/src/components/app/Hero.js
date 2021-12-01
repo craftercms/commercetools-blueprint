@@ -49,14 +49,12 @@ function Hero(props) {
       <Container>
         <Row>
           <Col md={12}>
-            <Field
+            <RenderField
               component="h2"
               model={props}
               fieldId="title_t"
               className="landing__header-title"
-            >
-              {title_t}
-            </Field>
+            />
             <Field
               model={props}
               fieldId="content_html"

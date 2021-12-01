@@ -33,7 +33,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { usePosts } from '../shared/hooks';
-import { Field } from '@craftercms/experience-builder/react';
+import { Field, RenderField } from '@craftercms/experience-builder/react';
 
 function BlogTeaser(props) {
 
@@ -47,14 +47,14 @@ function BlogTeaser(props) {
       <Container>
         <Row>
           <Col md={12}>
-            <Field
+            <RenderField
               component="h3"
               model={props}
               fieldId="title_s"
               className="landing__section-title"
             >
               {title_s}
-            </Field>
+            </RenderField>
           </Col>
         </Row>
         <Row className="landing__teasers">
@@ -78,22 +78,20 @@ export function BlogPostCard(props) {
     <Field component={Link} to={`/blog/${slug_s}`} model={props}>
       <Card>
         <CardBody className="landing__teaser">
-          <Field
+          <RenderField
             component="img"
+            renderTarget="src"
             className="landing__teaser-img"
             model={props}
             fieldId="image_s"
-            src={image_s}
-            alt=''
+            alt=""
           />
-          <Field
+          <RenderField
             component="h3"
             model={props}
             fieldId="title_s"
             className="landing__teaser-title"
-          >
-            {title_s}
-          </Field>
+          />
           {
             !hideSummary && summary_html_raw &&
             <Field

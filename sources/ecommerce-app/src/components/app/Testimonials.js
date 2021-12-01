@@ -28,7 +28,7 @@ import {
   Col, Row, Container, Card, CardBody,
 } from 'reactstrap';
 import StarIcon from 'mdi-react/StarIcon';
-import { Field } from '@craftercms/experience-builder/react';
+import { Field, RenderField } from '@craftercms/experience-builder/react';
 
 function Testimonials(props) {
   const {
@@ -40,14 +40,12 @@ function Testimonials(props) {
       <Container>
         <Row>
           <Col md={12}>
-            <Field
+            <RenderField
               component="h3"
               model={props}
               fieldId="title_s"
               className="landing__section-title"
-            >
-              {title_s}
-            </Field>
+            />
           </Col>
         </Row>
         <Row className="landing__testimonials">
@@ -61,15 +59,13 @@ function Testimonials(props) {
                 >
                   <Card>
                     <CardBody className="landing__testimonial">
-                      <Field
+                      <RenderField
                         component="p"
                         model={props}
                         fieldId="testimonials_o.customer_s"
                         className="landing__testimonial-name"
                         index={index}
-                      >
-                        {customer_s}
-                      </Field>
+                      />
                       <div className="landing__testimonial-stars">
                         {(
                           () => {
