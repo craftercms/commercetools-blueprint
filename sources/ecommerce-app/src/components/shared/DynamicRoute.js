@@ -27,7 +27,7 @@ import { fetchQuery } from '../../util/content';
 import byUrlQuery from './queries.graphql';
 import { parseDescriptor } from '@craftercms/content';
 import { reportNavigation } from '@craftercms/ice';
-import { Guest, ContentType } from '@craftercms/studio-guest/react';
+import { Guest, ContentType } from '@craftercms/experience-builder/react';
 import { isAuthoring } from './utils';
 import contentTypeMap from './contentTypeMap';
 import Spinner from '../shared/Spinner';

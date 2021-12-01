@@ -28,7 +28,7 @@ import {
   Col, Row, Container, Card, CardBody,
 } from 'reactstrap';
 import StarIcon from 'mdi-react/StarIcon';
-import { Field } from '@craftercms/studio-guest/react';
+import { Field } from '@craftercms/experience-builder/react';
 
 function Testimonials(props) {
   const {

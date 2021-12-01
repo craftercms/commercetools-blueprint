@@ -32,7 +32,7 @@ import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { getProducts, useProductsQuery } from '../../util/products';
 import { useCategories, usePosts } from '../shared/hooks';
-import { Field, Guest } from '@craftercms/studio-guest/react';
+import { RenderField, Field, Guest } from '@craftercms/experience-builder/react';
 import { isAuthoring } from '../shared/utils';
 
 export default function BlogEntry(props) {
@@ -118,7 +118,7 @@ function Post({ post }) {
       </Field>
       {
         image_s &&
-        <Field
+        <RenderField
           component="img"
           className="post__image"
           model={post}

@@ -25,7 +25,7 @@
 import React from 'react';
 import { Col, Row, Container } from 'reactstrap';
 import A from "../shared/Anchor";
-import { Field, RenderField } from '@craftercms/studio-guest/react';
+import { Field, RenderField } from '@craftercms/experience-builder/react';
 
 function Hero(props) {
   const {

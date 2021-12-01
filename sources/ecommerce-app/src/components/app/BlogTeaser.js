@@ -33,7 +33,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { usePosts } from '../shared/hooks';
-import { Field } from '@craftercms/studio-guest/react';
+import { Field } from '@craftercms/experience-builder/react';
 
 function BlogTeaser(props) {
 

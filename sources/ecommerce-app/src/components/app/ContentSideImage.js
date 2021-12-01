@@ -24,7 +24,7 @@
 
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
-import { Field } from '@craftercms/studio-guest/react';
+import { Field } from '@craftercms/experience-builder/react';
 
 function ContentSideImage(props) {
   const {
