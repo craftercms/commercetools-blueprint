@@ -24,7 +24,7 @@
 
 import React from 'react';
 import { Col, Row, Container } from 'reactstrap';
-import { Field } from '@craftercms/studio-guest/react';
+import { Field } from '@craftercms/experience-builder/react';
 
 function Features(props) {
   const {

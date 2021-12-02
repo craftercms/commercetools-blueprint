@@ -32,7 +32,7 @@ import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { getProducts, useProductsQuery } from '../../util/products';
 import { useCategories, usePosts } from '../shared/hooks';
-import { Field, Guest } from '@craftercms/studio-guest/react';
+import { RenderField, Field, Guest } from '@craftercms/experience-builder/react';
 import { isAuthoring } from '../shared/utils';
 
 export default function BlogEntry(props) {
@@ -85,41 +85,42 @@ function Post({ post }) {
   return (
     <>
       <Field component="section" className="post__head" model={post}>
-        <Field
+        <RenderField
           component="h1"
           model={post}
           fieldId="title_s"
           className="post__title"
         >
           {title_s}
-        </Field>
+        </RenderField>
         {
           subtitle_s &&
-          <Field
+          <RenderField
             component="p"
             model={post}
             fieldId="subtitle_s"
             className="post__subtitle"
           >
             {subtitle_s}
-          </Field>
+          </RenderField>
         }
         {
           author_s &&
-          <Field
+          <RenderField
             component="p"
             model={post}
             fieldId="author_s"
             className="post__author"
           >
             {author_s}
-          </Field>
+          </RenderField>
         }
       </Field>
       {
         image_s &&
         <Field
           component="img"
+          renderTarget="src"
           className="post__image"
           model={post}
           fieldId="image_s"

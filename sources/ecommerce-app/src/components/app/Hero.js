@@ -25,7 +25,7 @@
 import React from 'react';
 import { Col, Row, Container } from 'reactstrap';
 import A from "../shared/Anchor";
-import { Field, RenderField } from '@craftercms/studio-guest/react';
+import { Field, RenderField } from '@craftercms/experience-builder/react';
 
 function Hero(props) {
   const {
@@ -49,14 +49,12 @@ function Hero(props) {
       <Container>
         <Row>
           <Col md={12}>
-            <Field
+            <RenderField
               component="h2"
               model={props}
               fieldId="title_t"
               className="landing__header-title"
-            >
-              {title_t}
-            </Field>
+            />
             <Field
               model={props}
               fieldId="content_html"

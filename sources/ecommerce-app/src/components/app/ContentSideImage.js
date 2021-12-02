@@ -24,7 +24,7 @@
 
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
-import { Field } from '@craftercms/studio-guest/react';
+import { Field, RenderField } from '@craftercms/experience-builder/react';
 
 function ContentSideImage(props) {
   const {
@@ -40,7 +40,7 @@ function ContentSideImage(props) {
       <Col md={6} sm={12} xs={12}>
         <div className="landing__code-text">
           <div className="landing__code-wrap">
-            <Field component="h3" model={props} fieldId="title_s">{title_s}</Field>
+            <RenderField component="h3" model={props} fieldId="title_s" />
             <Field
               component="p"
               model={props}
@@ -56,12 +56,12 @@ function ContentSideImage(props) {
       <Col md={6} sm={12} xs={12}>
         <div className="landing__code-img landing__code-img--no-shadow">
           <div className="landing__code-wrap">
-            <Field
+            <RenderField
               component="img"
+              renderTarget="src"
               className="landing__img landing__img--over"
               model={props}
               fieldId="image_s"
-              src={image_s}
               alt={image_alt_s || ''}
             />
           </div>

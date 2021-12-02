@@ -25,7 +25,7 @@
 /* eslint-disable react/no-children-prop */
 import React, { useState } from 'react';
 import { Button, ButtonToolbar } from 'reactstrap';
-import TextField from '@material-ui/core/TextField';
+import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
 import renderCheckBoxField from '../shared/form/CheckBox';
 import Alert from '../shared/Alert';
