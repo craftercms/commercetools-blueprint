@@ -1,6 +1,6 @@
 #  MIT License
 #
-#  Copyright (c) 2018-2019 Crafter Software Corporation. All Rights Reserved.
+#  Copyright (c) 2018-2022 Crafter Software Corporation. All Rights Reserved.
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -36,7 +36,7 @@ plugin:
   version:
     major: 2
     minor: 0
-    patch: 16
+    patch: 17
   description: |
     An e-commerce blueprint with full integration with commercetools https://commercetools.com
   website:
@@ -64,12 +64,9 @@ plugin:
         url: "https://raw.githubusercontent.com/craftercms/commercetools-blueprint/master/static-assets/images/screenshots/profile.jpg"
   developer:
     company:
-      name: Crafter Software
-      email: info@craftersoftware.com
-      url: https://craftersoftware.com/
-  build:
-    id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
-    date: 2019-06-24T00:00:00Z
+      name: CrafterCMS
+      email: info@craftercms.com
+      url: https://craftercms.com
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
@@ -80,7 +77,6 @@ plugin:
   crafterCmsEditions:
     - community
     - enterprise
-  searchEngine: Elasticsearch
   parameters:
     - label: Project Key
       name: projectKey
