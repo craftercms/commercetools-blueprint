@@ -73,7 +73,7 @@ function BlogTeaser(props) {
 }
 
 export function BlogPostCard(props) {
-  const { slug_s, title_s, image_s, summary_html_raw, hideSummary } = props;
+  const { slug_s, summary_html_raw, hideSummary } = props;
   return (
     <Field component={Link} to={`/blog/${slug_s}`} model={props}>
       <Card>

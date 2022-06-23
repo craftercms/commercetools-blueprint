@@ -29,9 +29,7 @@ import { Field, RenderField } from '@craftercms/experience-builder/react';
 
 function Hero(props) {
   const {
-    title_t,
     image_s,
-    image_alt_t,
     section_background_image_s,
     content_html_raw,
     buttons_o
