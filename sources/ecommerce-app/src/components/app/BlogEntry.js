@@ -32,7 +32,7 @@ import { catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { getProducts, useProductsQuery } from '../../util/products';
 import { useCategories, usePosts } from '../shared/hooks';
-import { RenderField, Field, Guest } from '@craftercms/experience-builder/react';
+import { RenderField, Field, ExperienceBuilder } from '@craftercms/experience-builder/react';
 import { isAuthoring } from '../shared/utils';
 
 export default function BlogEntry(props) {
@@ -46,7 +46,7 @@ export default function BlogEntry(props) {
   });
   const post = usePosts(paginationData, slug);
 
-  return <Guest
+  return <ExperienceBuilder
     isAuthoring={isAuthoring()}
     path={post?.items[0].craftercms.path}
   >
@@ -77,7 +77,7 @@ export default function BlogEntry(props) {
         </Row>
       </Container>
     </Layout>
-  </Guest>
+  </ExperienceBuilder>
 }
 
 function Post({ post }) {

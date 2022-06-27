@@ -26,7 +26,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchQuery } from '../../util/content';
 import byUrlQuery from './queries.graphql';
 import { parseDescriptor } from '@craftercms/content';
-import { Guest, ContentType } from '@craftercms/experience-builder/react';
+import { ExperienceBuilder, ContentType } from '@craftercms/experience-builder/react';
 import { isAuthoring } from './utils';
 import contentTypeMap from './contentTypeMap';
 import Spinner from '../shared/Spinner';
@@ -66,7 +66,7 @@ export default function DynamicRoute(props) {
   if (state === null) {
     return <Spinner />;
   } else {
-    return <Guest
+    return <ExperienceBuilder
       isAuthoring={isAuthoring()}
       path={state.model?.craftercms.path}
     >
@@ -75,6 +75,6 @@ export default function DynamicRoute(props) {
         {...props}
         contentTypeMap={contentTypeMap}
       />
-    </Guest>
+    </ExperienceBuilder>
   }
 }
