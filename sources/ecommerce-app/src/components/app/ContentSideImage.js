@@ -31,9 +31,7 @@ function ContentSideImage(props) {
     section_background_image_s,
     contentAlignment_s,
     content_html_raw,
-    image_alt_s,
-    image_s,
-    title_s
+    image_alt_s
   } = props;
   const
     CopyColumn = (

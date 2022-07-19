@@ -31,10 +31,7 @@ import StarIcon from 'mdi-react/StarIcon';
 import { Field, RenderField } from '@craftercms/experience-builder/react';
 
 function Testimonials(props) {
-  const {
-    title_s,
-    testimonials_o
-  } = props;
+  const { testimonials_o } = props;
   return (
     <Field component="section" className="landing__section" model={props}>
       <Container>
