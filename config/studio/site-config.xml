@@ -223,6 +223,7 @@
       <!-- <bulk-publish-required/> -->
       <!-- <publish-by-commit-required/> -->
       <!-- <publish-required/> -->
+      <!-- <publish-everything-required/> -->
     </comments>
   </publishing>
   <site-urls>
