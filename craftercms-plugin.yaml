@@ -36,7 +36,7 @@ plugin:
   version:
     major: 2
     minor: 0
-    patch: 32
+    patch: 33
   description: |
     An e-commerce blueprint with full integration with commercetools https://commercetools.com
   website:
@@ -73,10 +73,10 @@ plugin:
   crafterCmsVersions:
     - major: 4
       minor: 0
-      patch: 1
+      patch: 2
     - major: 4
       minor: 0
-      patch: 2
+      patch: 3
   crafterCmsEditions:
     - community
     - enterprise
