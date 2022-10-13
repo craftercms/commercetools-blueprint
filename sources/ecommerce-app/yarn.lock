@@ -1242,16 +1242,16 @@
     "@craftercms/utils" "2.0.6"
     rxjs "^7.0.0"
 
-"@craftercms/experience-builder@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@craftercms/experience-builder/-/experience-builder-1.0.0-rc.1.tgz#460659c6684b79b78e1610a57ea4e838823f6650"
-  integrity sha512-uFFcuCCLGsJKyJRx5Ka6xXjak4BM1QTstYfzoZaoBdYnIypL/K47KmGOzvqFSOuwIQNkhUMQTLNr5H0LWYSJdQ==
+"@craftercms/experience-builder@^1.0.0-rc.2":
+  version "1.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@craftercms/experience-builder/-/experience-builder-1.0.0-rc.2.tgz#e4b35c4bcf5cac0957cdf8068a1054050a28f7f2"
+  integrity sha512-MqjPHjFxVujNwqujJopMhrc1xf3R5woLYYIpPu0vY490svDIhgsftQ+uUGlPUTFbrSXV/mfN5AvcHCpDjZhgHA==
   dependencies:
     "@craftercms/classes" "^2.0.6"
     "@craftercms/content" "^2.0.6"
     "@craftercms/ice" "^2.0.6"
     "@craftercms/search" "^2.0.6"
-    "@craftercms/studio-ui" "1.0.0-rc.1"
+    "@craftercms/studio-ui" "1.0.0-rc.4"
     "@reduxjs/toolkit" "^1.7.0"
     "@types/react-dom" "^18.0.5"
     jquery "^3.6.0"
@@ -1302,10 +1302,10 @@
     url-search-params-polyfill "^5.0.0"
     uuid "^3.4.0"
 
-"@craftercms/studio-ui@1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@craftercms/studio-ui/-/studio-ui-1.0.0-rc.1.tgz#3f1dbd7b88d03f17ed47fc390f4b1b39fa2f5644"
-  integrity sha512-Ty4mXDKE0g3aE8sfwLbfXBLCKWR7YlR0zAlyVyg89iPy9BveFGTG0dToKMPMuYUxUCGwpOSPPCPT6xUfObsoew==
+"@craftercms/studio-ui@1.0.0-rc.4":
+  version "1.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@craftercms/studio-ui/-/studio-ui-1.0.0-rc.3.tgz#076ca3c94c2193d29edaa31ca0eec7b2a8a15744"
+  integrity sha512-fwtQ/O6l1YtGYVuq2fn+rtMD571f8o9Arx/uGz6X06RC9ErNZnp2Eg3Ok+ylDpE+M7jcrlcV9/mbMRVi5go/Rg==
   dependencies:
     "@craco/craco" "6.4.3"
     "@craftercms/uppy" "1.0.0-beta"
