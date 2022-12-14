@@ -6,7 +6,7 @@
   "dependencies": {
     "@craftercms/classes": "^2.0.1",
     "@craftercms/content": "^2.0.1",
-    "@craftercms/experience-builder": "^1.0.0-rc.2",
+    "@craftercms/experience-builder": "^1.0.0-rc.3",
     "@craftercms/search": "^2.0.1",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.0.5",
