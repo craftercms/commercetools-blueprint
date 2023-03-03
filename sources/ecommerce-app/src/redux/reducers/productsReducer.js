@@ -50,6 +50,7 @@ import {
 import { toLookupTable } from '../../util/array';
 import { byIdLoadingKey, getRootType, removeProp } from '../../util/redux';
 import Cookies from 'js-cookie'
+import { siteName } from '../../util/content';
 
 const initialState = {
   byId: null,
@@ -122,7 +123,7 @@ export default function productReducer(state = initialState, action) {
 
     case CHANGE_LOCALE:
     case CHANGE_CURRENCY: {
-      Cookies.set(type === CHANGE_LOCALE ? 'locale' : 'currency', payload.value);
+      Cookies.set(type === CHANGE_LOCALE ? `crafter-engine-locale-${siteName}` : 'currency', payload.value);
       return {
         ...state,
         query: {
