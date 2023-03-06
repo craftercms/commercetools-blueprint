@@ -22,49 +22,10 @@
  * SOFTWARE.
  */
 
-import { combineEpics } from 'redux-observable';
-import {
-  addToCartEpic,
-  changeLocaleOrCurrencyEpic,
-  checkoutEpic,
-  facetsChangedEpic,
-  fetchCartEpic,
-  fetchProductEpic,
-  fetchProductsEpic,
-  removeFromCartEpic,
-  updateCartEpic,
-  updateCartItemEpic
-} from './products';
-import {
-  addUserAddressEpic,
-  editUserAddressEpic,
-  fetchOrderEpic,
-  fetchOrdersEpic,
-  loginEpic,
-  logoutEpic,
-  removeUserAddressEpic,
-  setAsDefaultAddressEpic,
-  unauthorizedEpic
-} from './users';
+export const getLocaleCookieName = (siteName) => {
+  return `crafter-engine-locale-${siteName}`;
+}
 
-export default combineEpics(
-  fetchProductEpic,
-  fetchProductsEpic,
-  fetchCartEpic,
-  addToCartEpic,
-  removeFromCartEpic,
-  updateCartItemEpic,
-  fetchOrdersEpic,
-  loginEpic,
-  logoutEpic,
-  unauthorizedEpic,
-  facetsChangedEpic,
-  addUserAddressEpic,
-  editUserAddressEpic,
-  removeUserAddressEpic,
-  setAsDefaultAddressEpic,
-  updateCartEpic,
-  checkoutEpic,
-  fetchOrderEpic,
-  changeLocaleOrCurrencyEpic
-);
+export const getCurrencyCookieName = () => {
+  return 'currency';
+}

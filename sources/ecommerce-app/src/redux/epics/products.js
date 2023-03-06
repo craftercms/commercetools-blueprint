@@ -22,14 +22,16 @@
  * SOFTWARE.
  */
 
-import { ofType } from 'redux-observable';
-import { mapTo, pluck, switchMap, tap, withLatestFrom } from 'rxjs/operators';
-import { ajax } from 'rxjs/ajax';
+import {ofType} from 'redux-observable';
+import {ignoreElements, mapTo, pluck, switchMap, tap, withLatestFrom} from 'rxjs/operators';
+import {ajax} from 'rxjs/ajax';
 
 import {
   ADD_TO_CART,
   addToCartComplete,
   addToCartFailed,
+  CHANGE_CURRENCY,
+  CHANGE_LOCALE,
   CHECKOUT,
   checkoutComplete,
   checkoutFailed,
@@ -58,7 +60,10 @@ import {
   updateCartItemQuantityComplete,
   updateCartItemQuantityFailed
 } from '../actions/productsActions';
-import { errorOp, mapOp } from '../../util/redux';
+import {errorOp, mapOp} from '../../util/redux';
+import Cookies from "js-cookie";
+import {siteName} from "../../util/content";
+import {getCurrencyCookieName, getLocaleCookieName} from "../../util/locale";
 
 export const fetchProductEpic = (action$, state$) => action$.pipe(
   ofType(FETCH_PRODUCT),
@@ -180,4 +185,12 @@ export const checkoutEpic = (action$) => action$.pipe(
     )
   ),
   mapOp(checkoutComplete, checkoutFailed)
+);
+
+export const changeLocaleOrCurrencyEpic = (action$) => action$.pipe(
+  ofType(CHANGE_LOCALE, CHANGE_CURRENCY),
+  tap((action) => {
+    Cookies.set(action.type === CHANGE_LOCALE ? getLocaleCookieName(siteName) : getCurrencyCookieName(), action.payload.value)
+  }),
+  ignoreElements()
 );
