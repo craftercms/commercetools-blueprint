@@ -34,6 +34,9 @@ import rootEpic from './epics/epics';
 import { loginComplete, setPersona } from './actions/usersActions';
 import { setIsAuthoring } from './actions/themeActions';
 import { setStoreSettings } from './actions/productsActions';
+import Cookies from 'js-cookie';
+import {getCurrencyCookieName, getLocaleCookieName} from "../util/locale";
+import {siteName} from "../util/content";
 
 const reducer = combineReducers({
   theme: themeReducer,
@@ -72,7 +75,11 @@ let storeSettings = null;
 try {
   const json = document.getElementById('storeSettingsJSON').innerHTML;
   storeSettings = JSON.parse(json);
-  storeSettings && store.dispatch(setStoreSettings(storeSettings));
+  // If cookies are set, use cookies values, otherwise, set first currency/locale match from storeSettingsJSON
+  const locale = Cookies.get(getLocaleCookieName(siteName)) ?? storeSettings.locales[0];
+  const currency = Cookies.get(getCurrencyCookieName()) ?? storeSettings.currencies[0];
+
+  store.dispatch(setStoreSettings({ locale, currency }));
 } catch (e) {
   (process.env.NODE_ENV === 'development') && console.error('Invalid syntax for store settings JSON.', e.message);
 }

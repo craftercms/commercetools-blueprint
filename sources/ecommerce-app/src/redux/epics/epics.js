@@ -25,6 +25,7 @@
 import { combineEpics } from 'redux-observable';
 import {
   addToCartEpic,
+  changeLocaleOrCurrencyEpic,
   checkoutEpic,
   facetsChangedEpic,
   fetchCartEpic,
@@ -64,5 +65,6 @@ export default combineEpics(
   setAsDefaultAddressEpic,
   updateCartEpic,
   checkoutEpic,
-  fetchOrderEpic
+  fetchOrderEpic,
+  changeLocaleOrCurrencyEpic
 );

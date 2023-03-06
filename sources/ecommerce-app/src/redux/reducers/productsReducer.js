@@ -49,7 +49,9 @@ import {
 } from '../actions/productsActions';
 import { toLookupTable } from '../../util/array';
 import { byIdLoadingKey, getRootType, removeProp } from '../../util/redux';
-import Cookies from 'js-cookie'
+import {defaultCurrency, defaultLocale, getCurrencyCookieName, getLocaleCookieName} from "../../util/locale";
+import Cookies from 'js-cookie';
+import {siteName} from "../../util/content";
 
 const initialState = {
   byId: null,
@@ -60,8 +62,8 @@ const initialState = {
   query: {
     offset: 0,
     limit: 10,
-    locale: 'en',
-    currency: 'USD'
+    locale: Cookies.get(getLocaleCookieName(siteName)) ?? defaultLocale,
+    currency: Cookies.get(getCurrencyCookieName()) ?? defaultCurrency
   }
 };
 
@@ -122,7 +124,6 @@ export default function productReducer(state = initialState, action) {
 
     case CHANGE_LOCALE:
     case CHANGE_CURRENCY: {
-      Cookies.set(type === CHANGE_LOCALE ? 'locale' : 'currency', payload.value);
       return {
         ...state,
         query: {
