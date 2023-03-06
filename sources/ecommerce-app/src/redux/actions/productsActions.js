@@ -301,6 +301,6 @@ export function changeCurrency(value) {
 export function setStoreSettings(settings) {
   return {
     type: SET_STORE_SETTINGS,
-    payload: { currency: settings.currencies[0], locale: settings.locales[0] }
+    payload: settings
   }
 }

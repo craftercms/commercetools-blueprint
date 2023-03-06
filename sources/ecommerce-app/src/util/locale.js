@@ -22,6 +22,9 @@
  * SOFTWARE.
  */
 
+export const defaultLocale = 'en';
+export const defaultCurrency = 'USD';
+
 export const getLocaleCookieName = (siteName) => {
   return `crafter-engine-locale-${siteName}`;
 }

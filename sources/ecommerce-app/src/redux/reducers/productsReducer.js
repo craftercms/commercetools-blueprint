@@ -49,6 +49,9 @@ import {
 } from '../actions/productsActions';
 import { toLookupTable } from '../../util/array';
 import { byIdLoadingKey, getRootType, removeProp } from '../../util/redux';
+import {defaultCurrency, defaultLocale, getCurrencyCookieName, getLocaleCookieName} from "../../util/locale";
+import Cookies from 'js-cookie';
+import {siteName} from "../../util/content";
 
 const initialState = {
   byId: null,
@@ -59,8 +62,8 @@ const initialState = {
   query: {
     offset: 0,
     limit: 10,
-    locale: 'en',
-    currency: 'USD'
+    locale: Cookies.get(getLocaleCookieName(siteName)) ?? defaultLocale,
+    currency: Cookies.get(getCurrencyCookieName()) ?? defaultCurrency
   }
 };
 
