@@ -28,7 +28,7 @@ This file configures site properties used by Crafter Engine
 -->
 <site>
 	<version>2</version>
-   <defaultLocale>en</defaultLocale>
+   <defaultLocale>en_US</defaultLocale>
    <spa>
       <enabled>true</enabled>
       <viewName>/templates/web/index.ftl</viewName>
