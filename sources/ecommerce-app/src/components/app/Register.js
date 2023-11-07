@@ -33,7 +33,7 @@ import EmailIcon from 'mdi-react/EmailIcon';
 import EyeIcon from 'mdi-react/EyeIcon';
 import KeyVariantIcon from 'mdi-react/KeyVariantIcon';
 import AccountOutlineIcon from 'mdi-react/AccountOutlineIcon';
-import MailRuIcon from 'mdi-react/MailRuIcon';
+import AlternateEmailIcon from 'mdi-react/AlternateEmailIcon';
 import Alert from '../shared/Alert';
 import { catchError } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
@@ -103,7 +103,7 @@ export const RegisterFormComponent = memo(function ({ onSuccess }) {
           <div className="form__form-group">
             <div className="form__form-group-field">
               <div className="form__form-group-icon">
-                <MailRuIcon/>
+                <AlternateEmailIcon/>
               </div>
               <Field
                 name="email"

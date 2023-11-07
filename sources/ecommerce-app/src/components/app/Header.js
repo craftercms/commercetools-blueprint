@@ -37,7 +37,7 @@ import {
 import Anchor from '../shared/Anchor';
 import { Link, useHistory } from 'react-router-dom';
 import SearchIcon from 'mdi-react/SearchIcon';
-import PersonCircleOutlineIcon from 'mdi-react/PersonCircleOutlineIcon';
+import AccountCircleOutlineIcon from 'mdi-react/AccountCircleOutlineIcon';
 import ShoppingCartIcon from 'mdi-react/ShoppingCartIcon';
 import hamburger  from '../../img/burger.svg';
 import Flag from 'react-world-flags';
@@ -143,7 +143,7 @@ export default function Header() {
                       </Link>
                     ) : (
                       <Link className="landing__menu-nav__item" to="/account">
-                        <PersonCircleOutlineIcon/>
+                        <AccountCircleOutlineIcon/>
                       </Link>
                     )
                 }
