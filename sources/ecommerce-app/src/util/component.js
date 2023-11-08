@@ -37,7 +37,7 @@ import Cookie from 'js-cookie';
 import { useDispatch, useSelector } from 'react-redux';
 
 export function getLoginFormDefaults() {
-  const email = localStorage.getItem(`${process.env.REACT_APP_STORE_KEY}.email`);
+  const email = localStorage.getItem(`${import.meta.env.VITE_APP_STORE_KEY}.email`);
   return {
     email: email || '',
     rememberMe: email != null
@@ -125,10 +125,10 @@ export function useCartUpdateInFlight() {
 }
 
 export const crafterConf = {
-  baseUrl: process.env.REACT_APP_CRAFTER_BASE,
+  baseUrl: import.meta.env.REACT_APP_CRAFTER_BASE,
   // By default empty on the .env so preview grabs the crafterSite cookie set by authoring
   // Dev may use it's .env.local for local development or fix the value.
-  site: process.env.REACT_APP_SITE_ID || Cookie.get('crafterSite')
+  site: import.meta.env.VITE_APP_SITE_ID || Cookie.get('crafterSite')
 };
 
 export function getQuery(query) {

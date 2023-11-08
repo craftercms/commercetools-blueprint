@@ -28,22 +28,16 @@ import Spinner from './components/shared/Spinner';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './scss/app.scss';
+import {createRoot} from "react-dom/client";
 
 const App = React.lazy(() => import('./components/App'));
 
-render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render((
   <Suspense fallback={<Spinner/>}>
     <App/>
-  </Suspense>,
-  document.getElementById('root')
-);
+  </Suspense>
+));
 
-function render(component, container) {
-
-  // Some libs have components with still "unsafe" lifecycle stuff.
-  // Cant' switch concurrent mode on yet.
-  // ReactDOM.unstable_createRoot(container).render(component);
-
-  ReactDOM.render(component, container);
-
-}

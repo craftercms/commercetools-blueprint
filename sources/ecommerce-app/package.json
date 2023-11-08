@@ -38,7 +38,6 @@
     "react-ratings-declarative": "^3.4.1",
     "react-redux": "^8.1.3",
     "react-router-dom": "^5.3.4",
-    "react-scripts": "^5.0.1",
     "react-select": "^5.8.0",
     "react-world-flags": "^1.6.0",
     "reactstrap": "^9.2.1",
@@ -47,10 +46,9 @@
     "rxjs": "^7.8.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "vite",
     "build": "chmod +x build.sh; ./build.sh",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "vitest"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -68,7 +66,11 @@
     ]
   },
   "devDependencies": {
-    "sass": "^1.69.5"
+    "@vitejs/plugin-react-swc": "^3.4.1",
+    "sass": "^1.69.5",
+    "vite": "^4.5.0",
+    "vite-plugin-svgr": "^4.1.0",
+    "vite-tsconfig-paths": "^4.2.1"
   },
   "packageManager": "yarn@4.0.1"
 }

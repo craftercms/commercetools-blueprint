@@ -144,7 +144,7 @@ function RelatedPosts({ categories, slug }) {
   useEffect(
     () => {
       ajax.post(
-        process.env.REACT_APP_GRAPHQL_SERVER,
+        import.meta.env.VITE_APP_GRAPHQL_SERVER,
         {
           query: `query {
             posts: component_post (limit: 3, sortOrder: ASC, sortBy: "title_s") {

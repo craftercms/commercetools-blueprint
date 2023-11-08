@@ -51,9 +51,9 @@ function LogInFormComponent(props) {
   const onSubmit = (data) => {
     if (data) {
       if (data.rememberMe) {
-        localStorage.setItem(`${process.env.REACT_APP_STORE_KEY}.email`, data.email);
+        localStorage.setItem(`${import.meta.env.VITE_APP_STORE_KEY}.email`, data.email);
       } else {
-        localStorage.removeItem(`${process.env.REACT_APP_STORE_KEY}.email`);
+        localStorage.removeItem(`${import.meta.env.VITE_APP_STORE_KEY}.email`);
       }
       ajax.post(
         `/api/1/security/login.json`,
@@ -76,7 +76,7 @@ function LogInFormComponent(props) {
 
   useEffect(
     () => {
-      const meRemembered = !!localStorage.getItem(`${process.env.REACT_APP_STORE_KEY}.email`);
+      const meRemembered = !!localStorage.getItem(`${import.meta.env.VITE_APP_STORE_KEY}.email`);
       document.querySelectorAll('.form input')[meRemembered ? 1 : 0].focus();
     },
     []

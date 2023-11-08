@@ -26,13 +26,13 @@ import Cookies from 'js-cookie';
 
 export const siteName =
   document.getElementById('2fb5164e').innerHTML ||
-  process.env.REACT_APP_SITE_ID ||
+  import.meta.env.REACT_APP_SITE_ID ||
   Cookies.get('crafterSite');
 if (!siteName) {
   throw new Error('Site not set.');
 }
 
-let graphqlServer = process.env.REACT_APP_GRAPHQL_SERVER;
+let graphqlServer = import.meta.env.VITE_APP_GRAPHQL_SERVER;
 if (!graphqlServer.includes(siteName)) {
   graphqlServer += `?crafterSite=${siteName}`;
 }

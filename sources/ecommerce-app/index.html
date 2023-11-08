@@ -23,7 +23,7 @@
   -->
 
 <!DOCTYPE html>
-<html lang="en" data-craftercms-preview="%REACT_APP_PREVIEW_MODE%">
+<html lang="en" data-craftercms-preview="%VITE_APP_PREVIEW_MODE%">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,30 +32,21 @@
     manifest.json provides metadata used when your web app is added to the
     homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
   -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" crossorigin="use-credentials">
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+  <link rel="shortcut icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
-  <!--
-    Notice the use of %PUBLIC_URL% in the tags above.
-    It will be replaced with the URL of the `public` folder during the build.
-    Only files inside the `public` folder can be referenced from the HTML.
-
-    Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-    work correctly both with client-side routing and a non-root public URL.
-    Learn how to configure a non-root public URL by running `npm run build`.
-  -->
   <title>Crafter CMS e-Commerce</title>
   <script id="userJSON" type="application/json">
-    %REACT_APP_USER_SNIPPET%
+    %VITE_APP_USER_SNIPPET%
   </script>
   <script id="personaJSON" type="application/json">
-    { "age": %REACT_APP_PERSONA_AGE%, "gender": %REACT_APP_PERSONA_GENDER% }
+    { "age": %VITE_APP_PERSONA_AGE%, "gender": %VITE_APP_PERSONA_GENDER% }
   </script>
   <script id="storeSettingsJSON" type="application/json">
-    %REACT_APP_STORE_SETTINGS%
+    %VITE_APP_STORE_SETTINGS%
   </script>
 
-  <script id="2fb5164e" type="text/plain">%REACT_APP_SITE_ID%</script>
+  <script id="2fb5164e" type="text/plain">%VITE_APP_SITE_ID%</script>
 </head>
 <body>
 <noscript>
@@ -74,5 +65,6 @@
 -->
 
   <script src="/static-assets/js/jquery.core.js"></script>
+<script type="module" src="/src/index.jsx"></script>
 </body>
 </html>

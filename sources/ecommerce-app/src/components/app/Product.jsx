@@ -27,8 +27,8 @@ import { Link } from 'react-router-dom';
 import { money } from '../../util/string';
 import Ratings from 'react-ratings-declarative';
 
-const saleBadge = `${process.env.PUBLIC_URL}/img/for_store/catalog/sale_lable.png`;
-const newBadge = `${process.env.PUBLIC_URL}/img/for_store/catalog/new_lable.png`;
+const saleBadge = `${import.meta.env.PUBLIC_URL}/img/for_store/catalog/sale_lable.png`;
+const newBadge = `${import.meta.env.PUBLIC_URL}/img/for_store/catalog/new_lable.png`;
 
 export default function Product(props) {
 

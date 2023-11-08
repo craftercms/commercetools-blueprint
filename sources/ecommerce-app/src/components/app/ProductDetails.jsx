@@ -73,7 +73,7 @@ export default function ProductDetails(props) {
 
         const posts$ = keys.keys.length
           ? ajax.post(
-            process.env.REACT_APP_GRAPHQL_SERVER,
+            import.meta.env.VITE_APP_GRAPHQL_SERVER,
             {
               query: `query {
               posts: component_post(limit: 3) {
