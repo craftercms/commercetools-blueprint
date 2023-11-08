@@ -231,7 +231,7 @@ export default function ProductListing(props) {
                     />
                   </div>
                   <div className="catalog-items">
-                    {products.map(product =>
+                    {products?.map(product =>
                       <Product key={product.id} product={product}/>
                     )}
                     {
