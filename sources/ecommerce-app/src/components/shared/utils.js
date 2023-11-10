@@ -63,14 +63,14 @@ export function createResource(factory) {
 
 export const siteName =
   document.getElementById('2fb5164e').innerHTML ||
-  process.env.REACT_APP_CRAFTERCMS_SITE_ID ||
+  import.meta.env.REACT_APP_CRAFTERCMS_SITE_ID ||
   Cookies.get('crafterSite');
 if (!siteName) {
   throw new Error('Site not set.');
 }
 
 export const crafterConfig = {
-  baseUrl: process.env.REACT_APP_CRAFTERCMS_BASE_URL ?? '',
+  baseUrl: import.meta.env.REACT_APP_CRAFTERCMS_BASE_URL ?? '',
   site: siteName
 };
 
