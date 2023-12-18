@@ -4,10 +4,10 @@
   "private": true,
   "proxy": "http://localhost:8080",
   "dependencies": {
-    "@craftercms/classes": "^4.1.2",
-    "@craftercms/content": "^4.1.2",
-    "@craftercms/experience-builder": "4.1.2-1",
-    "@craftercms/search": "^4.1.2",
+    "@craftercms/classes": "4.1.2-support.2",
+    "@craftercms/content": "4.1.2-support.2",
+    "@craftercms/experience-builder": "4.1.2-support.3",
+    "@craftercms/search": "4.1.2-support.2",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.16",
     "@mui/material": "^5.14.17",
@@ -48,6 +48,7 @@
   "scripts": {
     "start": "vite",
     "build": "chmod +x build.sh; ./build.sh",
+    "build-vite": "vite build",
     "test": "vitest"
   },
   "eslintConfig": {
