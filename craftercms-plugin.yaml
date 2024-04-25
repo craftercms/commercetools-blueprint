@@ -36,7 +36,7 @@ plugin:
   version:
     major: 2
     minor: 0
-    patch: 53
+    patch: 54
   description: |
     An e-commerce blueprint with full integration with commercetools https://commercetools.com
   website:
