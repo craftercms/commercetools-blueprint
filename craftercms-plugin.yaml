@@ -36,7 +36,7 @@ plugin:
   version:
     major: 2
     minor: 0
-    patch: 56
+    patch: 57
   description: |
     An e-commerce blueprint with full integration with commercetools https://commercetools.com
   website:
@@ -98,6 +98,18 @@ plugin:
     - major: 4
       minor: 1
       patch: 8
+    - major: 4
+      minor: 1
+      patch: 9
+    - major: 4
+      minor: 1
+      patch: 10
+    - major: 4
+      minor: 1
+      patch: 11
+    - major: 4
+      minor: 1
+      patch: 12
     - major: 4
       minor: 2
       patch: 0
