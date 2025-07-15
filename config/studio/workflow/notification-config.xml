@@ -73,16 +73,19 @@
                             </head>
                             <body style=" font-size: 12pt;">
                                 <p>
-                                    The following content was unable to deploy:
-                                    <ul>
-                                        <#list files as file>
-                                                <li>${file.internalName!file.name}</li>
-                                        </#list>
-                                    </ul>
-                                        Error:<br/>
-                                        ${deploymentError.toString()}
-                                    <br/><br/>
-                                </p>
+                                  The following content was unable to deploy:
+                                  <ul>
+                                      <#list files as file>
+                                          <li>${file.action}: ${file.path} from package ${file.packageId}.
+                                           <#if file.liveError != 0>Live error: ${file.liveError?c}</#if><#if file.stagingError != 0>Stage error: ${file.stagingError?c}</#if></li>
+                                      </#list>
+                                  </ul>
+                                  <#if deploymentError?has_content>
+                                      Error:<br/>
+                                      <pre>${deploymentError}</pre>
+                                  </#if>
+                                  <br/><br/>
+                              </p>
                             </body>
                         </html>
     ]]></body>
