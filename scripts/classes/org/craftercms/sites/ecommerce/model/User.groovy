@@ -24,6 +24,7 @@
 
 package org.craftercms.sites.ecommerce.model
 
+@Grab(group='org.apache.groovy', module='groovy-json', version='4.0.33')
 import groovy.json.JsonOutput
 
 class User {
